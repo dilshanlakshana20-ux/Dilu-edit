@@ -1133,46 +1133,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </div>
 
-function likeSite() {
-
-    const btn = document.getElementById("likeBtn");
-
-    btn.classList.toggle("liked");
-
-    if (btn.classList.contains("liked")) {
-        btn.innerHTML = "❤️ <span>Liked</span>";
-    } else {
-        btn.innerHTML = "🤍 <span>Like</span>";
-    }
-}
-
-
-function subscribeSite() {
-
-    alert("Thanks for subscribing to Dilu Edits! 🔔");
-
-}
-
-
-function shareSite() {
-
-    if (navigator.share) {
-
-        navigator.share({
-            title: "Dilu Edits",
-            text: "Check out Dilu Edits!",
-            url: window.location.href
-        });
-
-    } else {
-
-        navigator.clipboard.writeText(window.location.href);
-
-        alert("Website link copied! 📋");
-
-    }
-
-}
     
 <!-- ================= FOOTER ================= -->
 
