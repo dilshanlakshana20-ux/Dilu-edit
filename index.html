@@ -354,7 +354,6 @@ body {
     cursor: pointer;
 }
 
-
 /* ================= FOOTER ================= */
 
 footer {
@@ -661,6 +660,41 @@ footer {
     }
 }
 
+/* ================= ENGAGEMENT BUTTONS ================= */
+
+.engagement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 45px auto 25px;
+    flex-wrap: wrap;
+}
+
+.engagement button {
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.08);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: .3s;
+}
+
+.engagement button:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 25px #00ffff;
+}
+
+.engagement button.liked {
+    background: linear-gradient(45deg,#ff0055,#ff00cc);
+}
+    
 </style>
 
 <link rel="stylesheet"
@@ -1050,7 +1084,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </a>
 
         <a
-            href="https://wa.me/94781111683"
+            href="https://wa.me/94701412188"
             target="_blank"
             class="contact-btn"
         >
@@ -1081,6 +1115,65 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </a>
 </div>
 
+<!-- ================= LIKE / SUBSCRIBE / SHARE ================= -->
+
+<div class="engagement">
+
+    <button onclick="likeSite()" id="likeBtn">
+        ❤️ <span>Like</span>
+    </button>
+
+    <button onclick="subscribeSite()">
+        🔔 <span>Subscribe</span>
+    </button>
+
+    <button onclick="shareSite()">
+        📤 <span>Share</span>
+    </button>
+
+</div>
+
+function likeSite() {
+
+    const btn = document.getElementById("likeBtn");
+
+    btn.classList.toggle("liked");
+
+    if (btn.classList.contains("liked")) {
+        btn.innerHTML = "❤️ <span>Liked</span>";
+    } else {
+        btn.innerHTML = "🤍 <span>Like</span>";
+    }
+}
+
+
+function subscribeSite() {
+
+    alert("Thanks for subscribing to Dilu Edits! 🔔");
+
+}
+
+
+function shareSite() {
+
+    if (navigator.share) {
+
+        navigator.share({
+            title: "Dilu Edits",
+            text: "Check out Dilu Edits!",
+            url: window.location.href
+        });
+
+    } else {
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("Website link copied! 📋");
+
+    }
+
+}
+    
 <!-- ================= FOOTER ================= -->
 
 <footer>
