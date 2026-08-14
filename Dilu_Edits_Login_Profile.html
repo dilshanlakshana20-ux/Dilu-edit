@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dilu Edits | Creative Portfolio</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #ff00cc, transparent 35%),
+        radial-gradient(circle at bottom right, #00ffff, transparent 35%),
+        linear-gradient(135deg, #08001c, #12002b, #001a33);
+}
+
+
+/* ================= TITLE ================= */
+
+.title {
+    text-align: center;
+    padding: 65px 20px 45px;
+}
+
+.title h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    letter-spacing: 5px;
+
+    background: linear-gradient(
+        to right,
+        #00F5A0,
+        #00C6FF,
+        #7F00FF
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 25px #00ffff;
+}
+
+.title p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ddd;
+}
+
+
+/* ================= CATEGORY ================= */
+
+.category {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.category-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.category-title h2 {
+    display: inline-block;
+
+    font-size: 34px;
+
+    color: #00C6FF;
+
+    border-bottom: 3px solid #00C6FF;
+
+    padding-bottom: 7px;
+
+    text-shadow:
+        2px 3px 5px rgba(0,0,0,0.6);
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+
+/* ================= PROJECT CARD ================= */
+
+.project {
+    background: rgba(255,255,255,0.10);
+
+    padding: 9px;
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.project:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 0 20px #ff00cc,
+        0 0 35px #00ffff;
+}
+
+
+/* ================= IMAGE ================= */
+
+.project img {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+}
+
+.project h3 {
+
+    text-align: center;
+
+    font-size: 14px;
+
+    padding: 12px 4px;
+
+    color: #fff;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.card-buttons {
+
+    display: flex;
+
+    gap: 6px;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
+}
+
+.btn {
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 12px;
+
+    text-decoration: none;
+}
+
+.add-btn {
+
+    background:
+        linear-gradient(
+            45deg,
+            #00c6ff,
+            #7f00ff
+        );
+}
+
+.delete-btn {
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff512f,
+            #dd2476
+        );
+}
+
+
+/* ================= ADD PHOTO ================= */
+
+.add-area {
+
+    text-align: center;
+
+    margin: 20px 0 30px;
+}
+
+.add-photo {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            45deg,
+            #00F5A0,
+            #00C6FF,
+            #7F00FF
+        );
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 15px rgba(0,198,255,0.5);
+}
+
+.add-photo input {
+    display: none;
+}
+
+
+/* ================= POPUP ================= */
+
+.photo-popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,0.82);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.popup-box {
+
+    width: 90%;
+
+    max-width: 520px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12002b,
+            #001a33
+        );
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px #ff00cc,
+        0 0 45px #00ffff;
+}
+
+.popup-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.popup-top span {
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.popup-image {
+
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+.download-btn {
+
+    display: inline-block;
+
+    background: #00C6FF;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    margin-right: 5px;
+}
+
+.close-btn {
+
+    background: #ff00cc;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+
+    padding: 4px 11px;
+
+    cursor: pointer;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 45px 20px 30px;
+
+    color: #aaa;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 1000px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .project img {
+
+        height: 145px;
+    }
+
+    .category-title h2 {
+
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .project img {
+
+        height: 125px;
+    }
+
+    .project h3 {
+
+        font-size: 12px;
+    }
+}
+
+
+/* ================= LOGIN / PROFILE ================= */
+
+.auth-area {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1000;
+}
+
+.profile-btn {
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(10,0,35,.75);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,198,255,.25);
+}
+
+.auth-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,.78);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-box {
+    width: 92%;
+    max-width: 390px;
+    background: linear-gradient(135deg,#12002b,#001a33);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 0 25px #ff00cc, 0 0 45px #00ffff;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 9px;
+    background: rgba(255,255,255,.08);
+    color: white;
+    outline: none;
+}
+
+.auth-main-btn {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 9px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg,#00c6ff,#7f00ff);
+}
+
+.auth-switch, .logout-btn {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #00c6ff;
+    cursor: pointer;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: linear-gradient(45deg,#ff00cc,#00ffff);
+}
+
+.auth-close {
+    float: right;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 35px 0;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    transition: .3s;
+}
+
+.tiktok { background:#000; }
+.instagram { background:linear-gradient(45deg,#F9CE34,#EE2A7B,#6228D7); }
+.facebook { background:#1877F2; }
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 15px rgba(255,255,255,.5);
+}
+
+</style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<!-- ================= LOGIN / PROFILE ================= -->
+<div class="auth-area">
+    <button id="profileBtn" class="profile-btn" onclick="openAuth()">
+        <i class="fa-solid fa-user"></i> Login
+    </button>
+</div>
+
+<div id="authModal" class="auth-modal">
+    <div class="auth-box">
+        <button class="auth-close" onclick="closeAuth()">×</button>
+
+        <div id="loginView">
+            <h2>Login</h2>
+            <input id="loginEmail" type="email" placeholder="Email">
+            <input id="loginPassword" type="password" placeholder="Password">
+            <button class="auth-main-btn" onclick="loginUser()">Login</button>
+            <div class="auth-switch" onclick="showSignup()">Create an account</div>
+        </div>
+
+        <div id="signupView" style="display:none;">
+            <h2>Create Account</h2>
+            <input id="signupName" type="text" placeholder="Your name">
+            <input id="signupEmail" type="email" placeholder="Email">
+            <input id="signupPassword" type="password" placeholder="Password (6+ characters)">
+            <button class="auth-main-btn" onclick="signupUser()">Sign Up</button>
+            <div class="auth-switch" onclick="showLogin()">Already have an account? Login</div>
+        </div>
+
+        <div id="profileView" style="display:none;">
+            <div class="profile-details">
+                <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                <h2 id="profileName"></h2>
+                <p id="profileEmail"></p>
+                <button class="auth-main-btn" onclick="logoutUser()">Logout</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="title">
+
+    <h1>Dilu Edits</h1>
+
+    <p>
+        Creative Photo Editing & Design
+    </p>
+
+</header>
+
+
+<!-- ================= LOCAL PROJECT ================= -->
+
+<section class="category">
+
+    <div class="category-title">
+
+        <h2>Local Projects</h2>
+
+    </div>
+
+
+    <div class="add-area">
+
+        <label class="add-photo">
+
+            ➕ Add Local Photo
+
+            <input
+                type="file"
+                accept="image/*"
+                onchange="addPhoto(event, 'local')"
+            >
+
+        </label>
+
+    </div>
+
+
+    <div
+        class="gallery"
+        id="localGallery"
+    >
+
+        <!-- Example Photos -->
+
+        <div class="project">
+
+            <img
+                src="local1.jpg"
+                onclick="openPhoto(this.src)"
+            >
+
+            <h3>Local Project 01</h3>
+
+            <div class="card-buttons">
+
+                <a
+                    href="local1.jpg"
+                    download
+                    class="btn add-btn"
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FORIN PROJECT ================= -->
+
+<section class="category">
+
+    <div class="category-title">
+
+        <h2>Forin Projects</h2>
+
+    </div>
+
+
+    <div class="add-area">
+
+        <label class="add-photo">
+
+            ➕ Add Forin Photo
+
+            <input
+                type="file"
+                accept="image/*"
+                onchange="addPhoto(event, 'forin')"
+            >
+
+        </label>
+
+    </div>
+
+
+    <div
+        class="gallery"
+        id="forinGallery"
+    >
+
+        <!-- Example Photo -->
+
+        <div class="project">
+
+            <img
+                src="forin1.jpg"
+                onclick="openPhoto(this.src)"
+            >
+
+            <h3>Forin Project 01</h3>
+
+            <div class="card-buttons">
+
+                <a
+                    href="forin1.jpg"
+                    download
+                    class="btn add-btn"
+                >
+                    Download
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= POPUP ================= -->
+
+<div
+    id="photoPopup"
+    class="photo-popup"
+>
+
+    <div class="popup-box">
+
+        <div class="popup-top">
+
+            <span>
+                Photo Preview
+            </span>
+
+            <div>
+
+                <a
+                    id="downloadBtn"
+                    class="download-btn"
+                    download
+                >
+                    📥 Download
+                </a>
+
+                <button
+                    class="close-btn"
+                    onclick="closePhoto()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <img
+            id="popupImage"
+            class="popup-image"
+        >
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= SOCIAL MEDIA ================= -->
+<div class="social-links">
+    <a href="https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY" target="_blank" class="tiktok" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr" target="_blank" class="instagram" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr" target="_blank" class="facebook" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    ©️ 2026 Dilu Edits
+    <br>
+    Creative Photo Editing & Design
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* OPEN PHOTO */
+
+function openPhoto(imageSrc) {
+
+    document.getElementById(
+        "popupImage"
+    ).src = imageSrc;
+
+    document.getElementById(
+        "downloadBtn"
+    ).href = imageSrc;
+
+    document.getElementById(
+        "photoPopup"
+    ).style.display = "flex";
+}
+
+
+/* CLOSE PHOTO */
+
+function closePhoto() {
+
+    document.getElementById(
+        "photoPopup"
+    ).style.display = "none";
+}
+
+
+/* ADD PHOTO */
+
+function addPhoto(event, category) {
+
+    const file =
+        event.target.files[0];
+
+    if (!file) return;
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload = function(e) {
+
+        const gallery =
+            document.getElementById(
+                category + "Gallery"
+            );
+
+
+        const project =
+            document.createElement("div");
+
+        project.className =
+            "project";
+
+
+        const image =
+            document.createElement("img");
+
+        image.src =
+            e.target.result;
+
+        image.onclick =
+            function() {
+
+                openPhoto(
+                    e.target.result
+                );
+
+            };
+
+
+        const title =
+            document.createElement("h3");
+
+        title.textContent =
+            category === "local"
+            ? "Local Project"
+            : "Forin Project";
+
+
+        const buttons =
+            document.createElement("div");
+
+        buttons.className =
+            "card-buttons";
+
+
+        const download =
+            document.createElement("a");
+
+        download.href =
+            e.target.result;
+
+        download.download =
+            file.name;
+
+        download.className =
+            "btn add-btn";
+
+        download.textContent =
+            "Download";
+
+
+        const del =
+            document.createElement("button");
+
+        del.className =
+            "btn delete-btn";
+
+        del.textContent =
+            "Delete";
+
+
+        del.onclick =
+            function() {
+
+                project.remove();
+
+            };
+
+
+        buttons.appendChild(
+            download
+        );
+
+        buttons.appendChild(
+            del
+        );
+
+
+        project.appendChild(
+            image
+        );
+
+        project.appendChild(
+            title
+        );
+
+        project.appendChild(
+            buttons
+        );
+
+
+        gallery.appendChild(
+            project
+        );
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ================= SIMPLE FREE DEMO AUTH =================
+   Stores accounts in this browser's localStorage.
+   This is NOT secure multi-user authentication.
+*/
+function openAuth() {
+    document.getElementById("authModal").style.display = "flex";
+    const user = JSON.parse(localStorage.getItem("diluCurrentUser") || "null");
+    if (user) {
+        showProfile(user);
+    } else {
+        showLogin();
+    }
+}
+
+function closeAuth() {
+    document.getElementById("authModal").style.display = "none";
+}
+
+function showLogin() {
+    document.getElementById("loginView").style.display = "block";
+    document.getElementById("signupView").style.display = "none";
+    document.getElementById("profileView").style.display = "none";
+}
+
+function showSignup() {
+    document.getElementById("loginView").style.display = "none";
+    document.getElementById("signupView").style.display = "block";
+    document.getElementById("profileView").style.display = "none";
+}
+
+function showProfile(user) {
+    document.getElementById("loginView").style.display = "none";
+    document.getElementById("signupView").style.display = "none";
+    document.getElementById("profileView").style.display = "block";
+    document.getElementById("profileName").textContent = user.name;
+    document.getElementById("profileEmail").textContent = user.email;
+}
+
+function signupUser() {
+    const name = document.getElementById("signupName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
+    const password = document.getElementById("signupPassword").value;
+
+    if (!name || !email || password.length < 6) {
+        alert("Name, valid email and a password of at least 6 characters are required.");
+        return;
+    }
+
+    const users = JSON.parse(localStorage.getItem("diluUsers") || "[]");
+
+    if (users.some(u => u.email === email)) {
+        alert("This email is already registered.");
+        return;
+    }
+
+    const user = { name, email, password };
+    users.push(user);
+    localStorage.setItem("diluUsers", JSON.stringify(users));
+    localStorage.setItem("diluCurrentUser", JSON.stringify(user));
+
+    updateProfileButton();
+    showProfile(user);
+}
+
+function loginUser() {
+    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("loginPassword").value;
+
+    const users = JSON.parse(localStorage.getItem("diluUsers") || "[]");
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if (!user) {
+        alert("Email or password is incorrect.");
+        return;
+    }
+
+    localStorage.setItem("diluCurrentUser", JSON.stringify(user));
+    updateProfileButton();
+    showProfile(user);
+}
+
+function logoutUser() {
+    localStorage.removeItem("diluCurrentUser");
+    updateProfileButton();
+    showLogin();
+}
+
+function updateProfileButton() {
+    const btn = document.getElementById("profileBtn");
+    const user = JSON.parse(localStorage.getItem("diluCurrentUser") || "null");
+
+    if (user) {
+        btn.innerHTML = '<i class="fa-solid fa-user"></i> ' + user.name;
+    } else {
+        btn.innerHTML = '<i class="fa-solid fa-user"></i> Login';
+    }
+}
+
+document.addEventListener("DOMContentLoaded", updateProfileButton);
+
+</script>
+
+
+</body>
+
