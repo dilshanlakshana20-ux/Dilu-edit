@@ -767,40 +767,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <h2>💼 Professional Projects</h2>
     </div>
 
-    <div class="gallery">
+    <div class="add-area">
 
-        <div class="project">
-            <img src="professional/project1.jpg"
-                 onclick="openPhoto(this.src)">
-            <h3>Professional Project 01</h3>
+        <label class="add-photo">
+            ➕ Add Professional Project
 
-            <div class="card-buttons">
-                <a href="professional/project1.jpg"
-                   download
-                   class="btn add-btn">
-                    Download
-                </a>
-            </div>
-        </div>
+            <input
+                type="file"
+                accept="image/*"
+                onchange="addPhoto(event, 'professional')"
+            >
 
-        <div class="project">
-            <img src="professional/project2.jpg"
-                 onclick="openPhoto(this.src)">
-            <h3>Professional Project 02</h3>
-
-            <div class="card-buttons">
-                <a href="professional/project2.jpg"
-                   download
-                   class="btn add-btn">
-                    Download
-                </a>
-            </div>
-        </div>
+        </label>
 
     </div>
 
-</section>
+    <div
+        class="gallery"
+        id="professionalGallery">
+    </div>
 
+</section>
 
 <!-- ================= CREATIVE PROJECT ================= -->
 
@@ -810,36 +797,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <h2>🎨 Creative Projects</h2>
     </div>
 
-    <div class="gallery">
+    <div class="add-area">
 
-        <div class="project">
-            <img src="creative/project1.jpg"
-                 onclick="openPhoto(this.src)">
-            <h3>Creative Project 01</h3>
+        <label class="add-photo">
+            ➕ Add Creative Project
 
-            <div class="card-buttons">
-                <a href="creative/project1.jpg"
-                   download
-                   class="btn add-btn">
-                    Download
-                </a>
-            </div>
-        </div>
+            <input
+                type="file"
+                accept="image/*"
+                onchange="addPhoto(event, 'creative')"
+            >
 
-        <div class="project">
-            <img src="creative/project2.jpg"
-                 onclick="openPhoto(this.src)">
-            <h3>Creative Project 02</h3>
+        </label>
 
-            <div class="card-buttons">
-                <a href="creative/project2.jpg"
-                   download
-                   class="btn add-btn">
-                    Download
-                </a>
-            </div>
-        </div>
+    </div>
 
+    <div
+        class="gallery"
+        id="creativeGallery">
     </div>
 
 </section>
@@ -1107,45 +1082,69 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <script>
 
-    function likeSite() {
+  function addPhoto(event, category) {
 
-    const btn = document.getElementById("likeBtn");
+    const file = event.target.files[0];
 
-    btn.classList.toggle("liked");
+    if (!file) return;
 
-    if (btn.classList.contains("liked")) {
-        btn.innerHTML = "❤️ <span>Liked</span>";
-    } else {
-        btn.innerHTML = "🤍 <span>Like</span>";
-    }
-}
+    const reader = new FileReader();
 
+    reader.onload = function(e) {
 
-function subscribeSite() {
+        const gallery = document.getElementById(
+            category + "Gallery"
+        );
 
-    alert("Thanks for subscribing to Dilu Edits! 🔔");
+        const project = document.createElement("div");
+        project.className = "project";
 
-}
+        const image = document.createElement("img");
 
+        image.src = e.target.result;
 
-function shareSite() {
+        image.onclick = function() {
+            openPhoto(e.target.result);
+        };
 
-    if (navigator.share) {
+        const title = document.createElement("h3");
 
-        navigator.share({
-            title: "Dilu Edits",
-            text: "Check out Dilu Edits!",
-            url: window.location.href
-        });
+        if (category === "professional") {
+            title.textContent = "Professional Project";
+        } else {
+            title.textContent = "Creative Project";
+        }
 
-    } else {
+        const buttons = document.createElement("div");
+        buttons.className = "card-buttons";
 
-        navigator.clipboard.writeText(window.location.href);
+        const download = document.createElement("a");
 
-        alert("Website link copied! 📋");
+        download.href = e.target.result;
+        download.download = file.name;
+        download.className = "btn add-btn";
+        download.textContent = "Download";
 
-    }
+        const del = document.createElement("button");
 
+        del.className = "btn delete-btn";
+        del.textContent = "Delete";
+
+        del.onclick = function() {
+            project.remove();
+        };
+
+        buttons.appendChild(download);
+        buttons.appendChild(del);
+
+        project.appendChild(image);
+        project.appendChild(title);
+        project.appendChild(buttons);
+
+        gallery.appendChild(project);
+    };
+
+    reader.readAsDataURL(file);
 }
 
 /* OPEN PHOTO */
