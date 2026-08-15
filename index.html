@@ -768,29 +768,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
     <div class="add-area">
-
         <label class="add-photo">
             ➕ Add Professional Project
-
             <input
                 type="file"
                 accept="image/*"
-                onchange="addPhoto(event, 'professional')"
+                onchange="uploadToCloudinary(event, 'professional')"
             >
-
         </label>
-
     </div>
 
-    <div
-        class="gallery"
-        id="professionalGallery">
-    </div>
+    <div class="gallery" id="professionalGallery"></div>
 
 </section>
 
-<!-- ================= CREATIVE PROJECT ================= -->
-
+<!-- =============== CREATIVE Projects ================== -->
 <section class="category">
 
     <div class="category-title">
@@ -798,27 +790,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
     <div class="add-area">
-
         <label class="add-photo">
             ➕ Add Creative Project
-
             <input
                 type="file"
                 accept="image/*"
-                onchange="addPhoto(event, 'creative')"
+                onchange="uploadToCloudinary(event, 'creative')"
             >
-
         </label>
-
     </div>
 
-    <div
-        class="gallery"
-        id="creativeGallery">
-    </div>
+    <div class="gallery" id="creativeGallery"></div>
 
 </section>
-
 
 <!-- ================= POPUP ================= -->
 
@@ -1081,72 +1065,179 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
-
-  function addPhoto(event, category) {
+async function uploadToCloudinary(event, category) {
 
     const file = event.target.files[0];
 
     if (!file) return;
 
-    const reader = new FileReader();
+    const cloudName = "paxu7ccs";
+    const uploadPreset = "dilu_edits";
 
-    reader.onload = function(e) {
+    const formData = new FormData();
 
-        const gallery = document.getElementById(
-            category + "Gallery"
+    formData.append("file", file);
+    formData.append("upload_preset", uploadPreset);
+    formData.append("folder", "dilu-edits/" + category);
+
+    try {
+
+        alert("Uploading photo... ⏳");
+
+        const response = await fetch(
+            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+            {
+                method: "POST",
+                body: formData
+            }
         );
 
-        const project = document.createElement("div");
-        project.className = "project";
+        const data = await response.json();
 
-        const image = document.createElement("img");
-
-        image.src = e.target.result;
-
-        image.onclick = function() {
-            openPhoto(e.target.result);
-        };
-
-        const title = document.createElement("h3");
-
-        if (category === "professional") {
-            title.textContent = "Professional Project";
-        } else {
-            title.textContent = "Creative Project";
+        if (!response.ok) {
+            console.error(data);
+            alert("Upload failed ❌");
+            return;
         }
 
-        const buttons = document.createElement("div");
-        buttons.className = "card-buttons";
-
-        const download = document.createElement("a");
-
-        download.href = e.target.result;
-        download.download = file.name;
-        download.className = "btn add-btn";
-        download.textContent = "Download";
-
-        const del = document.createElement("button");
-
-        del.className = "btn delete-btn";
-        del.textContent = "Delete";
-
-        del.onclick = function() {
-            project.remove();
+        const project = {
+            url: data.secure_url,
+            name: file.name
         };
 
-        buttons.appendChild(download);
-        buttons.appendChild(del);
+        const storageKey = "dilu_" + category + "_projects";
 
-        project.appendChild(image);
-        project.appendChild(title);
-        project.appendChild(buttons);
+        const projects = JSON.parse(
+            localStorage.getItem(storageKey) || "[]"
+        );
 
-        gallery.appendChild(project);
-    };
+        projects.push(project);
 
-    reader.readAsDataURL(file);
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(projects)
+        );
+
+        displayProject(project, category);
+
+        alert("Project uploaded successfully! ✅");
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Something went wrong ❌");
+
+    }
+
+    event.target.value = "";
 }
 
+
+function displayProject(project, category) {
+
+    const gallery = document.getElementById(
+        category + "Gallery"
+    );
+
+    const card = document.createElement("div");
+
+    card.className = "project";
+
+    const image = document.createElement("img");
+
+    image.src = project.url;
+
+    image.onclick = function() {
+        openPhoto(project.url);
+    };
+
+    const title = document.createElement("h3");
+
+    title.textContent =
+        category === "professional"
+        ? "Professional Project"
+        : "Creative Project";
+
+    const buttons = document.createElement("div");
+
+    buttons.className = "card-buttons";
+
+    const download = document.createElement("a");
+
+    download.href = project.url;
+
+    download.target = "_blank";
+
+    download.className = "btn add-btn";
+
+    download.textContent = "View";
+
+    const deleteBtn = document.createElement("button");
+
+    deleteBtn.className = "btn delete-btn";
+
+    deleteBtn.textContent = "Delete";
+
+    deleteBtn.onclick = function() {
+
+        card.remove();
+
+        const storageKey = "dilu_" + category + "_projects";
+
+        const projects = JSON.parse(
+            localStorage.getItem(storageKey) || "[]"
+        );
+
+        const updated = projects.filter(
+            item => item.url !== project.url
+        );
+
+        localStorage.setItem(
+            storageKey,
+            JSON.stringify(updated)
+        );
+
+    };
+
+    buttons.appendChild(download);
+
+    buttons.appendChild(deleteBtn);
+
+    card.appendChild(image);
+
+    card.appendChild(title);
+
+    card.appendChild(buttons);
+
+    gallery.appendChild(card);
+}
+
+
+function loadProjects(category) {
+
+    const storageKey = "dilu_" + category + "_projects";
+
+    const projects = JSON.parse(
+        localStorage.getItem(storageKey) || "[]"
+    );
+
+    projects.forEach(function(project) {
+
+        displayProject(project, category);
+
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    updateProfileButton();
+
+    loadProjects("professional");
+
+    loadProjects("creative");
+
+});
 /* OPEN PHOTO */
 
 function openPhoto(imageSrc) {
@@ -1402,8 +1493,12 @@ function updateProfileButton() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", updateProfileButton);
-
+document.addEventListener("DOMContentLoaded", function() {
+    updateProfileButton();
+    loadProjects("professional");
+    loadProjects("creative");
+});
+    
 </script>
 
 
