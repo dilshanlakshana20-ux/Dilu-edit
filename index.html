@@ -1062,146 +1062,389 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<script type="module">
 
-<script>
-async function uploadToCloudinary(event, category) {
+/* ================= FIREBASE ================= */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc,
+    query,
+    orderBy
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyC2JMZsM3wUl3mPgnwujAa_PdrApozWBmw",
+
+    authDomain: "dilu-edits-b184a.firebaseapp.com",
+
+    projectId: "dilu-edits-b184a",
+
+    storageBucket: "dilu-edits-b184a.firebasestorage.app",
+
+    messagingSenderId: "834870152212",
+
+    appId: "1:834870152212:web:1f734ce3779321eff42b01"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+/* ================= CLOUDINARY ================= */
+
+const cloudName = "paxu7ccs";
+
+const uploadPreset = "dilu_edits";
+
+
+/* ================= UPLOAD PHOTO ================= */
+
+window.uploadToCloudinary = async function(event, category) {
 
     const file = event.target.files[0];
 
     if (!file) return;
 
-    const cloudName = "paxu7ccs";
-    const uploadPreset = "dilu_edits";
-
-    const formData = new FormData();
-
-    formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
-    formData.append("folder", "dilu-edits/" + category);
 
     try {
 
         alert("Uploading photo... ⏳");
 
-        const response = await fetch(
-            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-            {
-                method: "POST",
-                body: formData
-            }
+
+        const formData = new FormData();
+
+        formData.append("file", file);
+
+        formData.append(
+            "upload_preset",
+            uploadPreset
         );
+
+        formData.append(
+            "folder",
+            "dilu-edits/" + category
+        );
+
+
+        /* Upload to Cloudinary */
+
+        const response = await fetch(
+
+            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+
+            {
+
+                method: "POST",
+
+                body: formData
+
+            }
+
+        );
+
 
         const data = await response.json();
 
+
         if (!response.ok) {
+
             console.error(data);
-            alert("Upload failed ❌");
+
+            alert("Cloudinary upload failed ❌");
+
             return;
+
         }
 
-        const project = {
-            url: data.secure_url,
-            name: file.name
-        };
 
-        const storageKey = "dilu_" + category + "_projects";
+        /* ================= SAVE TO FIRESTORE ================= */
 
-        const projects = JSON.parse(
-            localStorage.getItem(storageKey) || "[]"
+        await addDoc(
+
+            collection(db, "projects"),
+
+            {
+
+                url: data.secure_url,
+
+                name: file.name,
+
+                category: category,
+
+                publicId: data.public_id,
+
+                createdAt: Date.now()
+
+            }
+
         );
 
-        projects.push(project);
-
-        localStorage.setItem(
-            storageKey,
-            JSON.stringify(projects)
-        );
-
-        displayProject(project, category);
 
         alert("Project uploaded successfully! ✅");
 
-    } catch (error) {
+
+        /* Refresh gallery */
+
+        loadProjects(category);
+
+
+    }
+
+    catch (error) {
 
         console.error(error);
+
         alert("Something went wrong ❌");
 
     }
 
+
     event.target.value = "";
-}
+
+};
 
 
-function displayProject(project, category) {
+/* ================= LOAD PROJECTS ================= */
+
+async function loadProjects(category) {
 
     const gallery = document.getElementById(
         category + "Gallery"
     );
 
-    const card = document.createElement("div");
+
+    if (!gallery) return;
+
+
+    gallery.innerHTML = "";
+
+
+    try {
+
+        const projectsRef =
+            collection(db, "projects");
+
+
+        const snapshot =
+            await getDocs(projectsRef);
+
+
+        const projects = [];
+
+
+        snapshot.forEach(function(documentSnapshot) {
+
+            const project =
+                documentSnapshot.data();
+
+
+            if (project.category === category) {
+
+                projects.push({
+
+                    id: documentSnapshot.id,
+
+                    ...project
+
+                });
+
+            }
+
+        });
+
+
+        /* Newest first */
+
+        projects.sort(
+            (a, b) =>
+                (b.createdAt || 0) -
+                (a.createdAt || 0)
+        );
+
+
+        projects.forEach(function(project) {
+
+            displayProject(
+                project,
+                category
+            );
+
+        });
+
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Photos load කරන්න බැරි වුණා ❌"
+        );
+
+    }
+
+}
+
+
+/* ================= DISPLAY PROJECT ================= */
+
+function displayProject(project, category) {
+
+    const gallery =
+        document.getElementById(
+            category + "Gallery"
+        );
+
+
+    if (!gallery) return;
+
+
+    const card =
+        document.createElement("div");
 
     card.className = "project";
 
-    const image = document.createElement("img");
+
+    /* IMAGE */
+
+    const image =
+        document.createElement("img");
+
 
     image.src = project.url;
 
+    image.alt =
+        project.name || "Dilu Edits Project";
+
+
     image.onclick = function() {
+
         openPhoto(project.url);
+
     };
 
-    const title = document.createElement("h3");
+
+    /* TITLE */
+
+    const title =
+        document.createElement("h3");
+
 
     title.textContent =
         category === "professional"
+
         ? "Professional Project"
+
         : "Creative Project";
 
-    const buttons = document.createElement("div");
 
-    buttons.className = "card-buttons";
+    /* BUTTON AREA */
 
-    const download = document.createElement("a");
+    const buttons =
+        document.createElement("div");
 
-    download.href = project.url;
 
-    download.target = "_blank";
+    buttons.className =
+        "card-buttons";
 
-    download.className = "btn add-btn";
 
-    download.textContent = "View";
+    /* VIEW */
 
-    const deleteBtn = document.createElement("button");
+    const view =
+        document.createElement("a");
 
-    deleteBtn.className = "btn delete-btn";
 
-    deleteBtn.textContent = "Delete";
+    view.href =
+        project.url;
 
-    deleteBtn.onclick = function() {
+    view.target =
+        "_blank";
 
-        card.remove();
+    view.className =
+        "btn add-btn";
 
-        const storageKey = "dilu_" + category + "_projects";
+    view.textContent =
+        "View";
 
-        const projects = JSON.parse(
-            localStorage.getItem(storageKey) || "[]"
-        );
 
-        const updated = projects.filter(
-            item => item.url !== project.url
-        );
+    /* DELETE */
 
-        localStorage.setItem(
-            storageKey,
-            JSON.stringify(updated)
-        );
+    const deleteBtn =
+        document.createElement("button");
 
-    };
 
-    buttons.appendChild(download);
+    deleteBtn.className =
+        "btn delete-btn";
+
+    deleteBtn.textContent =
+        "Delete";
+
+
+    deleteBtn.onclick =
+        async function() {
+
+            const confirmDelete =
+                confirm(
+                    "Delete this project?"
+                );
+
+
+            if (!confirmDelete) return;
+
+
+            try {
+
+                await deleteDoc(
+
+                    doc(
+                        db,
+                        "projects",
+                        project.id
+                    )
+
+                );
+
+
+                card.remove();
+
+
+                alert(
+                    "Project deleted ✅"
+                );
+
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+                alert(
+                    "Delete failed ❌"
+                );
+
+            }
+
+        };
+
+
+    buttons.appendChild(view);
 
     buttons.appendChild(deleteBtn);
+
 
     card.appendChild(image);
 
@@ -1209,296 +1452,474 @@ function displayProject(project, category) {
 
     card.appendChild(buttons);
 
+
     gallery.appendChild(card);
+
 }
 
 
-function loadProjects(category) {
+/* ================= PHOTO POPUP ================= */
 
-    const storageKey = "dilu_" + category + "_projects";
-
-    const projects = JSON.parse(
-        localStorage.getItem(storageKey) || "[]"
-    );
-
-    projects.forEach(function(project) {
-
-        displayProject(project, category);
-
-    });
-}
-
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    updateProfileButton();
-
-    loadProjects("professional");
-
-    loadProjects("creative");
-
-});
-/* OPEN PHOTO */
-
-function openPhoto(imageSrc) {
+window.openPhoto = function(imageSrc) {
 
     document.getElementById(
         "popupImage"
     ).src = imageSrc;
 
+
     document.getElementById(
         "downloadBtn"
     ).href = imageSrc;
 
+
     document.getElementById(
         "photoPopup"
     ).style.display = "flex";
-}
+
+};
 
 
-/* CLOSE PHOTO */
+/* ================= CLOSE PHOTO ================= */
 
-function closePhoto() {
+window.closePhoto = function() {
 
     document.getElementById(
         "photoPopup"
     ).style.display = "none";
+
+};
+
+
+/* ================= LOGIN / PROFILE ================= */
+
+window.openAuth = function() {
+
+    document.getElementById(
+        "authModal"
+    ).style.display = "flex";
+
+
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
+
+
+    if (user) {
+
+        showProfile(user);
+
+    }
+
+    else {
+
+        showLogin();
+
+    }
+
+};
+
+
+window.closeAuth = function() {
+
+    document.getElementById(
+        "authModal"
+    ).style.display = "none";
+
+};
+
+
+window.showLogin = function() {
+
+    document.getElementById(
+        "loginView"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "signupView"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "profileView"
+    ).style.display = "none";
+
+};
+
+
+window.showSignup = function() {
+
+    document.getElementById(
+        "loginView"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "signupView"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "profileView"
+    ).style.display = "none";
+
+};
+
+
+function showProfile(user) {
+
+    document.getElementById(
+        "loginView"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "signupView"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "profileView"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "profileName"
+    ).textContent =
+        user.name;
+
+
+    document.getElementById(
+        "profileEmail"
+    ).textContent =
+        user.email;
+
 }
 
 
-/* ADD PHOTO */
+/* ================= SIGN UP ================= */
 
-function addPhoto(event, category) {
+window.signupUser = function() {
 
-    const file =
-        event.target.files[0];
-
-    if (!file) return;
-
-
-    const reader =
-        new FileReader();
+    const name =
+        document.getElementById(
+            "signupName"
+        ).value.trim();
 
 
-    reader.onload = function(e) {
-
-        const gallery =
-            document.getElementById(
-                category + "Gallery"
-            );
+    const email =
+        document.getElementById(
+            "signupEmail"
+        ).value.trim().toLowerCase();
 
 
-        const project =
-            document.createElement("div");
-
-        project.className =
-            "project";
-
-
-        const image =
-            document.createElement("img");
-
-        image.src =
-            e.target.result;
-
-        image.onclick =
-            function() {
-
-                openPhoto(
-                    e.target.result
-                );
-
-            };
+    const password =
+        document.getElementById(
+            "signupPassword"
+        ).value;
 
 
-        const title =
-            document.createElement("h3");
+    if (
+        !name ||
+        !email ||
+        password.length < 6
+    ) {
 
-        title.textContent =
-            category === "local"
-            ? "Local Project"
-            : "Forin Project";
-
-
-        const buttons =
-            document.createElement("div");
-
-        buttons.className =
-            "card-buttons";
-
-
-        const download =
-            document.createElement("a");
-
-        download.href =
-            e.target.result;
-
-        download.download =
-            file.name;
-
-        download.className =
-            "btn add-btn";
-
-        download.textContent =
-            "Download";
-
-
-        const del =
-            document.createElement("button");
-
-        del.className =
-            "btn delete-btn";
-
-        del.textContent =
-            "Delete";
-
-
-        del.onclick =
-            function() {
-
-                project.remove();
-
-            };
-
-
-        buttons.appendChild(
-            download
+        alert(
+            "Name, valid email and password 6+ characters required."
         );
 
-        buttons.appendChild(
-            del
+        return;
+
+    }
+
+
+    const users =
+        JSON.parse(
+            localStorage.getItem(
+                "diluUsers"
+            ) || "[]"
         );
 
 
-        project.appendChild(
-            image
+    if (
+        users.some(
+            user =>
+                user.email === email
+        )
+    ) {
+
+        alert(
+            "This email is already registered."
         );
 
-        project.appendChild(
-            title
-        );
+        return;
 
-        project.appendChild(
-            buttons
-        );
+    }
 
 
-        gallery.appendChild(
-            project
-        );
+    const user = {
+
+        name,
+        email,
+        password
 
     };
 
 
-    reader.readAsDataURL(file);
-
-}
-
-
-/* ================= SIMPLE FREE DEMO AUTH =================
-   Stores accounts in this browser's localStorage.
-   This is NOT secure multi-user authentication.
-*/
-function openAuth() {
-    document.getElementById("authModal").style.display = "flex";
-    const user = JSON.parse(localStorage.getItem("diluCurrentUser") || "null");
-    if (user) {
-        showProfile(user);
-    } else {
-        showLogin();
-    }
-}
-
-function closeAuth() {
-    document.getElementById("authModal").style.display = "none";
-}
-
-function showLogin() {
-    document.getElementById("loginView").style.display = "block";
-    document.getElementById("signupView").style.display = "none";
-    document.getElementById("profileView").style.display = "none";
-}
-
-function showSignup() {
-    document.getElementById("loginView").style.display = "none";
-    document.getElementById("signupView").style.display = "block";
-    document.getElementById("profileView").style.display = "none";
-}
-
-function showProfile(user) {
-    document.getElementById("loginView").style.display = "none";
-    document.getElementById("signupView").style.display = "none";
-    document.getElementById("profileView").style.display = "block";
-    document.getElementById("profileName").textContent = user.name;
-    document.getElementById("profileEmail").textContent = user.email;
-}
-
-function signupUser() {
-    const name = document.getElementById("signupName").value.trim();
-    const email = document.getElementById("signupEmail").value.trim().toLowerCase();
-    const password = document.getElementById("signupPassword").value;
-
-    if (!name || !email || password.length < 6) {
-        alert("Name, valid email and a password of at least 6 characters are required.");
-        return;
-    }
-
-    const users = JSON.parse(localStorage.getItem("diluUsers") || "[]");
-
-    if (users.some(u => u.email === email)) {
-        alert("This email is already registered.");
-        return;
-    }
-
-    const user = { name, email, password };
     users.push(user);
-    localStorage.setItem("diluUsers", JSON.stringify(users));
-    localStorage.setItem("diluCurrentUser", JSON.stringify(user));
+
+
+    localStorage.setItem(
+        "diluUsers",
+        JSON.stringify(users)
+    );
+
+
+    localStorage.setItem(
+        "diluCurrentUser",
+        JSON.stringify(user)
+    );
+
 
     updateProfileButton();
+
     showProfile(user);
-}
 
-function loginUser() {
-    const email = document.getElementById("loginEmail").value.trim().toLowerCase();
-    const password = document.getElementById("loginPassword").value;
+};
 
-    const users = JSON.parse(localStorage.getItem("diluUsers") || "[]");
-    const user = users.find(u => u.email === email && u.password === password);
+
+/* ================= LOGIN ================= */
+
+window.loginUser = function() {
+
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim().toLowerCase();
+
+
+    const password =
+        document.getElementById(
+            "loginPassword"
+        ).value;
+
+
+    const users =
+        JSON.parse(
+            localStorage.getItem(
+                "diluUsers"
+            ) || "[]"
+        );
+
+
+    const user =
+        users.find(
+            user =>
+                user.email === email &&
+                user.password === password
+        );
+
 
     if (!user) {
-        alert("Email or password is incorrect.");
+
+        alert(
+            "Email or password is incorrect."
+        );
+
         return;
+
     }
 
-    localStorage.setItem("diluCurrentUser", JSON.stringify(user));
-    updateProfileButton();
-    showProfile(user);
-}
 
-function logoutUser() {
-    localStorage.removeItem("diluCurrentUser");
+    localStorage.setItem(
+        "diluCurrentUser",
+        JSON.stringify(user)
+    );
+
+
     updateProfileButton();
+
+    showProfile(user);
+
+};
+
+
+/* ================= LOGOUT ================= */
+
+window.logoutUser = function() {
+
+    localStorage.removeItem(
+        "diluCurrentUser"
+    );
+
+
+    updateProfileButton();
+
     showLogin();
-}
+
+};
+
+
+/* ================= PROFILE BUTTON ================= */
 
 function updateProfileButton() {
-    const btn = document.getElementById("profileBtn");
-    const user = JSON.parse(localStorage.getItem("diluCurrentUser") || "null");
+
+    const btn =
+        document.getElementById(
+            "profileBtn"
+        );
+
+
+    if (!btn) return;
+
+
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
+
 
     if (user) {
-        btn.innerHTML = '<i class="fa-solid fa-user"></i> ' + user.name;
-    } else {
-        btn.innerHTML = '<i class="fa-solid fa-user"></i> Login';
+
+        btn.innerHTML =
+            '<i class="fa-solid fa-user"></i> ' +
+            user.name;
+
     }
+
+    else {
+
+        btn.innerHTML =
+            '<i class="fa-solid fa-user"></i> Login';
+
+    }
+
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    updateProfileButton();
-    loadProjects("professional");
-    loadProjects("creative");
-});
-    
+
+/* ================= LIKE ================= */
+
+window.likeSite = function() {
+
+    const button =
+        document.getElementById(
+            "likeBtn"
+        );
+
+
+    button.classList.toggle(
+        "liked"
+    );
+
+
+    const span =
+        button.querySelector("span");
+
+
+    if (
+        button.classList.contains(
+            "liked"
+        )
+    ) {
+
+        span.textContent =
+            "Liked";
+
+    }
+
+    else {
+
+        span.textContent =
+            "Like";
+
+    }
+
+};
+
+
+/* ================= SUBSCRIBE ================= */
+
+window.subscribeSite = function() {
+
+    alert(
+        "Thank you for subscribing! 🔔"
+    );
+
+};
+
+
+/* ================= SHARE ================= */
+
+window.shareSite = async function() {
+
+    try {
+
+        if (
+            navigator.share
+        ) {
+
+            await navigator.share({
+
+                title: "Dilu Edits",
+
+                text:
+                    "Check out Dilu Edits!",
+
+                url:
+                    window.location.href
+
+            });
+
+        }
+
+        else {
+
+            await navigator.clipboard.writeText(
+                window.location.href
+            );
+
+            alert(
+                "Website link copied! 📋"
+            );
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
+};
+
+
+/* ================= PAGE LOAD ================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateProfileButton();
+
+        loadProjects(
+            "professional"
+        );
+
+        loadProjects(
+            "creative"
+        );
+
+    }
+);
+
 </script>
 
 
