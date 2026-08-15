@@ -762,40 +762,259 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     ...
 </header>
 
+<div class="pro-photo-glass">
+    <div class="pro-glow"></div>
 
-<!-- 🔥 GLASS PHOTO BAR -->
-
-<div class="photo-upload-glass">
-
-    <div class="glass-icon">
-        <i class="fa-solid fa-cloud-arrow-up"></i>
+    <div class="pro-icon">
+        <i class="fa-solid fa-camera"></i>
     </div>
 
-    <div class="glass-text">
-        <h3>Have a great photo?</h3>
-        <p>Share your best work and add it to our collection.</p>
+    <div class="pro-message">
+        <h3>Have a Professional Photo?</h3>
+        <p>Got a great shot? Add it to our collection.</p>
     </div>
 
-    <label class="glass-upload-btn">
-        <i class="fa-solid fa-plus"></i>
-        Add Photo
-
-        <input
-            type="file"
-            accept="image/*"
-            onchange="uploadToCloudinary(event, 'professional')"
-            hidden
-        >
-    </label>
-
+    <div class="pro-arrow">
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
 </div>
 
+<style>
+.pro-photo-glass {
+    position: relative;
+    width: 88%;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 18px 22px;
 
-<!-- PROFESSIONAL -->
+    display: flex;
+    align-items: center;
+    gap: 16px;
 
-<section id="professional">
-    ...
-</section> 
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 5% 50%,
+            rgba(0, 229, 255, .30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 0, 153, .25),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 100% 80%,
+            rgba(125, 50, 255, .32),
+            transparent 40%
+        ),
+        rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        inset 0 1px 2px rgba(255,255,255,.35),
+        inset 0 -2px 5px rgba(0,0,0,.25);
+
+    overflow: hidden;
+
+    transition: .35s ease;
+}
+
+
+/* GLASS LIGHT */
+
+.pro-photo-glass::before {
+    content: "";
+    position: absolute;
+
+    top: -120%;
+    left: -20%;
+
+    width: 45%;
+    height: 300%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.22),
+        transparent
+    );
+
+    transform: rotate(18deg);
+    pointer-events: none;
+}
+
+
+/* 3D GLOW */
+
+.pro-glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    top: -90px;
+
+    background: #7b2fff;
+
+    filter: blur(70px);
+
+    opacity: .45;
+
+    border-radius: 50%;
+}
+
+
+/* ICON */
+
+.pro-icon {
+    position: relative;
+    z-index: 2;
+
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #7b2fff,
+            #ff0099
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.4),
+        inset 0 1px 2px rgba(255,255,255,.45);
+}
+
+
+/* TEXT */
+
+.pro-message {
+    position: relative;
+    z-index: 2;
+}
+
+.pro-message h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.4);
+}
+
+.pro-message p {
+    margin: 4px 0 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 12px;
+}
+
+
+/* RIGHT ARROW */
+
+.pro-arrow {
+    position: relative;
+    z-index: 2;
+
+    margin-left: auto;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,229,255,.8),
+            rgba(255,0,153,.8)
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.35);
+
+    transition: .3s;
+}
+
+
+/* HOVER */
+
+.pro-photo-glass:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.5),
+        0 0 25px rgba(123,47,255,.18),
+        inset 0 1px 2px rgba(255,255,255,.4);
+}
+
+.pro-photo-glass:hover .pro-arrow {
+    transform: translateX(5px);
+}
+
+
+/* MOBILE */
+
+@media (max-width:600px) {
+
+    .pro-photo-glass {
+        width: 86%;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .pro-icon {
+        min-width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .pro-message h3 {
+        font-size: 14px;
+    }
+
+    .pro-message p {
+        font-size: 10px;
+    }
+
+    .pro-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
+</style>
 
 <!-- ================= PROFISHINOL PROJECT ================= -->
 
