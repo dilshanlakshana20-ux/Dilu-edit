@@ -31,51 +31,34 @@ body {
 /* ================= TITLE ================= */
 
 .title {
-    
-  .title h1 {
-    font-size: clamp(55px, 10vw, 110px);
-    font-weight: 900;
-    letter-spacing: 7px;
-    text-transform: uppercase;
+    text-align: center;
+    padding: 65px 20px 45px;
+}
+
+.title h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    letter-spacing: 5px;
 
     background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 35%,
-        #00c6ff 55%,
-        #7f00ff 75%,
-        #c000ff 100%
+        to right,
+        #00F5A0,
+        #00C6FF,
+        #7F00FF
     );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 
-    filter:
-        drop-shadow(0 0 8px rgba(255,255,255,.8))
-        drop-shadow(0 0 18px rgba(0,198,255,.7))
-        drop-shadow(0 0 35px rgba(127,0,255,.8));
-
-    animation: diluGlow 3s ease-in-out infinite alternate;
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 25px #00ffff;
 }
 
-@keyframes diluGlow {
-    from {
-        filter:
-            drop-shadow(0 0 8px rgba(255,255,255,.8))
-            drop-shadow(0 0 18px rgba(0,198,255,.6))
-            drop-shadow(0 0 30px rgba(127,0,255,.6));
-    }
-
-    to {
-        filter:
-            drop-shadow(0 0 12px rgba(255,255,255,1))
-            drop-shadow(0 0 28px rgba(0,198,255,.9))
-            drop-shadow(0 0 45px rgba(127,0,255,1));
-    }
+.title p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ddd;
 }
-
-    
 
 
 /* ================= CATEGORY ================= */
@@ -773,11 +756,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         Creative Photo Editing & Design
     </p>
 
+</header>
+
+   <header>
     ...
 </header>
 
-
-    
 <div class="pro-photo-glass">
     <div class="pro-glow"></div>
 
