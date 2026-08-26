@@ -2,1610 +2,1052 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Dilu Edits</title>
-
-<meta name="description"
-content="Dilu Edits - Professional video editing, photo editing, reels, shorts, thumbnails and creative online services.">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<meta name="description" content="Dilu Edits - Professional video editing, reels, shorts, thumbnails and creative content editing.">
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    color:white;
-    min-height:100vh;
-    overflow-x:hidden;
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
 
     background:
-        radial-gradient(circle at 10% 10%,#ff00cc55,transparent 30%),
-        radial-gradient(circle at 90% 90%,#00ffff44,transparent 30%),
-        linear-gradient(135deg,#08001c,#12002b,#001a33);
+        radial-gradient(circle at top left, #ff00cc, transparent 35%),
+        radial-gradient(circle at bottom right, #00ffff, transparent 35%),
+        linear-gradient(135deg, #08001c, #12002b, #001a33);
 }
 
-/* =========================================================
-   LOGIN BUTTON
-========================================================= */
 
-.auth-area{
-    position:fixed;
-    top:18px;
-    right:18px;
-    z-index:5000;
+/* ================= TITLE ================= */
+
+.title {
+    text-align: center;
+    padding: 65px 20px 45px;
 }
 
-.profile-btn{
-    border:1px solid rgba(255,255,255,.25);
-    background:rgba(10,0,35,.75);
-    color:white;
-    padding:10px 14px;
-    border-radius:12px;
-    cursor:pointer;
-    backdrop-filter:blur(10px);
-    box-shadow:0 0 15px rgba(0,198,255,.25);
-}
+.title h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    letter-spacing: 5px;
 
-/* =========================================================
-   NEW MAIN HERO
-========================================================= */
-
-.hero{
-    width:94%;
-    max-width:1250px;
-    margin:0 auto;
-    padding:75px 20px 20px;
-    text-align:center;
-}
-
-.hero-title{
-    font-size:clamp(42px,7vw,78px);
-    font-weight:900;
-    letter-spacing:6px;
-
-    background:linear-gradient(
-        90deg,
-        #00f5a0,
-        #00c6ff,
-        #7f00ff,
-        #ff00cc
+    background: linear-gradient(
+        to right,
+        #00F5A0,
+        #00C6FF,
+        #7F00FF
     );
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    filter:drop-shadow(0 0 18px #00ffff55);
-}
-
-.hero-subtitle{
-    margin-top:10px;
-    color:#ccc;
-    font-size:18px;
-}
-
-/* =========================================================
-   SERVICE → PHOTO → LAPTOP DESIGN
-========================================================= */
-
-.service-showcase{
-    position:relative;
-    width:100%;
-    max-width:1100px;
-    margin:50px auto 20px;
-    min-height:620px;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-}
-
-/* TOP SERVICES */
-
-.service-top{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    padding:0 70px;
-    position:relative;
-    z-index:5;
-}
-
-.service-box{
-    width:280px;
-    padding:18px 25px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.20);
-
-    backdrop-filter:blur(15px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.35),
-        inset 0 1px 2px rgba(255,255,255,.25);
-
-    transition:.3s;
-}
-
-.service-box:hover{
-    transform:translateY(-7px);
-
-    box-shadow:
-        0 0 25px #00ffff55,
-        0 0 35px #ff00cc44;
-}
-
-.service-box h2{
-    font-size:25px;
-
-    background:linear-gradient(
-        90deg,
-        #00e5ff,
-        #ff00cc
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.service-box p{
-    margin-top:7px;
-    color:#bbb;
-    font-size:14px;
-}
-
-/* ARROWS */
-
-.arrow{
-    position:absolute;
-    top:110px;
-    font-size:55px;
-    color:#00e5ff;
-    text-shadow:
-        0 0 10px #00e5ff,
-        0 0 25px #7f00ff;
-    z-index:3;
-}
-
-.arrow-left{
-    left:31%;
-    transform:rotate(25deg);
-}
-
-.arrow-right{
-    right:31%;
-    transform:rotate(-25deg);
-}
-
-/* =========================================================
-   MY PHOTO
-========================================================= */
-
-.my-photo-area{
-    margin-top:45px;
-    position:relative;
-    z-index:10;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.my-photo-frame{
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    padding:6px;
-
-    background:linear-gradient(
-        135deg,
-        #00ffff,
-        #7f00ff,
-        #ff00cc
-    );
-
-    box-shadow:
-        0 0 25px #00ffff88,
-        0 0 50px #ff00cc55;
-
-    animation:photoGlow 3s infinite alternate;
-}
-
-.my-photo-frame img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:5px solid #100022;
-}
-
-.my-photo-name{
-    margin-top:12px;
-    font-size:24px;
-    font-weight:bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     text-shadow:
-        0 0 10px #00ffff;
+        0 0 10px #ff00cc,
+        0 0 25px #00ffff;
 }
 
-/* PHOTO GLOW */
-
-@keyframes photoGlow{
-    from{
-        transform:scale(1);
-        box-shadow:
-            0 0 20px #00ffff66,
-            0 0 35px #ff00cc44;
-    }
-
-    to{
-        transform:scale(1.04);
-        box-shadow:
-            0 0 35px #00ffffaa,
-            0 0 65px #ff00cc66;
-    }
+.title p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #ddd;
 }
 
-/* =========================================================
-   LAPTOP
-========================================================= */
 
-.laptop-area{
-    margin-top:35px;
-    position:relative;
-    z-index:10;
+/* ================= CATEGORY ================= */
+
+.category {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto 60px;
 }
 
-.laptop-screen{
-    width:520px;
-    max-width:80vw;
-    height:300px;
-
-    border:10px solid #222;
-    border-bottom:18px solid #111;
-
-    border-radius:18px 18px 10px 10px;
-
-    background:
-        radial-gradient(circle at 30% 30%,#00ffff33,transparent 30%),
-        radial-gradient(circle at 70% 70%,#ff00cc33,transparent 30%),
-        linear-gradient(135deg,#090016,#071a30);
-
-    box-shadow:
-        0 0 20px #00ffff55,
-        inset 0 0 30px #000;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
+.category-title {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.laptop-screen i{
-    font-size:55px;
-    color:#00e5ff;
-    text-shadow:0 0 20px #00e5ff;
+.category-title h2 {
+    display: inline-block;
+
+    font-size: 34px;
+
+    color: #00C6FF;
+
+    border-bottom: 3px solid #00C6FF;
+
+    padding-bottom: 7px;
+
+    text-shadow:
+        2px 3px 5px rgba(0,0,0,0.6);
 }
 
-.laptop-screen h2{
-    margin-top:15px;
-    font-size:38px;
-    letter-spacing:4px;
 
-    background:linear-gradient(
-        90deg,
-        #00f5a0,
-        #00c6ff,
-        #ff00cc
-    );
+/* ================= GALLERY ================= */
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.laptop-screen p{
-    margin-top:7px;
-    color:#aaa;
-}
-
-.laptop-base{
-    width:600px;
-    max-width:90vw;
-    height:25px;
-
-    margin-left:-40px;
-
-    background:linear-gradient(
-        90deg,
-        #222,
-        #aaa,
-        #222
-    );
-
-    border-radius:0 0 20px 20px;
-
-    box-shadow:0 8px 20px #000;
-}
-
-.laptop-base:after{
-    content:"";
-    display:block;
-
-    width:130px;
-    height:7px;
-
-    margin:0 auto;
-
-    background:#333;
-
-    border-radius:0 0 10px 10px;
-}
-
-/* =========================================================
-   WEBSITE LOGO
-========================================================= */
-
-.website-logo{
-    margin-top:25px;
-
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-
-    padding:13px 25px;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.20);
-
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-        0 0 20px #00ffff33;
-}
-
-.website-logo i{
-    color:#00e5ff;
-    font-size:25px;
-}
-
-.website-logo span{
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-/* =========================================================
-   SOFTWARE
-========================================================= */
-
-.software-list{
-    width:100%;
-    margin-top:35px;
-
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.software{
-    padding:10px 15px;
-
-    border-radius:12px;
-
-    background:rgba(255,255,255,.07);
-
-    border:1px solid rgba(255,255,255,.18);
-
-    color:#eee;
-
-    font-size:13px;
-
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
-}
-
-.software:hover{
-    transform:translateY(-5px);
-
-    background:linear-gradient(
-        45deg,
-        #00c6ff,
-        #7f00ff
-    );
-
-    box-shadow:
-        0 0 18px #00ffff66;
-}
-
-/* =========================================================
-   CATEGORY
-========================================================= */
-
-.category{
-    width:90%;
-    max-width:1400px;
-    margin:70px auto 60px;
-}
-
-.category-title{
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.category-title h2{
-    display:inline-block;
-
-    font-size:34px;
-
-    color:#00c6ff;
-
-    border-bottom:3px solid #00c6ff;
-
-    padding-bottom:7px;
-
-    text-shadow:2px 3px 5px rgba(0,0,0,.6);
-}
-
-/* =========================================================
-   ADD PHOTO
-========================================================= */
-
-.add-area{
-    text-align:center;
-    margin:20px 0 30px;
-}
-
-.add-photo{
-    display:inline-block;
-
-    background:
-        linear-gradient(
-            45deg,
-            #00f5a0,
-            #00c6ff,
-            #7f00ff
-        );
-
-    padding:11px 20px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    box-shadow:
-        0 0 15px rgba(0,198,255,.5);
-}
-
-.add-photo input{
-    display:none;
-}
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-.gallery{
-    display:grid;
+.gallery {
+    display: grid;
 
     grid-template-columns:
-        repeat(5,1fr);
+        repeat(5, 1fr);
 
-    gap:15px;
+    gap: 15px;
 }
 
-.project{
-    background:rgba(255,255,255,.10);
 
-    padding:9px;
+/* ================= PROJECT CARD ================= */
 
-    border-radius:18px;
+.project {
+    background: rgba(255,255,255,0.10);
 
-    backdrop-filter:blur(10px);
+    padding: 9px;
 
-    border:1px solid rgba(255,255,255,.15);
+    border-radius: 18px;
 
-    transition:.3s;
+    backdrop-filter: blur(10px);
 
-    position:relative;
+    border: 1px solid rgba(255,255,255,0.15);
+
+    transition: 0.3s;
+
+    position: relative;
 }
 
-.project:hover{
-    transform:translateY(-7px);
+.project:hover {
+
+    transform: translateY(-7px);
 
     box-shadow:
         0 0 20px #ff00cc,
         0 0 35px #00ffff;
 }
 
-.project img{
-    width:100%;
-    height:180px;
 
-    object-fit:cover;
+/* ================= IMAGE ================= */
 
-    display:block;
+.project img {
 
-    border-radius:13px;
+    width: 100%;
 
-    cursor:pointer;
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 13px;
+
+    cursor: pointer;
 }
 
-.project h3{
-    text-align:center;
+.project h3 {
 
-    font-size:14px;
+    text-align: center;
 
-    padding:12px 4px;
+    font-size: 14px;
 
-    color:#fff;
+    padding: 12px 4px;
+
+    color: #fff;
 }
 
-.card-buttons{
-    display:flex;
-    gap:6px;
-    justify-content:center;
-    margin-bottom:5px;
+
+/* ================= BUTTONS ================= */
+
+.card-buttons {
+
+    display: flex;
+
+    gap: 6px;
+
+    justify-content: center;
+
+    margin-bottom: 5px;
 }
 
-.btn{
-    border:none;
-    padding:7px 10px;
-    border-radius:7px;
-    cursor:pointer;
-    color:white;
-    font-size:12px;
-    text-decoration:none;
+.btn {
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 12px;
+
+    text-decoration: none;
 }
 
-.add-btn{
-    background:linear-gradient(45deg,#00c6ff,#7f00ff);
+.add-btn {
+
+    background:
+        linear-gradient(
+            45deg,
+            #00c6ff,
+            #7f00ff
+        );
 }
 
-.delete-btn{
-    background:linear-gradient(45deg,#ff512f,#dd2476);
+.delete-btn {
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff512f,
+            #dd2476
+        );
 }
 
-/* =========================================================
-   INFO
-========================================================= */
 
-.info-section{
-    width:90%;
-    max-width:1200px;
+/* ================= ADD PHOTO ================= */
 
-    margin:70px auto;
+.add-area {
 
-    padding:35px 25px;
+    text-align: center;
 
-    text-align:center;
+    margin: 20px 0 30px;
+}
 
-    background:rgba(255,255,255,.08);
+.add-photo {
 
-    border:1px solid rgba(255,255,255,.15);
+    display: inline-block;
 
-    border-radius:25px;
+    background:
+        linear-gradient(
+            45deg,
+            #00F5A0,
+            #00C6FF,
+            #7F00FF
+        );
 
-    backdrop-filter:blur(12px);
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
 
     box-shadow:
-        0 0 20px rgba(0,198,255,.12);
+        0 0 15px rgba(0,198,255,0.5);
 }
 
-.info-section h2{
-    font-size:32px;
-    margin-bottom:18px;
-    color:#00c6ff;
+.add-photo input {
+    display: none;
+}
+
+
+/* ================= POPUP ================= */
+
+.photo-popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,0.82);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.popup-box {
+
+    width: 90%;
+
+    max-width: 520px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12002b,
+            #001a33
+        );
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 25px #ff00cc,
+        0 0 45px #00ffff;
+}
+
+.popup-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.popup-top span {
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.popup-image {
+
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+.download-btn {
+
+    display: inline-block;
+
+    background: #00C6FF;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    margin-right: 5px;
+}
+
+.close-btn {
+
+    background: #ff00cc;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+
+    padding: 4px 11px;
+
+    cursor: pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 45px 20px 30px;
+
+    color: #aaa;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 1000px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .project img {
+
+        height: 145px;
+    }
+
+    .category-title h2 {
+
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .project img {
+
+        height: 125px;
+    }
+
+    .project h3 {
+
+        font-size: 12px;
+    }
+}
+
+
+/* ================= LOGIN / PROFILE ================= */
+
+.auth-area {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1000;
+}
+
+.profile-btn {
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(10,0,35,.75);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0,198,255,.25);
+}
+
+.auth-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,.78);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-box {
+    width: 92%;
+    max-width: 390px;
+    background: linear-gradient(135deg,#12002b,#001a33);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 0 25px #ff00cc, 0 0 45px #00ffff;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 9px;
+    background: rgba(255,255,255,.08);
+    color: white;
+    outline: none;
+}
+
+.auth-main-btn {
+    width: 100%;
+    border: none;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 9px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg,#00c6ff,#7f00ff);
+}
+
+.auth-switch, .logout-btn {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #00c6ff;
+    cursor: pointer;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: linear-gradient(45deg,#ff00cc,#00ffff);
+}
+
+.auth-close {
+    float: right;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 35px 0;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    transition: .3s;
+}
+
+.tiktok { background:#000; }
+.instagram { background:linear-gradient(45deg,#F9CE34,#EE2A7B,#6228D7); }
+.facebook { background:#1877F2; }
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 15px rgba(255,255,255,.5);
+}
+    /* ================= EXTRA SECTIONS ================= */
+
+.info-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 35px 25px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 0 20px rgba(0,198,255,0.12);
+}
+
+.info-section h2 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    color: #00C6FF;
 
     text-shadow:
         0 0 10px #00ffff;
 }
 
-.info-section p{
-    color:#ddd;
-    line-height:1.7;
-    font-size:16px;
+.info-section p {
+    color: #ddd;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-top:25px;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
 }
 
-.info-card{
-    padding:25px 15px;
-
-    border-radius:18px;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    transition:.3s;
+.info-card {
+    padding: 25px 15px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: .3s;
 }
 
-.info-card:hover{
-    transform:translateY(-7px);
-
+.info-card:hover {
+    transform: translateY(-7px);
     box-shadow:
         0 0 20px #ff00cc,
         0 0 30px #00ffff;
 }
 
-.info-card i{
-    font-size:35px;
-    margin-bottom:12px;
-    color:#00c6ff;
+.info-card i {
+    font-size: 35px;
+    margin-bottom: 12px;
+    color: #00C6FF;
 }
 
-.info-card h3{
-    margin-bottom:10px;
+.info-card h3 {
+    margin-bottom: 10px;
 }
 
-.review{
-    font-style:italic;
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
 }
 
-.review strong{
-    display:block;
-    margin-top:12px;
-    color:#00c6ff;
+.contact-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(45deg,#00c6ff,#7f00ff);
+    transition: .3s;
 }
 
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:25px;
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #00ffff;
 }
 
-.contact-btn{
-    display:inline-block;
-
-    padding:12px 20px;
-
-    border-radius:10px;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    background:
-        linear-gradient(
-            45deg,
-            #00c6ff,
-            #7f00ff
-        );
-
-    transition:.3s;
+.review {
+    font-style: italic;
 }
 
-.contact-btn:hover{
-    transform:scale(1.05);
-
-    box-shadow:
-        0 0 18px #00ffff;
+.review strong {
+    display: block;
+    margin-top: 12px;
+    color: #00C6FF;
 }
 
-/* =========================================================
-   SOCIAL
-========================================================= */
+@media (max-width: 700px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
 
-.social-links{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    margin:35px 0;
+    .info-section h2 {
+        font-size: 27px;
+    }
 }
 
-.social-links a{
-    width:50px;
-    height:50px;
+/* ================= ENGAGEMENT BUTTONS ================= */
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-size:25px;
-
-    transition:.3s;
+.engagement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 45px auto 25px;
+    flex-wrap: wrap;
 }
 
-.tiktok{
-    background:#000;
+.engagement button {
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.08);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: .3s;
 }
 
-.instagram{
-    background:
-        linear-gradient(
-            45deg,
-            #f9ce34,
-            #ee2a7b,
-            #6228d7
-        );
-}
-
-.facebook{
-    background:#1877f2;
-}
-
-.social-links a:hover{
-    transform:translateY(-5px) scale(1.1);
-
-    box-shadow:
-        0 0 15px rgba(255,255,255,.5);
-}
-
-/* =========================================================
-   ENGAGEMENT
-========================================================= */
-
-.engagement{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    gap:12px;
-
-    margin:45px auto 25px;
-
-    flex-wrap:wrap;
-}
-
-.engagement button{
-    border:1px solid rgba(255,255,255,.2);
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    padding:12px 20px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
-}
-
-.engagement button:hover{
-    transform:translateY(-5px);
-
+.engagement button:hover {
+    transform: translateY(-5px);
     box-shadow:
         0 0 15px #ff00cc,
         0 0 25px #00ffff;
 }
 
-.engagement button.liked{
-    background:
-        linear-gradient(
-            45deg,
-            #ff0055,
-            #ff00cc
-        );
+.engagement button.liked {
+    background: linear-gradient(45deg,#ff0055,#ff00cc);
 }
-
-/* =========================================================
-   POPUP
-========================================================= */
-
-.photo-popup{
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:9999;
-
-    background:rgba(0,0,0,.82);
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-}
-
-.popup-box{
-    width:90%;
-    max-width:520px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #12002b,
-            #001a33
-        );
-
-    padding:15px;
-
-    border-radius:18px;
-
-    box-shadow:
-        0 0 25px #ff00cc,
-        0 0 45px #00ffff;
-}
-
-.popup-top{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    margin-bottom:12px;
-}
-
-.popup-top span{
-    font-size:17px;
-    font-weight:bold;
-}
-
-.popup-image{
-    width:100%;
-
-    max-height:400px;
-
-    object-fit:contain;
-
-    border-radius:12px;
-}
-
-.download-btn{
-    display:inline-block;
-
-    background:#00c6ff;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:8px 13px;
-
-    border-radius:7px;
-
-    margin-right:5px;
-}
-
-.close-btn{
-    background:#ff00cc;
-
-    color:white;
-
-    border:none;
-
-    border-radius:7px;
-
-    font-size:20px;
-
-    padding:4px 11px;
-
-    cursor:pointer;
-}
-
-/* =========================================================
-   LOGIN MODAL
-========================================================= */
-
-.auth-modal{
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:10000;
-
-    background:rgba(0,0,0,.78);
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-}
-
-.auth-box{
-    width:92%;
-    max-width:390px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #12002b,
-            #001a33
-        );
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:20px;
-
-    padding:22px;
-
-    box-shadow:
-        0 0 25px #ff00cc,
-        0 0 45px #00ffff;
-}
-
-.auth-box h2{
-    text-align:center;
-    margin-bottom:18px;
-}
-
-.auth-box input{
-    width:100%;
-
-    padding:12px;
-
-    margin:7px 0;
-
-    border:1px solid rgba(255,255,255,.18);
-
-    border-radius:9px;
-
-    background:rgba(255,255,255,.08);
-
-    color:white;
-
-    outline:none;
-}
-
-.auth-main-btn{
-    width:100%;
-
-    border:none;
-
-    padding:12px;
-
-    margin-top:10px;
-
-    border-radius:9px;
-
-    color:white;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    background:
-        linear-gradient(
-            45deg,
-            #00c6ff,
-            #7f00ff
-        );
-}
-
-.auth-switch,
-.logout-btn{
-    display:block;
-
-    text-align:center;
-
-    margin-top:12px;
-
-    color:#00c6ff;
-
-    cursor:pointer;
-}
-
-.profile-details{
-    text-align:center;
-}
-
-.profile-avatar{
-    width:70px;
-    height:70px;
-
-    margin:0 auto 12px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:30px;
-
-    background:
-        linear-gradient(
-            45deg,
-            #ff00cc,
-            #00ffff
-        );
-}
-
-.auth-close{
-    float:right;
-
-    border:none;
-
-    background:transparent;
-
-    color:white;
-
-    font-size:25px;
-
-    cursor:pointer;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    text-align:center;
-
-    padding:45px 20px 30px;
-
-    color:#aaa;
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:1000px){
-
-    .gallery{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .service-top{
-        padding:0 20px;
-    }
-
-    .arrow-left{
-        left:25%;
-    }
-
-    .arrow-right{
-        right:25%;
-    }
-
-}
-
-@media(max-width:700px){
-
-    .service-showcase{
-        min-height:670px;
-    }
-
-    .service-top{
-        flex-direction:column;
-        align-items:center;
-        gap:15px;
-    }
-
-    .service-box{
-        width:90%;
-        max-width:300px;
-    }
-
-    .arrow{
-        display:none;
-    }
-
-    .my-photo-area{
-        margin-top:25px;
-    }
-
-    .my-photo-frame{
-        width:150px;
-        height:150px;
-    }
-
-    .laptop-screen{
-        height:220px;
-    }
-
-    .laptop-screen h2{
-        font-size:28px;
-    }
-
-    .laptop-base{
-        margin-left:-20px;
-    }
-
-    .gallery{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .project img{
-        height:145px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .info-section h2{
-        font-size:27px;
-    }
-
-}
-
-@media(max-width:400px){
-
-    .gallery{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .project img{
-        height:125px;
-    }
-
-    .project h3{
-        font-size:12px;
-    }
-
-    .software{
-        font-size:11px;
-        padding:8px 10px;
-    }
-
-}
-
+    
 </style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-     LOGIN BUTTON
-========================================================= -->
-
+<!-- ================= LOGIN / PROFILE ================= -->
 <div class="auth-area">
-
-    <button
-        id="profileBtn"
-        class="profile-btn"
-        onclick="openAuth()">
-
-        <i class="fa-solid fa-user"></i>
-        Login
-
+    <button id="profileBtn" class="profile-btn" onclick="openAuth()">
+        <i class="fa-solid fa-user"></i> Login
     </button>
-
 </div>
-
-
-<!-- =========================================================
-     LOGIN MODAL
-========================================================= -->
 
 <div id="authModal" class="auth-modal">
-
     <div class="auth-box">
-
-        <button
-            class="auth-close"
-            onclick="closeAuth()">
-
-            ×
-
-        </button>
-
+        <button class="auth-close" onclick="closeAuth()">×</button>
 
         <div id="loginView">
-
             <h2>Login</h2>
-
-            <input
-                id="loginEmail"
-                type="email"
-                placeholder="Email">
-
-            <input
-                id="loginPassword"
-                type="password"
-                placeholder="Password">
-
-            <button
-                class="auth-main-btn"
-                onclick="loginUser()">
-
-                Login
-
-            </button>
-
-            <div
-                class="auth-switch"
-                onclick="showSignup()">
-
-                Create an account
-
-            </div>
-
+            <input id="loginEmail" type="email" placeholder="Email">
+            <input id="loginPassword" type="password" placeholder="Password">
+            <button class="auth-main-btn" onclick="loginUser()">Login</button>
+            <div class="auth-switch" onclick="showSignup()">Create an account</div>
         </div>
 
-
-        <div
-            id="signupView"
-            style="display:none;">
-
+        <div id="signupView" style="display:none;">
             <h2>Create Account</h2>
-
-            <input
-                id="signupName"
-                type="text"
-                placeholder="Your name">
-
-            <input
-                id="signupEmail"
-                type="email"
-                placeholder="Email">
-
-            <input
-                id="signupPassword"
-                type="password"
-                placeholder="Password (6+ characters)">
-
-            <button
-                class="auth-main-btn"
-                onclick="signupUser()">
-
-                Sign Up
-
-            </button>
-
-            <div
-                class="auth-switch"
-                onclick="showLogin()">
-
-                Already have an account? Login
-
-            </div>
-
+            <input id="signupName" type="text" placeholder="Your name">
+            <input id="signupEmail" type="email" placeholder="Email">
+            <input id="signupPassword" type="password" placeholder="Password (6+ characters)">
+            <button class="auth-main-btn" onclick="signupUser()">Sign Up</button>
+            <div class="auth-switch" onclick="showLogin()">Already have an account? Login</div>
         </div>
 
-
-        <div
-            id="profileView"
-            style="display:none;">
-
+        <div id="profileView" style="display:none;">
             <div class="profile-details">
-
-                <div class="profile-avatar">
-
-                    <i class="fa-solid fa-user"></i>
-
-                </div>
-
+                <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
                 <h2 id="profileName"></h2>
-
                 <p id="profileEmail"></p>
-
-                <button
-                    class="auth-main-btn"
-                    onclick="logoutUser()">
-
-                    Logout
-
-                </button>
-
+                <button class="auth-main-btn" onclick="logoutUser()">Logout</button>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
 
-<header class="hero">
+<!-- ================= HEADER ================= -->
 
-    <h1 class="hero-title">
-        DILU EDITS
-    </h1>
+<header class="title">
 
-    <p class="hero-subtitle">
-        Creative Editing • Online Services • Professional Designs
+    <h1>Dilu Edits</h1>
+
+    <p>
+        Creative Photo Editing & Design
     </p>
 
-
-    <!-- =====================================================
-         SERVICE SHOWCASE
-    ====================================================== -->
-
-    <div class="service-showcase">
-
-
-        <!-- SERVICES -->
-
-        <div class="service-top">
-
-
-            <div class="service-box">
-
-                <h2>
-                    EDITING SERVICE
-                </h2>
-
-                <p>
-                    Professional Photo & Video Editing
-                </p>
-
-            </div>
-
-
-            <div class="service-box">
-
-                <h2>
-                    ONLINE SERVICE
-                </h2>
-
-                <p>
-                    Fast & Creative Digital Services
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ARROWS -->
-
-        <div class="arrow arrow-left">
-            ↘
-        </div>
-
-        <div class="arrow arrow-right">
-            ↙
-        </div>
-
-
-        <!-- =================================================
-             MY PHOTO
-        ================================================== -->
-
-        <div class="my-photo-area">
-
-            <div class="my-photo-frame">
-
-                <!--
-                IMPORTANT:
-                මෙතන YOUR_PHOTO_URL_HERE වෙනුවට
-                ඔයාගේ photo URL එක දාන්න.
-                -->
-
-                <img
-                    src="YOUR_PHOTO_URL_HERE"
-                    alt="Dilu Edits Owner">
-
-            </div>
-
-            <div class="my-photo-name">
-                MY PHOTO
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             LAPTOP
-        ================================================== -->
-
-        <div class="laptop-area">
-
-            <div class="laptop-screen">
-
-                <i class="fa-solid fa-laptop"></i>
-
-                <h2>
-                    DILU EDITS
-                </h2>
-
-                <p>
-                    Creative Editing Studio
-                </p>
-
-            </div>
-
-            <div class="laptop-base"></div>
-
-        </div>
-
-
-        <!-- WEBSITE LOGO -->
-
-        <div class="website-logo">
-
-            <i class="fa-solid fa-globe"></i>
-
-            <span>
-                DILU EDITS WEBSITE
-            </span>
-
-        </div>
-
-
-        <!-- SOFTWARE -->
-
-        <div class="software-list">
-
-            <div class="software">
-                <i class="fa-solid fa-film"></i>
-                Premiere Pro
-            </div>
-
-            <div class="software">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                After Effects
-            </div>
-
-            <div class="software">
-                <i class="fa-solid fa-mobile-screen"></i>
-                CapCut
-            </div>
-
-            <div class="software">
-                <i class="fa-solid fa-image"></i>
-                Photoshop
-            </div>
-
-            <div class="software">
-                <i class="fa-solid fa-pen-nib"></i>
-                Illustrator
-            </div>
-
-            <div class="software">
-                <i class="fa-solid fa-camera"></i>
-                Lightroom
-            </div>
-
-        </div>
-
-    </div>
-
+    ...
 </header>
 
 
-<!-- =========================================================
-     PROFESSIONAL PROJECTS
-========================================================= -->
+    
+<div class="pro-photo-glass">
+    <div class="pro-glow"></div>
+
+    <div class="pro-icon">
+        <i class="fa-solid fa-camera"></i>
+    </div>
+
+    <div class="pro-message">
+        <h3>Have a Professional Photo?Add it here</h3>
+        <p>Got a great shot? Add it to our collection.</p>
+    </div>
+
+   
+</div>
+
+<style>
+.pro-photo-glass {
+    position: relative;
+    width: 88%;
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 5% 50%,
+            rgba(0, 229, 255, .30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 0, 153, .25),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 100% 80%,
+            rgba(125, 50, 255, .32),
+            transparent 40%
+        ),
+        rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        inset 0 1px 2px rgba(255,255,255,.35),
+        inset 0 -2px 5px rgba(0,0,0,.25);
+
+    overflow: hidden;
+
+    transition: .35s ease;
+}
+
+
+/* GLASS LIGHT */
+
+.pro-photo-glass::before {
+    content: "";
+    position: absolute;
+
+    top: -120%;
+    left: -20%;
+
+    width: 45%;
+    height: 300%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255,255,255,.22),
+        transparent
+    );
+
+    transform: rotate(18deg);
+    pointer-events: none;
+}
+
+
+/* 3D GLOW */
+
+.pro-glow {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    top: -90px;
+
+    background: #7b2fff;
+
+    filter: blur(70px);
+
+    opacity: .45;
+
+    border-radius: 50%;
+}
+
+
+/* ICON */
+
+.pro-icon {
+    position: relative;
+    z-index: 2;
+
+    min-width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #7b2fff,
+            #ff0099
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.4),
+        inset 0 1px 2px rgba(255,255,255,.45);
+}
+
+
+/* TEXT */
+
+.pro-message {
+  .pro-message {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.pro-message h3 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 45px;
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    text-align: center;
+    
+    text-shadow:
+        0 3px 10px rgba(0,0,0,.4);
+}
+
+.pro-message p {
+    margin: 4px 0 0;
+
+    color: rgba(255,255,255,.78);
+
+    font-size:8px;
+}
+
+
+
+
+/* HOVER */
+
+.pro-photo-glass:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.5),
+        0 0 25px rgba(123,47,255,.18),
+        inset 0 1px 2px rgba(255,255,255,.4);
+}
+
+
+
+/* MOBILE */
+
+@media (max-width:600px) {
+
+    .pro-photo-glass {
+        width: 86%;
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .pro-icon {
+        min-width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .pro-message h3 {
+     .pro-message h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-align: center;
+}  
+    }
+
+    .pro-message p {
+        font-size: 10px;
+    }
+
+   
+}
+</style>    
+
+<!-- ================= PROFISHINOL PROJECT ================= -->
 
 <section class="category">
 
     <div class="category-title">
-
-        <h2>
-            💼 Professional Projects
-        </h2>
-
+        <h2>💼 Professional Projects</h2>
     </div>
 
-
     <div class="add-area">
-
         <label class="add-photo">
-
             ➕ Add Professional Project
-
             <input
                 type="file"
                 accept="image/*"
-                onchange="uploadToCloudinary(event,'professional')">
-
+                onchange="uploadToCloudinary(event, 'professional')"
+            >
         </label>
-
     </div>
 
-
-    <div
-        class="gallery"
-        id="professionalGallery">
-    </div>
+    <div class="gallery" id="professionalGallery"></div>
 
 </section>
 
-
-<!-- =========================================================
-     CREATIVE PROJECTS
-========================================================= -->
-
+<!-- =============== CREATIVE Projects ================== -->
 <section class="category">
 
     <div class="category-title">
-
-        <h2>
-            🎨 Creative Projects
-        </h2>
-
+        <h2>🎨 Creative Projects</h2>
     </div>
 
-
     <div class="add-area">
-
         <label class="add-photo">
-
             ➕ Add Creative Project
-
             <input
                 type="file"
                 accept="image/*"
-                onchange="uploadToCloudinary(event,'creative')">
-
+                onchange="uploadToCloudinary(event, 'creative')"
+            >
         </label>
-
     </div>
 
-
-    <div
-        class="gallery"
-        id="creativeGallery">
-    </div>
+    <div class="gallery" id="creativeGallery"></div>
 
 </section>
 
-
-<!-- =========================================================
-     PHOTO POPUP
-========================================================= -->
+<!-- ================= POPUP ================= -->
 
 <div
     id="photoPopup"
-    class="photo-popup">
+    class="photo-popup"
+>
 
     <div class="popup-box">
 
@@ -1620,18 +1062,16 @@ footer{
                 <a
                     id="downloadBtn"
                     class="download-btn"
-                    download>
-
+                    download
+                >
                     📥 Download
-
                 </a>
 
                 <button
                     class="close-btn"
-                    onclick="closePhoto()">
-
+                    onclick="closePhoto()"
+                >
                     ×
-
                 </button>
 
             </div>
@@ -1641,417 +1081,230 @@ footer{
 
         <img
             id="popupImage"
-            class="popup-image">
+            class="popup-image"
+        >
 
     </div>
 
 </div>
 
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+<!-- ================= ABOUT ME ================= -->
 
 <section class="info-section">
 
-    <h2>
-        About Me
-    </h2>
+    <h2>About Me</h2>
 
     <p>
-
         Hi, I'm Lakshana, the creator of Dilu Edits.
         I create creative video edits, photo designs,
         thumbnails, reels and short-form content.
         My goal is to turn ideas into clean and attractive visuals.
-
     </p>
 
 </section>
 
 
-<!-- =========================================================
-     SKILLS
-========================================================= -->
+<!-- ================= SKILLS ================= -->
 
 <section class="info-section">
 
-    <h2>
-        My Skills
-    </h2>
-
+    <h2>My Skills</h2>
 
     <div class="cards">
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-video"></i>
-
-            <h3>
-                Video Editing
-            </h3>
-
-            <p>
-                Creative and smooth video editing.
-            </p>
-
+            <h3>Video Editing</h3>
+            <p>Creative and smooth video editing.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-image"></i>
-
-            <h3>
-                Thumbnail Design
-            </h3>
-
-            <p>
-                Eye-catching YouTube thumbnails.
-            </p>
-
+            <h3>Thumbnail Design</h3>
+            <p>Eye-catching YouTube thumbnails.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-mobile-screen"></i>
-
-            <h3>
-                Reels & Shorts
-            </h3>
-
-            <p>
-                TikTok, Instagram Reels and YouTube Shorts.
-            </p>
-
+            <h3>Reels & Shorts</h3>
+            <p>TikTok, Instagram Reels and YouTube Shorts.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-            <h3>
-                Photo Editing
-            </h3>
-
-            <p>
-                Creative photo editing and visual effects.
-            </p>
-
+            <h3>Photo Editing</h3>
+            <p>Creative photo editing and visual effects.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-sliders"></i>
-
-            <h3>
-                Color Correction
-            </h3>
-
-            <p>
-                Clean and attractive color adjustments.
-            </p>
-
+            <h3>Color Correction</h3>
+            <p>Clean and attractive color adjustments.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-solid fa-music"></i>
-
-            <h3>
-                Audio Editing
-            </h3>
-
-            <p>
-                Audio sync, music and basic sound editing.
-            </p>
-
+            <h3>Audio Editing</h3>
+            <p>Audio sync, music and basic sound editing.</p>
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     SERVICES
-========================================================= -->
+<!-- ================= SERVICES ================= -->
 
 <section class="info-section">
 
-    <h2>
-        My Services
-    </h2>
-
+    <h2>My Services</h2>
 
     <div class="cards">
 
-
         <div class="info-card">
-
             <i class="fa-brands fa-youtube"></i>
-
-            <h3>
-                YouTube Editing
-            </h3>
-
-            <p>
-                Professional editing for YouTube videos.
-            </p>
-
+            <h3>YouTube Editing</h3>
+            <p>Professional editing for YouTube videos.</p>
         </div>
 
-
         <div class="info-card">
-
             <i class="fa-brands fa-tiktok"></i>
-
-            <h3>
-                TikTok Editing
-            </h3>
-
-            <p>
-                Short, engaging and creative TikTok videos.
-            </p>
-
+            <h3>TikTok Editing</h3>
+            <p>Short, engaging and creative TikTok videos.</p>
         </div>
-
 
         <div class="info-card">
-
             <i class="fa-solid fa-photo-film"></i>
-
-            <h3>
-                Photo & Thumbnail
-            </h3>
-
-            <p>
-                Creative thumbnails and photo designs.
-            </p>
-
+            <h3>Photo & Thumbnail</h3>
+            <p>Creative thumbnails and photo designs.</p>
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     REVIEWS
-========================================================= -->
+<!-- ================= REVIEWS ================= -->
 
 <section class="info-section">
 
-    <h2>
-        Client Reviews
-    </h2>
-
+    <h2>Client Reviews</h2>
 
     <div class="cards">
-
 
         <div class="info-card review">
-
             <p>
                 "Amazing editing and very creative work!"
             </p>
-
-            <strong>
-                — Client
-            </strong>
-
+            <strong>— Client</strong>
         </div>
 
-
         <div class="info-card review">
-
             <p>
                 "Fast delivery and great quality."
             </p>
-
-            <strong>
-                — Client
-            </strong>
-
+            <strong>— Client</strong>
         </div>
 
-
         <div class="info-card review">
-
             <p>
                 "Really liked the final result."
             </p>
-
-            <strong>
-                — Client
-            </strong>
-
+            <strong>— Client</strong>
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================================================
-     CONTACT
-========================================================= -->
+<!-- ================= CONTACT ================= -->
 
 <section class="info-section">
 
-    <h2>
-        Contact Me
-    </h2>
+    <h2>Contact Me</h2>
 
     <p>
-        Want to work with me?
-        Contact me through WhatsApp, Email or Fiverr.
+        Want to work with me? Contact me through
+        WhatsApp, Email or Fiverr.
     </p>
-
 
     <div class="contact-buttons">
 
         <a
             href="mailto:dilshanlakshana20@gmail.com"
-            class="contact-btn">
-
+            class="contact-btn"
+        >
             📧 Email Me
-
         </a>
-
 
         <a
             href="https://wa.me/94701412188"
             target="_blank"
-            class="contact-btn">
-
+            class="contact-btn"
+        >
             💬 WhatsApp
-
         </a>
-
 
         <a
             href="#"
-            class="contact-btn">
-
+            class="contact-btn"
+        >
             ⭐ Fiverr
-
         </a>
 
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     SOCIAL MEDIA
-========================================================= -->
-
+<!-- ================= SOCIAL MEDIA ================= -->
 <div class="social-links">
-
-    <a
-        href="https://www.tiktok.com/@secrethearthunter"
-        target="_blank"
-        class="tiktok">
-
+    <a href="https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY" target="_blank" class="tiktok" aria-label="TikTok">
         <i class="fa-brands fa-tiktok"></i>
-
     </a>
-
-
-    <a
-        href="https://www.instagram.com/finiks_1234"
-        target="_blank"
-        class="instagram">
-
+    <a href="https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr" target="_blank" class="instagram" aria-label="Instagram">
         <i class="fa-brands fa-instagram"></i>
-
     </a>
-
-
-    <a
-        href="https://www.facebook.com/share/1999WJBMvX/"
-        target="_blank"
-        class="facebook">
-
+    <a href="https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr" target="_blank" class="facebook" aria-label="Facebook">
         <i class="fa-brands fa-facebook-f"></i>
-
     </a>
-
 </div>
 
-
-<!-- =========================================================
-     LIKE / SUBSCRIBE / SHARE
-========================================================= -->
+<!-- ================= LIKE / SUBSCRIBE / SHARE ================= -->
 
 <div class="engagement">
 
-    <button
-        onclick="likeSite()"
-        id="likeBtn">
-
+    <button onclick="likeSite()" id="likeBtn">
         ❤️ <span>Like</span>
-
     </button>
 
-
-    <button
-        onclick="subscribeSite()">
-
+    <button onclick="subscribeSite()">
         🔔 <span>Subscribe</span>
-
     </button>
 
-
-    <button
-        onclick="shareSite()">
-
+    <button onclick="shareSite()">
         📤 <span>Share</span>
-
     </button>
 
 </div>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+    
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
     ©️ 2026 Dilu Edits
-
     <br>
-
     Creative Photo Editing & Design
 
 </footer>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script type="module">
 
-/* =========================================================
-   FIREBASE
-========================================================= */
+/* ================= FIREBASE ================= */
 
-import {
-    initializeApp
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
     getFirestore,
@@ -2059,256 +1312,219 @@ import {
     addDoc,
     getDocs,
     deleteDoc,
-    doc
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+    doc,
+    query,
+    orderBy
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 const firebaseConfig = {
 
-    apiKey:
-    "AIzaSyC2JMZsM3wUl3mPgnwujAa_PdrApozWBmw",
+    apiKey: "AIzaSyC2JMZsM3wUl3mPgnwujAa_PdrApozWBmw",
 
-    authDomain:
-    "dilu-edits-b184a.firebaseapp.com",
+    authDomain: "dilu-edits-b184a.firebaseapp.com",
 
-    projectId:
-    "dilu-edits-b184a",
+    projectId: "dilu-edits-b184a",
 
-    storageBucket:
-    "dilu-edits-b184a.firebasestorage.app",
+    storageBucket: "dilu-edits-b184a.firebasestorage.app",
 
-    messagingSenderId:
-    "834870152212",
+    messagingSenderId: "834870152212",
 
-    appId:
-    "1:834870152212:web:1f734ce3779321eff42b01"
+    appId: "1:834870152212:web:1f734ce3779321eff42b01"
 
 };
 
 
-const app =
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
 
 
-const db =
-getFirestore(app);
+/* ================= CLOUDINARY ================= */
+
+const cloudName = "paxu7ccs";
+
+const uploadPreset = "dilu_edits";
 
 
-/* =========================================================
-   CLOUDINARY
-========================================================= */
+/* ================= UPLOAD PHOTO ================= */
 
-const cloudName =
-"paxu7ccs";
+window.uploadToCloudinary = async function(event, category) {
 
+    const file = event.target.files[0];
 
-const uploadPreset =
-"dilu_edits";
+    if (!file) return;
 
 
-/* =========================================================
-   UPLOAD
-========================================================= */
-
-window.uploadToCloudinary =
-async function(event,category){
-
-    const file =
-    event.target.files[0];
-
-
-    if(!file)
-        return;
-
-
-    try{
+    try {
 
         alert("Uploading photo... ⏳");
 
 
-        const formData =
-        new FormData();
+        const formData = new FormData();
 
-
-        formData.append(
-            "file",
-            file
-        );
-
+        formData.append("file", file);
 
         formData.append(
             "upload_preset",
             uploadPreset
         );
 
-
         formData.append(
             "folder",
-            "dilu-edits/"+category
+            "dilu-edits/" + category
         );
 
 
-        const response =
-        await fetch(
+        /* Upload to Cloudinary */
+
+        const response = await fetch(
 
             `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
 
             {
-                method:"POST",
-                body:formData
+
+                method: "POST",
+
+                body: formData
+
             }
 
         );
 
 
-        const data =
-        await response.json();
+        const data = await response.json();
 
 
-        if(!response.ok){
+        if (!response.ok) {
 
             console.error(data);
 
-            alert(
-                "Cloudinary upload failed ❌"
-            );
+            alert("Cloudinary upload failed ❌");
 
             return;
 
         }
 
 
+        /* ================= SAVE TO FIRESTORE ================= */
+
         await addDoc(
 
-            collection(
-                db,
-                "projects"
-            ),
+            collection(db, "projects"),
 
             {
 
-                url:data.secure_url,
+                url: data.secure_url,
 
-                name:file.name,
+                name: file.name,
 
-                category:category,
+                category: category,
 
-                publicId:data.public_id,
+                publicId: data.public_id,
 
-                createdAt:Date.now()
+                createdAt: Date.now()
 
             }
 
         );
 
 
-        alert(
-            "Project uploaded successfully! ✅"
-        );
+        alert("Project uploaded successfully! ✅");
 
+
+        /* Refresh gallery */
 
         loadProjects(category);
 
+
     }
 
-    catch(error){
+    catch (error) {
 
         console.error(error);
 
-        alert(
-            "Something went wrong ❌"
-        );
+        alert("Something went wrong ❌");
 
     }
 
 
-    event.target.value="";
+    event.target.value = "";
 
 };
 
 
-/* =========================================================
-   LOAD PROJECTS
-========================================================= */
+/* ================= LOAD PROJECTS ================= */
 
-async function loadProjects(category){
+async function loadProjects(category) {
 
-    const gallery =
-    document.getElementById(
-        category+"Gallery"
+    const gallery = document.getElementById(
+        category + "Gallery"
     );
 
 
-    if(!gallery)
-        return;
+    if (!gallery) return;
 
 
-    gallery.innerHTML="";
+    gallery.innerHTML = "";
 
 
-    try{
+    try {
+
+        const projectsRef =
+            collection(db, "projects");
+
 
         const snapshot =
-        await getDocs(
-            collection(
-                db,
-                "projects"
-            )
-        );
+            await getDocs(projectsRef);
 
 
-        const projects=[];
+        const projects = [];
 
 
-        snapshot.forEach(
-            documentSnapshot=>{
+        snapshot.forEach(function(documentSnapshot) {
 
-                const project =
+            const project =
                 documentSnapshot.data();
 
 
-                if(
-                    project.category===
-                    category
-                ){
+            if (project.category === category) {
 
-                    projects.push({
+                projects.push({
 
-                        id:
-                        documentSnapshot.id,
+                    id: documentSnapshot.id,
 
-                        ...project
+                    ...project
 
-                    });
-
-                }
+                });
 
             }
-        );
 
+        });
+
+
+        /* Newest first */
 
         projects.sort(
-            (a,b)=>
-            (b.createdAt||0)-
-            (a.createdAt||0)
+            (a, b) =>
+                (b.createdAt || 0) -
+                (a.createdAt || 0)
         );
 
 
-        projects.forEach(
-            project=>{
+        projects.forEach(function(project) {
 
-                displayProject(
-                    project,
-                    category
-                );
+            displayProject(
+                project,
+                category
+            );
 
-            }
-        );
+        });
+
 
     }
 
-    catch(error){
+    catch (error) {
 
         console.error(error);
 
@@ -2321,150 +1537,146 @@ async function loadProjects(category){
 }
 
 
-/* =========================================================
-   DISPLAY PROJECT
-========================================================= */
+/* ================= DISPLAY PROJECT ================= */
 
-function displayProject(
-    project,
-    category
-){
+function displayProject(project, category) {
 
     const gallery =
-    document.getElementById(
-        category+"Gallery"
-    );
+        document.getElementById(
+            category + "Gallery"
+        );
 
 
-    if(!gallery)
-        return;
+    if (!gallery) return;
 
 
     const card =
-    document.createElement("div");
+        document.createElement("div");
+
+    card.className = "project";
 
 
-    card.className="project";
-
+    /* IMAGE */
 
     const image =
-    document.createElement("img");
+        document.createElement("img");
 
 
-    image.src=
-    project.url;
+    image.src = project.url;
+
+    image.alt =
+        project.name || "Dilu Edits Project";
 
 
-    image.alt=
-    project.name||
-    "Dilu Edits Project";
-
-
-    image.onclick=
-    function(){
+    image.onclick = function() {
 
         openPhoto(project.url);
 
     };
 
 
+    /* TITLE */
+
     const title =
-    document.createElement("h3");
+        document.createElement("h3");
 
 
-    title.textContent=
-    category==="professional"
+    title.textContent =
+        category === "professional"
 
-    ? "Professional Project"
+        ? "Professional Project"
 
-    : "Creative Project";
+        : "Creative Project";
 
+
+    /* BUTTON AREA */
 
     const buttons =
-    document.createElement("div");
+        document.createElement("div");
 
 
-    buttons.className=
-    "card-buttons";
+    buttons.className =
+        "card-buttons";
 
+
+    /* VIEW */
 
     const view =
-    document.createElement("a");
+        document.createElement("a");
 
 
-    view.href=
-    project.url;
+    view.href =
+        project.url;
+
+    view.target =
+        "_blank";
+
+    view.className =
+        "btn add-btn";
+
+    view.textContent =
+        "View";
 
 
-    view.target="_blank";
-
-
-    view.className=
-    "btn add-btn";
-
-
-    view.textContent=
-    "View";
-
+    /* DELETE */
 
     const deleteBtn =
-    document.createElement("button");
+        document.createElement("button");
 
 
-    deleteBtn.className=
-    "btn delete-btn";
+    deleteBtn.className =
+        "btn delete-btn";
+
+    deleteBtn.textContent =
+        "Delete";
 
 
-    deleteBtn.textContent=
-    "Delete";
+    deleteBtn.onclick =
+        async function() {
+
+            const confirmDelete =
+                confirm(
+                    "Delete this project?"
+                );
 
 
-    deleteBtn.onclick=
-    async function(){
-
-        const confirmDelete=
-        confirm(
-            "Delete this project?"
-        );
+            if (!confirmDelete) return;
 
 
-        if(!confirmDelete)
-            return;
+            try {
+
+                await deleteDoc(
+
+                    doc(
+                        db,
+                        "projects",
+                        project.id
+                    )
+
+                );
 
 
-        try{
-
-            await deleteDoc(
-
-                doc(
-                    db,
-                    "projects",
-                    project.id
-                )
-
-            );
+                card.remove();
 
 
-            card.remove();
+                alert(
+                    "Project deleted ✅"
+                );
 
 
-            alert(
-                "Project deleted ✅"
-            );
+            }
 
-        }
+            catch (error) {
 
-        catch(error){
+                console.error(error);
 
-            console.error(error);
+                alert(
+                    "Delete failed ❌"
+                );
 
-            alert(
-                "Delete failed ❌"
-            );
+            }
 
-        }
-
-    };
+        };
 
 
     buttons.appendChild(view);
@@ -2484,178 +1696,175 @@ function displayProject(
 }
 
 
-/* =========================================================
-   PHOTO POPUP
-========================================================= */
+/* ================= PHOTO POPUP ================= */
 
-window.openPhoto=
-function(imageSrc){
+window.openPhoto = function(imageSrc) {
 
     document.getElementById(
         "popupImage"
-    ).src=imageSrc;
+    ).src = imageSrc;
 
 
     document.getElementById(
         "downloadBtn"
-    ).href=imageSrc;
+    ).href = imageSrc;
 
 
     document.getElementById(
         "photoPopup"
-    ).style.display="flex";
+    ).style.display = "flex";
 
 };
 
 
-window.closePhoto=
-function(){
+/* ================= CLOSE PHOTO ================= */
+
+window.closePhoto = function() {
 
     document.getElementById(
         "photoPopup"
-    ).style.display="none";
+    ).style.display = "none";
 
 };
 
 
-/* =========================================================
-   AUTH
-========================================================= */
+/* ================= LOGIN / PROFILE ================= */
 
-window.openAuth=
-function(){
+window.openAuth = function() {
 
     document.getElementById(
         "authModal"
-    ).style.display="flex";
+    ).style.display = "flex";
 
 
-    const user=
-    JSON.parse(
-        localStorage.getItem(
-            "diluCurrentUser"
-        )||"null"
-    );
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
 
 
-    if(user)
+    if (user) {
+
         showProfile(user);
 
-    else
+    }
+
+    else {
+
         showLogin();
+
+    }
 
 };
 
 
-window.closeAuth=
-function(){
+window.closeAuth = function() {
 
     document.getElementById(
         "authModal"
-    ).style.display="none";
+    ).style.display = "none";
 
 };
 
 
-window.showLogin=
-function(){
+window.showLogin = function() {
 
     document.getElementById(
         "loginView"
-    ).style.display="block";
+    ).style.display = "block";
 
 
     document.getElementById(
         "signupView"
-    ).style.display="none";
+    ).style.display = "none";
 
 
     document.getElementById(
         "profileView"
-    ).style.display="none";
+    ).style.display = "none";
 
 };
 
 
-window.showSignup=
-function(){
+window.showSignup = function() {
 
     document.getElementById(
         "loginView"
-    ).style.display="none";
+    ).style.display = "none";
 
 
     document.getElementById(
         "signupView"
-    ).style.display="block";
+    ).style.display = "block";
 
 
     document.getElementById(
         "profileView"
-    ).style.display="none";
+    ).style.display = "none";
 
 };
 
 
-function showProfile(user){
+function showProfile(user) {
 
     document.getElementById(
         "loginView"
-    ).style.display="none";
+    ).style.display = "none";
 
 
     document.getElementById(
         "signupView"
-    ).style.display="none";
+    ).style.display = "none";
 
 
     document.getElementById(
         "profileView"
-    ).style.display="block";
+    ).style.display = "block";
 
 
     document.getElementById(
         "profileName"
-    ).textContent=user.name;
+    ).textContent =
+        user.name;
 
 
     document.getElementById(
         "profileEmail"
-    ).textContent=user.email;
+    ).textContent =
+        user.email;
 
 }
 
 
-/* =========================================================
-   SIGNUP
-========================================================= */
+/* ================= SIGN UP ================= */
 
-window.signupUser=
-function(){
+window.signupUser = function() {
 
-    const name=
-    document.getElementById(
-        "signupName"
-    ).value.trim();
+    const name =
+        document.getElementById(
+            "signupName"
+        ).value.trim();
 
 
-    const email=
-    document.getElementById(
-        "signupEmail"
-    ).value.trim().toLowerCase();
+    const email =
+        document.getElementById(
+            "signupEmail"
+        ).value.trim().toLowerCase();
 
 
-    const password=
-    document.getElementById(
-        "signupPassword"
-    ).value;
+    const password =
+        document.getElementById(
+            "signupPassword"
+        ).value;
 
 
-    if(
-        !name||
-        !email||
-        password.length<6
-    ){
+    if (
+        !name ||
+        !email ||
+        password.length < 6
+    ) {
 
         alert(
             "Name, valid email and password 6+ characters required."
@@ -2666,20 +1875,20 @@ function(){
     }
 
 
-    const users=
-    JSON.parse(
-        localStorage.getItem(
-            "diluUsers"
-        )||"[]"
-    );
+    const users =
+        JSON.parse(
+            localStorage.getItem(
+                "diluUsers"
+            ) || "[]"
+        );
 
 
-    if(
+    if (
         users.some(
-            user=>
-            user.email===email
+            user =>
+                user.email === email
         )
-    ){
+    ) {
 
         alert(
             "This email is already registered."
@@ -2690,10 +1899,12 @@ function(){
     }
 
 
-    const user={
+    const user = {
+
         name,
         email,
         password
+
     };
 
 
@@ -2719,42 +1930,39 @@ function(){
 };
 
 
-/* =========================================================
-   LOGIN
-========================================================= */
+/* ================= LOGIN ================= */
 
-window.loginUser=
-function(){
+window.loginUser = function() {
 
-    const email=
-    document.getElementById(
-        "loginEmail"
-    ).value.trim().toLowerCase();
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim().toLowerCase();
 
 
-    const password=
-    document.getElementById(
-        "loginPassword"
-    ).value;
+    const password =
+        document.getElementById(
+            "loginPassword"
+        ).value;
 
 
-    const users=
-    JSON.parse(
-        localStorage.getItem(
-            "diluUsers"
-        )||"[]"
-    );
+    const users =
+        JSON.parse(
+            localStorage.getItem(
+                "diluUsers"
+            ) || "[]"
+        );
 
 
-    const user=
-    users.find(
-        user=>
-        user.email===email&&
-        user.password===password
-    );
+    const user =
+        users.find(
+            user =>
+                user.email === email &&
+                user.password === password
+        );
 
 
-    if(!user){
+    if (!user) {
 
         alert(
             "Email or password is incorrect."
@@ -2778,12 +1986,9 @@ function(){
 };
 
 
-/* =========================================================
-   LOGOUT
-========================================================= */
+/* ================= LOGOUT ================= */
 
-window.logoutUser=
-function(){
+window.logoutUser = function() {
 
     localStorage.removeItem(
         "diluCurrentUser"
@@ -2797,59 +2002,53 @@ function(){
 };
 
 
-/* =========================================================
-   PROFILE BUTTON
-========================================================= */
+/* ================= PROFILE BUTTON ================= */
 
-function updateProfileButton(){
+function updateProfileButton() {
 
-    const btn=
-    document.getElementById(
-        "profileBtn"
-    );
+    const btn =
+        document.getElementById(
+            "profileBtn"
+        );
 
 
-    if(!btn)
-        return;
+    if (!btn) return;
 
 
-    const user=
-    JSON.parse(
-        localStorage.getItem(
-            "diluCurrentUser"
-        )||"null"
-    );
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
 
 
-    if(user){
+    if (user) {
 
-        btn.innerHTML=
-        '<i class="fa-solid fa-user"></i> '+
-        user.name;
+        btn.innerHTML =
+            '<i class="fa-solid fa-user"></i> ' +
+            user.name;
 
     }
 
-    else{
+    else {
 
-        btn.innerHTML=
-        '<i class="fa-solid fa-user"></i> Login';
+        btn.innerHTML =
+            '<i class="fa-solid fa-user"></i> Login';
 
     }
 
 }
 
 
-/* =========================================================
-   LIKE
-========================================================= */
+/* ================= LIKE ================= */
 
-window.likeSite=
-function(){
+window.likeSite = function() {
 
-    const button=
-    document.getElementById(
-        "likeBtn"
-    );
+    const button =
+        document.getElementById(
+            "likeBtn"
+        );
 
 
     button.classList.toggle(
@@ -2857,26 +2056,34 @@ function(){
     );
 
 
-    const span=
-    button.querySelector(
-        "span"
-    );
+    const span =
+        button.querySelector("span");
 
 
-    span.textContent=
-    button.classList.contains("liked")
-    ?"Liked"
-    :"Like";
+    if (
+        button.classList.contains(
+            "liked"
+        )
+    ) {
+
+        span.textContent =
+            "Liked";
+
+    }
+
+    else {
+
+        span.textContent =
+            "Like";
+
+    }
 
 };
 
 
-/* =========================================================
-   SUBSCRIBE
-========================================================= */
+/* ================= SUBSCRIBE ================= */
 
-window.subscribeSite=
-function(){
+window.subscribeSite = function() {
 
     alert(
         "Thank you for subscribing! 🔔"
@@ -2885,37 +2092,35 @@ function(){
 };
 
 
-/* =========================================================
-   SHARE
-========================================================= */
+/* ================= SHARE ================= */
 
-window.shareSite=
-async function(){
+window.shareSite = async function() {
 
-    try{
+    try {
 
-        if(navigator.share){
+        if (
+            navigator.share
+        ) {
 
             await navigator.share({
 
-                title:"Dilu Edits",
+                title: "Dilu Edits",
 
                 text:
-                "Check out Dilu Edits!",
+                    "Check out Dilu Edits!",
 
                 url:
-                window.location.href
+                    window.location.href
 
             });
 
         }
 
-        else{
+        else {
 
             await navigator.clipboard.writeText(
                 window.location.href
             );
-
 
             alert(
                 "Website link copied! 📋"
@@ -2925,7 +2130,7 @@ async function(){
 
     }
 
-    catch(error){
+    catch (error) {
 
         console.log(error);
 
@@ -2934,13 +2139,11 @@ async function(){
 };
 
 
-/* =========================================================
-   PAGE LOAD
-========================================================= */
+/* ================= PAGE LOAD ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    function(){
+    function() {
 
         updateProfileButton();
 
@@ -2957,5 +2160,5 @@ document.addEventListener(
 
 </script>
 
+
 </body>
-</html>
