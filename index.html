@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DILU EDITS | Professional Video Editing</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<meta name="description"
-content="DILU EDITS - Professional Video Editing, Creative Edits and Online Services.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<title>DILU EDITS | Professional Editing & Online Services</title>
 
 <style>
 
-/* =========================================================
-   DILU EDITS
-   WHITE + PURPLE GLASS DESIGN
-========================================================= */
-
-:root{
-    --purple:#9b5cff;
-    --purple2:#d8b8ff;
-    --white:#ffffff;
-    --glass:rgba(255,255,255,.09);
-    --border:rgba(255,255,255,.20);
-    --dark:#07050d;
-    --dark2:#11091d;
-}
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -42,1223 +29,2982 @@ html{
 }
 
 body{
-    font-family:Inter,Arial,sans-serif;
-    color:white;
-    background:#07050d;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#020205;
+
+    color:#fff;
+
     min-height:100vh;
+
     overflow-x:hidden;
 }
 
-/* =========================================================
+
+/* =====================================================
    BACKGROUND
-========================================================= */
+===================================================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
-    z-index:-5;
+
+    z-index:-10;
 
     background:
-      radial-gradient(circle at 15% 20%,
-      rgba(155,92,255,.25),transparent 30%),
 
-      radial-gradient(circle at 85% 20%,
-      rgba(216,184,255,.18),transparent 30%),
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(78,40,255,.20),
+            transparent 28%
+        ),
 
-      radial-gradient(circle at 50% 90%,
-      rgba(155,92,255,.20),transparent 35%),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(170,30,255,.17),
+            transparent 28%
+        ),
 
-      linear-gradient(135deg,#05030a,#0c0715 45%,#05030a);
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(0,110,255,.12),
+            transparent 35%
+        ),
+
+        #020205;
+
 }
 
-body::after{
-    content:"";
+
+.bg-orb{
+
     position:fixed;
-    inset:-50%;
-    z-index:-4;
 
-    background:
-      repeating-linear-gradient(
-        120deg,
-        transparent 0px,
-        transparent 80px,
-        rgba(255,255,255,.025) 81px,
-        transparent 82px
-      );
-
-    animation:bgMove 25s linear infinite;
-}
-
-@keyframes bgMove{
-    from{transform:translate(0,0)}
-    to{transform:translate(120px,80px)}
-}
-
-/* Floating lights */
-
-.light{
-    position:fixed;
-    width:280px;
-    height:280px;
     border-radius:50%;
+
     filter:blur(90px);
-    opacity:.25;
+
     pointer-events:none;
-    z-index:-3;
+
+    z-index:-8;
+
+    opacity:.4;
+
 }
 
-.light.one{
-    background:#9b5cff;
-    top:10%;
-    left:-100px;
-    animation:float1 8s ease-in-out infinite;
-}
+.bg-orb.one{
 
-.light.two{
-    background:#d8b8ff;
-    right:-120px;
-    top:45%;
-    animation:float2 10s ease-in-out infinite;
-}
+    width:400px;
+    height:400px;
 
-@keyframes float1{
-    50%{transform:translate(100px,80px)}
-}
+    left:-180px;
+    top:20%;
 
-@keyframes float2{
-    50%{transform:translate(-100px,-70px)}
-}
-
-/* =========================================================
-   INTRO
-========================================================= */
-
-#intro{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-
-    background:
-      radial-gradient(circle,
-      rgba(155,92,255,.18),
-      transparent 45%),
-      #05030a;
-
-    animation:introHide 1s ease 4s forwards;
-}
-
-.intro-logo{
-    font-size:clamp(45px,10vw,110px);
-    font-weight:900;
-    letter-spacing:8px;
-
-    color:white;
-
-    text-shadow:
-      0 0 10px white,
-      0 0 30px rgba(155,92,255,.8),
-      0 0 70px rgba(155,92,255,.7);
+    background:#3b22ff;
 
     animation:
-      introZoom 1.7s ease forwards,
-      introGlow 1.4s ease-in-out infinite alternate;
+        orbOne 12s ease-in-out infinite;
+
 }
 
-.intro-sub{
-    margin-top:18px;
-    font-size:clamp(12px,2vw,18px);
-    letter-spacing:7px;
-    color:#d8b8ff;
-    opacity:0;
-    animation:subIn 1s ease 1s forwards;
+.bg-orb.two{
+
+    width:350px;
+    height:350px;
+
+    right:-150px;
+    top:10%;
+
+    background:#9d20ff;
+
+    animation:
+        orbTwo 10s ease-in-out infinite;
+
 }
 
-.intro-line{
-    width:0;
-    height:2px;
-    margin-top:28px;
+.bg-orb.three{
 
-    background:linear-gradient(90deg,
-    transparent,
-    white,
-    var(--purple),
-    white,
-    transparent);
+    width:300px;
+    height:300px;
 
-    box-shadow:0 0 20px var(--purple);
+    right:30%;
+    bottom:-150px;
 
-    animation:lineIn 2s ease 1.2s forwards;
+    background:#075dff;
+
+    animation:
+        orbThree 14s ease-in-out infinite;
+
 }
 
-@keyframes introZoom{
-    0%{
-        opacity:0;
-        transform:scale(.5);
-        filter:blur(15px);
+
+@keyframes orbOne{
+
+    0%,100%{
+        transform:translate(0,0);
     }
-    70%{
-        opacity:1;
-        transform:scale(1.08);
+
+    50%{
+        transform:translate(100px,-50px);
     }
-    100%{
-        opacity:1;
+
+}
+
+
+@keyframes orbTwo{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-80px,60px);
+    }
+
+}
+
+
+@keyframes orbThree{
+
+    0%,100%{
         transform:scale(1);
-        filter:blur(0);
     }
+
+    50%{
+        transform:scale(1.35);
+    }
+
 }
 
-@keyframes introGlow{
-    from{
-        text-shadow:
-        0 0 10px white,
-        0 0 25px #9b5cff;
-    }
-    to{
-        text-shadow:
-        0 0 15px white,
-        0 0 45px #9b5cff,
-        0 0 80px #9b5cff;
-    }
-}
 
-@keyframes subIn{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-}
+/* =====================================================
+   PARTICLES
+===================================================== */
 
-@keyframes lineIn{
-    to{width:300px}
-}
+#particles{
 
-@keyframes introHide{
-    to{
-        opacity:0;
-        visibility:hidden;
-        pointer-events:none;
-    }
-}
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-nav{
     position:fixed;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:1000;
 
-    width:min(1100px,94%);
+    inset:0;
 
-    padding:12px 16px;
+    z-index:-7;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    pointer-events:none;
 
-    background:rgba(15,10,25,.65);
-    border:1px solid var(--border);
-    border-radius:25px;
+    overflow:hidden;
 
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+}
+
+.particle{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#a855f7;
 
     box-shadow:
-      0 15px 50px rgba(0,0,0,.35),
-      inset 0 1px rgba(255,255,255,.08);
+        0 0 10px #a855f7;
+
+    animation:
+        floatParticle linear infinite;
+
 }
 
-.logo{
-    font-size:20px;
-    font-weight:900;
-    letter-spacing:2px;
-    color:white;
-    text-decoration:none;
-}
 
-.logo span{
-    color:var(--purple2);
-}
+@keyframes floatParticle{
 
-.nav-links{
-    display:flex;
-    gap:5px;
-    align-items:center;
-}
-
-.nav-btn{
-    border:0;
-    background:transparent;
-    color:#bbb;
-    padding:11px 13px;
-    border-radius:15px;
-    cursor:pointer;
-    font-weight:700;
-    font-size:12px;
-    transition:.3s;
-}
-
-.nav-btn:hover,
-.nav-btn.active{
-    color:white;
-    background:rgba(155,92,255,.16);
-
-    box-shadow:
-      0 0 15px rgba(155,92,255,.35),
-      inset 0 0 15px rgba(155,92,255,.08);
-}
-
-.nav-btn.active{
-    text-shadow:0 0 12px var(--purple2);
-}
-
-.login-small{
-    border:1px solid rgba(216,184,255,.5);
-    color:white;
-    background:rgba(155,92,255,.12);
-    padding:10px 15px;
-    border-radius:14px;
-    cursor:pointer;
-    font-weight:800;
-}
-
-/* =========================================================
-   APP
-========================================================= */
-
-main{
-    min-height:100vh;
-    padding-top:110px;
-    padding-bottom:60px;
-}
-
-.page{
-    display:none;
-    width:min(1150px,92%);
-    margin:auto;
-
-    animation:pageIn .55s ease;
-}
-
-.page.active{
-    display:block;
-}
-
-@keyframes pageIn{
     from{
+        transform:translateY(100vh);
         opacity:0;
-        transform:translateY(18px) scale(.99);
     }
-    to{
+
+    15%{
         opacity:1;
-        transform:none;
     }
+
+    85%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-20vh);
+        opacity:0;
+    }
+
 }
 
-/* =========================================================
+
+/* =====================================================
    GLASS
-========================================================= */
+===================================================== */
 
 .glass{
-    background:
-      linear-gradient(
-        135deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.035)
-      );
 
-    border:1px solid rgba(255,255,255,.16);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
 
     box-shadow:
-      0 25px 80px rgba(0,0,0,.38),
-      inset 0 1px rgba(255,255,255,.10);
 
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
+        0 25px 80px
+        rgba(0,0,0,.35),
+
+        inset 0 1px
+        rgba(255,255,255,.07);
+
 }
 
-/* =========================================================
-   PAGE TITLE
-========================================================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:78px;
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        0 4vw;
+
+    background:
+        rgba(2,2,7,.72);
+
+    backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+/* MINI LOGO */
+
+.logo-mini{
+
+    font-size:25px;
+
+    font-weight:1000;
+
+    letter-spacing:-2px;
+
+    white-space:nowrap;
+
+}
+
+.logo-mini span{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #c084fc,
+            #7c3aed,
+            #2563eb
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+/* NAV */
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.nav{
+
+    position:relative;
+
+    background:none;
+
+    border:0;
+
+    color:#bbb;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    padding:8px 2px;
+
+    transition:.3s;
+
+}
+
+
+.nav::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:-7px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a855f7,
+            #2563eb
+        );
+
+    box-shadow:
+        0 0 12px #a855f7;
+
+    transform:
+        scaleX(0);
+
+    transition:.3s;
+
+}
+
+
+.nav:hover,
+.nav.active{
+
+    color:#d8b4fe;
+
+    text-shadow:
+        0 0 14px
+        rgba(168,85,247,.8);
+
+}
+
+
+.nav.active::after{
+
+    transform:
+        scaleX(1);
+
+}
+
+
+/* =====================================================
+   DE LOGO
+===================================================== */
+
+.de-logo{
+
+    width:47px;
+    height:47px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:1px;
+
+    font-size:19px;
+
+    font-weight:1000;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #050505,
+            #160b25,
+            #07152d
+        );
+
+    border:
+        1px solid
+        rgba(216,180,254,.35);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(168,85,247,.45),
+
+        0 0 35px
+        rgba(37,99,235,.15),
+
+        inset 0 0 18px
+        rgba(255,255,255,.04);
+
+    transform:skew(-5deg);
+
+    animation:
+        dePulse 3s ease-in-out infinite;
+
+}
+
+
+.de-logo span:first-child{
+
+    color:#fff;
+
+}
+
+
+.de-logo span:last-child{
+
+    background:
+        linear-gradient(
+            180deg,
+            #c084fc,
+            #7c3aed,
+            #2563eb
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+@keyframes dePulse{
+
+    0%,100%{
+
+        box-shadow:
+            0 0 18px
+            rgba(168,85,247,.35);
+
+    }
+
+    50%{
+
+        box-shadow:
+            0 0 28px
+            rgba(168,85,247,.65),
+
+            0 0 50px
+            rgba(37,99,235,.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-btn{
+
+    padding:
+        9px 14px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(168,85,247,.45);
+
+    background:
+        rgba(120,30,255,.10);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:800;
+
+    font-size:11px;
+
+    transition:.3s;
+
+}
+
+
+.login-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px
+        rgba(168,85,247,.35);
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:
+        110px 5vw 60px;
+
+}
+
+
+.page.active{
+
+    display:block;
+
+    animation:
+        pageIn .55s ease;
+
+}
+
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(18px)
+            scale(.99);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+/* =====================================================
+   ANIMATED PAGE TITLE
+===================================================== */
 
 .page-title{
-    padding:30px;
-    border-radius:30px;
-    margin-bottom:25px;
 
-    position:relative;
-    overflow:hidden;
+    text-align:center;
+
+    margin-bottom:35px;
+
 }
 
-.page-title::before{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    right:-100px;
-    top:-150px;
-
-    background:#9b5cff;
-    filter:blur(80px);
-    opacity:.25;
-}
 
 .page-title h1{
-    font-size:clamp(35px,6vw,70px);
-    font-weight:900;
-    position:relative;
+
+    font-size:
+        clamp(38px,6vw,72px);
+
+    font-weight:1000;
+
+    letter-spacing:-4px;
+
 }
+
 
 .page-title h1 span{
-    color:#d8b8ff;
-    text-shadow:0 0 25px rgba(155,92,255,.6);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            #c084fc,
+            #8b5cf6,
+            #2563eb,
+            #fff
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        titleGradient 4s linear infinite;
+
+    text-shadow:
+        0 0 25px
+        rgba(168,85,247,.35);
+
 }
+
+
+@keyframes titleGradient{
+
+    0%{
+        background-position:0% center;
+    }
+
+    100%{
+        background-position:250% center;
+    }
+
+}
+
 
 .page-title p{
-    color:#aaa;
-    margin-top:10px;
-    position:relative;
-}
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-.hero{
-    min-height:calc(100vh - 150px);
-
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:30px;
-    align-items:center;
-}
-
-.hero-text{
-    padding:35px;
-    border-radius:35px;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    padding:8px 14px;
-    border-radius:100px;
-
-    background:rgba(155,92,255,.12);
-    border:1px solid rgba(216,184,255,.2);
-
-    color:#d8b8ff;
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:20px;
-}
-
-.badge i{
-    width:7px;
-    height:7px;
-    background:#c99cff;
-    border-radius:50%;
-    box-shadow:0 0 12px #9b5cff;
-}
-
-.hero h1{
-    font-size:clamp(42px,7vw,85px);
-    line-height:.95;
-    font-weight:900;
-}
-
-.hero h1 .purple{
-    color:#b77cff;
-    text-shadow:0 0 30px rgba(155,92,255,.6);
-}
-
-.hero p{
-    margin-top:22px;
-    max-width:620px;
-    color:#aaa;
-    line-height:1.8;
-}
-
-.hero-buttons{
-    margin-top:28px;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.primary-btn,
-.secondary-btn{
-    border:0;
-    padding:14px 20px;
-    border-radius:16px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.primary-btn{
-    color:white;
-    background:linear-gradient(135deg,#9b5cff,#6c32c7);
-    box-shadow:0 10px 30px rgba(155,92,255,.25);
-}
-
-.secondary-btn{
-    color:white;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.16);
-}
-
-.primary-btn:hover,
-.secondary-btn:hover{
-    transform:translateY(-3px);
-}
-
-.hero-card{
-    min-height:450px;
-    border-radius:35px;
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.hero-card::before{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    background:#9b5cff;
-    filter:blur(80px);
-    opacity:.4;
-}
-
-.dilu-mark{
-    position:relative;
-    text-align:center;
-}
-
-.dilu-mark strong{
-    display:block;
-    font-size:clamp(55px,8vw,100px);
-    font-weight:900;
-    letter-spacing:8px;
-}
-
-.dilu-mark span{
-    color:#d8b8ff;
-    letter-spacing:7px;
-    font-size:13px;
-}
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-.profile-grid{
-    display:grid;
-    grid-template-columns:.7fr 1.3fr;
-    gap:25px;
-}
-
-.profile-card{
-    padding:30px;
-    border-radius:30px;
-}
-
-.avatar{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    margin:auto auto 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:45px;
-    font-weight:900;
-
-    background:linear-gradient(135deg,#9b5cff,#2a1747);
-    border:2px solid rgba(255,255,255,.3);
-
-    box-shadow:
-      0 0 45px rgba(155,92,255,.35);
-}
-
-.profile-card h2{
-    text-align:center;
-}
-
-.profile-card .role{
-    text-align:center;
-    color:#c59aff;
-    margin-top:7px;
-}
-
-.info-list{
-    margin-top:25px;
-    display:grid;
-    gap:12px;
-}
-
-.info{
-    padding:15px;
-    border-radius:17px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.info small{
-    display:block;
-    color:#888;
-    margin-bottom:4px;
-}
-
-.info strong{
-    color:#eee;
-}
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.service-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.service-card{
-    padding:32px;
-    border-radius:30px;
-    min-height:320px;
-    position:relative;
-    overflow:hidden;
-    transition:.35s;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(216,184,255,.35);
-    box-shadow:
-      0 25px 70px rgba(0,0,0,.4),
-      0 0 35px rgba(155,92,255,.12);
-}
-
-.service-icon{
-    width:65px;
-    height:65px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:20px;
-
-    background:rgba(155,92,255,.13);
-    border:1px solid rgba(216,184,255,.18);
-
-    font-size:28px;
-
-    margin-bottom:22px;
-}
-
-.service-card h2{
-    font-size:28px;
-}
-
-.service-card p{
-    color:#999;
-    line-height:1.7;
-    margin-top:12px;
-}
-
-.service-list{
-    margin-top:18px;
-    display:grid;
-    gap:8px;
-}
-
-.service-list div{
-    color:#ccc;
-    font-size:14px;
-}
-
-.service-list span{
-    color:#c89dff;
-    margin-right:8px;
-}
-
-/* =========================================================
-   EDITS
-========================================================= */
-
-.owner-tools{
-    display:none;
-    padding:18px;
-    border-radius:22px;
-    margin-bottom:22px;
-
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.owner-tools.show{
-    display:flex;
-}
-
-.owner-label{
-    color:#d8b8ff;
-    font-weight:800;
-}
-
-.upload-btn{
-    padding:12px 17px;
-    border-radius:14px;
-    cursor:pointer;
-
-    color:white;
-    background:linear-gradient(135deg,#9b5cff,#6633bd);
-    font-weight:800;
-}
-
-#photoInput{
-    display:none;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.portfolio-card{
-    position:relative;
-    min-height:270px;
-    border-radius:25px;
-    overflow:hidden;
-
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.13);
-
-    transition:.35s;
-}
-
-.portfolio-card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 20px 60px rgba(155,92,255,.18);
-}
-
-.portfolio-card img{
-    width:100%;
-    height:100%;
-    min-height:270px;
-    object-fit:cover;
-    display:block;
-
-    transition:.5s;
-}
-
-.portfolio-card:hover img{
-    transform:scale(1.07);
-}
-
-.portfolio-overlay{
-    position:absolute;
-    left:12px;
-    right:12px;
-    bottom:12px;
-
-    padding:14px;
-    border-radius:16px;
-
-    background:rgba(5,3,10,.65);
-    border:1px solid rgba(255,255,255,.14);
-
-    backdrop-filter:blur(15px);
-}
-
-.portfolio-overlay strong{
-    font-size:14px;
-}
-
-.empty-gallery{
-    grid-column:1/-1;
-    min-height:300px;
-    border-radius:30px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
 
     color:#777;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
 }
 
-.empty-gallery div{
-    padding:30px;
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+.dashboard{
+
+    max-width:1400px;
+
+    margin:auto;
+
 }
 
-.empty-gallery i{
-    font-size:50px;
-    display:block;
-    color:#9b5cff;
-    margin-bottom:15px;
-}
 
-/* =========================================================
-   CONTACT
-========================================================= */
+/* =====================================================
+   DASHBOARD TOP
+===================================================== */
 
-.contact-grid{
+.dashboard-top{
+
+    min-height:
+        calc(100vh - 145px);
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
 
-.contact-card{
-    padding:22px;
-    border-radius:24px;
+    grid-template-columns:
+        .8fr 1.6fr .8fr;
 
-    display:flex;
+    gap:25px;
+
     align-items:center;
-    gap:18px;
 
-    text-decoration:none;
-    color:white;
-
-    transition:.3s;
 }
 
-.contact-card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(216,184,255,.4);
-    box-shadow:0 15px 45px rgba(155,92,255,.14);
-}
 
-.contact-icon{
-    min-width:55px;
-    height:55px;
+/* HERO SIDE */
 
-    border-radius:17px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(155,92,255,.13);
-    border:1px solid rgba(216,184,255,.17);
-
-    font-size:24px;
-}
-
-.contact-card small{
-    color:#888;
-    display:block;
-    margin-bottom:4px;
-}
-
-.contact-card strong{
-    font-size:15px;
-    word-break:break-word;
-}
-
-.contact-edit{
-    margin-top:25px;
-    padding:25px;
-    border-radius:25px;
-    display:none;
-}
-
-.contact-edit.show{
-    display:block;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-input,
-textarea{
-    width:100%;
-    padding:14px 15px;
-
-    border-radius:14px;
-
-    border:1px solid rgba(255,255,255,.14);
-    background:rgba(255,255,255,.05);
-    color:white;
-
-    outline:none;
-    font-family:inherit;
-}
-
-textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-input:focus,
-textarea:focus{
-    border-color:#9b5cff;
-    box-shadow:0 0 20px rgba(155,92,255,.12);
-}
-
-.form-full{
-    grid-column:1/-1;
-}
-
-/* =========================================================
-   LOGIN MODAL
-========================================================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:5000;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
+.hero-side{
 
     padding:20px;
 
-    background:rgba(0,0,0,.65);
-    backdrop-filter:blur(12px);
 }
 
-.modal.show{
-    display:flex;
+
+.availability{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        8px 12px;
+
+    border-radius:99px;
+
+    color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    background:
+        rgba(255,255,255,.04);
+
 }
 
-.login-box{
-    width:min(420px,100%);
-    padding:32px;
-    border-radius:30px;
-    position:relative;
 
-    animation:modalIn .35s ease;
-}
+.availability i{
 
-@keyframes modalIn{
-    from{
-        opacity:0;
-        transform:scale(.9) translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
+    width:7px;
+    height:7px;
 
-.close{
-    position:absolute;
-    right:18px;
-    top:15px;
-
-    width:35px;
-    height:35px;
-
-    border:0;
     border-radius:50%;
 
-    color:white;
-    background:rgba(255,255,255,.08);
+    background:#35ff9c;
 
-    cursor:pointer;
+    box-shadow:
+        0 0 14px #35ff9c;
+
 }
 
-.login-box h2{
-    font-size:30px;
-    margin-bottom:8px;
-}
 
-.login-box p{
+.hero-side h3{
+
+    margin-top:25px;
+
     color:#888;
-    margin-bottom:22px;
+
+    letter-spacing:5px;
+
+    font-size:13px;
+
 }
 
-.login-form{
-    display:grid;
-    gap:12px;
+
+.hero-side h2{
+
+    margin-top:8px;
+
+    font-size:
+        clamp(40px,5vw,68px);
+
+    line-height:.95;
+
 }
 
-.login-form button{
-    margin-top:5px;
+
+.hero-side p{
+
+    margin-top:20px;
+
+    color:#999;
+
+    line-height:1.7;
+
+    font-size:13px;
+
 }
 
-.login-note{
+
+.hero-btns{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:25px;
+
+}
+
+
+.hero-btn{
+
+    padding:
+        12px 16px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:white;
+
     font-size:11px;
-    color:#777;
-    margin-top:15px;
-    line-height:1.6;
+
+    font-weight:800;
+
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-footer{
-    width:min(1100px,92%);
-    margin:20px auto 35px;
+.hero-btn.primary{
 
-    padding:22px;
-    border-radius:25px;
+    background:
+        linear-gradient(
+            120deg,
+            #315cff,
+            #842cff
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(80,50,255,.25);
+
+}
+
+
+.hero-btn.secondary{
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.05);
+
+}
+
+
+/* =====================================================
+   DASHBOARD LAPTOP GLASS
+===================================================== */
+
+.dashboard-laptop-area{
+
+    min-height:500px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:35px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    perspective:1200px;
+
+}
+
+
+.dashboard-laptop-area::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(168,85,247,.45),
+            rgba(37,99,235,.20),
+            transparent 70%
+        );
+
+    filter:blur(25px);
+
+    animation:
+        laptopGlow 4s ease-in-out infinite;
+
+}
+
+
+@keyframes laptopGlow{
+
+    0%,100%{
+
+        transform:scale(.9);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:1;
+
+    }
+
+}
+
+
+.laptop-glass{
+
+    width:88%;
+
+    max-width:600px;
+
+    padding:
+        35px 25px 45px;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(168,85,247,.05),
+            rgba(37,99,235,.05)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.17);
+
+    backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,.55),
+
+        inset 0 1px
+        rgba(255,255,255,.12);
+
+    position:relative;
+
+}
+
+
+.laptop-3d{
+
+    width:100%;
+
+    position:relative;
+
+    transform-style:
+        preserve-3d;
+
+    transform:
+        rotateX(0deg)
+        rotateY(0deg);
+
+    transition:
+        transform .12s ease-out;
+
+}
+
+
+/* =====================================================
+   LAPTOP SCREEN
+===================================================== */
+
+.laptop-screen{
+
+    width:86%;
+
+    aspect-ratio:16/10;
+
+    margin:auto;
+
+    padding:8px;
+
+    border-radius:
+        16px 16px 5px 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #030303
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(168,85,247,.3),
+
+        0 0 60px
+        rgba(37,99,235,.15);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transform:
+        translateZ(20px);
+
+}
+
+
+.laptop-screen video{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:9px;
+
+}
+
+
+.screen-fallback{
+
+    position:absolute;
+
+    inset:8px;
+
+    display:grid;
+
+    place-items:center;
 
     text-align:center;
-    color:#777;
+
+    border-radius:9px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(124,58,237,.35),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            #05050a,
+            #16002a,
+            #03152e
+        );
+
+}
+
+
+.screen-fallback strong{
+
+    font-size:
+        clamp(25px,4vw,45px);
+
+    font-weight:1000;
+
+    letter-spacing:-2px;
+
+}
+
+
+.screen-fallback strong span{
+
+    color:#a855f7;
+
+}
+
+
+.screen-fallback small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#aaa;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+}
+
+
+.screen-shine{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            125deg,
+            transparent 25%,
+            rgba(255,255,255,.10) 45%,
+            transparent 60%
+        );
+
+    animation:
+        screenShine 4s linear infinite;
+
+}
+
+
+@keyframes screenShine{
+
+    from{
+        transform:translateX(-120%);
+    }
+
+    to{
+        transform:translateX(120%);
+    }
+
+}
+
+
+/* =====================================================
+   LAPTOP BASE
+===================================================== */
+
+.laptop-base{
+
+    width:100%;
+
+    height:28px;
+
+    margin-top:-1px;
+
+    position:relative;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #ddd,
+            #888,
+            #222
+        );
+
+    clip-path:
+        polygon(
+            7% 0,
+            93% 0,
+            100% 100%,
+            0 100%
+        );
+
+    border-radius:
+        0 0 12px 12px;
+
+    transform:
+        translateZ(8px);
+
+}
+
+
+.keyboard{
+
+    position:absolute;
+
+    left:18%;
+    right:18%;
+
+    top:5px;
+
+    height:7px;
+
+    border-radius:4px;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            #222 0 5px,
+            #888 6px 7px
+        );
+
+}
+
+
+.trackpad{
+
+    position:absolute;
+
+    width:15%;
+
+    height:7px;
+
+    left:42.5%;
+
+    bottom:3px;
+
+    border-radius:4px;
+
+    background:#aaa;
+
+    opacity:.65;
+
+}
+
+
+.laptop-shadow{
+
+    position:absolute;
+
+    left:12.5%;
+
+    bottom:-22px;
+
+    width:75%;
+
+    height:30px;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(168,85,247,.5),
+            transparent 70%
+        );
+
+    filter:blur(12px);
+
+    transform:
+        translateZ(-30px);
+
+}
+
+
+/* =====================================================
+   LAPTOP CAPTION
+===================================================== */
+
+.laptop-caption{
+
+    position:relative;
+
+    margin-top:25px;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    color:#ddd;
+
+    text-shadow:
+        0 0 15px
+        rgba(168,85,247,.8);
+
+}
+
+
+.laptop-caption span{
+
+    color:#a855f7;
+
+    margin:0 8px;
+
+}
+
+
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
+
+.hero-right{
+
+    padding:20px;
+
+}
+
+
+.mini-card{
+
+    padding:20px;
+
+    border-radius:22px;
+
+    margin-bottom:15px;
+
+}
+
+
+.mini-card h3{
+
     font-size:12px;
+
+    color:#a855f7;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
 }
 
-footer strong{
-    color:#d8b8ff;
+
+.mini-card p{
+
+    color:#aaa;
+
+    line-height:1.7;
+
+    font-size:12px;
+
 }
 
-/* =========================================================
-   TOAST
-========================================================= */
 
-.toast{
-    position:fixed;
-    bottom:25px;
-    left:50%;
-    transform:translateX(-50%) translateY(100px);
+/* =====================================================
+   COMMENTS
+===================================================== */
 
-    z-index:9998;
+.comments-section{
 
-    padding:13px 20px;
-    border-radius:15px;
+    max-width:1000px;
 
-    background:rgba(20,12,32,.9);
-    border:1px solid rgba(216,184,255,.25);
+    margin:
+        30px auto 0;
 
-    backdrop-filter:blur(15px);
+}
+
+
+.comments-title{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+.comments-title h2{
+
+    font-size:28px;
+
+}
+
+
+.comments-title span{
+
+    background:
+        linear-gradient(
+            90deg,
+            #c084fc,
+            #2563eb
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.comments-title p{
+
+    color:#777;
+
+    font-size:11px;
+
+    margin-top:6px;
+
+}
+
+
+.comment-form{
+
+    padding:20px;
+
+    border-radius:22px;
+
+}
+
+
+.comment-form textarea{
+
+    width:100%;
+
+    min-height:90px;
+
+    resize:vertical;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(0,0,0,.35);
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+
+.comment-form button{
+
+    margin-top:10px;
+
+    padding:
+        10px 15px;
+
+    border:0;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            120deg,
+            #7c3aed,
+            #2563eb
+        );
+
+}
+
+
+#commentsList{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:18px;
+
+}
+
+
+.comment{
+
+    padding:18px;
+
+    border-radius:18px;
+
+}
+
+
+.comment strong{
+
+    color:#c084fc;
+
+    font-size:13px;
+
+}
+
+
+.comment small{
+
+    display:block;
+
+    color:#666;
+
+    margin-top:3px;
+
+}
+
+
+.comment p{
+
+    color:#ccc;
+
+    line-height:1.6;
+
+    margin-top:10px;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+.profile-card{
+
+    padding:28px;
+
+    border-radius:25px;
+
+}
+
+
+.profile-avatar{
+
+    width:125px;
+    height:125px;
+
+    margin:
+        0 auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:50px;
+
+    font-weight:1000;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #030303,
+            #28103c,
+            #4322a8,
+            #073c91
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,.25);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(168,85,247,.55),
+
+        0 0 70px
+        rgba(37,99,235,.20);
+
+}
+
+
+.profile-avatar span:first-child{
 
     color:white;
+
+}
+
+
+.profile-avatar span:last-child{
+
+    color:#b66cff;
+
+}
+
+
+.profile-card h2{
+
+    text-align:center;
+
+    font-size:26px;
+
+}
+
+
+.profile-card .role{
+
+    text-align:center;
+
+    color:#a855f7;
+
+    margin-top:6px;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+
+.profile-info{
+
+    margin-top:25px;
+
+}
+
+
+.profile-info p{
+
+    color:#aaa;
+
+    padding:9px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+
     font-size:13px;
-    font-weight:700;
 
-    transition:.4s;
 }
 
-.toast.show{
-    transform:translateX(-50%) translateY(0);
+
+.profile-info b{
+
+    color:#ddd;
+
 }
 
-/* =========================================================
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:22px;
+
+}
+
+
+.service-column{
+
+    padding:25px;
+
+    border-radius:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.service-column h2{
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #c084fc,
+            #2563eb
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+.service-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.service-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.035);
+
+    transition:.3s;
+
+}
+
+
+.service-item:hover{
+
+    transform:
+        translateX(5px);
+
+    border-color:
+        rgba(168,85,247,.35);
+
+    box-shadow:
+        0 0 20px
+        rgba(168,85,247,.10);
+
+}
+
+
+.service-item .icon{
+
+    min-width:36px;
+    height:36px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3116a8,
+            #8a13ff
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(130,30,255,.35);
+
+}
+
+
+.service-divider{
+
+    height:2px;
+
+    margin:
+        20px 8%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #a855f7,
+            #d8b4fe,
+            #2563eb,
+            #a855f7,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 8px
+        #a855f7,
+
+        0 0 20px
+        rgba(37,99,235,.7);
+
+    animation:
+        neonLine 2.5s linear infinite;
+
+}
+
+
+@keyframes neonLine{
+
+    0%{
+        transform:
+            translateX(-10%);
+        opacity:.45;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateX(10%);
+        opacity:.45;
+    }
+
+}
+
+
+.service-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:20px;
+
+}
+
+
+.service-tags span{
+
+    padding:
+        7px 10px;
+
+    border-radius:99px;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.7px;
+
+    color:#ccc;
+
+    border:
+        1px solid
+        rgba(216,180,254,.2);
+
+    background:
+        rgba(168,85,247,.07);
+
+}
+
+
+.owner-service-add{
+
+    display:none;
+
+    margin-top:16px;
+
+}
+
+
+body.owner .owner-service-add{
+
+    display:block;
+
+}
+
+
+.add-btn{
+
+    padding:
+        10px 13px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(168,85,247,.45);
+
+    color:white;
+
+    background:
+        rgba(120,30,255,.12);
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   EDITS
+===================================================== */
+
+.edits-wrap{
+
+    max-width:1250px;
+
+    margin:auto;
+
+}
+
+
+.edits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+
+.edit-card{
+
+    min-height:220px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101015,
+            #19022f
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    transition:.35s;
+
+}
+
+
+.edit-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(168,85,247,.25);
+
+}
+
+
+.edit-card img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.edit-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,.9)
+        );
+
+}
+
+
+.edit-info{
+
+    position:absolute;
+
+    z-index:2;
+
+    left:16px;
+    right:16px;
+
+    bottom:15px;
+
+}
+
+
+.edit-info h3{
+
+    font-size:16px;
+
+}
+
+
+.edit-info p{
+
+    color:#aaa;
+
+    font-size:10px;
+
+    margin-top:5px;
+
+}
+
+
+.plus-card{
+
+    display:grid;
+
+    place-items:center;
+
+    cursor:pointer;
+
+    border:
+        1px dashed
+        rgba(168,85,247,.55);
+
+}
+
+
+.plus{
+
+    font-size:55px;
+
+    color:#a855f7;
+
+    text-align:center;
+
+    text-shadow:
+        0 0 25px
+        #8a20ff;
+
+}
+
+
+.plus-card p{
+
+    color:#aaa;
+
+    text-align:center;
+
+}
+
+
+.owner-only{
+
+    display:none;
+
+}
+
+
+body.owner .owner-only{
+
+    display:grid;
+
+}
+
+
+/* =====================================================
+   CONTACTS
+===================================================== */
+
+.contact-wrap{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+.contact-intro{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+
+.contact-intro h2{
+
+    font-size:
+        clamp(28px,4vw,45px);
+
+}
+
+
+.contact-intro p{
+
+    color:#777;
+
+    margin-top:8px;
+
+}
+
+
+.contact-section{
+
+    margin-bottom:25px;
+
+}
+
+
+.contact-section-title{
+
+    padding:18px 22px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:12px;
+
+}
+
+
+.contact-section-title .section-icon{
+
+    width:50px;
+    height:50px;
+
+    border-radius:15px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168,85,247,.25),
+            rgba(37,99,235,.12)
+        );
+
+}
+
+
+.contact-section-title h3{
+
+    font-size:16px;
+
+    letter-spacing:1px;
+
+}
+
+
+.contact-section-title p{
+
+    color:#777;
+
+    font-size:10px;
+
+    margin-top:4px;
+
+}
+
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+}
+
+
+.contact-card{
+
+    padding:20px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s;
+
+}
+
+
+.contact-card:hover{
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(168,85,247,.35);
+
+    box-shadow:
+        0 15px 40px
+        rgba(168,85,247,.12);
+
+}
+
+
+.contact-icon{
+
+    width:45px;
+    height:45px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:13px;
+
+    background:
+        rgba(168,85,247,.10);
+
+    font-size:21px;
+
+}
+
+
+.contact-card small{
+
+    display:block;
+
+    color:#777;
+
+    font-size:8px;
+
+    letter-spacing:1px;
+
+}
+
+
+.contact-card strong{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#ddd;
+
+    font-size:13px;
+
+    word-break:break-word;
+
+}
+
+
+.owner-contact{
+
+    display:none;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    margin-top:15px;
+
+}
+
+
+body.owner .owner-contact{
+
+    display:block;
+
+}
+
+
+.owner-contact h3{
+
+    color:#c084fc;
+
+    margin-bottom:15px;
+
+}
+
+
+.owner-contact input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:#07070c;
+
+    color:white;
+
+    outline:none;
+
+}
+
+
+.owner-contact button{
+
+    padding:
+        11px 15px;
+
+    border:0;
+
+    border-radius:12px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            120deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    cursor:pointer;
+
+    font-weight:800;
+
+}
+
+
+/* =====================================================
+   CONTACT EMAIL
+===================================================== */
+
+.email-box{
+
+    padding:5px;
+
+    border-radius:22px;
+
+}
+
+
+.email-box a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:17px;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+
+/* =====================================================
+   SUPPORT BAR
+===================================================== */
+
+.support-bar{
+
+    max-width:1200px;
+
+    margin:
+        45px auto 0;
+
+    padding:
+        25px 15px;
+
+    border-top:
+        1px solid
+        rgba(168,85,247,.45);
+
+    border-bottom:
+        1px solid
+        rgba(37,99,235,.35);
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+
+.support-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:10px;
+
+}
+
+
+.support-icon{
+
+    font-size:30px;
+
+}
+
+
+.support-item h4{
+
+    color:#c084fc;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+}
+
+
+.support-item p{
+
+    color:#aaa;
+
+    font-size:10px;
+
+    line-height:1.5;
+
+    margin-top:4px;
+
+}
+
+
+/* =====================================================
+   LOGIN MODAL
+===================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:none;
+
+    place-items:center;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.78);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.modal.show{
+
+    display:grid;
+
+}
+
+
+.login-box{
+
+    width:
+        min(430px,95vw);
+
+    padding:28px;
+
+    border-radius:25px;
+
+}
+
+
+.login-box h2{
+
+    text-align:center;
+
+    font-size:28px;
+
+}
+
+
+.login-box > p{
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:11px;
+
+    margin:
+        7px 0 20px;
+
+}
+
+
+.login-box input{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:11px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:#07070c;
+
+    color:#fff;
+
+    outline:none;
+
+}
+
+
+.login-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+
+.login-actions button{
+
+    flex:1;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+
+.login-main{
+
+    border:0;
+
+    color:#fff;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            120deg,
+            #7c3aed,
+            #2563eb
+        );
+
+}
+
+
+.close-btn{
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#fff;
+
+}
+
+
+#loginMessage{
+
+    min-height:18px;
+
+    margin-top:10px;
+
+    text-align:center;
+
+    color:#ff7777;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================================
+   OWNER PANEL
+===================================================== */
+
+.owner-panel{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border-radius:20px;
+
+}
+
+
+body.owner .owner-panel{
+
+    display:block;
+
+}
+
+
+.owner-panel h3{
+
+    color:#c084fc;
+
+    margin-bottom:10px;
+
+}
+
+
+.owner-panel button{
+
+    margin-top:10px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    text-align:center;
+
+    color:#555;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    padding:30px;
+
+}
+
+
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
+
+@media(max-width:1100px){
+
+    .dashboard-top{
+
+        grid-template-columns:
+            1fr 1.5fr;
+
+    }
+
+    .hero-right{
+
+        display:none;
+
+    }
+
+}
+
 
 @media(max-width:850px){
 
     nav{
-        top:8px;
-        border-radius:20px;
-    }
-
-    .logo{
-        font-size:15px;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:65px;
-        left:0;
-        right:0;
 
         display:none;
-        padding:10px;
 
-        background:rgba(10,6,17,.92);
-        border:1px solid rgba(255,255,255,.13);
-        border-radius:20px;
-
-        backdrop-filter:blur(20px);
-
-        flex-wrap:wrap;
-        justify-content:center;
     }
 
-    nav.open .nav-links{
-        display:flex;
+    header{
+
+        padding:
+            0 18px;
+
     }
 
-    .nav-btn{
-        font-size:10px;
-        padding:9px 10px;
-    }
+    .dashboard-top{
 
-    .hero{
         grid-template-columns:1fr;
-        min-height:auto;
-        padding-top:25px;
+
     }
 
-    .hero-card{
-        min-height:300px;
+    .hero-side{
+
+        text-align:center;
+
+        order:2;
+
+    }
+
+    .hero-side p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .hero-btns{
+
+        justify-content:center;
+
+    }
+
+    .dashboard-laptop-area{
+
+        order:1;
+
     }
 
     .profile-grid,
-    .service-grid,
-    .contact-grid{
+    .services-grid{
+
         grid-template-columns:1fr;
+
     }
 
-    .gallery{
-        grid-template-columns:repeat(2,1fr);
+    .support-bar{
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-full{
-        grid-column:auto;
-    }
 }
 
-@media(max-width:500px){
 
-    main{
-        padding-top:90px;
-    }
+@media(max-width:600px){
 
     .page{
-        width:94%;
+
+        padding:
+            100px 15px 40px;
+
     }
 
-    .hero-text,
-    .page-title{
-        padding:22px;
-        border-radius:25px;
+    .dilu-title{
+
+        letter-spacing:-3px;
+
     }
 
-    .hero h1{
-        font-size:48px;
+    .laptop-glass{
+
+        width:96%;
+
+        padding:
+            22px 12px 30px;
+
     }
 
-    .hero-card{
-        min-height:250px;
+    .dashboard-laptop-area{
+
+        min-height:380px;
+
     }
 
-    .dilu-mark strong{
-        font-size:48px;
-    }
+    .contact-grid{
 
-    .gallery{
         grid-template-columns:1fr;
+
     }
 
-    .portfolio-card,
-    .portfolio-card img{
-        min-height:300px;
+    .edits-grid{
+
+        grid-template-columns:1fr;
+
     }
 
-    .intro-logo{
-        font-size:45px;
-        letter-spacing:4px;
+    #commentsList{
+
+        grid-template-columns:1fr;
+
     }
 
-    .intro-sub{
-        letter-spacing:3px;
+    .support-bar{
+
+        grid-template-columns:1fr;
+
     }
 
-    .login-box{
-        padding:24px;
-    }
+}
+
+
+/* =====================================================
+   HIDE MOBILE MENU ELEMENT
+===================================================== */
+
+.mobile-menu{
+
+    display:none;
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<div class="light one"></div>
-<div class="light two"></div>
 
-<!-- =====================================================
-     INTRO
-===================================================== -->
+<!-- BACKGROUND -->
 
-<section id="intro">
+<div class="bg-orb one"></div>
+<div class="bg-orb two"></div>
+<div class="bg-orb three"></div>
 
-    <div class="intro-logo">DILU EDITS</div>
-
-    <div class="intro-sub">
-        PROFESSIONAL VIDEO EDITING
-    </div>
-
-    <div class="intro-line"></div>
-
-</section>
+<div id="particles"></div>
 
 
 <!-- =====================================================
-     NAVIGATION
+     HEADER
 ===================================================== -->
 
-<nav id="navbar">
+<header>
 
-    <a class="logo" href="#" onclick="showPage('dashboard')">
+    <div class="logo-mini">
         DILU <span>EDITS</span>
-    </a>
-
-    <div class="nav-links">
-
-        <button class="nav-btn active"
-        onclick="showPage('dashboard')">
-            🏠 DASHBOARD
-        </button>
-
-        <button class="nav-btn"
-        onclick="showPage('profile')">
-            👤 PROFILE
-        </button>
-
-        <button class="nav-btn"
-        onclick="showPage('services')">
-            🛠 SERVICES
-        </button>
-
-        <button class="nav-btn"
-        onclick="showPage('edits')">
-            🎬 EDITS
-        </button>
-
-        <button class="nav-btn"
-        onclick="showPage('contacts')">
-            📞 CONTACTS
-        </button>
-
     </div>
 
-    <button class="login-small"
-    onclick="openLogin()">
-        LOGIN
+
+    <nav>
+
+        <button
+            class="nav active"
+            data-page="home"
+        >
+            DASHBORD
+        </button>
+
+        <button
+            class="nav"
+            data-page="profile"
+        >
+            PROFILE
+        </button>
+
+        <button
+            class="nav"
+            data-page="services"
+        >
+            SERVICES
+        </button>
+
+        <button
+            class="nav"
+            data-page="edits"
+        >
+            EDITS
+        </button>
+
+        <button
+            class="nav"
+            data-page="contacts"
+        >
+            CONTACTS
+        </button>
+
+
+        <button
+            class="login-btn"
+            onclick="openLogin()"
+            id="loginButton"
+        >
+            🔐 LOGIN
+        </button>
+
+
+        <div class="de-logo">
+
+            <span>D</span>
+            <span>E</span>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MOBILE LOGIN -->
+
+    <button
+        class="login-btn mobile-menu"
+        onclick="openLogin()"
+    >
+        🔐
     </button>
 
-</nav>
+</header>
 
 
 <!-- =====================================================
@@ -1267,77 +3013,411 @@ footer strong{
 
 <main>
 
-<!-- ================= DASHBOARD ================= -->
 
-<section id="dashboard" class="page active">
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
-    <div class="hero">
+<section
+    class="page active"
+    id="home"
+>
 
-        <div class="hero-text glass">
 
-            <div class="badge">
-                <i></i>
-                AVAILABLE FOR PROJECTS
-            </div>
+    <div class="dashboard">
+
+
+        <div class="page-title">
 
             <h1>
-                DILU<br>
-                <span class="purple">EDITS</span>
+                DILU
+                <span>EDITS</span>
             </h1>
 
             <p>
-                Creative video editing, professional visual content,
-                thumbnails, reels, shorts and online services —
-                designed to make your content stand out.
+                PROFESSIONAL EDITING • ONLINE SOLUTIONS
             </p>
 
-            <div class="hero-buttons">
+        </div>
 
-                <button class="primary-btn"
-                onclick="showPage('edits')">
-                    🎬 VIEW MY EDITS
-                </button>
 
-                <button class="secondary-btn"
-                onclick="showPage('contacts')">
-                    📞 CONTACT ME
-                </button>
+        <div class="dashboard-top">
+
+
+            <!-- LEFT -->
+
+            <div class="hero-side">
+
+                <div class="availability">
+
+                    <i></i>
+
+                    AVAILABLE FOR PROJECTS
+
+                </div>
+
+
+                <h3>
+                    PROFESSIONAL
+                </h3>
+
+
+                <h2>
+                    Video<br>
+                    Editor
+                </h2>
+
+
+                <p>
+
+                    I create cinematic videos,
+                    creative edits, reels,
+                    thumbnails and visual
+                    experiences that make your
+                    content stand out.
+
+                </p>
+
+
+                <div class="hero-btns">
+
+                    <a
+                        class="hero-btn primary"
+                        href="#"
+                        onclick="
+                            showPage('edits');
+                            return false;
+                        "
+                    >
+                        VIEW MY WORK ↗
+                    </a>
+
+
+                    <a
+                        class="hero-btn secondary"
+                        href="#"
+                        onclick="
+                            showPage('contacts');
+                            return false;
+                        "
+                    >
+                        CONTACT ME →
+                    </a>
+
+                </div>
 
             </div>
+
+
+            <!-- LAPTOP -->
+
+            <div
+                class="dashboard-laptop-area glass"
+                id="laptopArea"
+            >
+
+                <div class="laptop-glass">
+
+                    <div
+                        class="laptop-3d"
+                        id="laptop3D"
+                    >
+
+
+                        <div class="laptop-screen">
+
+                            <video
+                                id="introVideo"
+                                autoplay
+                                muted
+                                playsinline
+                                preload="auto"
+                            >
+
+                                <source
+                                    src="intro-clip.mp4"
+                                    type="video/mp4"
+                                >
+
+                            </video>
+
+
+                            <div
+                                class="screen-fallback"
+                                id="screenFallback"
+                            >
+
+                                <div>
+
+                                    <strong>
+                                        DILU
+                                        <span>EDITS</span>
+                                    </strong>
+
+                                    <small>
+                                        3–5 SECOND INTRO
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="screen-shine"></div>
+
+                        </div>
+
+
+                        <div class="laptop-base">
+
+                            <div class="keyboard"></div>
+
+                            <div class="trackpad"></div>
+
+                        </div>
+
+
+                        <div class="laptop-shadow"></div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="laptop-caption">
+
+                    <span>✦</span>
+
+                    EXPLORE DILU EDITS
+
+                    <span>✦</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="hero-right">
+
+
+                <div class="mini-card glass">
+
+                    <h3>
+                        EDITING
+                    </h3>
+
+                    <p>
+                        Professional video editing,
+                        thumbnails, reels, shorts,
+                        motion graphics and more.
+                    </p>
+
+                </div>
+
+
+                <div class="mini-card glass">
+
+                    <h3>
+                        ONLINE
+                    </h3>
+
+                    <p>
+                        Website development,
+                        landing pages, graphics,
+                        online creative solutions
+                        and digital services.
+                    </p>
+
+                </div>
+
+
+                <div class="mini-card glass">
+
+                    <h3>
+                        DILU EDITS
+                    </h3>
+
+                    <p>
+                        CREATE • EDIT • INSPIRE
+                    </p>
+
+                </div>
+
+
+            </div>
+
 
         </div>
 
 
-        <div class="hero-card glass">
+        <!-- =================================================
+             SUPPORT
+        ================================================== -->
 
-            <div class="dilu-mark">
+        <div class="support-bar">
 
-                <strong>DILU</strong>
-                <strong>EDITS</strong>
 
-                <span>
-                    CREATIVE • PROFESSIONAL • FAST
-                </span>
+            <div class="support-item">
+
+                <div class="support-icon">
+                    🚀
+                </div>
+
+                <div>
+
+                    <h4>
+                        FAST DELIVERY
+                    </h4>
+
+                    <p>
+                        Quick turnaround without
+                        compromising quality.
+                    </p>
+
+                </div>
 
             </div>
 
+
+            <div class="support-item">
+
+                <div class="support-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h4>
+                        HIGH QUALITY
+                    </h4>
+
+                    <p>
+                        Professional editing with
+                        attention to every detail.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="support-item">
+
+                <div class="support-icon">
+                    💲
+                </div>
+
+                <div>
+
+                    <h4>
+                        AFFORDABLE PRICES
+                    </h4>
+
+                    <p>
+                        Quality services at a
+                        price you can afford.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="support-item">
+
+                <div class="support-icon">
+                    🎧
+                </div>
+
+                <div>
+
+                    <h4>
+                        24/7 SUPPORT
+                    </h4>
+
+                    <p>
+                        Always here to help you
+                        anytime, anywhere.
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
+
+
+        <!-- =================================================
+             COMMENTS
+        ================================================== -->
+
+        <div class="comments-section">
+
+
+            <div class="comments-title">
+
+                <h2>
+                    What People Say About
+                    <span>DILU EDITS</span>
+                </h2>
+
+                <p>
+                    Share your experience
+                </p>
+
+            </div>
+
+
+            <div class="comment-form glass">
+
+                <textarea
+                    id="commentText"
+                    placeholder="Write your comment..."
+                ></textarea>
+
+
+                <button
+                    onclick="addComment()"
+                >
+                    💬 POST COMMENT
+                </button>
+
+            </div>
+
+
+            <div id="commentsList"></div>
+
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= PROFILE ================= -->
+<!-- =====================================================
+     PROFILE
+===================================================== -->
 
-<section id="profile" class="page">
+<section
+    class="page"
+    id="profile"
+>
 
-    <div class="page-title glass">
 
-        <h1>MY <span>PROFILE</span></h1>
+    <div class="page-title">
+
+        <h1>
+            <span>PROFILE</span>
+        </h1>
 
         <p>
-            Get to know the editor behind DILU EDITS.
+            ABOUT DILU EDITS
         </p>
 
     </div>
@@ -1345,34 +3425,49 @@ footer strong{
 
     <div class="profile-grid">
 
+
         <div class="profile-card glass">
 
-            <div class="avatar">
-                DE
+            <div class="profile-avatar">
+
+                <span>D</span>
+                <span>E</span>
+
             </div>
 
-            <h2>DILU EDITS</h2>
+
+            <h2>
+                Lakshana Dilshan
+            </h2>
+
 
             <div class="role">
-                Professional Video Editor
+                FOUNDER & PROFESSIONAL VIDEO EDITOR
             </div>
 
-            <div class="info-list">
 
-                <div class="info">
-                    <small>Specialization</small>
-                    <strong>Video Editing & Creative Design</strong>
-                </div>
+            <div class="profile-info">
 
-                <div class="info">
-                    <small>Editing</small>
-                    <strong>Shorts • Reels • TikTok • YouTube</strong>
-                </div>
+                <p>
+                    <b>Brand:</b>
+                    DILU EDITS
+                </p>
 
-                <div class="info">
-                    <small>Delivery</small>
-                    <strong>Fast & Professional</strong>
-                </div>
+                <p>
+                    <b>Job:</b>
+                    Professional Video Editor
+                </p>
+
+                <p>
+                    <b>Skills:</b>
+                    Video Editing, Thumbnails,
+                    Reels, Motion Graphics
+                </p>
+
+                <p>
+                    <b>Style:</b>
+                    Creative • Clean • Professional
+                </p>
 
             </div>
 
@@ -1381,93 +3476,219 @@ footer strong{
 
         <div class="profile-card glass">
 
-            <h2>About DILU EDITS</h2>
+            <h3
+                style="
+                color:#c084fc;
+                margin-bottom:18px;
+                letter-spacing:2px;
+                "
+            >
+                MY SKILLS
+            </h3>
 
-            <p style="color:#aaa;line-height:1.9;margin-top:18px;">
 
-                Welcome to DILU EDITS.
-                I create clean, modern and creative video edits
-                for social media, YouTube and personal projects.
+            <div class="service-list">
 
-                <br><br>
+                <div class="service-item">
+                    <div class="icon">🎬</div>
+                    <div>Video Editing</div>
+                </div>
 
-                My goal is simple:
-                <strong style="color:#d8b8ff;">
-                    turn your idea into professional visual content.
-                </strong>
+                <div class="service-item">
+                    <div class="icon">🖼️</div>
+                    <div>Thumbnail Design</div>
+                </div>
 
-            </p>
+                <div class="service-item">
+                    <div class="icon">📱</div>
+                    <div>Reels & Shorts</div>
+                </div>
+
+                <div class="service-item">
+                    <div class="icon">🎨</div>
+                    <div>Color Grading</div>
+                </div>
+
+                <div class="service-item">
+                    <div class="icon">🎧</div>
+                    <div>Audio Editing</div>
+                </div>
+
+                <div class="service-item">
+                    <div class="icon">⚡</div>
+                    <div>Motion Graphics</div>
+                </div>
+
+            </div>
 
         </div>
+
 
     </div>
 
-</section>
 
+    <!-- OWNER PROFILE EDITOR -->
 
-<!-- ================= SERVICES ================= -->
+    <div class="owner-panel glass">
 
-<section id="services" class="page">
+        <h3>
+            👑 OWNER PROFILE
+        </h3>
 
-    <div class="page-title glass">
-
-        <h1>MY <span>SERVICES</span></h1>
-
-        <p>
-            Choose the service you need.
+        <p style="color:#aaa;font-size:12px">
+            Owner login is active. You can later connect
+            this section to Firebase for permanent editing.
         </p>
 
     </div>
 
 
-    <div class="service-grid">
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="page"
+    id="services"
+>
+
+
+    <div class="page-title">
+
+        <h1>
+            <span>SERVICES</span>
+        </h1>
+
+        <p>
+            PROFESSIONAL • FAST • CREATIVE
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
 
         <!-- EDITING -->
 
-        <div class="service-card glass">
+        <div class="service-column glass">
 
-            <div class="service-icon">
-                🎬
+            <h2>
+                🎬 EDITING SERVICE
+            </h2>
+
+
+            <div
+                class="service-list"
+                id="editingServices"
+            >
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🎬
+                    </div>
+
+                    <div>
+                        YouTube Video Editing
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <div>
+                        Shorts & Reels Editing
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🎵
+                    </div>
+
+                    <div>
+                        TikTok Video Editing
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🖼️
+                    </div>
+
+                    <div>
+                        Thumbnail Design
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🎨
+                    </div>
+
+                    <div>
+                        Color Correction
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🎧
+                    </div>
+
+                    <div>
+                        Audio Sync
+                    </div>
+
+                </div>
+
+
             </div>
 
-            <h2>EDITING SERVICE</h2>
 
-            <p id="editingText">
-                Professional video editing for creators,
-                businesses and personal projects.
-            </p>
+            <div class="service-divider"></div>
 
-            <div class="service-list">
 
-                <div>
-                    <span>✦</span>
-                    YouTube Video Editing
-                </div>
+            <div class="service-tags">
 
-                <div>
-                    <span>✦</span>
-                    Shorts & Reels
-                </div>
+                <span>⚡ FAST DELIVERY</span>
 
-                <div>
-                    <span>✦</span>
-                    TikTok Videos
-                </div>
+                <span>✦ HIGH QUALITY</span>
 
-                <div>
-                    <span>✦</span>
-                    Thumbnail Design
-                </div>
+                <span>✓ PROFESSIONAL</span>
 
-                <div>
-                    <span>✦</span>
-                    Color Correction
-                </div>
+            </div>
 
-                <div>
-                    <span>✦</span>
-                    Text Animation & Transitions
-                </div>
+
+            <div class="owner-service-add">
+
+                <button
+                    class="add-btn"
+                    onclick="addService('editing')"
+                >
+                    ＋ ADD EDITING SERVICE
+                </button>
 
             </div>
 
@@ -1476,222 +3697,698 @@ footer strong{
 
         <!-- ONLINE -->
 
-        <div class="service-card glass">
+        <div class="service-column glass">
 
-            <div class="service-icon">
-                🌐
+            <h2>
+                🌐 ONLINE SERVICE
+            </h2>
+
+
+            <div
+                class="service-list"
+                id="onlineServices"
+            >
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🌐
+                    </div>
+
+                    <div>
+                        Website Development
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        💻
+                    </div>
+
+                    <div>
+                        Landing Pages
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🛒
+                    </div>
+
+                    <div>
+                        E-Commerce Sites
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        🔎
+                    </div>
+
+                    <div>
+                        SEO Optimization
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        📲
+                    </div>
+
+                    <div>
+                        Social Media Setup
+                    </div>
+
+                </div>
+
+
+                <div class="service-item">
+
+                    <div class="icon">
+                        ▶️
+                    </div>
+
+                    <div>
+                        YouTube Channel Setup
+                    </div>
+
+                </div>
+
+
             </div>
 
-            <h2>ONLINE SERVICE</h2>
 
-            <p id="onlineText">
-                Online digital services for creators,
-                businesses and everyday projects.
+            <div class="service-divider"></div>
+
+
+            <div class="service-tags">
+
+                <span>⚡ FAST DELIVERY</span>
+
+                <span>✦ HIGH QUALITY</span>
+
+                <span>✓ ONLINE SUPPORT</span>
+
+            </div>
+
+
+            <div class="owner-service-add">
+
+                <button
+                    class="add-btn"
+                    onclick="addService('online')"
+                >
+                    ＋ ADD ONLINE SERVICE
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     EDITS
+===================================================== -->
+
+<section
+    class="page"
+    id="edits"
+>
+
+
+    <div class="page-title">
+
+        <h1>
+            <span>EDITS</span>
+        </h1>
+
+        <p>
+            MY CREATIVE PORTFOLIO
+        </p>
+
+    </div>
+
+
+    <div class="edits-wrap">
+
+
+        <div
+            class="edits-grid"
+            id="editsGrid"
+        >
+
+
+            <!-- SAMPLE -->
+
+            <div class="edit-card">
+
+                <div class="edit-info">
+
+                    <h3>
+                        Creative Project 01
+                    </h3>
+
+                    <p>
+                        DILU EDITS Portfolio
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="edit-card">
+
+                <div class="edit-info">
+
+                    <h3>
+                        Creative Project 02
+                    </h3>
+
+                    <p>
+                        Professional Edit
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OWNER ONLY -->
+
+            <label
+                class="edit-card plus-card owner-only"
+            >
+
+                <input
+                    id="photoInput"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    hidden
+                >
+
+
+                <div>
+
+                    <div class="plus">
+                        ＋
+                    </div>
+
+                    <p>
+                        ADD PHOTOS
+                    </p>
+
+                </div>
+
+            </label>
+
+
+        </div>
+
+
+        <div
+            class="owner-panel glass"
+        >
+
+            <h3>
+                👑 OWNER EDIT CONTROLS
+            </h3>
+
+            <p
+                style="
+                color:#aaa;
+                font-size:11px;
+                "
+            >
+                Add multiple portfolio photos
+                using the + Add Photos card.
             </p>
 
-            <div class="service-list">
-
-                <div>
-                    <span>✦</span>
-                    Online Video Services
-                </div>
-
-                <div>
-                    <span>✦</span>
-                    Digital Content
-                </div>
-
-                <div>
-                    <span>✦</span>
-                    Social Media Support
-                </div>
-
-                <div>
-                    <span>✦</span>
-                    Creative Online Work
-                </div>
-
-            </div>
-
         </div>
+
 
     </div>
 
-
-    <!-- OWNER SERVICE EDIT -->
-
-    <div id="serviceEditor"
-    class="contact-edit glass"
-    style="margin-top:25px;">
-
-        <h3>⚙️ OWNER — EDIT SERVICES</h3>
-
-        <br>
-
-        <div class="form-grid">
-
-            <textarea id="editingInput"
-            placeholder="Editing Service text"></textarea>
-
-            <textarea id="onlineInput"
-            placeholder="Online Service text"></textarea>
-
-            <button class="primary-btn form-full"
-            onclick="saveServices()">
-                💾 SAVE SERVICES
-            </button>
-
-        </div>
-
-    </div>
 
 </section>
 
 
-<!-- ================= EDITS ================= -->
+<!-- =====================================================
+     CONTACTS
+===================================================== -->
 
-<section id="edits" class="page">
+<section
+    class="page"
+    id="contacts"
+>
 
-    <div class="page-title glass">
 
-        <h1>MY <span>EDITS</span></h1>
+    <div class="page-title">
+
+        <h1>
+            <span>CONTACTS</span>
+        </h1>
 
         <p>
-            Explore my latest creative projects and portfolio.
+            LET'S WORK TOGETHER
         </p>
 
     </div>
 
 
-    <!-- OWNER ONLY -->
-
-    <div id="ownerTools"
-    class="owner-tools glass">
-
-        <div>
-            <div class="owner-label">
-                👑 OWNER MODE
-            </div>
-
-            <small style="color:#777;">
-                Add multiple portfolio photos
-            </small>
-        </div>
-
-        <label class="upload-btn">
-
-            ＋ ADD PHOTOS
-
-            <input
-            id="photoInput"
-            type="file"
-            accept="image/*"
-            multiple
-            onchange="addPhotos(event)">
-
-        </label>
-
-    </div>
+    <div class="contact-wrap">
 
 
-    <div id="gallery"
-    class="gallery">
+        <div class="contact-intro">
 
-        <div class="empty-gallery glass">
+            <h2>
+                Contact <span style="
+                    background:
+                    linear-gradient(
+                        90deg,
+                        #c084fc,
+                        #2563eb
+                    );
+                    -webkit-background-clip:text;
+                    background-clip:text;
+                    color:transparent;
+                ">ME</span>
+            </h2>
 
-            <div>
-
-                <i>🎬</i>
-
-                <h2>Your Portfolio</h2>
-
-                <p style="margin-top:8px;">
-                    Owner can add photos from the
-                    <strong style="color:#d8b8ff;">
-                    ＋ ADD PHOTOS
-                    </strong>
-                    button.
-                </p>
-
-            </div>
+            <p>
+                Choose your preferred way
+                to contact DILU EDITS.
+            </p>
 
         </div>
 
+
+        <!-- =================================================
+             PHONE NUMBERS
+        ================================================== -->
+
+        <div class="contact-section">
+
+
+            <div class="contact-section-title glass">
+
+                <div class="section-icon">
+                    📱
+                </div>
+
+                <div>
+
+                    <h3>
+                        PHONE NUMBERS
+                    </h3>
+
+                    <p>
+                        Call or WhatsApp
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <a
+                    class="contact-card glass"
+                    id="phoneCard"
+                    href="tel:+94771234567"
+                >
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <small>
+                            PHONE NUMBER
+                        </small>
+
+                        <strong id="phoneDisplay">
+                            +94 77 123 4567
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="contact-card glass"
+                    id="whatsappCard"
+                    href="https://wa.me/94771234567"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <small>
+                            WHATSAPP
+                        </small>
+
+                        <strong id="whatsappDisplay">
+                            +94 77 123 4567
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <!-- OWNER -->
+
+            <div class="owner-contact glass">
+
+                <h3>
+                    👑 EDIT PHONE DETAILS
+                </h3>
+
+
+                <input
+                    id="phoneInput"
+                    placeholder="Phone Number"
+                >
+
+
+                <input
+                    id="whatsappInput"
+                    placeholder="WhatsApp Number"
+                >
+
+
+                <button
+                    onclick="saveContacts()"
+                >
+                    💾 SAVE NUMBERS
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             SOCIAL MEDIA
+        ================================================== -->
+
+        <div class="contact-section">
+
+
+            <div class="contact-section-title glass">
+
+                <div class="section-icon">
+                    🌐
+                </div>
+
+                <div>
+
+                    <h3>
+                        SOCIAL MEDIA
+                    </h3>
+
+                    <p>
+                        Follow DILU EDITS online
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <a
+                    class="contact-card glass"
+                    id="instagramCard"
+                    href="https://instagram.com/"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        📸
+                    </div>
+
+                    <div>
+
+                        <small>
+                            INSTAGRAM
+                        </small>
+
+                        <strong id="instagramDisplay">
+                            @dilu_edits
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="contact-card glass"
+                    id="facebookCard"
+                    href="https://facebook.com/"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        📘
+                    </div>
+
+                    <div>
+
+                        <small>
+                            FACEBOOK
+                        </small>
+
+                        <strong>
+                            Dilu Edits
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="contact-card glass"
+                    id="tiktokCard"
+                    href="https://tiktok.com/"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        🎵
+                    </div>
+
+                    <div>
+
+                        <small>
+                            TIKTOK
+                        </small>
+
+                        <strong>
+                            @dilu_edits
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <a
+                    class="contact-card glass"
+                    id="youtubeCard"
+                    href="https://youtube.com/"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        ▶️
+                    </div>
+
+                    <div>
+
+                        <small>
+                            YOUTUBE
+                        </small>
+
+                        <strong>
+                            DILU EDITS
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <div class="owner-contact glass">
+
+                <h3>
+                    👑 EDIT SOCIAL LINKS
+                </h3>
+
+
+                <input
+                    id="instagramInput"
+                    placeholder="Instagram Link"
+                >
+
+
+                <input
+                    id="facebookInput"
+                    placeholder="Facebook Link"
+                >
+
+
+                <input
+                    id="tiktokInput"
+                    placeholder="TikTok Link"
+                >
+
+
+                <input
+                    id="youtubeInput"
+                    placeholder="YouTube Link"
+                >
+
+
+                <button
+                    onclick="saveContacts()"
+                >
+                    💾 SAVE SOCIAL LINKS
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             EMAIL
+        ================================================== -->
+
+        <div class="contact-section">
+
+
+            <div class="contact-section-title glass">
+
+                <div class="section-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <h3>
+                        EMAIL
+                    </h3>
+
+                    <p>
+                        Business email
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="email-box glass">
+
+                <a
+                    id="emailCard"
+                    href="mailto:diluedits@gmail.com"
+                >
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <div>
+
+                        <small>
+                            BUSINESS EMAIL
+                        </small>
+
+                        <strong
+                            id="emailDisplay"
+                        >
+                            diluedits@gmail.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <div class="owner-contact glass">
+
+                <h3>
+                    👑 EDIT EMAIL
+                </h3>
+
+
+                <input
+                    id="emailInput"
+                    placeholder="Business Email"
+                >
+
+
+                <button
+                    onclick="saveContacts()"
+                >
+                    💾 SAVE EMAIL
+                </button>
+
+            </div>
+
+
+        </div>
+
+
     </div>
+
 
 </section>
 
-
-<!-- ================= CONTACTS ================= -->
-
-<section id="contacts" class="page">
-
-    <div class="page-title glass">
-
-        <h1>CONTACT <span>ME</span></h1>
-
-        <p>
-            Connect with DILU EDITS through your favorite platform.
-        </p>
-
-    </div>
-
-
-    <div id="contactGrid"
-    class="contact-grid">
-
-        <!-- JS fills this -->
-
-    </div>
-
-
-    <!-- OWNER CONTACT EDITOR -->
-
-    <div id="contactEditor"
-    class="contact-edit glass">
-
-        <h3>⚙️ OWNER — CONTACT DETAILS</h3>
-
-        <p style="color:#777;margin:8px 0 18px;">
-            Add your email, phone and social media links.
-        </p>
-
-        <div class="form-grid">
-
-            <input id="emailInput"
-            placeholder="Email">
-
-            <input id="phoneInput"
-            placeholder="Phone Number">
-
-            <input id="whatsappInput"
-            placeholder="WhatsApp Number">
-
-            <input id="instagramInput"
-            placeholder="Instagram Link">
-
-            <input id="facebookInput"
-            placeholder="Facebook Link">
-
-            <input id="tiktokInput"
-            placeholder="TikTok Link">
-
-            <input id="youtubeInput"
-            placeholder="YouTube Link">
-
-            <input id="websiteInput"
-            placeholder="Website / Other Link">
-
-            <button class="primary-btn form-full"
-            onclick="saveContacts()">
-                💾 SAVE CONTACT DETAILS
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
 
 </main>
 
@@ -1700,10 +4397,9 @@ footer strong{
      FOOTER
 ===================================================== -->
 
-<footer class="glass">
+<footer>
 
-    © 2026 <strong>DILU EDITS</strong>
-    • Professional Video Editing
+    DILU EDITS • CREATE • EDIT • INSPIRE
 
 </footer>
 
@@ -1712,57 +4408,112 @@ footer strong{
      LOGIN MODAL
 ===================================================== -->
 
-<div id="loginModal" class="modal">
+<div
+    class="modal"
+    id="loginModal"
+>
+
 
     <div class="login-box glass">
 
-        <button class="close"
-        onclick="closeLogin()">
-            ✕
-        </button>
 
-        <h2>Welcome 👋</h2>
+        <h2>
+            LOGIN
+        </h2>
+
 
         <p>
-            Enter your name and phone number to continue.
+            Login with your name and phone number
         </p>
 
-        <form class="login-form"
-        onsubmit="loginUser(event)">
 
-            <input
-            id="loginName"
+        <!-- NORMAL USER LOGIN -->
+
+        <input
+            id="userName"
             type="text"
             placeholder="Your Name"
-            required>
+        >
 
-            <input
-            id="loginPhone"
+
+        <input
+            id="userPhone"
             type="tel"
             placeholder="Phone Number"
-            required>
+        >
+
+
+        <div class="login-actions">
 
             <button
-            class="primary-btn"
-            type="submit">
-
-                🔐 LOGIN
-
+                class="login-main"
+                onclick="userLogin()"
+            >
+                LOGIN
             </button>
 
-        </form>
 
-        <div class="login-note">
-
-            Name + Phone Number are enough for this
-            front-end demo login.
-
-            <br>
-
-            Owner access is controlled by the
-            OWNER_PHONE value in the JavaScript.
+            <button
+                class="close-btn"
+                onclick="closeLogin()"
+            >
+                CLOSE
+            </button>
 
         </div>
+
+
+        <div id="loginMessage"></div>
+
+
+        <hr
+            style="
+            margin:22px 0;
+            border:0;
+            border-top:
+            1px solid
+            rgba(255,255,255,.08);
+            "
+        >
+
+
+        <!-- OWNER -->
+
+        <p
+            style="
+            text-align:left;
+            color:#c084fc;
+            font-weight:800;
+            "
+        >
+            👑 OWNER LOGIN
+        </p>
+
+
+        <input
+            id="ownerUsername"
+            placeholder="Owner Username"
+        >
+
+
+        <input
+            id="ownerPassword"
+            type="password"
+            placeholder="Owner Password"
+        >
+
+
+        <button
+            class="login-main"
+            style="
+            width:100%;
+            margin-top:3px;
+            "
+            onclick="ownerLogin()"
+        >
+            👑 OWNER LOGIN
+        </button>
+
 
     </div>
 
@@ -1770,567 +4521,1231 @@ footer strong{
 
 
 <!-- =====================================================
-     TOAST
+     JAVASCRIPT
 ===================================================== -->
-
-<div id="toast" class="toast"></div>
-
 
 <script>
 
-/* =========================================================
-   DILU EDITS SETTINGS
-========================================================= */
 
-/*
-   IMPORTANT:
-   Change this to YOUR phone number.
+/* =====================================================
+   PARTICLES
+===================================================== */
 
-   Example:
-   const OWNER_PHONE = "94771234567";
-
-   Don't put spaces or +.
-*/
-
-const OWNER_PHONE = "94770000000";
+const particles =
+    document.getElementById("particles");
 
 
-/* =========================================================
-   DEFAULT CONTACT DATA
-========================================================= */
+for(let i=0;i<70;i++){
 
-let contacts = JSON.parse(
-    localStorage.getItem("diluContacts")
-) || {
+    const p =
+        document.createElement("div");
 
-    email:"",
-    phone:"",
-    whatsapp:"",
-    instagram:"",
-    facebook:"",
-    tiktok:"",
-    youtube:"",
-    website:""
+    p.className =
+        "particle";
 
-};
+    p.style.left =
+        Math.random()*100 + "%";
 
+    p.style.animationDuration =
+        (5 + Math.random()*10) + "s";
 
-/* =========================================================
-   SERVICES DATA
-========================================================= */
+    p.style.animationDelay =
+        Math.random()*8 + "s";
 
-let services = JSON.parse(
-    localStorage.getItem("diluServices")
-) || {
+    p.style.opacity =
+        Math.random();
 
-    editing:
-    "Professional video editing for creators, businesses and personal projects.",
+    particles.appendChild(p);
 
-    online:
-    "Online digital services for creators, businesses and everyday projects."
-
-};
+}
 
 
-/* =========================================================
-   USER
-========================================================= */
-
-let currentUser = JSON.parse(
-    localStorage.getItem("diluUser")
-) || null;
-
-let isOwner = false;
-
-
-/* =========================================================
+/* =====================================================
    PAGE NAVIGATION
-========================================================= */
+===================================================== */
 
-function showPage(pageName){
+const pages =
+    [...document.querySelectorAll(".page")];
 
-    document.querySelectorAll(".page")
-    .forEach(page=>{
-        page.classList.remove("active");
+const navButtons =
+    [...document.querySelectorAll(".nav")];
+
+
+function showPage(id){
+
+    pages.forEach(page => {
+
+        page.classList.toggle(
+            "active",
+            page.id === id
+        );
+
     });
 
-    const target =
-        document.getElementById(pageName);
 
-    if(target){
-        target.classList.add("active");
-    }
+    navButtons.forEach(button => {
 
+        button.classList.toggle(
+            "active",
+            button.dataset.page === id
+        );
 
-    document.querySelectorAll(".nav-btn")
-    .forEach(btn=>{
-        btn.classList.remove("active");
     });
-
-
-    const buttons =
-        document.querySelectorAll(".nav-btn");
-
-    const pageIndex = {
-
-        dashboard:0,
-        profile:1,
-        services:2,
-        edits:3,
-        contacts:4
-
-    };
-
-    if(buttons[pageIndex[pageName]]){
-        buttons[pageIndex[pageName]]
-        .classList.add("active");
-    }
-
-
-    document
-    .getElementById("navbar")
-    .classList.remove("open");
 
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 }
 
 
-/* =========================================================
-   MOBILE NAV
-========================================================= */
+navButtons.forEach(button => {
 
-document
-.getElementById("navbar")
-.addEventListener("click",function(e){
+    button.addEventListener(
+        "click",
+        () => {
 
-    if(window.innerWidth <= 850){
+            showPage(
+                button.dataset.page
+            );
 
-        const clickedNav =
-            e.target.closest(".logo");
-
-        if(clickedNav) return;
-
-        if(e.target.closest(".nav-links")){
-            this.classList.remove("open");
         }
-
-    }
-
-});
-
-
-/* Long press / logo mobile */
-
-document
-.querySelector(".logo")
-.addEventListener("click",function(){
-
-    if(window.innerWidth <= 850){
-
-        document
-        .getElementById("navbar")
-        .classList.toggle("open");
-
-    }
+    );
 
 });
 
 
-/* =========================================================
-   LOGIN
-========================================================= */
+/* =====================================================
+   LOGIN MODAL
+===================================================== */
+
+const loginModal =
+    document.getElementById(
+        "loginModal"
+    );
+
 
 function openLogin(){
 
-    document
-    .getElementById("loginModal")
-    .classList.add("show");
+    loginModal.classList.add("show");
 
 }
 
 
 function closeLogin(){
 
-    document
-    .getElementById("loginModal")
-    .classList.remove("show");
+    loginModal.classList.remove("show");
 
 }
 
 
-function normalizePhone(phone){
+window.addEventListener(
+    "click",
+    function(e){
 
-    return phone
-    .replace(/\D/g,"")
-    .replace(/^0+/,"");
+        if(e.target === loginModal){
 
-}
+            closeLogin();
+
+        }
+
+    }
+);
 
 
-function loginUser(event){
+/* =====================================================
+   NORMAL USER LOGIN
+   NAME + PHONE ONLY
+===================================================== */
 
-    event.preventDefault();
+function userLogin(){
 
     const name =
         document
-        .getElementById("loginName")
-        .value.trim();
+        .getElementById("userName")
+        .value
+        .trim();
 
     const phone =
-        normalizePhone(
-            document
-            .getElementById("loginPhone")
-            .value
+        document
+        .getElementById("userPhone")
+        .value
+        .trim();
+
+
+    const message =
+        document.getElementById(
+            "loginMessage"
         );
 
 
     if(!name || !phone){
 
-        showToast("Please enter Name and Phone Number.");
+        message.textContent =
+            "Please enter your name and phone number.";
+
         return;
 
     }
 
 
-    currentUser = {
+    const user = {
+
         name:name,
+
         phone:phone
+
     };
 
 
     localStorage.setItem(
-        "diluUser",
-        JSON.stringify(currentUser)
+        "diluCurrentUser",
+        JSON.stringify(user)
     );
 
 
-    /*
-       OWNER CHECK
-    */
+    message.style.color =
+        "#67e8f9";
 
-    isOwner =
-        phone === normalizePhone(OWNER_PHONE);
+    message.textContent =
+        "Login successful!";
 
 
-    closeLogin();
+    updateLoginButton();
 
-    updateOwnerUI();
 
-    showToast(
-        isOwner
-        ? "👑 Owner Login Successful!"
-        : "✅ Login Successful!"
+    setTimeout(
+        closeLogin,
+        600
     );
 
 }
 
 
-/* =========================================================
-   OWNER UI
-========================================================= */
-
-function updateOwnerUI(){
-
-    const ownerTools =
-        document.getElementById("ownerTools");
-
-    const serviceEditor =
-        document.getElementById("serviceEditor");
-
-    const contactEditor =
-        document.getElementById("contactEditor");
+/* =====================================================
+   OWNER LOGIN
+===================================================== */
 
 
-    if(isOwner){
+/*
+   CHANGE THESE BEFORE PUBLISHING
+*/
 
-        ownerTools.classList.add("show");
-        serviceEditor.classList.add("show");
-        contactEditor.classList.add("show");
+const OWNER_USERNAME =
+    "dilu";
 
+const OWNER_PASSWORD =
+    "1234";
+
+
+function ownerLogin(){
+
+    const username =
         document
-        .getElementById("editingInput")
-        .value = services.editing;
+        .getElementById("ownerUsername")
+        .value
+        .trim();
 
+    const password =
         document
-        .getElementById("onlineInput")
-        .value = services.online;
+        .getElementById("ownerPassword")
+        .value;
 
 
-        document
-        .getElementById("emailInput")
-        .value = contacts.email;
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
 
-        document
-        .getElementById("phoneInput")
-        .value = contacts.phone;
 
-        document
-        .getElementById("whatsappInput")
-        .value = contacts.whatsapp;
+    if(
 
-        document
-        .getElementById("instagramInput")
-        .value = contacts.instagram;
+        username === OWNER_USERNAME &&
+        password === OWNER_PASSWORD
 
-        document
-        .getElementById("facebookInput")
-        .value = contacts.facebook;
+    ){
 
-        document
-        .getElementById("tiktokInput")
-        .value = contacts.tiktok;
+        localStorage.setItem(
+            "diluOwner",
+            "1"
+        );
 
-        document
-        .getElementById("youtubeInput")
-        .value = contacts.youtube;
 
-        document
-        .getElementById("websiteInput")
-        .value = contacts.website;
+        document.body.classList.add(
+            "owner"
+        );
+
+
+        message.style.color =
+            "#67e8f9";
+
+        message.textContent =
+            "Owner login successful!";
+
+
+        updateLoginButton();
+
+
+        setTimeout(
+            closeLogin,
+            600
+        );
+
 
     }else{
 
-        ownerTools.classList.remove("show");
-        serviceEditor.classList.remove("show");
-        contactEditor.classList.remove("show");
+        message.style.color =
+            "#ff7777";
+
+        message.textContent =
+            "Wrong owner username or password.";
 
     }
 
 }
 
 
-/* =========================================================
-   SERVICE SAVE
-========================================================= */
+/* =====================================================
+   LOGOUT
+===================================================== */
 
-function saveServices(){
+function logout(){
 
-    if(!isOwner){
+    localStorage.removeItem(
+        "diluCurrentUser"
+    );
 
-        showToast("Owner login required.");
-        return;
-
-    }
-
-
-    services.editing =
-        document
-        .getElementById("editingInput")
-        .value.trim();
-
-    services.online =
-        document
-        .getElementById("onlineInput")
-        .value.trim();
-
-
-    localStorage.setItem(
-        "diluServices",
-        JSON.stringify(services)
+    localStorage.removeItem(
+        "diluOwner"
     );
 
 
-    document
-    .getElementById("editingText")
-    .textContent = services.editing;
-
-    document
-    .getElementById("onlineText")
-    .textContent = services.online;
+    document.body.classList.remove(
+        "owner"
+    );
 
 
-    showToast("✅ Services saved!");
+    updateLoginButton();
 
 }
 
 
-/* =========================================================
-   CONTACT SAVE
-========================================================= */
+/* =====================================================
+   LOGIN BUTTON UPDATE
+===================================================== */
 
-function saveContacts(){
+function updateLoginButton(){
 
-    if(!isOwner){
+    const button =
+        document.getElementById(
+            "loginButton"
+        );
 
-        showToast("Owner login required.");
+
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
+
+
+    const owner =
+        localStorage.getItem(
+            "diluOwner"
+        );
+
+
+    if(owner === "1"){
+
+        button.innerHTML =
+            "👑 OWNER";
+
         return;
 
     }
 
 
-    contacts.email =
-        document.getElementById("emailInput").value.trim();
+    if(user){
 
-    contacts.phone =
-        document.getElementById("phoneInput").value.trim();
+        button.innerHTML =
+            "👤 " + user.name;
 
-    contacts.whatsapp =
-        document.getElementById("whatsappInput").value.trim();
+        return;
 
-    contacts.instagram =
-        document.getElementById("instagramInput").value.trim();
+    }
 
-    contacts.facebook =
-        document.getElementById("facebookInput").value.trim();
 
-    contacts.tiktok =
-        document.getElementById("tiktokInput").value.trim();
+    button.innerHTML =
+        "🔐 LOGIN";
 
-    contacts.youtube =
-        document.getElementById("youtubeInput").value.trim();
+}
 
-    contacts.website =
-        document.getElementById("websiteInput").value.trim();
+
+/* =====================================================
+   OWNER CHECK
+===================================================== */
+
+function ownerRequired(){
+
+    if(
+        localStorage.getItem(
+            "diluOwner"
+        ) !== "1"
+    ){
+
+        alert(
+            "Owner login required."
+        );
+
+        openLogin();
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+function addService(type){
+
+    if(!ownerRequired()) return;
+
+
+    const label =
+        type === "editing"
+        ? "Enter Editing Service:"
+        : "Enter Online Service:";
+
+
+    const text =
+        prompt(label);
+
+
+    if(!text) return;
+
+
+    const item =
+        document.createElement("div");
+
+
+    item.className =
+        "service-item";
+
+
+    item.innerHTML = `
+
+        <div class="icon">
+            ${type === "editing" ? "✦" : "🌐"}
+        </div>
+
+        <div></div>
+
+    `;
+
+
+    item.lastElementChild
+        .textContent = text;
+
+
+    const target =
+        type === "editing"
+        ? "editingServices"
+        : "onlineServices";
+
+
+    document
+        .getElementById(target)
+        .appendChild(item);
+
+
+    saveServices();
+
+}
+
+
+/* =====================================================
+   SAVE SERVICES
+===================================================== */
+
+function saveServices(){
+
+    const editing =
+        [...document
+        .querySelectorAll(
+            "#editingServices .service-item"
+        )]
+        .map(
+            item =>
+                item.lastElementChild
+                .textContent
+        );
+
+
+    const online =
+        [...document
+        .querySelectorAll(
+            "#onlineServices .service-item"
+        )]
+        .map(
+            item =>
+                item.lastElementChild
+                .textContent
+        );
+
+
+    localStorage.setItem(
+        "diluEditingServices",
+        JSON.stringify(editing)
+    );
+
+
+    localStorage.setItem(
+        "diluOnlineServices",
+        JSON.stringify(online)
+    );
+
+}
+
+
+/* =====================================================
+   LOAD SERVICES
+===================================================== */
+
+function loadServices(){
+
+    const editing =
+        JSON.parse(
+            localStorage.getItem(
+                "diluEditingServices"
+            ) || "null"
+        );
+
+
+    const online =
+        JSON.parse(
+            localStorage.getItem(
+                "diluOnlineServices"
+            ) || "null"
+        );
+
+
+    if(editing){
+
+        const box =
+            document.getElementById(
+                "editingServices"
+            );
+
+
+        box.innerHTML = "";
+
+
+        editing.forEach(
+            text => {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "service-item";
+
+                item.innerHTML = `
+                    <div class="icon">✦</div>
+                    <div></div>
+                `;
+
+                item.lastElementChild
+                    .textContent = text;
+
+                box.appendChild(item);
+
+            }
+        );
+
+    }
+
+
+    if(online){
+
+        const box =
+            document.getElementById(
+                "onlineServices"
+            );
+
+
+        box.innerHTML = "";
+
+
+        online.forEach(
+            text => {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "service-item";
+
+                item.innerHTML = `
+                    <div class="icon">🌐</div>
+                    <div></div>
+                `;
+
+                item.lastElementChild
+                    .textContent = text;
+
+                box.appendChild(item);
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO UPLOAD
+===================================================== */
+
+document
+.getElementById("photoInput")
+.addEventListener(
+    "change",
+    function(){
+
+        if(!ownerRequired()){
+
+            this.value = "";
+
+            return;
+
+        }
+
+
+        const files =
+            [...this.files];
+
+
+        files.forEach(
+            file => {
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(e){
+
+                        createPhotoCard(
+                            e.target.result,
+                            file.name
+                        );
+
+                    };
+
+
+                reader.readAsDataURL(
+                    file
+                );
+
+            }
+        );
+
+
+        this.value = "";
+
+    }
+);
+
+
+/* =====================================================
+   CREATE PHOTO CARD
+===================================================== */
+
+function createPhotoCard(
+    src,
+    name
+){
+
+    const grid =
+        document.getElementById(
+            "editsGrid"
+        );
+
+
+    const plusCard =
+        document.querySelector(
+            ".plus-card"
+        );
+
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className =
+        "edit-card";
+
+
+    const img =
+        document.createElement(
+            "img"
+        );
+
+
+    img.src =
+        src;
+
+
+    img.alt =
+        "DILU EDITS Project";
+
+
+    const info =
+        document.createElement(
+            "div"
+        );
+
+
+    info.className =
+        "edit-info";
+
+
+    const title =
+        document.createElement(
+            "h3"
+        );
+
+
+    title.textContent =
+        name;
+
+
+    const desc =
+        document.createElement(
+            "p"
+        );
+
+
+    desc.textContent =
+        "Owner uploaded project";
+
+
+    info.appendChild(title);
+
+    info.appendChild(desc);
+
+    card.appendChild(img);
+
+    card.appendChild(info);
+
+
+    grid.insertBefore(
+        card,
+        plusCard
+    );
+
+
+    savePhotos();
+
+}
+
+
+/* =====================================================
+   SAVE PHOTOS
+===================================================== */
+
+function savePhotos(){
+
+    const photos =
+        [...document
+        .querySelectorAll(
+            "#editsGrid .edit-card img"
+        )]
+        .map(
+            img => ({
+
+                src:img.src,
+
+                name:
+                    img
+                    .closest(".edit-card")
+                    .querySelector("h3")
+                    ?.textContent
+                    || "Project"
+
+            })
+        );
+
+
+    /*
+       NOTE:
+       Browser localStorage has limited space.
+       For the final Firebase version we will store
+       images in Cloudinary/Firebase.
+    */
+
+    try{
+
+        localStorage.setItem(
+            "diluPhotos",
+            JSON.stringify(photos)
+        );
+
+    }catch(error){
+
+        console.log(
+            "Storage limit reached."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD PHOTOS
+===================================================== */
+
+function loadPhotos(){
+
+    const photos =
+        JSON.parse(
+            localStorage.getItem(
+                "diluPhotos"
+            ) || "[]"
+        );
+
+
+    photos.forEach(
+        photo => {
+
+            createPhotoCard(
+                photo.src,
+                photo.name
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CONTACT DATA
+===================================================== */
+
+let contacts = {
+
+    phone:
+        "+94 77 123 4567",
+
+    whatsapp:
+        "94771234567",
+
+    email:
+        "diluedits@gmail.com",
+
+    instagram:
+        "https://instagram.com/",
+
+    facebook:
+        "https://facebook.com/",
+
+    tiktok:
+        "https://tiktok.com/",
+
+    youtube:
+        "https://youtube.com/"
+
+};
+
+
+function loadContacts(){
+
+    const saved =
+        JSON.parse(
+            localStorage.getItem(
+                "diluContacts"
+            ) || "null"
+        );
+
+
+    if(saved){
+
+        contacts = {
+            ...contacts,
+            ...saved
+        };
+
+    }
+
+
+    updateContactUI();
+
+}
+
+
+/* =====================================================
+   SAVE CONTACTS
+===================================================== */
+
+function saveContacts(){
+
+    if(!ownerRequired()) return;
+
+
+    const emailInput =
+        document.getElementById(
+            "emailInput"
+        );
+
+    const phoneInput =
+        document.getElementById(
+            "phoneInput"
+        );
+
+    const whatsappInput =
+        document.getElementById(
+            "whatsappInput"
+        );
+
+    const instagramInput =
+        document.getElementById(
+            "instagramInput"
+        );
+
+    const facebookInput =
+        document.getElementById(
+            "facebookInput"
+        );
+
+    const tiktokInput =
+        document.getElementById(
+            "tiktokInput"
+        );
+
+    const youtubeInput =
+        document.getElementById(
+            "youtubeInput"
+        );
+
+
+    if(emailInput.value.trim()){
+
+        contacts.email =
+            emailInput.value.trim();
+
+    }
+
+
+    if(phoneInput.value.trim()){
+
+        contacts.phone =
+            phoneInput.value.trim();
+
+    }
+
+
+    if(whatsappInput.value.trim()){
+
+        contacts.whatsapp =
+            whatsappInput.value
+            .trim()
+            .replace(
+                /\D/g,
+                ""
+            );
+
+    }
+
+
+    if(instagramInput.value.trim()){
+
+        contacts.instagram =
+            instagramInput.value.trim();
+
+    }
+
+
+    if(facebookInput.value.trim()){
+
+        contacts.facebook =
+            facebookInput.value.trim();
+
+    }
+
+
+    if(tiktokInput.value.trim()){
+
+        contacts.tiktok =
+            tiktokInput.value.trim();
+
+    }
+
+
+    if(youtubeInput.value.trim()){
+
+        contacts.youtube =
+            youtubeInput.value.trim();
+
+    }
 
 
     localStorage.setItem(
         "diluContacts",
-        JSON.stringify(contacts)
+        JSON.stringify(
+            contacts
+        )
     );
 
 
-    renderContacts();
+    updateContactUI();
 
-    showToast("✅ Contact details saved!");
+
+    alert(
+        "Contact details saved! ✅"
+    );
 
 }
 
 
-/* =========================================================
-   SAFE URL
-========================================================= */
+/* =====================================================
+   UPDATE CONTACT UI
+===================================================== */
 
-function makeURL(value){
+function updateContactUI(){
 
-    if(!value) return "";
+    document
+        .getElementById(
+            "phoneDisplay"
+        )
+        .textContent =
+            contacts.phone;
 
-    if(
-        value.startsWith("http://") ||
-        value.startsWith("https://")
-    ){
 
-        return value;
+    document
+        .getElementById(
+            "phoneCard"
+        )
+        .href =
+            "tel:" +
+            contacts.phone
+            .replace(/\s/g,"");
+
+
+    document
+        .getElementById(
+            "whatsappDisplay"
+        )
+        .textContent =
+            "+" +
+            contacts.whatsapp;
+
+
+    document
+        .getElementById(
+            "whatsappCard"
+        )
+        .href =
+            "https://wa.me/" +
+            contacts.whatsapp;
+
+
+    document
+        .getElementById(
+            "emailDisplay"
+        )
+        .textContent =
+            contacts.email;
+
+
+    document
+        .getElementById(
+            "emailCard"
+        )
+        .href =
+            "mailto:" +
+            contacts.email;
+
+
+    document
+        .getElementById(
+            "instagramCard"
+        )
+        .href =
+            contacts.instagram;
+
+
+    document
+        .getElementById(
+            "facebookCard"
+        )
+        .href =
+            contacts.facebook;
+
+
+    document
+        .getElementById(
+            "tiktokCard"
+        )
+        .href =
+            contacts.tiktok;
+
+
+    document
+        .getElementById(
+            "youtubeCard"
+        )
+        .href =
+            contacts.youtube;
+
+}
+
+
+/* =====================================================
+   COMMENTS
+===================================================== */
+
+function addComment(){
+
+    const user =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
+
+
+    if(!user){
+
+        alert(
+            "Please login first to comment."
+        );
+
+        openLogin();
+
+        return;
 
     }
 
-    return "https://" + value;
+
+    const textarea =
+        document.getElementById(
+            "commentText"
+        );
+
+
+    const text =
+        textarea.value.trim();
+
+
+    if(!text){
+
+        alert(
+            "Please write a comment."
+        );
+
+        return;
+
+    }
+
+
+    const comments =
+        JSON.parse(
+            localStorage.getItem(
+                "diluComments"
+            ) || "[]"
+        );
+
+
+    comments.unshift({
+
+        name:user.name,
+
+        phone:user.phone,
+
+        text:text,
+
+        date:
+            new Date()
+            .toLocaleString()
+
+    });
+
+
+    localStorage.setItem(
+        "diluComments",
+        JSON.stringify(
+            comments
+        )
+    );
+
+
+    textarea.value = "";
+
+
+    loadComments();
 
 }
 
 
-/* =========================================================
-   CONTACT DISPLAY
-========================================================= */
+/* =====================================================
+   LOAD COMMENTS
+===================================================== */
 
-function renderContacts(){
+function loadComments(){
 
-    const grid =
-        document.getElementById("contactGrid");
-
-    grid.innerHTML = "";
-
-
-    const items = [
-
-        {
-            icon:"📧",
-            title:"EMAIL",
-            value:contacts.email,
-            url:contacts.email
-                ? "mailto:"+contacts.email
-                : ""
-        },
-
-        {
-            icon:"💬",
-            title:"WHATSAPP",
-            value:contacts.whatsapp,
-            url:contacts.whatsapp
-                ? "https://wa.me/"+
-                  normalizePhone(contacts.whatsapp)
-                : ""
-        },
-
-        {
-            icon:"📱",
-            title:"PHONE",
-            value:contacts.phone,
-            url:contacts.phone
-                ? "tel:"+contacts.phone
-                : ""
-        },
-
-        {
-            icon:"📸",
-            title:"INSTAGRAM",
-            value:contacts.instagram,
-            url:makeURL(contacts.instagram)
-        },
-
-        {
-            icon:"📘",
-            title:"FACEBOOK",
-            value:contacts.facebook,
-            url:makeURL(contacts.facebook)
-        },
-
-        {
-            icon:"🎵",
-            title:"TIKTOK",
-            value:contacts.tiktok,
-            url:makeURL(contacts.tiktok)
-        },
-
-        {
-            icon:"▶️",
-            title:"YOUTUBE",
-            value:contacts.youtube,
-            url:makeURL(contacts.youtube)
-        },
-
-        {
-            icon:"🌐",
-            title:"WEBSITE",
-            value:contacts.website,
-            url:makeURL(contacts.website)
-        }
-
-    ];
+    const list =
+        document.getElementById(
+            "commentsList"
+        );
 
 
-    const available =
-        items.filter(item=>item.value);
+    const comments =
+        JSON.parse(
+            localStorage.getItem(
+                "diluComments"
+            ) || "[]"
+        );
 
 
-    if(!available.length){
+    list.innerHTML = "";
 
-        grid.innerHTML = `
 
-            <div class="glass"
-            style="
-                grid-column:1/-1;
-                padding:50px;
-                border-radius:30px;
-                text-align:center;
-                color:#777;
-            ">
+    if(!comments.length){
 
-                <div style="
-                    font-size:50px;
-                    margin-bottom:15px;
-                ">
-                    📞
-                </div>
+        list.innerHTML = `
 
-                <h2>Contact DILU EDITS</h2>
+            <div
+                class="comment glass"
+                style="grid-column:1/-1;text-align:center"
+            >
 
-                <p style="margin-top:8px;">
-                    Contact details will appear here.
+                <strong>
+                    Be the first to comment!
+                </strong>
+
+                <p>
+                    Your feedback will appear here.
                 </p>
 
             </div>
@@ -2342,294 +5757,267 @@ function renderContacts(){
     }
 
 
-    available.forEach(item=>{
+    comments.forEach(
+        comment => {
 
-        const card =
-            document.createElement("a");
-
-        card.className =
-            "contact-card glass";
-
-        card.href = item.url || "#";
-
-        if(item.url){
-
-            card.target =
-                item.url.startsWith("http")
-                ? "_blank"
-                : "_self";
-
-        }
+            const div =
+                document.createElement(
+                    "div"
+                );
 
 
-        card.innerHTML = `
-
-            <div class="contact-icon">
-                ${item.icon}
-            </div>
-
-            <div>
-                <small>
-                    ${item.title}
-                </small>
-
-                <strong>
-                    ${escapeHTML(item.value)}
-                </strong>
-            </div>
-
-        `;
+            div.className =
+                "comment glass";
 
 
-        grid.appendChild(card);
-
-    });
-
-}
-
-
-/* =========================================================
-   PHOTO UPLOAD
-========================================================= */
-
-function addPhotos(event){
-
-    if(!isOwner){
-
-        showToast("Owner login required.");
-        return;
-
-    }
+            const strong =
+                document.createElement(
+                    "strong"
+                );
 
 
-    const files =
-        Array.from(event.target.files);
+            strong.textContent =
+                comment.name;
 
 
-    if(!files.length) return;
+            const small =
+                document.createElement(
+                    "small"
+                );
 
 
-    const gallery =
-        document.getElementById("gallery");
+            small.textContent =
+                comment.date;
 
 
-    const empty =
-        gallery.querySelector(".empty-gallery");
-
-    if(empty){
-        empty.remove();
-    }
+            const p =
+                document.createElement(
+                    "p"
+                );
 
 
-    files.forEach(file=>{
-
-        if(!file.type.startsWith("image/")){
-            return;
-        }
+            p.textContent =
+                comment.text;
 
 
-        const reader =
-            new FileReader();
-
-
-        reader.onload = function(e){
-
-            createPortfolioCard(
-                e.target.result,
-                file.name
+            div.appendChild(
+                strong
             );
 
-        };
+            div.appendChild(
+                small
+            );
+
+            div.appendChild(
+                p
+            );
 
 
-        reader.readAsDataURL(file);
+            list.appendChild(
+                div
+            );
 
-    });
-
-
-    /*
-       Save to browser localStorage.
-
-       NOTE:
-       Large images may exceed localStorage limits.
-       For real production uploads, connect Cloudinary/Firebase.
-    */
-
-
-    event.target.value = "";
-
-    showToast(
-        `✅ ${files.length} photo(s) added!`
+        }
     );
 
 }
 
 
-/* =========================================================
-   PORTFOLIO CARD
-========================================================= */
+/* =====================================================
+   LAPTOP 3D MOUSE EFFECT
+===================================================== */
 
-function createPortfolioCard(
-    image,
-    name
-){
-
-    const gallery =
-        document.getElementById("gallery");
+const laptopArea =
+    document.getElementById(
+        "laptopArea"
+    );
 
 
-    const card =
-        document.createElement("div");
-
-    card.className =
-        "portfolio-card";
-
-
-    card.innerHTML = `
-
-        <img
-        src="${image}"
-        alt="${escapeHTML(name)}">
-
-        <div class="portfolio-overlay">
-
-            <strong>
-                ${escapeHTML(
-                    name.replace(/\.[^/.]+$/,"")
-                )}
-            </strong>
-
-        </div>
-
-    `;
+const laptop =
+    document.getElementById(
+        "laptop3D"
+    );
 
 
-    gallery.appendChild(card);
+if(laptopArea && laptop){
 
-}
+    laptopArea.addEventListener(
+        "mousemove",
+        function(e){
 
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHTML(text){
-
-    return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
+            const rect =
+                laptopArea
+                .getBoundingClientRect();
 
 
-/* =========================================================
-   TOAST
-========================================================= */
-
-let toastTimer;
-
-function showToast(message){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
+            const x =
+                e.clientX -
+                rect.left;
 
 
-    clearTimeout(toastTimer);
+            const y =
+                e.clientY -
+                rect.top;
 
-    toastTimer =
-        setTimeout(()=>{
 
-            toast.classList.remove("show");
+            const centerX =
+                rect.width / 2;
 
-        },2500);
+
+            const centerY =
+                rect.height / 2;
+
+
+            const rotateY =
+                ((x-centerX) /
+                centerX) * 22;
+
+
+            const rotateX =
+                -((y-centerY) /
+                centerY) * 16;
+
+
+            laptop.style.transform = `
+
+                rotateX(${rotateX}deg)
+
+                rotateY(${rotateY}deg)
+
+            `;
+
+        }
+    );
+
+
+    laptopArea.addEventListener(
+        "mouseleave",
+        function(){
+
+            laptop.style.transform =
+                "rotateX(0deg) rotateY(0deg)";
+
+        }
+    );
 
 }
 
 
-/* =========================================================
-   LOAD SAVED DATA
-========================================================= */
+/* =====================================================
+   INTRO VIDEO
+===================================================== */
 
-function loadData(){
-
-    /*
-       Services
-    */
-
-    document
-    .getElementById("editingText")
-    .textContent = services.editing;
-
-    document
-    .getElementById("onlineText")
-    .textContent = services.online;
+const introVideo =
+    document.getElementById(
+        "introVideo"
+    );
 
 
-    /*
-       Contacts
-    */
+const screenFallback =
+    document.getElementById(
+        "screenFallback"
+    );
 
-    renderContacts();
+
+if(introVideo){
+
+    introVideo.addEventListener(
+        "loadeddata",
+        function(){
+
+            screenFallback.style.display =
+                "none";
+
+        }
+    );
 
 
-    /*
-       Owner state
-    */
+    introVideo.addEventListener(
+        "timeupdate",
+        function(){
 
-    if(currentUser){
+            if(
+                introVideo.duration &&
+                introVideo.currentTime >= 5
+            ){
 
-        isOwner =
-            normalizePhone(currentUser.phone)
-            ===
-            normalizePhone(OWNER_PHONE);
+                introVideo.currentTime =
+                    0;
 
-        updateOwnerUI();
+            }
+
+        }
+    );
+
+
+    introVideo.addEventListener(
+        "error",
+        function(){
+
+            screenFallback.style.display =
+                "grid";
+
+        }
+    );
+
+
+    setTimeout(
+        function(){
+
+            if(
+                introVideo.readyState < 2
+            ){
+
+                screenFallback.style.display =
+                    "grid";
+
+            }
+
+        },
+        1200
+    );
+
+}
+
+
+/* =====================================================
+   PAGE INITIALIZE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        if(
+            localStorage.getItem(
+                "diluOwner"
+            ) === "1"
+        ){
+
+            document.body.classList.add(
+                "owner"
+            );
+
+        }
+
+
+        updateLoginButton();
+
+        loadServices();
+
+        loadContacts();
+
+        loadComments();
+
+        loadPhotos();
 
     }
+);
 
-}
-
-
-/* =========================================================
-   MODAL CLICK OUTSIDE
-========================================================= */
-
-document
-.getElementById("loginModal")
-.addEventListener("click",function(e){
-
-    if(e.target === this){
-        closeLogin();
-    }
-
-});
-
-
-/* =========================================================
-   START
-========================================================= */
-
-loadData();
-
-
-/*
-   Prevent browser restoring old scroll position
-*/
-
-if("scrollRestoration" in history){
-    history.scrollRestoration = "manual";
-}
-
-window.scrollTo(0,0);
 
 </script>
 
+
 </body>
+
 </html>
