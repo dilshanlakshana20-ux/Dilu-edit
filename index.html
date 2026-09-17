@@ -4219,18 +4219,14 @@ footer{
 
 import {
     initializeApp
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
 import {
     getAuth,
     signInWithEmailAndPassword,
     signOut,
     onAuthStateChanged
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
 import {
     getFirestore,
@@ -4238,9 +4234,10 @@ import {
     addDoc,
     getDocs,
     deleteDoc,
-    doc
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    doc,
+    query,
+    orderBy
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
 /* =====================================================
@@ -4279,18 +4276,15 @@ const firebaseConfig = {
    FIREBASE INIT
 ===================================================== */
 
-const app =
-    initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth =
-    getAuth(app);
+const auth = getAuth(app);
 
-const db =
-    getFirestore(app);
+const db = getFirestore(app);
 
 
 /* =====================================================
-   OWNER
+   OWNER SETTINGS
 ===================================================== */
 
 const OWNER_USERNAME =
@@ -4304,7 +4298,7 @@ const OWNER_UID =
 
 
 /* =====================================================
-   CLOUDINARY
+   CLOUDINARY SETTINGS
 ===================================================== */
 
 const CLOUDINARY_CLOUD_NAME =
@@ -4320,36 +4314,46 @@ const CLOUDINARY_UPLOAD_URL =
 
 
 /* =====================================================
-   GLOBAL HELPERS
+   GLOBAL STATE
 ===================================================== */
 
-let toastTimer;
+let toastTimer = null;
+
+let authInitialized = false;
+
+let photosLoading = false;
+
+let currentOwner = false;
 
 
-window.showToast =
-function(message){
+/* =====================================================
+   TOAST
+===================================================== */
+
+window.showToast = function(message){
 
     const toast =
         document.getElementById("toast");
 
-    if(!toast) return;
+    if(!toast){
+        return;
+    }
 
-    toast.textContent =
-        message;
+    toast.textContent = message;
 
     toast.classList.add("show");
 
     clearTimeout(toastTimer);
 
-    toastTimer =
-        setTimeout(
-            function(){
+    toastTimer = setTimeout(
+        function(){
 
-                toast.classList.remove("show");
+            toast.classList.remove("show");
 
-            },
-            3000
-        );
+        },
+        3000
+    );
+
 };
 
 
@@ -4368,8 +4372,7 @@ const navButtons =
     );
 
 
-window.showPage =
-function(id){
+window.showPage = function(id){
 
     pages.forEach(
         function(page){
@@ -4395,12 +4398,19 @@ function(id){
     );
 
 
+    const nav =
+        document.querySelector("nav");
+
+    if(nav){
+        nav.classList.remove(
+            "mobile-open"
+        );
+    }
+
+
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 };
@@ -4413,15 +4423,42 @@ navButtons.forEach(
             "click",
             function(){
 
-                window.showPage(
-                    button.dataset.page
-                );
+                const page =
+                    button.dataset.page;
+
+                if(page){
+
+                    window.showPage(
+                        page
+                    );
+
+                }
 
             }
         );
 
     }
 );
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+window.toggleMobileMenu = function(){
+
+    const nav =
+        document.querySelector("nav");
+
+    if(!nav){
+        return;
+    }
+
+    nav.classList.toggle(
+        "mobile-open"
+    );
+
+};
 
 
 /* =====================================================
@@ -4434,63 +4471,68 @@ const loginModal =
     );
 
 
-window.openLogin =
-function(){
+window.openLogin = function(){
 
-    loginModal.classList.add(
-        "show"
-    );
+    if(loginModal){
 
-};
-
-
-window.closeLogin =
-function(){
-
-    loginModal.classList.remove(
-        "show"
-    );
-
-};
-
-
-loginModal.addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            loginModal
-        ){
-
-            window.closeLogin();
-
-        }
+        loginModal.classList.add(
+            "show"
+        );
 
     }
-);
+
+};
+
+
+window.closeLogin = function(){
+
+    if(loginModal){
+
+        loginModal.classList.remove(
+            "show"
+        );
+
+    }
+
+};
+
+
+if(loginModal){
+
+    loginModal.addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target ===
+                loginModal
+            ){
+
+                window.closeLogin();
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =====================================================
    NORMAL USER LOGIN
 ===================================================== */
 
-window.userLogin =
-function(){
+window.userLogin = function(){
 
-    const name =
-        document
-        .getElementById("userName")
-        .value
-        .trim();
+    const nameInput =
+        document.getElementById(
+            "userName"
+        );
 
-
-    const phone =
-        document
-        .getElementById("userPhone")
-        .value
-        .trim();
-
+    const phoneInput =
+        document.getElementById(
+            "userPhone"
+        );
 
     const message =
         document.getElementById(
@@ -4498,13 +4540,28 @@ function(){
         );
 
 
+    const name =
+        nameInput
+            ? nameInput.value.trim()
+            : "";
+
+    const phone =
+        phoneInput
+            ? phoneInput.value.trim()
+            : "";
+
+
     if(!name || !phone){
 
-        message.style.color =
-            "#ff7777";
+        if(message){
 
-        message.textContent =
-            "Please enter your name and phone number.";
+            message.style.color =
+                "#ff7777";
+
+            message.textContent =
+                "Please enter your name and phone number.";
+
+        }
 
         return;
 
@@ -4514,27 +4571,37 @@ function(){
     localStorage.setItem(
         "diluCurrentUser",
         JSON.stringify({
-
             name:name,
-
             phone:phone
-
         })
     );
 
 
-    message.style.color =
-        "#67e8f9";
+    if(message){
 
-    message.textContent =
-        "Login successful!";
+        message.style.color =
+            "#67e8f9";
+
+        message.textContent =
+            "Login successful!";
+
+    }
 
 
     updateLoginButton();
 
 
+    showToast(
+        "👤 Login successful!"
+    );
+
+
     setTimeout(
-        window.closeLogin,
+        function(){
+
+            window.closeLogin();
+
+        },
         600
     );
 
@@ -4545,25 +4612,17 @@ function(){
    OWNER LOGIN
 ===================================================== */
 
-window.ownerLogin =
-async function(){
+window.ownerLogin = async function(){
 
-    const username =
-        document
-        .getElementById(
+    const usernameInput =
+        document.getElementById(
             "ownerUsername"
-        )
-        .value
-        .trim();
+        );
 
-
-    const password =
-        document
-        .getElementById(
+    const passwordInput =
+        document.getElementById(
             "ownerPassword"
-        )
-        .value;
-
+        );
 
     const message =
         document.getElementById(
@@ -4571,13 +4630,28 @@ async function(){
         );
 
 
+    const username =
+        usernameInput
+            ? usernameInput.value.trim()
+            : "";
+
+    const password =
+        passwordInput
+            ? passwordInput.value
+            : "";
+
+
     if(username !== OWNER_USERNAME){
 
-        message.style.color =
-            "#ff7777";
+        if(message){
 
-        message.textContent =
-            "Wrong owner username.";
+            message.style.color =
+                "#ff7777";
+
+            message.textContent =
+                "Wrong owner username.";
+
+        }
 
         return;
 
@@ -4586,11 +4660,15 @@ async function(){
 
     if(!password){
 
-        message.style.color =
-            "#ff7777";
+        if(message){
 
-        message.textContent =
-            "Enter your Firebase password.";
+            message.style.color =
+                "#ff7777";
+
+            message.textContent =
+                "Enter your Firebase password.";
+
+        }
 
         return;
 
@@ -4598,6 +4676,17 @@ async function(){
 
 
     try{
+
+        if(message){
+
+            message.style.color =
+                "#c084fc";
+
+            message.textContent =
+                "Checking owner account...";
+
+        }
+
 
         const result =
             await signInWithEmailAndPassword(
@@ -4608,8 +4697,8 @@ async function(){
 
 
         if(
-            result.user.uid !==
-            OWNER_UID
+            !result.user ||
+            result.user.uid !== OWNER_UID
         ){
 
             await signOut(auth);
@@ -4621,24 +4710,29 @@ async function(){
         }
 
 
-        message.style.color =
-            "#67e8f9";
+        if(message){
 
-        message.textContent =
-            "Owner login successful!";
+            message.style.color =
+                "#67e8f9";
 
+            message.textContent =
+                "Owner login successful!";
 
-        updateLoginButton();
-
-
-        setTimeout(
-            window.closeLogin,
-            600
-        );
+        }
 
 
         showToast(
             "👑 Owner login successful!"
+        );
+
+
+        setTimeout(
+            function(){
+
+                window.closeLogin();
+
+            },
+            600
         );
 
 
@@ -4650,8 +4744,12 @@ async function(){
         );
 
 
-        message.style.color =
-            "#ff7777";
+        if(message){
+
+            message.style.color =
+                "#ff7777";
+
+        }
 
 
         if(
@@ -4659,29 +4757,37 @@ async function(){
             "auth/invalid-credential"
         ){
 
-            message.textContent =
-                "Wrong Firebase password.";
+            if(message){
+                message.textContent =
+                    "Wrong Firebase password.";
+            }
 
         }else if(
             error.code ===
             "auth/user-not-found"
         ){
 
-            message.textContent =
-                "Firebase owner account not found.";
+            if(message){
+                message.textContent =
+                    "Firebase owner account not found.";
+            }
 
         }else if(
             error.code ===
             "auth/too-many-requests"
         ){
 
-            message.textContent =
-                "Too many attempts. Try again later.";
+            if(message){
+                message.textContent =
+                    "Too many attempts. Try again later.";
+            }
 
         }else{
 
-            message.textContent =
-                error.message;
+            if(message){
+                message.textContent =
+                    error.message;
+            }
 
         }
 
@@ -4691,7 +4797,7 @@ async function(){
 
 
 /* =====================================================
-   UPDATE LOGIN BUTTON
+   LOGIN BUTTON
 ===================================================== */
 
 function updateLoginButton(){
@@ -4702,17 +4808,12 @@ function updateLoginButton(){
         );
 
 
-    if(!button) return;
+    if(!button){
+        return;
+    }
 
 
-    const user =
-        auth.currentUser;
-
-
-    if(
-        user &&
-        user.uid === OWNER_UID
-    ){
+    if(currentOwner){
 
         button.innerHTML =
             "👑 OWNER";
@@ -4748,7 +4849,7 @@ function updateLoginButton(){
 
 
 /* =====================================================
-   OWNER STATE
+   OWNER CHECK
 ===================================================== */
 
 function isOwner(){
@@ -4766,6 +4867,17 @@ function isOwner(){
 
 
 function ownerRequired(){
+
+    if(!authInitialized){
+
+        alert(
+            "Please wait a moment for Firebase to connect."
+        );
+
+        return false;
+
+    }
+
 
     if(!isOwner()){
 
@@ -4791,31 +4903,43 @@ function ownerRequired(){
 
 onAuthStateChanged(
     auth,
-    function(user){
+    async function(user){
+
+        authInitialized = true;
+
 
         if(
             user &&
             user.uid === OWNER_UID
         ){
 
+            currentOwner = true;
+
             document.body.classList.add(
                 "owner"
             );
 
-            updateLoginButton();
-
         }else{
+
+            currentOwner = false;
 
             document.body.classList.remove(
                 "owner"
             );
 
-            updateLoginButton();
-
         }
 
 
-        loadPhotos();
+        updateLoginButton();
+
+
+        /*
+           IMPORTANT:
+           Only load photos here.
+           No second loadPhotos() at the bottom.
+        */
+
+        await loadPhotos();
 
     }
 );
@@ -4826,6 +4950,53 @@ onAuthStateChanged(
 ===================================================== */
 
 async function uploadToCloudinary(file){
+
+    if(!isOwner()){
+
+        throw new Error(
+            "Owner authentication required."
+        );
+
+    }
+
+
+    if(!file){
+
+        throw new Error(
+            "No image selected."
+        );
+
+    }
+
+
+    if(
+        !file.type ||
+        !file.type.startsWith("image/")
+    ){
+
+        throw new Error(
+            "Only image files are allowed."
+        );
+
+    }
+
+
+    /*
+       20MB maximum per image.
+    */
+
+    const MAX_SIZE =
+        20 * 1024 * 1024;
+
+
+    if(file.size > MAX_SIZE){
+
+        throw new Error(
+            "Image is too large. Maximum size is 20MB."
+        );
+
+    }
+
 
     const formData =
         new FormData();
@@ -4847,19 +5018,27 @@ async function uploadToCloudinary(file){
         await fetch(
             CLOUDINARY_UPLOAD_URL,
             {
-
-                method:
-                    "POST",
-
-                body:
-                    formData
-
+                method:"POST",
+                body:formData
             }
         );
 
 
-    const data =
-        await response.json();
+    let data;
+
+
+    try{
+
+        data =
+            await response.json();
+
+    }catch(error){
+
+        throw new Error(
+            "Cloudinary returned an invalid response."
+        );
+
+    }
 
 
     if(!response.ok){
@@ -4872,6 +5051,7 @@ async function uploadToCloudinary(file){
 
         throw new Error(
 
+            data &&
             data.error &&
             data.error.message
 
@@ -4884,23 +5064,36 @@ async function uploadToCloudinary(file){
     }
 
 
+    if(!data.secure_url){
+
+        throw new Error(
+            "Cloudinary did not return an image URL."
+        );
+
+    }
+
+
     return data;
 
 }
 
 
 /* =====================================================
-   GET FIRESTORE PHOTOS
+   FIRESTORE PHOTO QUERY
 ===================================================== */
 
 async function getFirebasePhotos(){
 
+    const photosCollection =
+        collection(
+            db,
+            "diluPhotos"
+        );
+
+
     const snapshot =
         await getDocs(
-            collection(
-                db,
-                "diluPhotos"
-            )
+            photosCollection
         );
 
 
@@ -4912,8 +5105,7 @@ async function getFirebasePhotos(){
 
             photos.push({
 
-                id:
-                    item.id,
+                id:item.id,
 
                 ...item.data()
 
@@ -4927,8 +5119,8 @@ async function getFirebasePhotos(){
         function(a,b){
 
             return (
-                (b.createdAt || 0) -
-                (a.createdAt || 0)
+                Number(b.createdAt || 0) -
+                Number(a.createdAt || 0)
             );
 
         }
@@ -4936,6 +5128,25 @@ async function getFirebasePhotos(){
 
 
     return photos;
+
+}
+
+
+/* =====================================================
+   PHOTO UNIQUE KEY
+===================================================== */
+
+function getPhotoKey(photo){
+
+    return [
+
+        photo.name || "",
+
+        photo.size || "",
+
+        photo.lastModified || ""
+
+    ].join("|");
 
 }
 
@@ -4986,13 +5197,22 @@ if(photoInput){
 
             try{
 
-                status.textContent =
-                    "Preparing photos... ⏳";
+                if(status){
 
-                status.classList.add(
-                    "show"
-                );
+                    status.textContent =
+                        "Checking existing photos... ⏳";
 
+                    status.classList.add(
+                        "show"
+                    );
+
+                }
+
+
+                /*
+                   Get existing Firestore records.
+                   This prevents duplicate uploads.
+                */
 
                 const existing =
                     await getFirebasePhotos();
@@ -5006,29 +5226,32 @@ if(photoInput){
                     function(photo){
 
                         existingKeys.add(
-
-                            [
-                                photo.name || "",
-                                photo.size || "",
-                                photo.lastModified || ""
-                            ].join("|")
-
+                            getPhotoKey(photo)
                         );
 
                     }
                 );
 
 
-                let uploaded =
-                    0;
+                let uploaded = 0;
 
-                let skipped =
-                    0;
+                let skipped = 0;
+
+                let failed = 0;
 
 
                 for(
                     const file of files
                 ){
+
+                    if(!isOwner()){
+
+                        throw new Error(
+                            "Owner session expired."
+                        );
+
+                    }
+
 
                     if(
                         !file.type ||
@@ -5037,23 +5260,34 @@ if(photoInput){
                         )
                     ){
 
+                        failed++;
+
                         continue;
 
                     }
 
 
                     const key =
-                        [
-                            file.name,
-                            file.size,
-                            file.lastModified
-                        ].join("|");
+                        getPhotoKey({
 
+                            name:
+                                file.name,
+
+                            size:
+                                file.size,
+
+                            lastModified:
+                                file.lastModified
+
+                        });
+
+
+                    /*
+                       Duplicate check
+                    */
 
                     if(
-                        existingKeys.has(
-                            key
-                        )
+                        existingKeys.has(key)
                     ){
 
                         skipped++;
@@ -5063,17 +5297,32 @@ if(photoInput){
                     }
 
 
-                    status.textContent =
-                        "Uploading " +
-                        file.name +
-                        " ☁️";
+                    if(status){
 
+                        status.textContent =
+                            "Uploading " +
+                            file.name +
+                            " ☁️";
+
+                    }
+
+
+                    /*
+                       STEP 1
+                       Upload image to Cloudinary.
+                    */
 
                     const cloudinary =
                         await uploadToCloudinary(
                             file
                         );
 
+
+                    /*
+                       STEP 2
+                       Save ONLY image information
+                       to Firestore.
+                    */
 
                     await addDoc(
                         collection(
@@ -5098,7 +5347,8 @@ if(photoInput){
                                 cloudinary.secure_url,
 
                             publicId:
-                                cloudinary.public_id,
+                                cloudinary.public_id ||
+                                null,
 
                             width:
                                 cloudinary.width ||
@@ -5132,14 +5382,19 @@ if(photoInput){
                 }
 
 
+                /*
+                   Reload once after ALL uploads.
+                */
+
                 await loadPhotos();
 
 
                 if(uploaded > 0){
 
                     showToast(
+                        "✅ " +
                         uploaded +
-                        " photo(s) uploaded successfully! ✅"
+                        " photo(s) uploaded successfully!"
                     );
 
                 }
@@ -5147,9 +5402,35 @@ if(photoInput){
 
                 if(skipped > 0){
 
-                    showToast(
-                        skipped +
-                        " duplicate photo(s) skipped."
+                    setTimeout(
+                        function(){
+
+                            showToast(
+                                "ℹ️ " +
+                                skipped +
+                                " duplicate photo(s) skipped."
+                            );
+
+                        },
+                        800
+                    );
+
+                }
+
+
+                if(failed > 0){
+
+                    setTimeout(
+                        function(){
+
+                            showToast(
+                                "⚠️ " +
+                                failed +
+                                " file(s) skipped."
+                            );
+
+                        },
+                        1200
                     );
 
                 }
@@ -5168,11 +5449,17 @@ if(photoInput){
                     error.message
                 );
 
+
             }finally{
 
-                status.classList.remove(
-                    "show"
-                );
+                if(status){
+
+                    status.classList.remove(
+                        "show"
+                    );
+
+                }
+
 
                 this.value = "";
 
@@ -5196,6 +5483,32 @@ function createPhotoCard(photo){
         );
 
 
+    if(!grid || !photo.url){
+
+        return;
+
+    }
+
+
+    /*
+       Prevent duplicate cards in DOM.
+    */
+
+    const existingCard =
+        grid.querySelector(
+            '[data-photo-id="' +
+            CSS.escape(photo.id) +
+            '"]'
+        );
+
+
+    if(existingCard){
+
+        return;
+
+    }
+
+
     const plusCard =
         grid.querySelector(
             ".plus-card"
@@ -5211,6 +5524,14 @@ function createPhotoCard(photo){
     card.className =
         "edit-card uploaded-photo-card";
 
+
+    card.dataset.photoId =
+        photo.id;
+
+
+    /* =================================================
+       IMAGE
+    ================================================= */
 
     const img =
         document.createElement(
@@ -5230,6 +5551,19 @@ function createPhotoCard(photo){
     img.loading =
         "lazy";
 
+
+    img.onerror =
+        function(){
+
+            this.style.display =
+                "none";
+
+        };
+
+
+    /* =================================================
+       INFO
+    ================================================= */
 
     const info =
         document.createElement(
@@ -5259,7 +5593,7 @@ function createPhotoCard(photo){
 
 
     description.textContent =
-        "Owner uploaded project";
+        "DILU EDITS Portfolio";
 
 
     info.appendChild(
@@ -5271,6 +5605,10 @@ function createPhotoCard(photo){
         description
     );
 
+
+    /* =================================================
+       DELETE BUTTON
+    ================================================= */
 
     const deleteButton =
         document.createElement(
@@ -5301,6 +5639,7 @@ function createPhotoCard(photo){
             event.preventDefault();
 
             event.stopPropagation();
+
 
             deletePhoto(
                 photo.id,
@@ -5356,38 +5695,84 @@ async function loadPhotos(){
         );
 
 
-    if(!grid) return;
+    if(!grid){
+
+        return;
+
+    }
 
 
-    grid
-        .querySelectorAll(
-            ".uploaded-photo-card"
-        )
-        .forEach(
-            function(card){
+    if(photosLoading){
 
-                card.remove();
+        return;
 
-            }
-        );
+    }
+
+
+    photosLoading = true;
 
 
     try{
+
+        /*
+           Remove only Firebase/Cloudinary cards.
+           Sample cards stay untouched.
+        */
+
+        grid
+            .querySelectorAll(
+                ".uploaded-photo-card"
+            )
+            .forEach(
+                function(card){
+
+                    card.remove();
+
+                }
+            );
+
 
         const photos =
             await getFirebasePhotos();
 
 
+        /*
+           Remove duplicate Firestore records
+           visually as well.
+        */
+
+        const seen =
+            new Set();
+
+
         photos.forEach(
             function(photo){
 
-                if(photo.url){
+                if(!photo.url){
 
-                    createPhotoCard(
-                        photo
-                    );
+                    return;
 
                 }
+
+
+                const key =
+                    photo.url ||
+                    getPhotoKey(photo);
+
+
+                if(seen.has(key)){
+
+                    return;
+
+                }
+
+
+                seen.add(key);
+
+
+                createPhotoCard(
+                    photo
+                );
 
             }
         );
@@ -5399,6 +5784,19 @@ async function loadPhotos(){
             "FIRESTORE LOAD ERROR:",
             error
         );
+
+
+        /*
+           Do not show an ugly alert every page load.
+        */
+
+        console.warn(
+            "Make sure Firestore rules and Firebase project settings are correct."
+        );
+
+    }finally{
+
+        photosLoading = false;
 
     }
 
@@ -5415,7 +5813,9 @@ async function deletePhoto(
 ){
 
     if(!ownerRequired()){
+
         return;
+
     }
 
 
@@ -5428,11 +5828,26 @@ async function deletePhoto(
 
 
     if(!answer){
+
         return;
+
     }
 
 
     try{
+
+        /*
+           Re-check owner before deleting.
+        */
+
+        if(!isOwner()){
+
+            throw new Error(
+                "Owner authentication expired."
+            );
+
+        }
+
 
         await deleteDoc(
             doc(
@@ -5443,12 +5858,38 @@ async function deletePhoto(
         );
 
 
-        await loadPhotos();
+        /*
+           Remove card immediately.
+        */
+
+        const card =
+            document.querySelector(
+                '[data-photo-id="' +
+                CSS.escape(photoId) +
+                '"]'
+            );
+
+
+        if(card){
+
+            card.remove();
+
+        }
 
 
         showToast(
-            "Photo removed from website! 🗑️"
+            "🗑️ Photo removed from website!"
         );
+
+
+        /*
+           IMPORTANT:
+           Firestore document is deleted.
+           Cloudinary file itself remains.
+           
+           We intentionally do NOT put a Cloudinary
+           API secret in this browser code.
+        */
 
 
     }catch(error){
@@ -5473,11 +5914,12 @@ async function deletePhoto(
    SERVICES
 ===================================================== */
 
-window.addService =
-function(type){
+window.addService = function(type){
 
     if(!ownerRequired()){
+
         return;
+
     }
 
 
@@ -5490,7 +5932,9 @@ function(type){
 
 
     if(!text){
+
         return;
+
     }
 
 
@@ -5500,6 +5944,13 @@ function(type){
                 ? "editingServices"
                 : "onlineServices"
         );
+
+
+    if(!target){
+
+        return;
+
+    }
 
 
     const item =
@@ -5512,27 +5963,39 @@ function(type){
         "service-item";
 
 
-    item.innerHTML =
+    const icon =
+        document.createElement(
+            "div"
+        );
 
+
+    icon.className =
+        "icon";
+
+    icon.textContent =
         type === "editing"
-
-        ?
-
-        `
-        <div class="icon">✦</div>
-        <div></div>
-        `
-
-        :
-
-        `
-        <div class="icon">🌐</div>
-        <div></div>
-        `;
+            ? "✦"
+            : "🌐";
 
 
-    item.lastElementChild.textContent =
+    const name =
+        document.createElement(
+            "div"
+        );
+
+
+    name.textContent =
         text;
+
+
+    item.appendChild(
+        icon
+    );
+
+
+    item.appendChild(
+        name
+    );
 
 
     target.appendChild(
@@ -5541,6 +6004,11 @@ function(type){
 
 
     saveServices();
+
+
+    showToast(
+        "Service added! ✅"
+    );
 
 };
 
@@ -5558,7 +6026,8 @@ function saveServices(){
 
                 return item
                     .lastElementChild
-                    .textContent;
+                    .textContent
+                    .trim();
 
             }
         );
@@ -5575,7 +6044,8 @@ function saveServices(){
 
                 return item
                     .lastElementChild
-                    .textContent;
+                    .textContent
+                    .trim();
 
             }
         );
@@ -5617,9 +6087,7 @@ function loadServices(){
         );
 
 
-    if(
-        Array.isArray(editing)
-    ){
+    if(Array.isArray(editing)){
 
         const box =
             document.getElementById(
@@ -5627,47 +6095,48 @@ function loadServices(){
             );
 
 
-        box.innerHTML =
-            "";
+        if(box){
+
+            box.innerHTML = "";
 
 
-        editing.forEach(
-            function(text){
+            editing.forEach(
+                function(text){
 
-                const item =
-                    document.createElement(
-                        "div"
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "service-item";
+
+
+                    item.innerHTML =
+                        `
+                        <div class="icon">✦</div>
+                        <div></div>
+                        `;
+
+
+                    item.lastElementChild.textContent =
+                        text;
+
+
+                    box.appendChild(
+                        item
                     );
 
+                }
+            );
 
-                item.className =
-                    "service-item";
-
-
-                item.innerHTML =
-                    `
-                    <div class="icon">✦</div>
-                    <div></div>
-                    `;
-
-
-                item.lastElementChild.textContent =
-                    text;
-
-
-                box.appendChild(
-                    item
-                );
-
-            }
-        );
+        }
 
     }
 
 
-    if(
-        Array.isArray(online)
-    ){
+    if(Array.isArray(online)){
 
         const box =
             document.getElementById(
@@ -5675,40 +6144,43 @@ function loadServices(){
             );
 
 
-        box.innerHTML =
-            "";
+        if(box){
+
+            box.innerHTML = "";
 
 
-        online.forEach(
-            function(text){
+            online.forEach(
+                function(text){
 
-                const item =
-                    document.createElement(
-                        "div"
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "service-item";
+
+
+                    item.innerHTML =
+                        `
+                        <div class="icon">🌐</div>
+                        <div></div>
+                        `;
+
+
+                    item.lastElementChild.textContent =
+                        text;
+
+
+                    box.appendChild(
+                        item
                     );
 
+                }
+            );
 
-                item.className =
-                    "service-item";
-
-
-                item.innerHTML =
-                    `
-                    <div class="icon">🌐</div>
-                    <div></div>
-                    `;
-
-
-                item.lastElementChild.textContent =
-                    text;
-
-
-                box.appendChild(
-                    item
-                );
-
-            }
-        );
+        }
 
     }
 
@@ -5773,24 +6245,53 @@ function loadContacts(){
 }
 
 
-window.saveContacts =
-function(){
+window.saveContacts = function(){
 
     if(!ownerRequired()){
+
         return;
+
     }
 
 
-    const emailInput =
-        document.getElementById(
-            "emailInput"
-        );
+    const fields = [
+
+        ["emailInput","email"],
+
+        ["phoneInput","phone"],
+
+        ["instagramInput","instagram"],
+
+        ["facebookInput","facebook"],
+
+        ["tiktokInput","tiktok"],
+
+        ["youtubeInput","youtube"]
+
+    ];
 
 
-    const phoneInput =
-        document.getElementById(
-            "phoneInput"
-        );
+    fields.forEach(
+        function(item){
+
+            const input =
+                document.getElementById(
+                    item[0]
+                );
+
+
+            if(
+                input &&
+                input.value.trim()
+            ){
+
+                contacts[item[1]] =
+                    input.value.trim();
+
+            }
+
+        }
+    );
 
 
     const whatsappInput =
@@ -5799,117 +6300,18 @@ function(){
         );
 
 
-    const instagramInput =
-        document.getElementById(
-            "instagramInput"
-        );
-
-
-    const facebookInput =
-        document.getElementById(
-            "facebookInput"
-        );
-
-
-    const tiktokInput =
-        document.getElementById(
-            "tiktokInput"
-        );
-
-
-    const youtubeInput =
-        document.getElementById(
-            "youtubeInput"
-        );
-
-
-    if(
-        emailInput &&
-        emailInput.value.trim()
-    ){
-
-        contacts.email =
-            emailInput.value.trim();
-
-    }
-
-
-    if(
-        phoneInput &&
-        phoneInput.value.trim()
-    ){
-
-        contacts.phone =
-            phoneInput.value.trim();
-
-    }
-
-
     if(
         whatsappInput &&
         whatsappInput.value.trim()
     ){
 
         contacts.whatsapp =
-            whatsappInput
-            .value
-            .trim()
-            .replace(
-                /\D/g,
-                ""
-            );
-
-    }
-
-
-    if(
-        instagramInput &&
-        instagramInput.value.trim()
-    ){
-
-        contacts.instagram =
-            instagramInput
-            .value
-            .trim();
-
-    }
-
-
-    if(
-        facebookInput &&
-        facebookInput.value.trim()
-    ){
-
-        contacts.facebook =
-            facebookInput
-            .value
-            .trim();
-
-    }
-
-
-    if(
-        tiktokInput &&
-        tiktokInput.value.trim()
-    ){
-
-        contacts.tiktok =
-            tiktokInput
-            .value
-            .trim();
-
-    }
-
-
-    if(
-        youtubeInput &&
-        youtubeInput.value.trim()
-    ){
-
-        contacts.youtube =
-            youtubeInput
-            .value
-            .trim();
+            whatsappInput.value
+                .trim()
+                .replace(
+                    /\D/g,
+                    ""
+                );
 
     }
 
@@ -5939,78 +6341,65 @@ function updateContactUI(){
             "phoneDisplay"
         );
 
-
     const phoneCard =
         document.getElementById(
             "phoneCard"
         );
-
 
     const whatsappDisplay =
         document.getElementById(
             "whatsappDisplay"
         );
 
-
     const whatsappCard =
         document.getElementById(
             "whatsappCard"
         );
-
 
     const emailDisplay =
         document.getElementById(
             "emailDisplay"
         );
 
-
     const emailCard =
         document.getElementById(
             "emailCard"
         );
-
 
     const instagramDisplay =
         document.getElementById(
             "instagramDisplay"
         );
 
-
     const instagramCard =
         document.getElementById(
             "instagramCard"
         );
-
 
     const facebookDisplay =
         document.getElementById(
             "facebookDisplay"
         );
 
-
     const facebookCard =
         document.getElementById(
             "facebookCard"
         );
-
 
     const tiktokDisplay =
         document.getElementById(
             "tiktokDisplay"
         );
 
-
     const tiktokCard =
         document.getElementById(
             "tiktokCard"
         );
 
-
     const youtubeDisplay =
         document.getElementById(
             "youtubeDisplay"
         );
-
 
     const youtubeCard =
         document.getElementById(
@@ -6018,12 +6407,16 @@ function updateContactUI(){
         );
 
 
-    if(phoneDisplay)
+    if(phoneDisplay){
+
         phoneDisplay.textContent =
             contacts.phone;
 
+    }
 
-    if(phoneCard)
+
+    if(phoneCard){
+
         phoneCard.href =
             "tel:" +
             contacts.phone.replace(
@@ -6031,68 +6424,106 @@ function updateContactUI(){
                 ""
             );
 
+    }
 
-    if(whatsappDisplay)
+
+    if(whatsappDisplay){
+
         whatsappDisplay.textContent =
             "+" +
             contacts.whatsapp;
 
+    }
 
-    if(whatsappCard)
+
+    if(whatsappCard){
+
         whatsappCard.href =
             "https://wa.me/" +
             contacts.whatsapp;
 
+    }
 
-    if(emailDisplay)
+
+    if(emailDisplay){
+
         emailDisplay.textContent =
             contacts.email;
 
+    }
 
-    if(emailCard)
+
+    if(emailCard){
+
         emailCard.href =
             "mailto:" +
             contacts.email;
 
+    }
 
-    if(instagramDisplay)
+
+    if(instagramDisplay){
+
         instagramDisplay.textContent =
             contacts.instagram;
 
+    }
 
-    if(instagramCard)
+
+    if(instagramCard){
+
         instagramCard.href =
             contacts.instagram;
 
+    }
 
-    if(facebookDisplay)
+
+    if(facebookDisplay){
+
         facebookDisplay.textContent =
             contacts.facebook;
 
+    }
 
-    if(facebookCard)
+
+    if(facebookCard){
+
         facebookCard.href =
             contacts.facebook;
 
+    }
 
-    if(tiktokDisplay)
+
+    if(tiktokDisplay){
+
         tiktokDisplay.textContent =
             contacts.tiktok;
 
+    }
 
-    if(tiktokCard)
+
+    if(tiktokCard){
+
         tiktokCard.href =
             contacts.tiktok;
 
+    }
 
-    if(youtubeDisplay)
+
+    if(youtubeDisplay){
+
         youtubeDisplay.textContent =
             contacts.youtube;
 
+    }
 
-    if(youtubeCard)
+
+    if(youtubeCard){
+
         youtubeCard.href =
             contacts.youtube;
+
+    }
 
 
     const emailSectionText =
@@ -6101,9 +6532,12 @@ function updateContactUI(){
         );
 
 
-    if(emailSectionText)
+    if(emailSectionText){
+
         emailSectionText.textContent =
             contacts.email;
+
+    }
 
 }
 
@@ -6112,8 +6546,7 @@ function updateContactUI(){
    COMMENTS
 ===================================================== */
 
-window.addComment =
-function(){
+window.addComment = function(){
 
     const user =
         JSON.parse(
@@ -6140,6 +6573,13 @@ function(){
         document.getElementById(
             "commentText"
         );
+
+
+    if(!textarea){
+
+        return;
+
+    }
 
 
     const text =
@@ -6178,7 +6618,7 @@ function(){
 
         date:
             new Date()
-            .toLocaleString()
+                .toLocaleString()
 
     });
 
@@ -6191,8 +6631,7 @@ function(){
     );
 
 
-    textarea.value =
-        "";
+    textarea.value = "";
 
 
     loadComments();
@@ -6213,7 +6652,11 @@ function loadComments(){
         );
 
 
-    if(!list) return;
+    if(!list){
+
+        return;
+
+    }
 
 
     const comments =
@@ -6224,20 +6667,18 @@ function loadComments(){
         );
 
 
-    list.innerHTML =
-        "";
+    list.innerHTML = "";
 
 
     if(!comments.length){
 
         list.innerHTML =
-
             `
             <div
                 class="comment glass"
                 style="
                 grid-column:1/-1;
-                text-align:center
+                text-align:center;
                 "
             >
 
@@ -6326,14 +6767,13 @@ function loadComments(){
 
 
 /* =====================================================
-   LAPTOP EFFECT
+   LAPTOP 3D
 ===================================================== */
 
 const laptopArea =
     document.getElementById(
         "laptopArea"
     );
-
 
 const laptop =
     document.getElementById(
@@ -6351,8 +6791,7 @@ if(
         function(event){
 
             const rect =
-                laptopArea
-                .getBoundingClientRect();
+                laptopArea.getBoundingClientRect();
 
 
             const x =
@@ -6419,7 +6858,6 @@ const introVideo =
         "introVideo"
     );
 
-
 const screenFallback =
     document.getElementById(
         "screenFallback"
@@ -6482,52 +6920,119 @@ const particleContainer =
     );
 
 
-for(
-    let i = 0;
-    i < 70;
-    i++
-){
+if(particleContainer){
 
-    const particle =
-        document.createElement(
-            "div"
+    for(
+        let i = 0;
+        i < 70;
+        i++
+    ){
+
+        const particle =
+            document.createElement(
+                "div"
+            );
+
+
+        particle.className =
+            "particle";
+
+
+        particle.style.left =
+            Math.random() *
+            100 +
+            "%";
+
+
+        particle.style.animationDuration =
+            (
+                5 +
+                Math.random() *
+                10
+            ) +
+            "s";
+
+
+        particle.style.animationDelay =
+            Math.random() *
+            8 +
+            "s";
+
+
+        particle.style.opacity =
+            Math.random();
+
+
+        particleContainer.appendChild(
+            particle
         );
 
+    }
 
-    particle.className =
-        "particle";
-
-
-    particle.style.left =
-        Math.random() *
-        100 +
-        "%";
+}
 
 
-    particle.style.animationDuration =
-        (
-            5 +
-            Math.random() *
-            10
-        ) +
-        "s";
+/* =====================================================
+   OWNER PASSWORD ENTER KEY
+===================================================== */
+
+const ownerPasswordInput =
+    document.getElementById(
+        "ownerPassword"
+    );
 
 
-    particle.style.animationDelay =
-        Math.random() *
-        8 +
-        "s";
+if(ownerPasswordInput){
 
+    ownerPasswordInput.addEventListener(
+        "keydown",
+        function(event){
 
-    particle.style.opacity =
-        Math.random();
+            if(
+                event.key ===
+                "Enter"
+            ){
 
+                window.ownerLogin();
 
-    particleContainer.appendChild(
-        particle
+            }
+
+        }
     );
 
 }
+
+
+/* =====================================================
+   WINDOW RESIZE
+===================================================== */
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        if(
+            window.innerWidth > 850
+        ){
+
+            const nav =
+                document.querySelector(
+                    "nav"
+                );
+
+
+            if(nav){
+
+                nav.classList.remove(
+                    "mobile-open"
+                );
+
+            }
+
+        }
+
+    }
+);
 
 
 /* =====================================================
@@ -6542,7 +7047,15 @@ loadComments();
 
 updateLoginButton();
 
-loadPhotos();
+/*
+   DO NOT call loadPhotos() here.
+
+   Firebase Auth state calls loadPhotos()
+   after Firebase is ready.
+*/
+
+
+</script>
 
 </script>
 
