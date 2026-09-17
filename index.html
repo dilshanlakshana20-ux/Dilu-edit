@@ -5129,50 +5129,40 @@ document
     "change",
     function(){
 
-        if(!ownerRequired()){
+           const files = Array.from(this.files);
 
-            this.value = "";
+        if(!files.length) return;
 
-            return;
+        files.forEach(file => {
 
-        }
+            const reader = new FileReader();
 
+            reader.onload = function(e){
 
-        const files =
-            [...this.files];
+                const photos =
+                    JSON.parse(
+                        localStorage.getItem("diluPhotos") || "[]"
+                    );
 
+                photos.push({
+                    name: file.name,
+                    data: e.target.result
+                });
 
-        files.forEach(
-            file => {
-
-                const reader =
-                    new FileReader();
-
-
-                reader.onload =
-                    function(e){
-
-                        createPhotoCard(
-                            e.target.result,
-                            file.name
-                        );
-
-                    };
-
-
-                reader.readAsDataURL(
-                    file
+                localStorage.setItem(
+                    "diluPhotos",
+                    JSON.stringify(photos)
                 );
 
-            }
-        );
+                loadPhotos();
+            };
 
+            reader.readAsDataURL(file);
+        });
 
         this.value = "";
-
     }
 );
-
 
 /* =====================================================
    CREATE PHOTO CARD
