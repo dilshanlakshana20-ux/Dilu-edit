@@ -5,10 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DILU EDITS | Professional Editing & Online Services</title>
 
@@ -29,19 +26,10 @@ html{
 }
 
 body{
-
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family:Inter,Arial,Helvetica,sans-serif;
     background:#020205;
-
     color:#fff;
-
     min-height:100vh;
-
     overflow-x:hidden;
 }
 
@@ -51,138 +39,79 @@ body{
 ===================================================== */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     inset:0;
-
     z-index:-10;
 
     background:
-
         radial-gradient(
             circle at 10% 20%,
             rgba(78,40,255,.20),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 90% 20%,
             rgba(170,30,255,.17),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 50% 100%,
             rgba(0,110,255,.12),
             transparent 35%
         ),
-
         #020205;
-
 }
 
-
 .bg-orb{
-
     position:fixed;
-
     border-radius:50%;
-
     filter:blur(90px);
-
     pointer-events:none;
-
     z-index:-8;
-
     opacity:.4;
-
 }
 
 .bg-orb.one{
-
     width:400px;
     height:400px;
-
     left:-180px;
     top:20%;
-
     background:#3b22ff;
-
-    animation:
-        orbOne 12s ease-in-out infinite;
-
+    animation:orbOne 12s ease-in-out infinite;
 }
 
 .bg-orb.two{
-
     width:350px;
     height:350px;
-
     right:-150px;
     top:10%;
-
     background:#9d20ff;
-
-    animation:
-        orbTwo 10s ease-in-out infinite;
-
+    animation:orbTwo 10s ease-in-out infinite;
 }
 
 .bg-orb.three{
-
     width:300px;
     height:300px;
-
     right:30%;
     bottom:-150px;
-
     background:#075dff;
-
-    animation:
-        orbThree 14s ease-in-out infinite;
-
+    animation:orbThree 14s ease-in-out infinite;
 }
-
 
 @keyframes orbOne{
-
-    0%,100%{
-        transform:translate(0,0);
-    }
-
-    50%{
-        transform:translate(100px,-50px);
-    }
-
+    0%,100%{transform:translate(0,0)}
+    50%{transform:translate(100px,-50px)}
 }
-
 
 @keyframes orbTwo{
-
-    0%,100%{
-        transform:translate(0,0);
-    }
-
-    50%{
-        transform:translate(-80px,60px);
-    }
-
+    0%,100%{transform:translate(0,0)}
+    50%{transform:translate(-80px,60px)}
 }
 
-
 @keyframes orbThree{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.35);
-    }
-
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.35)}
 }
 
 
@@ -191,59 +120,34 @@ body::before{
 ===================================================== */
 
 #particles{
-
     position:fixed;
-
     inset:0;
-
     z-index:-7;
-
     pointer-events:none;
-
     overflow:hidden;
-
 }
 
 .particle{
-
     position:absolute;
-
     width:3px;
     height:3px;
-
     border-radius:50%;
-
     background:#a855f7;
-
-    box-shadow:
-        0 0 10px #a855f7;
-
-    animation:
-        floatParticle linear infinite;
-
+    box-shadow:0 0 10px #a855f7;
+    animation:floatParticle linear infinite;
 }
 
-
 @keyframes floatParticle{
-
     from{
         transform:translateY(100vh);
         opacity:0;
     }
-
-    15%{
-        opacity:1;
-    }
-
-    85%{
-        opacity:1;
-    }
-
+    15%{opacity:1}
+    85%{opacity:1}
     to{
         transform:translateY(-20vh);
         opacity:0;
     }
-
 }
 
 
@@ -252,7 +156,6 @@ body::before{
 ===================================================== */
 
 .glass{
-
     background:
         linear-gradient(
             135deg,
@@ -260,24 +163,14 @@ body::before{
             rgba(255,255,255,.025)
         );
 
-    border:
-        1px solid
-        rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.15);
 
-    backdrop-filter:
-        blur(22px);
-
-    -webkit-backdrop-filter:
-        blur(22px);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 
     box-shadow:
-
-        0 25px 80px
-        rgba(0,0,0,.35),
-
-        inset 0 1px
-        rgba(255,255,255,.07);
-
+        0 25px 80px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.07);
 }
 
 
@@ -286,55 +179,33 @@ body::before{
 ===================================================== */
 
 header{
-
     position:fixed;
-
     top:0;
     left:0;
     right:0;
-
     height:78px;
-
     z-index:1000;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    padding:
-        0 4vw;
+    padding:0 4vw;
 
-    background:
-        rgba(2,2,7,.72);
+    background:rgba(2,2,7,.72);
+    backdrop-filter:blur(22px);
 
-    backdrop-filter:
-        blur(22px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
-
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-
-/* MINI LOGO */
-
 .logo-mini{
-
     font-size:25px;
-
     font-weight:1000;
-
     letter-spacing:-2px;
-
     white-space:nowrap;
-
 }
 
 .logo-mini span{
-
     background:
         linear-gradient(
             90deg,
@@ -345,64 +216,36 @@ header{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
 }
 
-
-/* NAV */
-
 nav{
-
     display:flex;
-
     align-items:center;
-
     gap:20px;
-
 }
 
 .nav{
-
     position:relative;
-
     background:none;
-
     border:0;
-
     color:#bbb;
-
     cursor:pointer;
-
     font-size:12px;
-
     font-weight:800;
-
     letter-spacing:1px;
-
     padding:8px 2px;
-
     transition:.3s;
-
 }
 
-
 .nav::after{
-
     content:"";
-
     position:absolute;
-
     left:0;
     right:0;
-
     bottom:-7px;
-
     height:2px;
-
     border-radius:10px;
 
     background:
@@ -412,34 +255,20 @@ nav{
             #2563eb
         );
 
-    box-shadow:
-        0 0 12px #a855f7;
+    box-shadow:0 0 12px #a855f7;
 
-    transform:
-        scaleX(0);
-
+    transform:scaleX(0);
     transition:.3s;
-
 }
-
 
 .nav:hover,
 .nav.active{
-
     color:#d8b4fe;
-
-    text-shadow:
-        0 0 14px
-        rgba(168,85,247,.8);
-
+    text-shadow:0 0 14px rgba(168,85,247,.8);
 }
 
-
 .nav.active::after{
-
-    transform:
-        scaleX(1);
-
+    transform:scaleX(1);
 }
 
 
@@ -448,25 +277,19 @@ nav{
 ===================================================== */
 
 .de-logo{
-
     width:47px;
     height:47px;
-
     border-radius:14px;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
-
     gap:1px;
 
     font-size:19px;
-
     font-weight:1000;
 
     background:
-
         linear-gradient(
             145deg,
             #050505,
@@ -474,38 +297,23 @@ nav{
             #07152d
         );
 
-    border:
-        1px solid
-        rgba(216,180,254,.35);
+    border:1px solid rgba(216,180,254,.35);
 
     box-shadow:
-
-        0 0 18px
-        rgba(168,85,247,.45),
-
-        0 0 35px
-        rgba(37,99,235,.15),
-
-        inset 0 0 18px
-        rgba(255,255,255,.04);
+        0 0 18px rgba(168,85,247,.45),
+        0 0 35px rgba(37,99,235,.15),
+        inset 0 0 18px rgba(255,255,255,.04);
 
     transform:skew(-5deg);
 
-    animation:
-        dePulse 3s ease-in-out infinite;
-
+    animation:dePulse 3s ease-in-out infinite;
 }
-
 
 .de-logo span:first-child{
-
     color:#fff;
-
 }
 
-
 .de-logo span:last-child{
-
     background:
         linear-gradient(
             180deg,
@@ -515,35 +323,20 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
 }
 
-
 @keyframes dePulse{
-
     0%,100%{
-
-        box-shadow:
-            0 0 18px
-            rgba(168,85,247,.35);
-
+        box-shadow:0 0 18px rgba(168,85,247,.35);
     }
 
     50%{
-
         box-shadow:
-            0 0 28px
-            rgba(168,85,247,.65),
-
-            0 0 50px
-            rgba(37,99,235,.2);
-
+            0 0 28px rgba(168,85,247,.65),
+            0 0 50px rgba(37,99,235,.2);
     }
-
 }
 
 
@@ -552,40 +345,24 @@ nav{
 ===================================================== */
 
 .login-btn{
-
-    padding:
-        9px 14px;
-
+    padding:9px 14px;
     border-radius:12px;
 
-    border:
-        1px solid
-        rgba(168,85,247,.45);
+    border:1px solid rgba(168,85,247,.45);
 
-    background:
-        rgba(120,30,255,.10);
+    background:rgba(120,30,255,.10);
 
     color:#fff;
-
     cursor:pointer;
-
     font-weight:800;
-
     font-size:11px;
 
     transition:.3s;
-
 }
 
-
 .login-btn:hover{
-
     transform:translateY(-2px);
-
-    box-shadow:
-        0 0 20px
-        rgba(168,85,247,.35);
-
+    box-shadow:0 0 20px rgba(168,85,247,.35);
 }
 
 
@@ -594,79 +371,46 @@ nav{
 ===================================================== */
 
 .page{
-
     display:none;
-
     min-height:100vh;
-
-    padding:
-        110px 5vw 60px;
-
+    padding:110px 5vw 60px;
 }
-
 
 .page.active{
-
     display:block;
-
-    animation:
-        pageIn .55s ease;
-
+    animation:pageIn .55s ease;
 }
 
-
 @keyframes pageIn{
-
     from{
-
         opacity:0;
-
-        transform:
-            translateY(18px)
-            scale(.99);
-
+        transform:translateY(18px) scale(.99);
     }
 
     to{
-
         opacity:1;
-
         transform:none;
-
     }
-
 }
 
 
 /* =====================================================
-   ANIMATED PAGE TITLE
+   PAGE TITLE
 ===================================================== */
 
 .page-title{
-
     text-align:center;
-
     margin-bottom:35px;
-
 }
-
 
 .page-title h1{
-
-    font-size:
-        clamp(38px,6vw,72px);
-
+    font-size:clamp(38px,6vw,72px);
     font-weight:1000;
-
     letter-spacing:-4px;
-
 }
 
-
 .page-title h1 span{
-
     background:
-
         linear-gradient(
             90deg,
             #fff,
@@ -676,48 +420,27 @@ nav{
             #fff
         );
 
-    background-size:
-        250% auto;
+    background-size:250% auto;
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
 
-    animation:
-        titleGradient 4s linear infinite;
+    animation:titleGradient 4s linear infinite;
 
-    text-shadow:
-        0 0 25px
-        rgba(168,85,247,.35);
-
+    text-shadow:0 0 25px rgba(168,85,247,.35);
 }
-
 
 @keyframes titleGradient{
-
-    0%{
-        background-position:0% center;
-    }
-
-    100%{
-        background-position:250% center;
-    }
-
+    0%{background-position:0% center}
+    100%{background-position:250% center}
 }
 
-
 .page-title p{
-
     color:#777;
-
     margin-top:10px;
-
     font-size:13px;
-
     letter-spacing:2px;
-
 }
 
 
@@ -726,159 +449,88 @@ nav{
 ===================================================== */
 
 .dashboard{
-
     max-width:1400px;
-
     margin:auto;
-
 }
-
-
-/* =====================================================
-   DASHBOARD TOP
-===================================================== */
 
 .dashboard-top{
-
-    min-height:
-        calc(100vh - 145px);
+    min-height:calc(100vh - 145px);
 
     display:grid;
-
-    grid-template-columns:
-        .8fr 1.6fr .8fr;
+    grid-template-columns:.8fr 1.6fr .8fr;
 
     gap:25px;
-
     align-items:center;
-
 }
-
-
-/* HERO SIDE */
 
 .hero-side{
-
     padding:20px;
-
 }
 
-
 .availability{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
 
-    padding:
-        8px 12px;
+    padding:8px 12px;
 
     border-radius:99px;
 
     color:#aaa;
 
     font-size:9px;
-
     letter-spacing:2px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.13);
 
-    background:
-        rgba(255,255,255,.04);
-
+    background:rgba(255,255,255,.04);
 }
-
 
 .availability i{
-
     width:7px;
     height:7px;
-
     border-radius:50%;
-
     background:#35ff9c;
-
-    box-shadow:
-        0 0 14px #35ff9c;
-
+    box-shadow:0 0 14px #35ff9c;
 }
-
 
 .hero-side h3{
-
     margin-top:25px;
-
     color:#888;
-
     letter-spacing:5px;
-
     font-size:13px;
-
 }
-
 
 .hero-side h2{
-
     margin-top:8px;
-
-    font-size:
-        clamp(40px,5vw,68px);
-
+    font-size:clamp(40px,5vw,68px);
     line-height:.95;
-
 }
-
 
 .hero-side p{
-
     margin-top:20px;
-
     color:#999;
-
     line-height:1.7;
-
     font-size:13px;
-
 }
-
 
 .hero-btns{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:10px;
-
     margin-top:25px;
-
 }
-
 
 .hero-btn{
-
-    padding:
-        12px 16px;
-
+    padding:12px 16px;
     border-radius:12px;
-
     text-decoration:none;
-
     color:white;
-
     font-size:11px;
-
     font-weight:800;
-
 }
 
-
 .hero-btn.primary{
-
     background:
         linear-gradient(
             120deg,
@@ -886,56 +538,36 @@ nav{
             #842cff
         );
 
-    box-shadow:
-        0 12px 35px
-        rgba(80,50,255,.25);
-
+    box-shadow:0 12px 35px rgba(80,50,255,.25);
 }
 
-
 .hero-btn.secondary{
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    background:
-        rgba(255,255,255,.05);
-
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);
 }
 
 
 /* =====================================================
-   DASHBOARD LAPTOP GLASS
+   LAPTOP
 ===================================================== */
 
 .dashboard-laptop-area{
-
     min-height:500px;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:35px;
 
     position:relative;
-
     overflow:hidden;
-
     perspective:1200px;
-
 }
 
-
 .dashboard-laptop-area::before{
-
     content:"";
-
     position:absolute;
 
     width:320px;
@@ -953,46 +585,30 @@ nav{
 
     filter:blur(25px);
 
-    animation:
-        laptopGlow 4s ease-in-out infinite;
-
+    animation:laptopGlow 4s ease-in-out infinite;
 }
 
-
 @keyframes laptopGlow{
-
     0%,100%{
-
         transform:scale(.9);
-
         opacity:.55;
-
     }
 
     50%{
-
         transform:scale(1.15);
-
         opacity:1;
-
     }
-
 }
 
-
 .laptop-glass{
-
     width:88%;
-
     max-width:600px;
 
-    padding:
-        35px 25px 45px;
+    padding:35px 25px 45px;
 
     border-radius:28px;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(255,255,255,.10),
@@ -1000,61 +616,38 @@ nav{
             rgba(37,99,235,.05)
         );
 
-    border:
-        1px solid
-        rgba(255,255,255,.17);
+    border:1px solid rgba(255,255,255,.17);
 
-    backdrop-filter:
-        blur(22px);
+    backdrop-filter:blur(22px);
 
     box-shadow:
-
-        0 30px 90px
-        rgba(0,0,0,.55),
-
-        inset 0 1px
-        rgba(255,255,255,.12);
+        0 30px 90px rgba(0,0,0,.55),
+        inset 0 1px rgba(255,255,255,.12);
 
     position:relative;
-
 }
 
-
 .laptop-3d{
-
     width:100%;
-
     position:relative;
 
-    transform-style:
-        preserve-3d;
+    transform-style:preserve-3d;
 
     transform:
         rotateX(0deg)
         rotateY(0deg);
 
-    transition:
-        transform .12s ease-out;
-
+    transition:transform .12s ease-out;
 }
 
-
-/* =====================================================
-   LAPTOP SCREEN
-===================================================== */
-
 .laptop-screen{
-
     width:86%;
-
     aspect-ratio:16/10;
 
     margin:auto;
-
     padding:8px;
 
-    border-radius:
-        16px 16px 5px 5px;
+    border-radius:16px 16px 5px 5px;
 
     background:
         linear-gradient(
@@ -1063,50 +656,31 @@ nav{
             #030303
         );
 
-    border:
-        2px solid
-        rgba(255,255,255,.18);
+    border:2px solid rgba(255,255,255,.18);
 
     box-shadow:
-
-        0 0 25px
-        rgba(168,85,247,.3),
-
-        0 0 60px
-        rgba(37,99,235,.15);
+        0 0 25px rgba(168,85,247,.3),
+        0 0 60px rgba(37,99,235,.15);
 
     position:relative;
-
     overflow:hidden;
 
-    transform:
-        translateZ(20px);
-
+    transform:translateZ(20px);
 }
-
 
 .laptop-screen video{
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     display:block;
-
     border-radius:9px;
-
 }
 
-
 .screen-fallback{
-
     position:absolute;
-
     inset:8px;
 
     display:grid;
-
     place-items:center;
 
     text-align:center;
@@ -1114,67 +688,43 @@ nav{
     border-radius:9px;
 
     background:
-
         radial-gradient(
             circle at center,
             rgba(124,58,237,.35),
             transparent 50%
         ),
-
         linear-gradient(
             135deg,
             #05050a,
             #16002a,
             #03152e
         );
-
 }
-
 
 .screen-fallback strong{
-
-    font-size:
-        clamp(25px,4vw,45px);
-
+    font-size:clamp(25px,4vw,45px);
     font-weight:1000;
-
     letter-spacing:-2px;
-
 }
-
 
 .screen-fallback strong span{
-
     color:#a855f7;
-
 }
-
 
 .screen-fallback small{
-
     display:block;
-
     margin-top:8px;
-
     color:#aaa;
-
     font-size:9px;
-
     letter-spacing:2px;
-
 }
 
-
 .screen-shine{
-
     position:absolute;
-
     inset:0;
-
     pointer-events:none;
 
     background:
-
         linear-gradient(
             125deg,
             transparent 25%,
@@ -1182,33 +732,16 @@ nav{
             transparent 60%
         );
 
-    animation:
-        screenShine 4s linear infinite;
-
+    animation:screenShine 4s linear infinite;
 }
-
 
 @keyframes screenShine{
-
-    from{
-        transform:translateX(-120%);
-    }
-
-    to{
-        transform:translateX(120%);
-    }
-
+    from{transform:translateX(-120%)}
+    to{transform:translateX(120%)}
 }
 
-
-/* =====================================================
-   LAPTOP BASE
-===================================================== */
-
 .laptop-base{
-
     width:100%;
-
     height:28px;
 
     margin-top:-1px;
@@ -1216,7 +749,6 @@ nav{
     position:relative;
 
     background:
-
         linear-gradient(
             180deg,
             #ddd,
@@ -1232,74 +764,47 @@ nav{
             0 100%
         );
 
-    border-radius:
-        0 0 12px 12px;
+    border-radius:0 0 12px 12px;
 
-    transform:
-        translateZ(8px);
-
+    transform:translateZ(8px);
 }
 
-
 .keyboard{
-
     position:absolute;
-
     left:18%;
     right:18%;
-
     top:5px;
-
     height:7px;
-
     border-radius:4px;
 
     background:
-
         repeating-linear-gradient(
             90deg,
             #222 0 5px,
             #888 6px 7px
         );
-
 }
 
-
 .trackpad{
-
     position:absolute;
-
     width:15%;
-
     height:7px;
-
     left:42.5%;
-
     bottom:3px;
 
     border-radius:4px;
-
     background:#aaa;
-
     opacity:.65;
-
 }
 
-
 .laptop-shadow{
-
     position:absolute;
-
     left:12.5%;
-
     bottom:-22px;
-
     width:75%;
-
     height:30px;
 
     background:
-
         radial-gradient(
             ellipse,
             rgba(168,85,247,.5),
@@ -1308,43 +813,25 @@ nav{
 
     filter:blur(12px);
 
-    transform:
-        translateZ(-30px);
-
+    transform:translateZ(-30px);
 }
 
-
-/* =====================================================
-   LAPTOP CAPTION
-===================================================== */
-
 .laptop-caption{
-
     position:relative;
-
     margin-top:25px;
 
     font-size:11px;
-
     font-weight:900;
-
     letter-spacing:3px;
 
     color:#ddd;
 
-    text-shadow:
-        0 0 15px
-        rgba(168,85,247,.8);
-
+    text-shadow:0 0 15px rgba(168,85,247,.8);
 }
 
-
 .laptop-caption span{
-
     color:#a855f7;
-
     margin:0 8px;
-
 }
 
 
@@ -1353,44 +840,26 @@ nav{
 ===================================================== */
 
 .hero-right{
-
     padding:20px;
-
 }
-
 
 .mini-card{
-
     padding:20px;
-
     border-radius:22px;
-
     margin-bottom:15px;
-
 }
-
 
 .mini-card h3{
-
     font-size:12px;
-
     color:#a855f7;
-
     letter-spacing:2px;
-
     margin-bottom:12px;
-
 }
 
-
 .mini-card p{
-
     color:#aaa;
-
     line-height:1.7;
-
     font-size:12px;
-
 }
 
 
@@ -1399,33 +868,20 @@ nav{
 ===================================================== */
 
 .comments-section{
-
     max-width:1000px;
-
-    margin:
-        30px auto 0;
-
+    margin:30px auto 0;
 }
-
 
 .comments-title{
-
     text-align:center;
-
     margin-bottom:20px;
-
 }
-
 
 .comments-title h2{
-
     font-size:28px;
-
 }
 
-
 .comments-title span{
-
     background:
         linear-gradient(
             90deg,
@@ -1434,69 +890,44 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
 }
-
 
 .comments-title p{
-
     color:#777;
-
     font-size:11px;
-
     margin-top:6px;
-
 }
-
 
 .comment-form{
-
     padding:20px;
-
     border-radius:22px;
-
 }
 
-
 .comment-form textarea{
-
     width:100%;
-
     min-height:90px;
-
     resize:vertical;
 
     padding:14px;
 
     border-radius:14px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
 
-    background:
-        rgba(0,0,0,.35);
+    background:rgba(0,0,0,.35);
 
     color:#fff;
-
     outline:none;
-
 }
 
-
 .comment-form button{
-
     margin-top:10px;
 
-    padding:
-        10px 15px;
+    padding:10px 15px;
 
     border:0;
-
     border-radius:12px;
 
     color:#fff;
@@ -1511,63 +942,36 @@ nav{
             #7c3aed,
             #2563eb
         );
-
 }
-
 
 #commentsList{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
-
     margin-top:18px;
-
 }
-
 
 .comment{
-
     padding:18px;
-
     border-radius:18px;
-
 }
-
 
 .comment strong{
-
     color:#c084fc;
-
     font-size:13px;
-
 }
-
 
 .comment small{
-
     display:block;
-
     color:#666;
-
     margin-top:3px;
-
 }
 
-
 .comment p{
-
     color:#ccc;
-
     line-height:1.6;
-
     margin-top:10px;
-
     font-size:12px;
-
 }
 
 
@@ -1576,52 +980,35 @@ nav{
 ===================================================== */
 
 .profile-grid{
-
     max-width:1100px;
-
     margin:auto;
 
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:20px;
-
 }
-
 
 .profile-card{
-
     padding:28px;
-
     border-radius:25px;
-
 }
 
-
 .profile-avatar{
-
     width:125px;
     height:125px;
 
-    margin:
-        0 auto 20px;
+    margin:0 auto 20px;
 
     border-radius:50%;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     font-size:50px;
-
     font-weight:1000;
 
     background:
-
         linear-gradient(
             135deg,
             #030303,
@@ -1630,85 +1017,49 @@ nav{
             #073c91
         );
 
-    border:
-        2px solid
-        rgba(255,255,255,.25);
+    border:2px solid rgba(255,255,255,.25);
 
     box-shadow:
-
-        0 0 25px
-        rgba(168,85,247,.55),
-
-        0 0 70px
-        rgba(37,99,235,.20);
-
+        0 0 25px rgba(168,85,247,.55),
+        0 0 70px rgba(37,99,235,.20);
 }
-
 
 .profile-avatar span:first-child{
-
     color:white;
-
 }
-
 
 .profile-avatar span:last-child{
-
     color:#b66cff;
-
 }
-
 
 .profile-card h2{
-
     text-align:center;
-
     font-size:26px;
-
 }
-
 
 .profile-card .role{
-
     text-align:center;
-
     color:#a855f7;
-
     margin-top:6px;
-
     font-size:11px;
-
     letter-spacing:2px;
-
 }
-
 
 .profile-info{
-
     margin-top:25px;
-
 }
-
 
 .profile-info p{
-
     color:#aaa;
-
     padding:9px 0;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
 
     font-size:13px;
-
 }
 
-
 .profile-info b{
-
     color:#ddd;
-
 }
 
 
@@ -1717,38 +1068,23 @@ nav{
 ===================================================== */
 
 .services-grid{
-
     max-width:1200px;
-
     margin:auto;
 
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:22px;
-
 }
-
 
 .service-column{
-
     padding:25px;
-
     border-radius:25px;
-
     position:relative;
-
     overflow:hidden;
-
 }
 
-
 .service-column h2{
-
     font-size:20px;
-
     margin-bottom:20px;
 
     background:
@@ -1760,71 +1096,47 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
-
     color:transparent;
-
 }
-
 
 .service-list{
-
     display:flex;
-
     flex-direction:column;
-
     gap:12px;
-
 }
 
-
 .service-item{
-
     display:flex;
-
     align-items:center;
-
     gap:13px;
 
     padding:14px;
 
     border-radius:15px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
-    background:
-        rgba(255,255,255,.035);
+    background:rgba(255,255,255,.035);
 
     transition:.3s;
-
 }
 
-
 .service-item:hover{
+    transform:translateX(5px);
 
-    transform:
-        translateX(5px);
-
-    border-color:
-        rgba(168,85,247,.35);
+    border-color:rgba(168,85,247,.35);
 
     box-shadow:
         0 0 20px
         rgba(168,85,247,.10);
-
 }
 
-
 .service-item .icon{
-
     min-width:36px;
     height:36px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:11px;
@@ -1839,19 +1151,14 @@ nav{
     box-shadow:
         0 0 18px
         rgba(130,30,255,.35);
-
 }
 
-
 .service-divider{
-
     height:2px;
 
-    margin:
-        20px 8%;
+    margin:20px 8%;
 
     background:
-
         linear-gradient(
             90deg,
             transparent,
@@ -1863,112 +1170,70 @@ nav{
         );
 
     box-shadow:
+        0 0 8px #a855f7,
+        0 0 20px rgba(37,99,235,.7);
 
-        0 0 8px
-        #a855f7,
-
-        0 0 20px
-        rgba(37,99,235,.7);
-
-    animation:
-        neonLine 2.5s linear infinite;
-
+    animation:neonLine 2.5s linear infinite;
 }
-
 
 @keyframes neonLine{
-
     0%{
-        transform:
-            translateX(-10%);
+        transform:translateX(-10%);
         opacity:.45;
     }
 
-    50%{
-        opacity:1;
-    }
+    50%{opacity:1}
 
     100%{
-        transform:
-            translateX(10%);
+        transform:translateX(10%);
         opacity:.45;
     }
-
 }
-
 
 .service-tags{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
-
     margin-top:20px;
-
 }
 
-
 .service-tags span{
-
-    padding:
-        7px 10px;
+    padding:7px 10px;
 
     border-radius:99px;
 
     font-size:8px;
-
     font-weight:900;
-
     letter-spacing:.7px;
 
     color:#ccc;
 
-    border:
-        1px solid
-        rgba(216,180,254,.2);
+    border:1px solid rgba(216,180,254,.2);
 
-    background:
-        rgba(168,85,247,.07);
-
+    background:rgba(168,85,247,.07);
 }
-
 
 .owner-service-add{
-
     display:none;
-
     margin-top:16px;
-
 }
-
 
 body.owner .owner-service-add{
-
     display:block;
-
 }
 
-
 .add-btn{
-
-    padding:
-        10px 13px;
+    padding:10px 13px;
 
     border-radius:12px;
 
-    border:
-        1px solid
-        rgba(168,85,247,.45);
+    border:1px solid rgba(168,85,247,.45);
 
     color:white;
 
-    background:
-        rgba(120,30,255,.12);
+    background:rgba(120,30,255,.12);
 
     cursor:pointer;
-
 }
 
 
@@ -1977,32 +1242,19 @@ body.owner .owner-service-add{
 ===================================================== */
 
 .edits-wrap{
-
     max-width:1250px;
-
     margin:auto;
-
 }
-
 
 .edits-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:18px;
-
 }
 
-
 .edit-card{
-
     min-height:220px;
-
     position:relative;
-
     overflow:hidden;
 
     border-radius:22px;
@@ -2014,48 +1266,32 @@ body.owner .owner-service-add{
             #19022f
         );
 
-    border:
-        1px solid
-        rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.10);
 
     transition:.35s;
-
 }
-
 
 .edit-card:hover{
-
-    transform:
-        translateY(-7px);
+    transform:translateY(-7px);
 
     box-shadow:
-
         0 0 25px
         rgba(168,85,247,.25);
-
 }
 
-
 .edit-card img{
-
     position:absolute;
-
     inset:0;
 
     width:100%;
     height:100%;
 
     object-fit:cover;
-
 }
 
-
 .edit-card::after{
-
     content:"";
-
     position:absolute;
-
     inset:0;
 
     background:
@@ -2063,92 +1299,105 @@ body.owner .owner-service-add{
             transparent 30%,
             rgba(0,0,0,.9)
         );
-
 }
 
-
 .edit-info{
-
     position:absolute;
 
     z-index:2;
 
     left:16px;
     right:16px;
-
     bottom:15px;
-
 }
-
 
 .edit-info h3{
-
     font-size:16px;
-
 }
-
 
 .edit-info p{
-
     color:#aaa;
-
     font-size:10px;
-
     margin-top:5px;
+}
 
+.plus-card{
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+
+    border:1px dashed rgba(168,85,247,.55);
+}
+
+.plus{
+    font-size:55px;
+    color:#a855f7;
+    text-align:center;
+
+    text-shadow:0 0 25px #8a20ff;
+}
+
+.plus-card p{
+    color:#aaa;
+    text-align:center;
 }
 
 
-.plus-card{
+/* =====================================================
+   OWNER ONLY
+===================================================== */
 
-    display:grid;
+.owner-only{
+    display:none !important;
+}
 
-    place-items:center;
+body.owner .owner-only{
+    display:grid !important;
+}
+
+
+/* =====================================================
+   PHOTO DELETE BUTTON
+===================================================== */
+
+.photo-delete-btn{
+    display:none;
+
+    position:absolute;
+
+    z-index:10;
+
+    left:15px;
+    right:15px;
+    bottom:15px;
+
+    width:calc(100% - 30px);
+
+    padding:10px 14px;
+
+    border:1px solid rgba(255,80,100,.45);
+
+    border-radius:11px;
+
+    background:rgba(160,20,45,.85);
+
+    color:#fff;
+
+    font-weight:900;
+    font-size:11px;
 
     cursor:pointer;
 
-    border:
-        1px dashed
-        rgba(168,85,247,.55);
-
+    transition:.3s;
 }
 
-
-.plus{
-
-    font-size:55px;
-
-    color:#a855f7;
-
-    text-align:center;
-
-    text-shadow:
-        0 0 25px
-        #8a20ff;
-
+body.owner .photo-delete-btn{
+    display:block !important;
 }
 
-
-.plus-card p{
-
-    color:#aaa;
-
-    text-align:center;
-
-}
-
-
-.owner-only{
-
-    display:none;
-
-}
-
-
-body.owner .owner-only{
-
-    display:grid;
-
+.photo-delete-btn:hover{
+    transform:scale(1.03);
+    background:rgba(220,30,60,.95);
 }
 
 
@@ -2157,73 +1406,47 @@ body.owner .owner-only{
 ===================================================== */
 
 .contact-wrap{
-
     max-width:1100px;
-
     margin:auto;
-
 }
-
 
 .contact-intro{
-
     text-align:center;
-
     margin-bottom:35px;
-
 }
-
 
 .contact-intro h2{
-
-    font-size:
-        clamp(28px,4vw,45px);
-
+    font-size:clamp(28px,4vw,45px);
 }
-
 
 .contact-intro p{
-
     color:#777;
-
     margin-top:8px;
-
 }
-
 
 .contact-section{
-
     margin-bottom:25px;
-
 }
 
-
 .contact-section-title{
-
     padding:18px 22px;
 
     border-radius:22px;
 
     display:flex;
-
     align-items:center;
-
     gap:15px;
 
     margin-bottom:12px;
-
 }
 
-
 .contact-section-title .section-icon{
-
     width:50px;
     height:50px;
 
     border-radius:15px;
 
     display:grid;
-
     place-items:center;
 
     font-size:22px;
@@ -2234,127 +1457,82 @@ body.owner .owner-only{
             rgba(168,85,247,.25),
             rgba(37,99,235,.12)
         );
-
 }
-
 
 .contact-section-title h3{
-
     font-size:16px;
-
     letter-spacing:1px;
-
 }
-
 
 .contact-section-title p{
-
     color:#777;
-
     font-size:10px;
-
     margin-top:4px;
-
 }
-
 
 .contact-grid{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:14px;
-
 }
 
-
 .contact-card{
-
     padding:20px;
 
     border-radius:20px;
 
     text-decoration:none;
-
     color:white;
 
     display:flex;
-
     align-items:center;
-
     gap:15px;
 
     transition:.3s;
-
 }
 
-
 .contact-card:hover{
+    transform:translateY(-4px);
 
-    transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(168,85,247,.35);
+    border-color:rgba(168,85,247,.35);
 
     box-shadow:
         0 15px 40px
         rgba(168,85,247,.12);
-
 }
 
-
 .contact-icon{
-
     width:45px;
     height:45px;
 
     display:grid;
-
     place-items:center;
 
     border-radius:13px;
 
-    background:
-        rgba(168,85,247,.10);
+    background:rgba(168,85,247,.10);
 
     font-size:21px;
-
 }
-
 
 .contact-card small{
-
     display:block;
-
     color:#777;
-
     font-size:8px;
-
     letter-spacing:1px;
-
 }
 
-
 .contact-card strong{
-
     display:block;
-
     margin-top:4px;
 
     color:#ddd;
-
     font-size:13px;
 
     word-break:break-word;
-
 }
 
-
 .owner-contact{
-
     display:none;
 
     padding:20px;
@@ -2362,28 +1540,18 @@ body.owner .owner-only{
     border-radius:22px;
 
     margin-top:15px;
-
 }
-
 
 body.owner .owner-contact{
-
     display:block;
-
 }
-
 
 .owner-contact h3{
-
     color:#c084fc;
-
     margin-bottom:15px;
-
 }
 
-
 .owner-contact input{
-
     width:100%;
 
     padding:12px;
@@ -2392,23 +1560,22 @@ body.owner .owner-contact{
 
     border-radius:12px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
 
     background:#07070c;
 
     color:white;
 
     outline:none;
-
 }
 
+.owner-contact input:focus{
+    border-color:#a855f7;
+    box-shadow:0 0 15px rgba(168,85,247,.15);
+}
 
 .owner-contact button{
-
-    padding:
-        11px 15px;
+    padding:11px 15px;
 
     border:0;
 
@@ -2426,113 +1593,73 @@ body.owner .owner-contact{
     cursor:pointer;
 
     font-weight:800;
-
 }
 
 
 /* =====================================================
-   CONTACT EMAIL
+   EMAIL
 ===================================================== */
 
 .email-box{
-
     padding:5px;
-
     border-radius:22px;
-
 }
 
-
 .email-box a{
-
     display:flex;
-
     align-items:center;
-
     gap:15px;
 
     padding:17px;
 
     color:white;
-
     text-decoration:none;
-
 }
 
 
 /* =====================================================
-   SUPPORT BAR
+   SUPPORT
 ===================================================== */
 
 .support-bar{
-
     max-width:1200px;
 
-    margin:
-        45px auto 0;
+    margin:45px auto 0;
 
-    padding:
-        25px 15px;
+    padding:25px 15px;
 
-    border-top:
-        1px solid
-        rgba(168,85,247,.45);
-
-    border-bottom:
-        1px solid
-        rgba(37,99,235,.35);
+    border-top:1px solid rgba(168,85,247,.45);
+    border-bottom:1px solid rgba(37,99,235,.35);
 
     display:grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:15px;
-
 }
-
 
 .support-item{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
-
     padding:10px;
-
 }
-
 
 .support-icon{
-
     font-size:30px;
-
 }
-
 
 .support-item h4{
-
     color:#c084fc;
-
     font-size:11px;
-
     letter-spacing:1px;
-
 }
 
-
 .support-item p{
-
     color:#aaa;
-
     font-size:10px;
-
     line-height:1.5;
-
     margin-top:4px;
-
 }
 
 
@@ -2541,9 +1668,7 @@ body.owner .owner-contact{
 ===================================================== */
 
 .modal{
-
     position:fixed;
-
     inset:0;
 
     z-index:5000;
@@ -2554,59 +1679,42 @@ body.owner .owner-contact{
 
     padding:20px;
 
-    background:
-        rgba(0,0,0,.78);
+    background:rgba(0,0,0,.78);
 
-    backdrop-filter:
-        blur(12px);
-
+    backdrop-filter:blur(12px);
 }
-
 
 .modal.show{
-
     display:grid;
-
 }
 
-
 .login-box{
-
-    width:
-        min(430px,95vw);
+    width:min(430px,95vw);
 
     padding:28px;
 
     border-radius:25px;
 
+    max-height:90vh;
+    overflow-y:auto;
 }
-
 
 .login-box h2{
-
     text-align:center;
-
     font-size:28px;
-
 }
 
-
 .login-box > p{
-
     text-align:center;
 
     color:#777;
 
     font-size:11px;
 
-    margin:
-        7px 0 20px;
-
+    margin:7px 0 20px;
 }
 
-
 .login-box input{
-
     width:100%;
 
     padding:13px;
@@ -2615,30 +1723,25 @@ body.owner .owner-contact{
 
     border-radius:12px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
 
     background:#07070c;
 
     color:#fff;
 
     outline:none;
-
 }
 
+.login-box input:focus{
+    border-color:#a855f7;
+}
 
 .login-actions{
-
     display:flex;
-
     gap:10px;
-
 }
 
-
 .login-actions button{
-
     flex:1;
 
     padding:12px;
@@ -2646,12 +1749,9 @@ body.owner .owner-contact{
     border-radius:12px;
 
     cursor:pointer;
-
 }
 
-
 .login-main{
-
     border:0;
 
     color:#fff;
@@ -2664,26 +1764,17 @@ body.owner .owner-contact{
             #7c3aed,
             #2563eb
         );
-
 }
-
 
 .close-btn{
+    border:1px solid rgba(255,255,255,.12);
 
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    background:
-        rgba(255,255,255,.05);
+    background:rgba(255,255,255,.05);
 
     color:#fff;
-
 }
 
-
 #loginMessage{
-
     min-height:18px;
 
     margin-top:10px;
@@ -2693,7 +1784,6 @@ body.owner .owner-contact{
     color:#ff7777;
 
     font-size:11px;
-
 }
 
 
@@ -2702,7 +1792,6 @@ body.owner .owner-contact{
 ===================================================== */
 
 .owner-panel{
-
     display:none;
 
     margin-top:15px;
@@ -2710,30 +1799,19 @@ body.owner .owner-contact{
     padding:18px;
 
     border-radius:20px;
-
 }
-
 
 body.owner .owner-panel{
-
     display:block;
-
 }
-
 
 .owner-panel h3{
-
     color:#c084fc;
-
     margin-bottom:10px;
-
 }
 
-
 .owner-panel button{
-
     margin-top:10px;
-
 }
 
 
@@ -2742,7 +1820,6 @@ body.owner .owner-panel{
 ===================================================== */
 
 footer{
-
     text-align:center;
 
     color:#555;
@@ -2752,7 +1829,6 @@ footer{
     letter-spacing:2px;
 
     padding:30px;
-
 }
 
 
@@ -2763,151 +1839,94 @@ footer{
 @media(max-width:1100px){
 
     .dashboard-top{
-
-        grid-template-columns:
-            1fr 1.5fr;
-
+        grid-template-columns:1fr 1.5fr;
     }
 
     .hero-right{
-
         display:none;
-
     }
-
 }
-
 
 @media(max-width:850px){
 
     nav{
-
         display:none;
-
     }
 
     header{
+        padding:0 18px;
+    }
 
-        padding:
-            0 18px;
-
+    .mobile-menu{
+        display:block;
     }
 
     .dashboard-top{
-
         grid-template-columns:1fr;
-
     }
 
     .hero-side{
-
         text-align:center;
-
         order:2;
-
     }
 
     .hero-side p{
-
         margin-left:auto;
         margin-right:auto;
-
     }
 
     .hero-btns{
-
         justify-content:center;
-
     }
 
     .dashboard-laptop-area{
-
         order:1;
-
     }
 
     .profile-grid,
     .services-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .support-bar{
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns:1fr 1fr;
     }
-
 }
-
 
 @media(max-width:600px){
 
     .page{
-
-        padding:
-            100px 15px 40px;
-
-    }
-
-    .dilu-title{
-
-        letter-spacing:-3px;
-
+        padding:100px 15px 40px;
     }
 
     .laptop-glass{
-
         width:96%;
-
-        padding:
-            22px 12px 30px;
-
+        padding:22px 12px 30px;
     }
 
     .dashboard-laptop-area{
-
         min-height:380px;
-
     }
 
     .contact-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .edits-grid{
-
         grid-template-columns:1fr;
-
     }
 
     #commentsList{
-
         grid-template-columns:1fr;
-
     }
 
     .support-bar{
-
         grid-template-columns:1fr;
-
     }
 
-}
-
-
-/* =====================================================
-   HIDE MOBILE MENU ELEMENT
-===================================================== */
-
-.mobile-menu{
-
-    display:none;
-
+    .logo-mini{
+        font-size:21px;
+    }
 }
 
 </style>
@@ -2916,9 +1935,6 @@ footer{
 
 
 <body>
-
-
-<!-- BACKGROUND -->
 
 <div class="bg-orb one"></div>
 <div class="bg-orb two"></div>
@@ -2937,44 +1953,27 @@ footer{
         DILU <span>EDITS</span>
     </div>
 
-
     <nav>
 
-        <button
-            class="nav active"
-            data-page="home"
-        >
-            DASHBORD
+        <button class="nav active" data-page="home">
+            DASHBOARD
         </button>
 
-        <button
-            class="nav"
-            data-page="profile"
-        >
+        <button class="nav" data-page="profile">
             PROFILE
         </button>
 
-        <button
-            class="nav"
-            data-page="services"
-        >
+        <button class="nav" data-page="services">
             SERVICES
         </button>
 
-        <button
-            class="nav"
-            data-page="edits"
-        >
+        <button class="nav" data-page="edits">
             EDITS
         </button>
 
-        <button
-            class="nav"
-            data-page="contacts"
-        >
+        <button class="nav" data-page="contacts">
             CONTACTS
         </button>
-
 
         <button
             class="login-btn"
@@ -2984,18 +1983,12 @@ footer{
             🔐 LOGIN
         </button>
 
-
         <div class="de-logo">
-
             <span>D</span>
             <span>E</span>
-
         </div>
 
     </nav>
-
-
-    <!-- MOBILE LOGIN -->
 
     <button
         class="login-btn mobile-menu"
@@ -3007,10 +2000,6 @@ footer{
 </header>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
 <main>
 
 
@@ -3018,20 +2007,14 @@ footer{
      DASHBOARD
 ===================================================== -->
 
-<section
-    class="page active"
-    id="home"
->
-
+<section class="page active" id="home">
 
     <div class="dashboard">
-
 
         <div class="page-title">
 
             <h1>
-                DILU
-                <span>EDITS</span>
+                DILU <span>EDITS</span>
             </h1>
 
             <p>
@@ -3044,62 +2027,42 @@ footer{
         <div class="dashboard-top">
 
 
-            <!-- LEFT -->
-
             <div class="hero-side">
 
                 <div class="availability">
-
                     <i></i>
-
                     AVAILABLE FOR PROJECTS
-
                 </div>
 
-
-                <h3>
-                    PROFESSIONAL
-                </h3>
-
+                <h3>PROFESSIONAL</h3>
 
                 <h2>
                     Video<br>
                     Editor
                 </h2>
 
-
                 <p>
-
                     I create cinematic videos,
                     creative edits, reels,
                     thumbnails and visual
                     experiences that make your
                     content stand out.
-
                 </p>
-
 
                 <div class="hero-btns">
 
                     <a
                         class="hero-btn primary"
                         href="#"
-                        onclick="
-                            showPage('edits');
-                            return false;
-                        "
+                        onclick="showPage('edits');return false;"
                     >
                         VIEW MY WORK ↗
                     </a>
 
-
                     <a
                         class="hero-btn secondary"
                         href="#"
-                        onclick="
-                            showPage('contacts');
-                            return false;
-                        "
+                        onclick="showPage('contacts');return false;"
                     >
                         CONTACT ME →
                     </a>
@@ -3123,7 +2086,6 @@ footer{
                         id="laptop3D"
                     >
 
-
                         <div class="laptop-screen">
 
                             <video
@@ -3141,7 +2103,6 @@ footer{
 
                             </video>
 
-
                             <div
                                 class="screen-fallback"
                                 id="screenFallback"
@@ -3155,13 +2116,12 @@ footer{
                                     </strong>
 
                                     <small>
-                                        3–5 SECOND INTRO
+                                        PROFESSIONAL VIDEO EDITOR
                                     </small>
 
                                 </div>
 
                             </div>
-
 
                             <div class="screen-shine"></div>
 
@@ -3176,14 +2136,11 @@ footer{
 
                         </div>
 
-
                         <div class="laptop-shadow"></div>
-
 
                     </div>
 
                 </div>
-
 
                 <div class="laptop-caption">
 
@@ -3202,12 +2159,9 @@ footer{
 
             <div class="hero-right">
 
-
                 <div class="mini-card glass">
 
-                    <h3>
-                        EDITING
-                    </h3>
+                    <h3>EDITING</h3>
 
                     <p>
                         Professional video editing,
@@ -3217,12 +2171,9 @@ footer{
 
                 </div>
 
-
                 <div class="mini-card glass">
 
-                    <h3>
-                        ONLINE
-                    </h3>
+                    <h3>ONLINE</h3>
 
                     <p>
                         Website development,
@@ -3233,12 +2184,9 @@ footer{
 
                 </div>
 
-
                 <div class="mini-card glass">
 
-                    <h3>
-                        DILU EDITS
-                    </h3>
+                    <h3>DILU EDITS</h3>
 
                     <p>
                         CREATE • EDIT • INSPIRE
@@ -3246,117 +2194,65 @@ footer{
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-        <!-- =================================================
-             SUPPORT
-        ================================================== -->
+        <!-- SUPPORT -->
 
         <div class="support-bar">
 
-
             <div class="support-item">
-
-                <div class="support-icon">
-                    🚀
-                </div>
-
+                <div class="support-icon">🚀</div>
                 <div>
-
-                    <h4>
-                        FAST DELIVERY
-                    </h4>
-
+                    <h4>FAST DELIVERY</h4>
                     <p>
                         Quick turnaround without
                         compromising quality.
                     </p>
-
                 </div>
-
             </div>
 
-
             <div class="support-item">
-
-                <div class="support-icon">
-                    🛡️
-                </div>
-
+                <div class="support-icon">🛡️</div>
                 <div>
-
-                    <h4>
-                        HIGH QUALITY
-                    </h4>
-
+                    <h4>HIGH QUALITY</h4>
                     <p>
                         Professional editing with
                         attention to every detail.
                     </p>
-
                 </div>
-
             </div>
 
-
             <div class="support-item">
-
-                <div class="support-icon">
-                    💲
-                </div>
-
+                <div class="support-icon">💲</div>
                 <div>
-
-                    <h4>
-                        AFFORDABLE PRICES
-                    </h4>
-
+                    <h4>AFFORDABLE PRICES</h4>
                     <p>
                         Quality services at a
                         price you can afford.
                     </p>
-
                 </div>
-
             </div>
 
-
             <div class="support-item">
-
-                <div class="support-icon">
-                    🎧
-                </div>
-
+                <div class="support-icon">🎧</div>
                 <div>
-
-                    <h4>
-                        24/7 SUPPORT
-                    </h4>
-
+                    <h4>24/7 SUPPORT</h4>
                     <p>
                         Always here to help you
                         anytime, anywhere.
                     </p>
-
                 </div>
-
             </div>
-
 
         </div>
 
 
-        <!-- =================================================
-             COMMENTS
-        ================================================== -->
+        <!-- COMMENTS -->
 
         <div class="comments-section">
-
 
             <div class="comments-title">
 
@@ -3371,7 +2267,6 @@ footer{
 
             </div>
 
-
             <div class="comment-form glass">
 
                 <textarea
@@ -3379,21 +2274,15 @@ footer{
                     placeholder="Write your comment..."
                 ></textarea>
 
-
-                <button
-                    onclick="addComment()"
-                >
+                <button onclick="addComment()">
                     💬 POST COMMENT
                 </button>
 
             </div>
 
-
             <div id="commentsList"></div>
 
-
         </div>
-
 
     </div>
 
@@ -3404,11 +2293,7 @@ footer{
      PROFILE
 ===================================================== -->
 
-<section
-    class="page"
-    id="profile"
->
-
+<section class="page" id="profile">
 
     <div class="page-title">
 
@@ -3422,9 +2307,7 @@ footer{
 
     </div>
 
-
     <div class="profile-grid">
-
 
         <div class="profile-card glass">
 
@@ -3435,16 +2318,13 @@ footer{
 
             </div>
 
-
             <h2>
                 Lakshana Dilshan
             </h2>
 
-
             <div class="role">
                 FOUNDER & PROFESSIONAL VIDEO EDITOR
             </div>
-
 
             <div class="profile-info">
 
@@ -3476,16 +2356,13 @@ footer{
 
         <div class="profile-card glass">
 
-            <h3
-                style="
+            <h3 style="
                 color:#c084fc;
                 margin-bottom:18px;
                 letter-spacing:2px;
-                "
-            >
+            ">
                 MY SKILLS
             </h3>
-
 
             <div class="service-list">
 
@@ -3523,25 +2400,18 @@ footer{
 
         </div>
 
-
     </div>
 
-
-    <!-- OWNER PROFILE EDITOR -->
 
     <div class="owner-panel glass">
 
-        <h3>
-            👑 OWNER PROFILE
-        </h3>
+        <h3>👑 OWNER PROFILE</h3>
 
         <p style="color:#aaa;font-size:12px">
-            Owner login is active. You can later connect
-            this section to Firebase for permanent editing.
+            Owner login is active.
         </p>
 
     </div>
-
 
 </section>
 
@@ -3550,11 +2420,7 @@ footer{
      SERVICES
 ===================================================== -->
 
-<section
-    class="page"
-    id="services"
->
-
+<section class="page" id="services">
 
     <div class="page-title">
 
@@ -3572,14 +2438,11 @@ footer{
     <div class="services-grid">
 
 
-        <!-- EDITING -->
-
         <div class="service-column glass">
 
             <h2>
                 🎬 EDITING SERVICE
             </h2>
-
 
             <div
                 class="service-list"
@@ -3587,99 +2450,44 @@ footer{
             >
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎬
-                    </div>
-
-                    <div>
-                        YouTube Video Editing
-                    </div>
-
+                    <div class="icon">🎬</div>
+                    <div>YouTube Video Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        📱
-                    </div>
-
-                    <div>
-                        Shorts & Reels Editing
-                    </div>
-
+                    <div class="icon">📱</div>
+                    <div>Shorts & Reels Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎵
-                    </div>
-
-                    <div>
-                        TikTok Video Editing
-                    </div>
-
+                    <div class="icon">🎵</div>
+                    <div>TikTok Video Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🖼️
-                    </div>
-
-                    <div>
-                        Thumbnail Design
-                    </div>
-
+                    <div class="icon">🖼️</div>
+                    <div>Thumbnail Design</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎨
-                    </div>
-
-                    <div>
-                        Color Correction
-                    </div>
-
+                    <div class="icon">🎨</div>
+                    <div>Color Correction</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎧
-                    </div>
-
-                    <div>
-                        Audio Sync
-                    </div>
-
+                    <div class="icon">🎧</div>
+                    <div>Audio Sync</div>
                 </div>
-
 
             </div>
-
 
             <div class="service-divider"></div>
 
-
             <div class="service-tags">
-
                 <span>⚡ FAST DELIVERY</span>
-
                 <span>✦ HIGH QUALITY</span>
-
                 <span>✓ PROFESSIONAL</span>
-
             </div>
-
 
             <div class="owner-service-add">
 
@@ -3695,14 +2503,11 @@ footer{
         </div>
 
 
-        <!-- ONLINE -->
-
         <div class="service-column glass">
 
             <h2>
                 🌐 ONLINE SERVICE
             </h2>
-
 
             <div
                 class="service-list"
@@ -3710,99 +2515,44 @@ footer{
             >
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🌐
-                    </div>
-
-                    <div>
-                        Website Development
-                    </div>
-
+                    <div class="icon">🌐</div>
+                    <div>Website Development</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        💻
-                    </div>
-
-                    <div>
-                        Landing Pages
-                    </div>
-
+                    <div class="icon">💻</div>
+                    <div>Landing Pages</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🛒
-                    </div>
-
-                    <div>
-                        E-Commerce Sites
-                    </div>
-
+                    <div class="icon">🛒</div>
+                    <div>E-Commerce Sites</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🔎
-                    </div>
-
-                    <div>
-                        SEO Optimization
-                    </div>
-
+                    <div class="icon">🔎</div>
+                    <div>SEO Optimization</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        📲
-                    </div>
-
-                    <div>
-                        Social Media Setup
-                    </div>
-
+                    <div class="icon">📲</div>
+                    <div>Social Media Setup</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        ▶️
-                    </div>
-
-                    <div>
-                        YouTube Channel Setup
-                    </div>
-
+                    <div class="icon">▶️</div>
+                    <div>YouTube Channel Setup</div>
                 </div>
-
 
             </div>
-
 
             <div class="service-divider"></div>
 
-
             <div class="service-tags">
-
                 <span>⚡ FAST DELIVERY</span>
-
                 <span>✦ HIGH QUALITY</span>
-
                 <span>✓ ONLINE SUPPORT</span>
-
             </div>
-
 
             <div class="owner-service-add">
 
@@ -3817,9 +2567,7 @@ footer{
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3828,11 +2576,7 @@ footer{
      EDITS
 ===================================================== -->
 
-<section
-    class="page"
-    id="edits"
->
-
+<section class="page" id="edits">
 
     <div class="page-title">
 
@@ -3849,14 +2593,12 @@ footer{
 
     <div class="edits-wrap">
 
-
         <div
             class="edits-grid"
             id="editsGrid"
         >
 
-
-            <!-- SAMPLE -->
+            <!-- SAMPLE 1 -->
 
             <div class="edit-card">
 
@@ -3875,6 +2617,8 @@ footer{
             </div>
 
 
+            <!-- SAMPLE 2 -->
+
             <div class="edit-card">
 
                 <div class="edit-info">
@@ -3892,11 +2636,9 @@ footer{
             </div>
 
 
-            <!-- OWNER ONLY -->
+            <!-- OWNER PHOTO ADD -->
 
-            <label
-                class="edit-card plus-card owner-only"
-            >
+            <label class="edit-card plus-card owner-only">
 
                 <input
                     id="photoInput"
@@ -3905,7 +2647,6 @@ footer{
                     multiple
                     hidden
                 >
-
 
                 <div>
 
@@ -3921,33 +2662,23 @@ footer{
 
             </label>
 
-
         </div>
 
 
-        <div
-            class="owner-panel glass"
-        >
+        <div class="owner-panel glass">
 
             <h3>
                 👑 OWNER EDIT CONTROLS
             </h3>
 
-            <p
-                style="
-                color:#aaa;
-                font-size:11px;
-                "
-            >
+            <p style="color:#aaa;font-size:11px">
                 Add multiple portfolio photos
                 using the + Add Photos card.
             </p>
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3956,11 +2687,7 @@ footer{
      CONTACTS
 ===================================================== -->
 
-<section
-    class="page"
-    id="contacts"
->
-
+<section class="page" id="contacts">
 
     <div class="page-title">
 
@@ -3981,7 +2708,8 @@ footer{
         <div class="contact-intro">
 
             <h2>
-                Contact <span style="
+                Contact
+                <span style="
                     background:
                     linear-gradient(
                         90deg,
@@ -3991,7 +2719,9 @@ footer{
                     -webkit-background-clip:text;
                     background-clip:text;
                     color:transparent;
-                ">ME</span>
+                ">
+                    ME
+                </span>
             </h2>
 
             <p>
@@ -4002,12 +2732,9 @@ footer{
         </div>
 
 
-        <!-- =================================================
-             PHONE NUMBERS
-        ================================================== -->
+        <!-- PHONE -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4031,7 +2758,6 @@ footer{
 
 
             <div class="contact-grid">
-
 
                 <a
                     class="contact-card glass"
@@ -4083,11 +2809,8 @@ footer{
 
                 </a>
 
-
             </div>
 
-
-            <!-- OWNER -->
 
             <div class="owner-contact glass">
 
@@ -4095,37 +2818,28 @@ footer{
                     👑 EDIT PHONE DETAILS
                 </h3>
 
-
                 <input
                     id="phoneInput"
                     placeholder="Phone Number"
                 >
-
 
                 <input
                     id="whatsappInput"
                     placeholder="WhatsApp Number"
                 >
 
-
-                <button
-                    onclick="saveContacts()"
-                >
+                <button onclick="saveContacts()">
                     💾 SAVE NUMBERS
                 </button>
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             SOCIAL MEDIA
-        ================================================== -->
+        <!-- SOCIAL -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4154,7 +2868,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="instagramCard"
-                    href="https://instagram.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4169,7 +2883,7 @@ footer{
                         </small>
 
                         <strong id="instagramDisplay">
-                            https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr
+                            Instagram
                         </strong>
 
                     </div>
@@ -4180,7 +2894,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="facebookCard"
-                    href="https://facebook.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4194,8 +2908,8 @@ footer{
                             FACEBOOK
                         </small>
 
-                        <strong>
-                            https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr
+                        <strong id="facebookDisplay">
+                            Facebook
                         </strong>
 
                     </div>
@@ -4206,7 +2920,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="tiktokCard"
-                    href="https://tiktok.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4220,8 +2934,8 @@ footer{
                             TIKTOK
                         </small>
 
-                        <strong>
-                        https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY
+                        <strong id="tiktokDisplay">
+                            TikTok
                         </strong>
 
                     </div>
@@ -4232,7 +2946,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="youtubeCard"
-                    href="https://youtube.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4246,14 +2960,13 @@ footer{
                             YOUTUBE
                         </small>
 
-                        <strong>
+                        <strong id="youtubeDisplay">
                             DILU EDITS
                         </strong>
 
                     </div>
 
                 </a>
-
 
             </div>
 
@@ -4267,19 +2980,19 @@ footer{
 
                 <input
                     id="instagramInput"
-                    placeholder="https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr"
+                    placeholder="Instagram Link"
                 >
 
 
                 <input
                     id="facebookInput"
-                    placeholder="https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr
+                    placeholder="Facebook Link"
                 >
 
 
                 <input
                     id="tiktokInput"
-                     placeholder="https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY"
+                    placeholder="TikTok Link"
                 >
 
 
@@ -4289,24 +3002,18 @@ footer{
                 >
 
 
-                <button
-                    onclick="saveContacts()"
-                >
+                <button onclick="saveContacts()">
                     💾 SAVE SOCIAL LINKS
                 </button>
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             EMAIL
-        ================================================== -->
+        <!-- EMAIL -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4320,8 +3027,8 @@ footer{
                         EMAIL
                     </h3>
 
-                    <p>
-                       dilshanlakshana20@gmail.com
+                    <p id="emailSectionDisplay">
+                        dilshanlakshana20@gmail.com
                     </p>
 
                 </div>
@@ -4333,7 +3040,7 @@ footer{
 
                 <a
                     id="emailCard"
-                    href="dilshanlakshana20@gmail.com"
+                    href="mailto:dilshanlakshana20@gmail.com"
                 >
 
                     <div class="contact-icon">
@@ -4346,10 +3053,8 @@ footer{
                             BUSINESS EMAIL
                         </small>
 
-                        <strong
-                            id="emailDisplay"
-                        >
-                           dilshanlakshana20@gmail.com
+                        <strong id="emailDisplay">
+                            dilshanlakshana20@gmail.com
                         </strong>
 
                     </div>
@@ -4365,42 +3070,29 @@ footer{
                     👑 EDIT EMAIL
                 </h3>
 
-
                 <input
                     id="emailInput"
-                    placeholder="dilshanlakshana20@gmai.com"
+                    type="email"
+                    placeholder="Your business email"
                 >
 
-
-                <button
-                    onclick="saveContacts()"
-                >
+                <button onclick="saveContacts()">
                     💾 SAVE EMAIL
                 </button>
 
             </div>
 
-
         </div>
-
 
     </div>
 
-
 </section>
-
 
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
-
     DILU EDITS • CREATE • EDIT • INSPIRE
-
 </footer>
 
 
@@ -4413,28 +3105,22 @@ footer{
     id="loginModal"
 >
 
-
     <div class="login-box glass">
-
 
         <h2>
             LOGIN
         </h2>
-
 
         <p>
             Login with your name and phone number
         </p>
 
 
-        <!-- NORMAL USER LOGIN -->
-
         <input
             id="userName"
             type="text"
             placeholder="Your Name"
         >
-
 
         <input
             id="userPhone"
@@ -4452,7 +3138,6 @@ footer{
                 LOGIN
             </button>
 
-
             <button
                 class="close-btn"
                 onclick="closeLogin()"
@@ -4466,26 +3151,18 @@ footer{
         <div id="loginMessage"></div>
 
 
-        <hr
-            style="
+        <hr style="
             margin:22px 0;
             border:0;
-            border-top:
-            1px solid
-            rgba(255,255,255,.08);
-            "
-        >
+            border-top:1px solid rgba(255,255,255,.08);
+        ">
 
 
-        <!-- OWNER -->
-
-        <p
-            style="
+        <p style="
             text-align:left;
             color:#c084fc;
             font-weight:800;
-            "
-        >
+        ">
             👑 OWNER LOGIN
         </p>
 
@@ -4494,7 +3171,6 @@ footer{
             id="ownerUsername"
             placeholder="Owner Username"
         >
-
 
         <input
             id="ownerPassword"
@@ -4506,26 +3182,22 @@ footer{
         <button
             class="login-main"
             style="
-            width:100%;
-            margin-top:3px;
+                width:100%;
+                margin-top:3px;
+                padding:12px;
+                border-radius:12px;
             "
             onclick="ownerLogin()"
         >
             👑 OWNER LOGIN
         </button>
 
-
     </div>
 
 </div>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
-
 
 /* =====================================================
    PARTICLES
@@ -4534,14 +3206,12 @@ footer{
 const particles =
     document.getElementById("particles");
 
-
 for(let i=0;i<70;i++){
 
     const p =
         document.createElement("div");
 
-    p.className =
-        "particle";
+    p.className="particle";
 
     p.style.left =
         Math.random()*100 + "%";
@@ -4556,7 +3226,6 @@ for(let i=0;i<70;i++){
         Math.random();
 
     particles.appendChild(p);
-
 }
 
 
@@ -4570,7 +3239,6 @@ const pages =
 const navButtons =
     [...document.querySelectorAll(".nav")];
 
-
 function showPage(id){
 
     pages.forEach(page => {
@@ -4582,7 +3250,6 @@ function showPage(id){
 
     });
 
-
     navButtons.forEach(button => {
 
         button.classList.toggle(
@@ -4592,17 +3259,12 @@ function showPage(id){
 
     });
 
-
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 }
-
 
 navButtons.forEach(button => {
 
@@ -4621,14 +3283,11 @@ navButtons.forEach(button => {
 
 
 /* =====================================================
-   LOGIN MODAL
+   LOGIN
 ===================================================== */
 
 const loginModal =
-    document.getElementById(
-        "loginModal"
-    );
-
+    document.getElementById("loginModal");
 
 function openLogin(){
 
@@ -4636,13 +3295,11 @@ function openLogin(){
 
 }
 
-
 function closeLogin(){
 
     loginModal.classList.remove("show");
 
 }
-
 
 window.addEventListener(
     "click",
@@ -4660,7 +3317,6 @@ window.addEventListener(
 
 /* =====================================================
    NORMAL USER LOGIN
-   NAME + PHONE ONLY
 ===================================================== */
 
 function userLogin(){
@@ -4677,14 +3333,14 @@ function userLogin(){
         .value
         .trim();
 
-
     const message =
         document.getElementById(
             "loginMessage"
         );
 
-
     if(!name || !phone){
+
+        message.style.color="#ff7777";
 
         message.textContent =
             "Please enter your name and phone number.";
@@ -4693,31 +3349,22 @@ function userLogin(){
 
     }
 
-
     const user = {
-
         name:name,
-
         phone:phone
-
     };
-
 
     localStorage.setItem(
         "diluCurrentUser",
         JSON.stringify(user)
     );
 
-
-    message.style.color =
-        "#67e8f9";
+    message.style.color="#67e8f9";
 
     message.textContent =
         "Login successful!";
 
-
     updateLoginButton();
-
 
     setTimeout(
         closeLogin,
@@ -4731,9 +3378,16 @@ function userLogin(){
    OWNER LOGIN
 ===================================================== */
 
-
 /*
-   CHANGE THESE BEFORE PUBLISHING
+   OWNER LOGIN DETAILS
+
+   Username:
+   dilu
+
+   Password:
+   1234
+
+   You can change these below.
 */
 
 const OWNER_USERNAME =
@@ -4756,18 +3410,14 @@ function ownerLogin(){
         .getElementById("ownerPassword")
         .value;
 
-
     const message =
         document.getElementById(
             "loginMessage"
         );
 
-
     if(
-
         username === OWNER_USERNAME &&
         password === OWNER_PASSWORD
-
     ){
 
         localStorage.setItem(
@@ -4775,11 +3425,9 @@ function ownerLogin(){
             "1"
         );
 
-
         document.body.classList.add(
             "owner"
         );
-
 
         message.style.color =
             "#67e8f9";
@@ -4787,15 +3435,14 @@ function ownerLogin(){
         message.textContent =
             "Owner login successful!";
 
-
         updateLoginButton();
 
+        renderPhotos();
 
         setTimeout(
             closeLogin,
             600
         );
-
 
     }else{
 
@@ -4824,11 +3471,9 @@ function logout(){
         "diluOwner"
     );
 
-
     document.body.classList.remove(
         "owner"
     );
-
 
     updateLoginButton();
 
@@ -4836,7 +3481,7 @@ function logout(){
 
 
 /* =====================================================
-   LOGIN BUTTON UPDATE
+   LOGIN BUTTON
 ===================================================== */
 
 function updateLoginButton(){
@@ -4846,7 +3491,6 @@ function updateLoginButton(){
             "loginButton"
         );
 
-
     const user =
         JSON.parse(
             localStorage.getItem(
@@ -4854,22 +3498,25 @@ function updateLoginButton(){
             ) || "null"
         );
 
-
     const owner =
         localStorage.getItem(
             "diluOwner"
         );
-
 
     if(owner === "1"){
 
         button.innerHTML =
             "👑 OWNER";
 
+        button.onclick = function(){
+            logout();
+        };
+
         return;
 
     }
 
+    button.onclick = openLogin;
 
     if(user){
 
@@ -4879,7 +3526,6 @@ function updateLoginButton(){
         return;
 
     }
-
 
     button.innerHTML =
         "🔐 LOGIN";
@@ -4922,53 +3568,56 @@ function addService(type){
 
     if(!ownerRequired()) return;
 
-
     const label =
         type === "editing"
         ? "Enter Editing Service:"
         : "Enter Online Service:";
 
-
     const text =
         prompt(label);
 
-
     if(!text) return;
 
-
     const item =
-        document.createElement("div");
-
+        document.createElement(
+            "div"
+        );
 
     item.className =
         "service-item";
 
+    const icon =
+        document.createElement(
+            "div"
+        );
 
-    item.innerHTML = `
+    icon.className =
+        "icon";
 
-        <div class="icon">
-            ${type === "editing" ? "✦" : "🌐"}
-        </div>
+    icon.textContent =
+        type === "editing"
+        ? "✦"
+        : "🌐";
 
-        <div></div>
+    const name =
+        document.createElement(
+            "div"
+        );
 
-    `;
+    name.textContent =
+        text;
 
-
-    item.lastElementChild
-        .textContent = text;
-
+    item.appendChild(icon);
+    item.appendChild(name);
 
     const target =
         type === "editing"
         ? "editingServices"
         : "onlineServices";
 
-
     document
         .getElementById(target)
         .appendChild(item);
-
 
     saveServices();
 
@@ -4982,34 +3631,25 @@ function addService(type){
 function saveServices(){
 
     const editing =
-        [...document
-        .querySelectorAll(
+        [...document.querySelectorAll(
             "#editingServices .service-item"
-        )]
-        .map(
+        )].map(
             item =>
-                item.lastElementChild
-                .textContent
+                item.lastElementChild.textContent
         );
-
 
     const online =
-        [...document
-        .querySelectorAll(
+        [...document.querySelectorAll(
             "#onlineServices .service-item"
-        )]
-        .map(
+        )].map(
             item =>
-                item.lastElementChild
-                .textContent
+                item.lastElementChild.textContent
         );
-
 
     localStorage.setItem(
         "diluEditingServices",
         JSON.stringify(editing)
     );
-
 
     localStorage.setItem(
         "diluOnlineServices",
@@ -5032,7 +3672,6 @@ function loadServices(){
             ) || "null"
         );
 
-
     const online =
         JSON.parse(
             localStorage.getItem(
@@ -5048,9 +3687,7 @@ function loadServices(){
                 "editingServices"
             );
 
-
-        box.innerHTML = "";
-
+        box.innerHTML="";
 
         editing.forEach(
             text => {
@@ -5063,13 +3700,11 @@ function loadServices(){
                 item.className =
                     "service-item";
 
-                item.innerHTML = `
-                    <div class="icon">✦</div>
-                    <div></div>
-                `;
+                item.innerHTML =
+                    '<div class="icon">✦</div><div></div>';
 
-                item.lastElementChild
-                    .textContent = text;
+                item.lastElementChild.textContent =
+                    text;
 
                 box.appendChild(item);
 
@@ -5086,9 +3721,7 @@ function loadServices(){
                 "onlineServices"
             );
 
-
-        box.innerHTML = "";
-
+        box.innerHTML="";
 
         online.forEach(
             text => {
@@ -5101,13 +3734,11 @@ function loadServices(){
                 item.className =
                     "service-item";
 
-                item.innerHTML = `
-                    <div class="icon">🌐</div>
-                    <div></div>
-                `;
+                item.innerHTML =
+                    '<div class="icon">🌐</div><div></div>';
 
-                item.lastElementChild
-                    .textContent = text;
+                item.lastElementChild.textContent =
+                    text;
 
                 box.appendChild(item);
 
@@ -5118,173 +3749,306 @@ function loadServices(){
 
 }
 
-/* =====================================================
-   PHOTO UPLOAD + DELETE - OWNER ONLY
-===================================================== */
-
-const photoInput = document.getElementById("photoInput");
-
 
 /* =====================================================
-   PHOTO INPUT
+   PHOTO SYSTEM
+   DUPLICATE SAFE
 ===================================================== */
 
-if (photoInput) {
-
-    photoInput.addEventListener("change", function () {
-
-        /* Owner check */
-
-        if (localStorage.getItem("diluOwner") !== "1") {
-
-            alert("Owner login required.");
-
-            this.value = "";
-
-            openLogin();
-
-            return;
-        }
+const photoInput =
+    document.getElementById(
+        "photoInput"
+    );
 
 
-        const files = Array.from(this.files)
-            .filter(file =>
-                file.type.startsWith("image/")
+/* -----------------------------------------------------
+   GET + CLEAN PHOTOS
+----------------------------------------------------- */
+
+function getPhotos(){
+
+    let photos=[];
+
+    try{
+
+        photos =
+            JSON.parse(
+                localStorage.getItem(
+                    "diluPhotos"
+                ) || "[]"
             );
 
+    }catch(error){
 
-        if (!files.length) {
+        photos=[];
 
-            this.value = "";
+    }
 
-            return;
-
-        }
-
-
-        let photos = JSON.parse(
-            localStorage.getItem("diluPhotos") || "[]"
-        );
+    if(!Array.isArray(photos)){
+        photos=[];
+    }
 
 
-        let completed = 0;
+    const unique=[];
+    const seen=new Set();
 
 
-        files.forEach(function(file) {
+    photos.forEach(
+        photo => {
 
-            const reader = new FileReader();
+            if(
+                !photo ||
+                !photo.data
+            ){
+                return;
+            }
 
 
-            reader.onload = function(e) {
+            /*
+               Exact image data is used as
+               duplicate identifier.
+            */
 
-                photos.push({
+            if(seen.has(photo.data)){
+                return;
+            }
 
-                    id:
+            seen.add(photo.data);
+
+
+            unique.push({
+
+                id:
+                    photo.id ||
+                    (
                         Date.now() +
                         "_" +
                         Math.random()
-                            .toString(36)
-                            .substring(2),
+                        .toString(36)
+                        .substring(2)
+                    ),
 
-                    name:
-                        file.name,
+                name:
+                    photo.name ||
+                    "DILU EDITS Project",
 
-                    data:
-                        e.target.result
+                data:
+                    photo.data
 
-                });
+            });
 
-
-                completed++;
-
-
-                if (completed === files.length) {
-
-                    localStorage.setItem(
-                        "diluPhotos",
-                        JSON.stringify(photos)
-                    );
+        }
+    );
 
 
-                    renderPhotos();
+    localStorage.setItem(
+        "diluPhotos",
+        JSON.stringify(unique)
+    );
 
 
-                    photoInput.value = "";
-
-
-                    alert(
-                        completed +
-                        " photo(s) added successfully! ✅"
-                    );
-
-                }
-
-            };
-
-
-            reader.onerror = function() {
-
-                completed++;
-
-
-                if (completed === files.length) {
-
-                    photoInput.value = "";
-
-                }
-
-            };
-
-
-            reader.readAsDataURL(file);
-
-        });
-
-    });
+    return unique;
 
 }
 
 
-/* =====================================================
-   RENDER ALL PHOTOS
-===================================================== */
+/* -----------------------------------------------------
+   PHOTO INPUT
+----------------------------------------------------- */
 
-function renderPhotos() {
+if(photoInput){
+
+    photoInput.addEventListener(
+        "change",
+        function(){
+
+            if(!ownerRequired()){
+
+                this.value="";
+
+                return;
+
+            }
+
+
+            const files =
+                Array.from(this.files)
+                .filter(
+                    file =>
+                        file.type.startsWith(
+                            "image/"
+                        )
+                );
+
+
+            if(!files.length){
+
+                this.value="";
+
+                return;
+
+            }
+
+
+            let photos =
+                getPhotos();
+
+
+            let completed=0;
+            let added=0;
+
+
+            files.forEach(
+                file => {
+
+                    const reader =
+                        new FileReader();
+
+
+                    reader.onload =
+                        function(e){
+
+                            const data =
+                                e.target.result;
+
+
+                            /*
+                               DUPLICATE CHECK
+                            */
+
+                            const exists =
+                                photos.some(
+                                    photo =>
+                                        photo.data === data
+                                );
+
+
+                            if(!exists){
+
+                                photos.push({
+
+                                    id:
+                                        Date.now() +
+                                        "_" +
+                                        Math.random()
+                                        .toString(36)
+                                        .substring(2),
+
+                                    name:
+                                        file.name,
+
+                                    data:
+                                        data
+
+                                });
+
+                                added++;
+
+                            }
+
+
+                            completed++;
+
+
+                            if(
+                                completed ===
+                                files.length
+                            ){
+
+                                localStorage.setItem(
+                                    "diluPhotos",
+                                    JSON.stringify(
+                                        photos
+                                    )
+                                );
+
+
+                                renderPhotos();
+
+
+                                photoInput.value="";
+
+
+                                if(added > 0){
+
+                                    alert(
+                                        added +
+                                        " new photo(s) added successfully! ✅"
+                                    );
+
+                                }else{
+
+                                    alert(
+                                        "Those photos are already in your portfolio. No duplicates added. ✅"
+                                    );
+
+                                }
+
+                            }
+
+                        };
+
+
+                    reader.onerror =
+                        function(){
+
+                            completed++;
+
+                            if(
+                                completed ===
+                                files.length
+                            ){
+
+                                photoInput.value="";
+
+                            }
+
+                        };
+
+
+                    reader.readAsDataURL(
+                        file
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* -----------------------------------------------------
+   RENDER PHOTOS
+----------------------------------------------------- */
+
+function renderPhotos(){
 
     const grid =
         document.getElementById(
             "editsGrid"
         );
 
+    if(!grid) return;
 
-    if (!grid) return;
 
-
-    /* ---------------------------------------------
-       Remove ONLY previously uploaded photos
-    --------------------------------------------- */
+    /*
+       Remove previously uploaded cards.
+       Sample cards remain untouched.
+    */
 
     grid
         .querySelectorAll(
             ".uploaded-photo"
         )
-        .forEach(function(card) {
+        .forEach(
+            card => card.remove()
+        );
 
-            card.remove();
-
-        });
-
-
-    /* ---------------------------------------------
-       Get saved photos
-    --------------------------------------------- */
 
     const photos =
-        JSON.parse(
-            localStorage.getItem(
-                "diluPhotos"
-            ) || "[]"
-        );
+        getPhotos();
 
 
     const plusCard =
@@ -5293,217 +4057,145 @@ function renderPhotos() {
         );
 
 
-    /* ---------------------------------------------
-       Create cards
-    --------------------------------------------- */
+    photos.forEach(
+        photo => {
 
-    photos.forEach(function(photo) {
-
-
-        const card =
-            document.createElement(
-                "div"
-            );
-
-
-        card.className =
-            "edit-card uploaded-photo";
-
-
-        /* IMAGE */
-
-        const img =
-            document.createElement(
-                "img"
-            );
-
-
-        img.src =
-            photo.data;
-
-
-        img.alt =
-            "DILU EDITS Project";
-
-
-        /* INFO */
-
-        const info =
-            document.createElement(
-                "div"
-            );
-
-
-        info.className =
-            "edit-info";
-
-
-        const title =
-            document.createElement(
-                "h3"
-            );
-
-
-        title.textContent =
-            photo.name;
-
-
-        const description =
-            document.createElement(
-                "p"
-            );
-
-
-        description.textContent =
-            "DILU EDITS Portfolio";
-
-
-        info.appendChild(
-            title
-        );
-
-
-        info.appendChild(
-            description
-        );
-
-
-        /* -----------------------------------------
-           DELETE BUTTON
-        ----------------------------------------- */
-
-        const deleteButton =
-            document.createElement(
-                "button"
-            );
-
-
-        deleteButton.className =
-            "photo-delete-btn owner-only";
-
-
-        deleteButton.type =
-            "button";
-
-
-        deleteButton.innerHTML =
-            "🗑 DELETE";
-
-
-        deleteButton.addEventListener(
-            "click",
-            function(e) {
-
-                e.preventDefault();
-
-                e.stopPropagation();
-
-
-                deletePhoto(
-                    photo.id
+            const card =
+                document.createElement(
+                    "div"
                 );
 
+            card.className =
+                "edit-card uploaded-photo";
+
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+            img.src =
+                photo.data;
+
+            img.alt =
+                photo.name;
+
+
+            const info =
+                document.createElement(
+                    "div"
+                );
+
+            info.className =
+                "edit-info";
+
+
+            const title =
+                document.createElement(
+                    "h3"
+                );
+
+            title.textContent =
+                photo.name;
+
+
+            const description =
+                document.createElement(
+                    "p"
+                );
+
+            description.textContent =
+                "DILU EDITS Portfolio";
+
+
+            info.appendChild(title);
+            info.appendChild(description);
+
+
+            const deleteButton =
+                document.createElement(
+                    "button"
+                );
+
+            deleteButton.className =
+                "photo-delete-btn owner-only";
+
+            deleteButton.type =
+                "button";
+
+            deleteButton.innerHTML =
+                "🗑 DELETE";
+
+
+            deleteButton.addEventListener(
+                "click",
+                function(e){
+
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    deletePhoto(
+                        photo.id
+                    );
+
+                }
+            );
+
+
+            card.appendChild(img);
+            card.appendChild(info);
+            card.appendChild(deleteButton);
+
+
+            if(plusCard){
+
+                grid.insertBefore(
+                    card,
+                    plusCard
+                );
+
+            }else{
+
+                grid.appendChild(card);
+
             }
-        );
-
-
-        /* -----------------------------------------
-           Add elements
-        ----------------------------------------- */
-
-        card.appendChild(
-            img
-        );
-
-
-        card.appendChild(
-            info
-        );
-
-
-        card.appendChild(
-            deleteButton
-        );
-
-
-        /* -----------------------------------------
-           Put before + button
-        ----------------------------------------- */
-
-        if (plusCard) {
-
-            grid.insertBefore(
-                card,
-                plusCard
-            );
-
-        } else {
-
-            grid.appendChild(
-                card
-            );
 
         }
-
-    });
+    );
 
 }
 
 
-/* =====================================================
+/* -----------------------------------------------------
    DELETE PHOTO
-===================================================== */
+----------------------------------------------------- */
 
-function deletePhoto(id) {
+function deletePhoto(id){
 
-
-    /* Owner check */
-
-    if (
-        localStorage.getItem(
-            "diluOwner"
-        ) !== "1"
-    ) {
-
-        alert(
-            "Owner login required."
-        );
-
-        openLogin();
-
+    if(!ownerRequired()){
         return;
-
     }
 
 
-    const confirmDelete =
+    const answer =
         confirm(
             "Are you sure you want to delete this photo?"
         );
 
 
-    if (!confirmDelete) {
-
+    if(!answer){
         return;
-
     }
 
 
     let photos =
-        JSON.parse(
-            localStorage.getItem(
-                "diluPhotos"
-            ) || "[]"
-        );
+        getPhotos();
 
 
     photos =
         photos.filter(
-            function(photo) {
-
-                return photo.id !== id;
-
-            }
+            photo =>
+                photo.id !== id
         );
 
 
@@ -5525,17 +4217,17 @@ function deletePhoto(id) {
 }
 
 
-/* =====================================================
+/* -----------------------------------------------------
    LOAD PHOTOS
-===================================================== */
+----------------------------------------------------- */
 
-function loadPhotos() {
+function loadPhotos(){
+
+    getPhotos();
 
     renderPhotos();
 
 }
-
-
 
 
 /* =====================================================
@@ -5545,7 +4237,7 @@ function loadPhotos() {
 let contacts = {
 
     phone:
-        " 0787147743",
+        "0787147743",
 
     whatsapp:
         "94787147743",
@@ -5568,19 +4260,33 @@ let contacts = {
 };
 
 
+/* =====================================================
+   LOAD CONTACTS
+===================================================== */
+
 function loadContacts(){
 
-    const saved =
-        JSON.parse(
-            localStorage.getItem(
-                "diluContacts"
-            ) || "null"
-        );
+    let saved=null;
+
+    try{
+
+        saved =
+            JSON.parse(
+                localStorage.getItem(
+                    "diluContacts"
+                ) || "null"
+            );
+
+    }catch(error){
+
+        saved=null;
+
+    }
 
 
     if(saved){
 
-        contacts = {
+        contacts={
             ...contacts,
             ...saved
         };
@@ -5594,42 +4300,44 @@ function loadContacts(){
 
 
 /* =====================================================
-   SAVE CONTACTS
+   SAVE CONTACTS - FIXED
 ===================================================== */
 
 function saveContacts(){
 
-    if(!ownerRequired()) return;
+    if(!ownerRequired()){
+        return;
+    }
 
 
     const emailInput =
         document.getElementById(
-            "dilshanlakshana20@gmail.com"
+            "emailInput"
         );
 
     const phoneInput =
         document.getElementById(
-            "0787147743"
+            "phoneInput"
         );
 
     const whatsappInput =
         document.getElementById(
-            "+94787147743"
+            "whatsappInput"
         );
 
     const instagramInput =
         document.getElementById(
-            "https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr"
+            "instagramInput"
         );
 
     const facebookInput =
         document.getElementById(
-            "https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr"
+            "facebookInput"
         );
 
     const tiktokInput =
         document.getElementById(
-            "https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY"
+            "tiktokInput"
         );
 
     const youtubeInput =
@@ -5638,63 +4346,88 @@ function saveContacts(){
         );
 
 
-    if(emailInput.value.trim()){
+    if(emailInput){
 
-        contacts.email =
+        const value =
             emailInput.value.trim();
 
+        if(value){
+            contacts.email=value;
+        }
+
     }
 
 
-    if(phoneInput.value.trim()){
+    if(phoneInput){
 
-        contacts.phone =
+        const value =
             phoneInput.value.trim();
 
+        if(value){
+            contacts.phone=value;
+        }
+
     }
 
 
-    if(whatsappInput.value.trim()){
+    if(whatsappInput){
 
-        contacts.whatsapp =
+        const value =
             whatsappInput.value
             .trim()
-            .replace(
-                /\D/g,
-                ""
-            );
+            .replace(/\D/g,"");
+
+        if(value){
+            contacts.whatsapp=value;
+        }
 
     }
 
 
-    if(instagramInput.value.trim()){
+    if(instagramInput){
 
-        contacts.instagram =
+        const value =
             instagramInput.value.trim();
 
+        if(value){
+            contacts.instagram=value;
+        }
+
     }
 
 
-    if(facebookInput.value.trim()){
+    if(facebookInput){
 
-        contacts.facebook =
+        const value =
             facebookInput.value.trim();
 
+        if(value){
+            contacts.facebook=value;
+        }
+
     }
 
 
-    if(tiktokInput.value.trim()){
+    if(tiktokInput){
 
-        contacts.tiktok =
+        const value =
             tiktokInput.value.trim();
 
+        if(value){
+            contacts.tiktok=value;
+        }
+
     }
 
 
-    if(youtubeInput.value.trim()){
+    if(youtubeInput){
 
-        contacts.youtube =
+        const value =
             youtubeInput.value.trim();
+
+        if(value){
+            contacts.youtube=value;
+        }
 
     }
 
@@ -5711,101 +4444,228 @@ function saveContacts(){
 
 
     alert(
-        "Contact details saved! ✅"
+        "Contact details saved successfully! ✅"
     );
 
 }
 
 
 /* =====================================================
-   UPDATE CONTACT UI
+   UPDATE CONTACT UI - FIXED
 ===================================================== */
 
 function updateContactUI(){
 
-    document
-        .getElementById(
+    const phoneDisplay =
+        document.getElementById(
             "phoneDisplay"
-        )
-        .textContent =
+        );
+
+    const phoneCard =
+        document.getElementById(
+            "phoneCard"
+        );
+
+    const whatsappDisplay =
+        document.getElementById(
+            "whatsappDisplay"
+        );
+
+    const whatsappCard =
+        document.getElementById(
+            "whatsappCard"
+        );
+
+    const emailDisplay =
+        document.getElementById(
+            "emailDisplay"
+        );
+
+    const emailCard =
+        document.getElementById(
+            "emailCard"
+        );
+
+    const emailSectionDisplay =
+        document.getElementById(
+            "emailSectionDisplay"
+        );
+
+    const instagramCard =
+        document.getElementById(
+            "instagramCard"
+        );
+
+    const instagramDisplay =
+        document.getElementById(
+            "instagramDisplay"
+        );
+
+    const facebookCard =
+        document.getElementById(
+            "facebookCard"
+        );
+
+    const facebookDisplay =
+        document.getElementById(
+            "facebookDisplay"
+        );
+
+    const tiktokCard =
+        document.getElementById(
+            "tiktokCard"
+        );
+
+    const tiktokDisplay =
+        document.getElementById(
+            "tiktokDisplay"
+        );
+
+    const youtubeCard =
+        document.getElementById(
+            "youtubeCard"
+        );
+
+    const youtubeDisplay =
+        document.getElementById(
+            "youtubeDisplay"
+        );
+
+
+    /* PHONE */
+
+    if(phoneDisplay){
+
+        phoneDisplay.textContent =
             contacts.phone;
 
+    }
 
-    document
-        .getElementById(
-            "phoneCard"
-        )
-        .href =
+    if(phoneCard){
+
+        phoneCard.href =
             "tel:" +
-            contacts.phone
-            .replace(/\s/g,"");
+            contacts.phone.replace(
+                /\s/g,
+                ""
+            );
+
+    }
 
 
-    document
-        .getElementById(
-            "whatsappDisplay"
-        )
-        .textContent =
+    /* WHATSAPP */
+
+    if(whatsappDisplay){
+
+        whatsappDisplay.textContent =
             "+" +
             contacts.whatsapp;
 
+    }
 
-    document
-        .getElementById(
-            "whatsappCard"
-        )
-        .href =
+    if(whatsappCard){
+
+        whatsappCard.href =
             "https://wa.me/" +
             contacts.whatsapp;
 
+    }
 
-    document
-        .getElementById(
-            "emailDisplay"
-        )
-        .textContent =
+
+    /* EMAIL */
+
+    if(emailDisplay){
+
+        emailDisplay.textContent =
             contacts.email;
 
+    }
 
-    document
-        .getElementById(
-            "emailCard"
-        )
-        .href =
+    if(emailSectionDisplay){
+
+        emailSectionDisplay.textContent =
+            contacts.email;
+
+    }
+
+    if(emailCard){
+
+        emailCard.href =
             "mailto:" +
             contacts.email;
 
+    }
 
-    document
-        .getElementById(
-            "instagramCard"
-        )
-        .href =
+
+    /* INSTAGRAM */
+
+    if(instagramCard){
+
+        instagramCard.href =
             contacts.instagram;
 
+    }
 
-    document
-        .getElementById(
-            "facebookCard"
-        )
-        .href =
+    if(instagramDisplay){
+
+        instagramDisplay.textContent =
+            contacts.instagram;
+
+    }
+
+
+    /* FACEBOOK */
+
+    if(facebookCard){
+
+        facebookCard.href =
             contacts.facebook;
 
+    }
 
-    document
-        .getElementById(
-            "tiktokCard"
-        )
-        .href =
+    if(facebookDisplay){
+
+        facebookDisplay.textContent =
+            contacts.facebook;
+
+    }
+
+
+    /* TIKTOK */
+
+    if(tiktokCard){
+
+        tiktokCard.href =
             contacts.tiktok;
 
+    }
 
-    document
-        .getElementById(
-            "youtubeCard"
-        )
-        .href =
+    if(tiktokDisplay){
+
+        tiktokDisplay.textContent =
+            contacts.tiktok;
+
+    }
+
+
+    /* YOUTUBE */
+
+    if(youtubeCard){
+
+        youtubeCard.href =
             contacts.youtube;
+
+    }
+
+    if(youtubeDisplay){
+
+        youtubeDisplay.textContent =
+            contacts.youtube ===
+            "https://youtube.com/"
+            ? "DILU EDITS"
+            : contacts.youtube;
+
+    }
 
 }
 
@@ -5889,7 +4749,7 @@ function addComment(){
     );
 
 
-    textarea.value = "";
+    textarea.value="";
 
 
     loadComments();
@@ -5917,16 +4777,19 @@ function loadComments(){
         );
 
 
-    list.innerHTML = "";
+    list.innerHTML="";
 
 
     if(!comments.length){
 
-        list.innerHTML = `
+        list.innerHTML=`
 
             <div
                 class="comment glass"
-                style="grid-column:1/-1;text-align:center"
+                style="
+                    grid-column:1/-1;
+                    text-align:center
+                "
             >
 
                 <strong>
@@ -5954,7 +4817,6 @@ function loadComments(){
                     "div"
                 );
 
-
             div.className =
                 "comment glass";
 
@@ -5963,7 +4825,6 @@ function loadComments(){
                 document.createElement(
                     "strong"
                 );
-
 
             strong.textContent =
                 comment.name;
@@ -5974,7 +4835,6 @@ function loadComments(){
                     "small"
                 );
 
-
             small.textContent =
                 comment.date;
 
@@ -5984,27 +4844,16 @@ function loadComments(){
                     "p"
                 );
 
-
             p.textContent =
                 comment.text;
 
 
-            div.appendChild(
-                strong
-            );
-
-            div.appendChild(
-                small
-            );
-
-            div.appendChild(
-                p
-            );
+            div.appendChild(strong);
+            div.appendChild(small);
+            div.appendChild(p);
 
 
-            list.appendChild(
-                div
-            );
+            list.appendChild(div);
 
         }
     );
@@ -6013,14 +4862,13 @@ function loadComments(){
 
 
 /* =====================================================
-   LAPTOP 3D MOUSE EFFECT
+   LAPTOP 3D
 ===================================================== */
 
 const laptopArea =
     document.getElementById(
         "laptopArea"
     );
-
 
 const laptop =
     document.getElementById(
@@ -6050,30 +4898,23 @@ if(laptopArea && laptop){
 
 
             const centerX =
-                rect.width / 2;
+                rect.width/2;
 
 
             const centerY =
-                rect.height / 2;
+                rect.height/2;
 
 
             const rotateY =
-                ((x-centerX) /
-                centerX) * 22;
+                ((x-centerX)/centerX)*22;
 
 
             const rotateX =
-                -((y-centerY) /
-                centerY) * 16;
+                -((y-centerY)/centerY)*16;
 
 
-            laptop.style.transform = `
-
-                rotateX(${rotateX}deg)
-
-                rotateY(${rotateY}deg)
-
-            `;
+            laptop.style.transform =
+                `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
         }
     );
@@ -6100,7 +4941,6 @@ const introVideo =
     document.getElementById(
         "introVideo"
     );
-
 
 const screenFallback =
     document.getElementById(
@@ -6130,8 +4970,7 @@ if(introVideo){
                 introVideo.currentTime >= 5
             ){
 
-                introVideo.currentTime =
-                    0;
+                introVideo.currentTime=0;
 
             }
 
@@ -6170,7 +5009,7 @@ if(introVideo){
 
 
 /* =====================================================
-   PAGE INITIALIZE
+   INITIALIZE
 ===================================================== */
 
 document.addEventListener(
@@ -6203,10 +5042,8 @@ document.addEventListener(
     }
 );
 
-
 </script>
 
-
 </body>
-
 </html>
+    
