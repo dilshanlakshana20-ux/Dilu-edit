@@ -37,7 +37,6 @@ body{
         sans-serif;
 
     background:#020205;
-
     color:#fff;
 
     min-height:100vh;
@@ -81,7 +80,6 @@ body::before{
         ),
 
         #020205;
-
 }
 
 
@@ -98,7 +96,6 @@ body::before{
     z-index:-8;
 
     opacity:.4;
-
 }
 
 .bg-orb.one{
@@ -113,7 +110,6 @@ body::before{
 
     animation:
         orbOne 12s ease-in-out infinite;
-
 }
 
 .bg-orb.two{
@@ -128,7 +124,6 @@ body::before{
 
     animation:
         orbTwo 10s ease-in-out infinite;
-
 }
 
 .bg-orb.three{
@@ -143,9 +138,7 @@ body::before{
 
     animation:
         orbThree 14s ease-in-out infinite;
-
 }
-
 
 @keyframes orbOne{
 
@@ -156,9 +149,7 @@ body::before{
     50%{
         transform:translate(100px,-50px);
     }
-
 }
-
 
 @keyframes orbTwo{
 
@@ -169,9 +160,7 @@ body::before{
     50%{
         transform:translate(-80px,60px);
     }
-
 }
-
 
 @keyframes orbThree{
 
@@ -182,7 +171,6 @@ body::before{
     50%{
         transform:scale(1.35);
     }
-
 }
 
 
@@ -201,7 +189,6 @@ body::before{
     pointer-events:none;
 
     overflow:hidden;
-
 }
 
 .particle{
@@ -220,9 +207,7 @@ body::before{
 
     animation:
         floatParticle linear infinite;
-
 }
-
 
 @keyframes floatParticle{
 
@@ -243,7 +228,6 @@ body::before{
         transform:translateY(-20vh);
         opacity:0;
     }
-
 }
 
 
@@ -277,7 +261,6 @@ body::before{
 
         inset 0 1px
         rgba(255,255,255,.07);
-
 }
 
 
@@ -315,11 +298,7 @@ header{
     border-bottom:
         1px solid
         rgba(255,255,255,.08);
-
 }
-
-
-/* MINI LOGO */
 
 .logo-mini{
 
@@ -330,7 +309,6 @@ header{
     letter-spacing:-2px;
 
     white-space:nowrap;
-
 }
 
 .logo-mini span{
@@ -345,15 +323,15 @@ header{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
 }
 
 
-/* NAV */
+/* =====================================================
+   NAV
+===================================================== */
 
 nav{
 
@@ -362,7 +340,6 @@ nav{
     align-items:center;
 
     gap:20px;
-
 }
 
 .nav{
@@ -386,9 +363,7 @@ nav{
     padding:8px 2px;
 
     transition:.3s;
-
 }
-
 
 .nav::after{
 
@@ -419,9 +394,7 @@ nav{
         scaleX(0);
 
     transition:.3s;
-
 }
-
 
 .nav:hover,
 .nav.active{
@@ -431,15 +404,12 @@ nav{
     text-shadow:
         0 0 14px
         rgba(168,85,247,.8);
-
 }
-
 
 .nav.active::after{
 
     transform:
         scaleX(1);
-
 }
 
 
@@ -493,16 +463,11 @@ nav{
 
     animation:
         dePulse 3s ease-in-out infinite;
-
 }
-
 
 .de-logo span:first-child{
-
     color:#fff;
-
 }
-
 
 .de-logo span:last-child{
 
@@ -515,13 +480,10 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
 }
-
 
 @keyframes dePulse{
 
@@ -530,7 +492,6 @@ nav{
         box-shadow:
             0 0 18px
             rgba(168,85,247,.35);
-
     }
 
     50%{
@@ -541,9 +502,7 @@ nav{
 
             0 0 50px
             rgba(37,99,235,.2);
-
     }
-
 }
 
 
@@ -574,9 +533,7 @@ nav{
     font-size:11px;
 
     transition:.3s;
-
 }
-
 
 .login-btn:hover{
 
@@ -585,7 +542,6 @@ nav{
     box-shadow:
         0 0 20px
         rgba(168,85,247,.35);
-
 }
 
 
@@ -601,9 +557,7 @@ nav{
 
     padding:
         110px 5vw 60px;
-
 }
-
 
 .page.active{
 
@@ -611,9 +565,7 @@ nav{
 
     animation:
         pageIn .55s ease;
-
 }
-
 
 @keyframes pageIn{
 
@@ -624,7 +576,6 @@ nav{
         transform:
             translateY(18px)
             scale(.99);
-
     }
 
     to{
@@ -632,14 +583,12 @@ nav{
         opacity:1;
 
         transform:none;
-
     }
-
 }
 
 
 /* =====================================================
-   ANIMATED PAGE TITLE
+   PAGE TITLE
 ===================================================== */
 
 .page-title{
@@ -647,9 +596,7 @@ nav{
     text-align:center;
 
     margin-bottom:35px;
-
 }
-
 
 .page-title h1{
 
@@ -659,9 +606,7 @@ nav{
     font-weight:1000;
 
     letter-spacing:-4px;
-
 }
-
 
 .page-title h1 span{
 
@@ -680,7 +625,6 @@ nav{
         250% auto;
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
@@ -691,9 +635,7 @@ nav{
     text-shadow:
         0 0 25px
         rgba(168,85,247,.35);
-
 }
-
 
 @keyframes titleGradient{
 
@@ -704,9 +646,7 @@ nav{
     100%{
         background-position:250% center;
     }
-
 }
-
 
 .page-title p{
 
@@ -717,7 +657,6 @@ nav{
     font-size:13px;
 
     letter-spacing:2px;
-
 }
 
 
@@ -730,13 +669,7 @@ nav{
     max-width:1400px;
 
     margin:auto;
-
 }
-
-
-/* =====================================================
-   DASHBOARD TOP
-===================================================== */
 
 .dashboard-top{
 
@@ -751,18 +684,12 @@ nav{
     gap:25px;
 
     align-items:center;
-
 }
-
-
-/* HERO SIDE */
 
 .hero-side{
 
     padding:20px;
-
 }
-
 
 .availability{
 
@@ -789,9 +716,7 @@ nav{
 
     background:
         rgba(255,255,255,.04);
-
 }
-
 
 .availability i{
 
@@ -804,9 +729,7 @@ nav{
 
     box-shadow:
         0 0 14px #35ff9c;
-
 }
-
 
 .hero-side h3{
 
@@ -817,9 +740,7 @@ nav{
     letter-spacing:5px;
 
     font-size:13px;
-
 }
-
 
 .hero-side h2{
 
@@ -829,9 +750,7 @@ nav{
         clamp(40px,5vw,68px);
 
     line-height:.95;
-
 }
-
 
 .hero-side p{
 
@@ -842,9 +761,7 @@ nav{
     line-height:1.7;
 
     font-size:13px;
-
 }
-
 
 .hero-btns{
 
@@ -855,9 +772,7 @@ nav{
     gap:10px;
 
     margin-top:25px;
-
 }
-
 
 .hero-btn{
 
@@ -873,9 +788,7 @@ nav{
     font-size:11px;
 
     font-weight:800;
-
 }
-
 
 .hero-btn.primary{
 
@@ -889,9 +802,7 @@ nav{
     box-shadow:
         0 12px 35px
         rgba(80,50,255,.25);
-
 }
-
 
 .hero-btn.secondary{
 
@@ -901,12 +812,11 @@ nav{
 
     background:
         rgba(255,255,255,.05);
-
 }
 
 
 /* =====================================================
-   DASHBOARD LAPTOP GLASS
+   LAPTOP
 ===================================================== */
 
 .dashboard-laptop-area{
@@ -928,9 +838,7 @@ nav{
     overflow:hidden;
 
     perspective:1200px;
-
 }
-
 
 .dashboard-laptop-area::before{
 
@@ -955,9 +863,7 @@ nav{
 
     animation:
         laptopGlow 4s ease-in-out infinite;
-
 }
-
 
 @keyframes laptopGlow{
 
@@ -966,7 +872,6 @@ nav{
         transform:scale(.9);
 
         opacity:.55;
-
     }
 
     50%{
@@ -974,11 +879,8 @@ nav{
         transform:scale(1.15);
 
         opacity:1;
-
     }
-
 }
-
 
 .laptop-glass{
 
@@ -1016,9 +918,7 @@ nav{
         rgba(255,255,255,.12);
 
     position:relative;
-
 }
-
 
 .laptop-3d{
 
@@ -1035,13 +935,7 @@ nav{
 
     transition:
         transform .12s ease-out;
-
 }
-
-
-/* =====================================================
-   LAPTOP SCREEN
-===================================================== */
 
 .laptop-screen{
 
@@ -1081,9 +975,7 @@ nav{
 
     transform:
         translateZ(20px);
-
 }
-
 
 .laptop-screen video{
 
@@ -1095,9 +987,7 @@ nav{
     display:block;
 
     border-radius:9px;
-
 }
-
 
 .screen-fallback{
 
@@ -1127,9 +1017,7 @@ nav{
             #16002a,
             #03152e
         );
-
 }
-
 
 .screen-fallback strong{
 
@@ -1139,16 +1027,11 @@ nav{
     font-weight:1000;
 
     letter-spacing:-2px;
-
 }
-
 
 .screen-fallback strong span{
-
     color:#a855f7;
-
 }
-
 
 .screen-fallback small{
 
@@ -1161,9 +1044,7 @@ nav{
     font-size:9px;
 
     letter-spacing:2px;
-
 }
-
 
 .screen-shine{
 
@@ -1184,9 +1065,7 @@ nav{
 
     animation:
         screenShine 4s linear infinite;
-
 }
-
 
 @keyframes screenShine{
 
@@ -1197,13 +1076,7 @@ nav{
     to{
         transform:translateX(120%);
     }
-
 }
-
-
-/* =====================================================
-   LAPTOP BASE
-===================================================== */
 
 .laptop-base{
 
@@ -1237,9 +1110,7 @@ nav{
 
     transform:
         translateZ(8px);
-
 }
-
 
 .keyboard{
 
@@ -1261,9 +1132,7 @@ nav{
             #222 0 5px,
             #888 6px 7px
         );
-
 }
-
 
 .trackpad{
 
@@ -1282,9 +1151,7 @@ nav{
     background:#aaa;
 
     opacity:.65;
-
 }
-
 
 .laptop-shadow{
 
@@ -1310,13 +1177,7 @@ nav{
 
     transform:
         translateZ(-30px);
-
 }
-
-
-/* =====================================================
-   LAPTOP CAPTION
-===================================================== */
 
 .laptop-caption{
 
@@ -1335,16 +1196,13 @@ nav{
     text-shadow:
         0 0 15px
         rgba(168,85,247,.8);
-
 }
-
 
 .laptop-caption span{
 
     color:#a855f7;
 
     margin:0 8px;
-
 }
 
 
@@ -1355,9 +1213,7 @@ nav{
 .hero-right{
 
     padding:20px;
-
 }
-
 
 .mini-card{
 
@@ -1366,9 +1222,7 @@ nav{
     border-radius:22px;
 
     margin-bottom:15px;
-
 }
-
 
 .mini-card h3{
 
@@ -1379,9 +1233,7 @@ nav{
     letter-spacing:2px;
 
     margin-bottom:12px;
-
 }
-
 
 .mini-card p{
 
@@ -1390,7 +1242,6 @@ nav{
     line-height:1.7;
 
     font-size:12px;
-
 }
 
 
@@ -1404,25 +1255,19 @@ nav{
 
     margin:
         30px auto 0;
-
 }
-
 
 .comments-title{
 
     text-align:center;
 
     margin-bottom:20px;
-
 }
-
 
 .comments-title h2{
 
     font-size:28px;
-
 }
-
 
 .comments-title span{
 
@@ -1434,13 +1279,10 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
 }
-
 
 .comments-title p{
 
@@ -1449,18 +1291,14 @@ nav{
     font-size:11px;
 
     margin-top:6px;
-
 }
-
 
 .comment-form{
 
     padding:20px;
 
     border-radius:22px;
-
 }
-
 
 .comment-form textarea{
 
@@ -1484,9 +1322,7 @@ nav{
     color:#fff;
 
     outline:none;
-
 }
-
 
 .comment-form button{
 
@@ -1511,9 +1347,7 @@ nav{
             #7c3aed,
             #2563eb
         );
-
 }
-
 
 #commentsList{
 
@@ -1525,27 +1359,21 @@ nav{
     gap:15px;
 
     margin-top:18px;
-
 }
-
 
 .comment{
 
     padding:18px;
 
     border-radius:18px;
-
 }
-
 
 .comment strong{
 
     color:#c084fc;
 
     font-size:13px;
-
 }
-
 
 .comment small{
 
@@ -1554,9 +1382,7 @@ nav{
     color:#666;
 
     margin-top:3px;
-
 }
-
 
 .comment p{
 
@@ -1567,7 +1393,6 @@ nav{
     margin-top:10px;
 
     font-size:12px;
-
 }
 
 
@@ -1587,18 +1412,14 @@ nav{
         1fr 1fr;
 
     gap:20px;
-
 }
-
 
 .profile-card{
 
     padding:28px;
 
     border-radius:25px;
-
 }
-
 
 .profile-avatar{
 
@@ -1641,32 +1462,22 @@ nav{
 
         0 0 70px
         rgba(37,99,235,.20);
-
 }
-
 
 .profile-avatar span:first-child{
-
     color:white;
-
 }
-
 
 .profile-avatar span:last-child{
-
     color:#b66cff;
-
 }
-
 
 .profile-card h2{
 
     text-align:center;
 
     font-size:26px;
-
 }
-
 
 .profile-card .role{
 
@@ -1679,16 +1490,12 @@ nav{
     font-size:11px;
 
     letter-spacing:2px;
-
 }
-
 
 .profile-info{
 
     margin-top:25px;
-
 }
-
 
 .profile-info p{
 
@@ -1701,14 +1508,10 @@ nav{
         rgba(255,255,255,.06);
 
     font-size:13px;
-
 }
 
-
 .profile-info b{
-
     color:#ddd;
-
 }
 
 
@@ -1728,9 +1531,7 @@ nav{
         1fr 1fr;
 
     gap:22px;
-
 }
-
 
 .service-column{
 
@@ -1741,9 +1542,7 @@ nav{
     position:relative;
 
     overflow:hidden;
-
 }
-
 
 .service-column h2{
 
@@ -1760,13 +1559,10 @@ nav{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent;
-
 }
-
 
 .service-list{
 
@@ -1775,9 +1571,7 @@ nav{
     flex-direction:column;
 
     gap:12px;
-
 }
-
 
 .service-item{
 
@@ -1799,9 +1593,7 @@ nav{
         rgba(255,255,255,.035);
 
     transition:.3s;
-
 }
-
 
 .service-item:hover{
 
@@ -1814,9 +1606,7 @@ nav{
     box-shadow:
         0 0 20px
         rgba(168,85,247,.10);
-
 }
-
 
 .service-item .icon{
 
@@ -1839,9 +1629,7 @@ nav{
     box-shadow:
         0 0 18px
         rgba(130,30,255,.35);
-
 }
-
 
 .service-divider{
 
@@ -1872,9 +1660,7 @@ nav{
 
     animation:
         neonLine 2.5s linear infinite;
-
 }
-
 
 @keyframes neonLine{
 
@@ -1893,9 +1679,7 @@ nav{
             translateX(10%);
         opacity:.45;
     }
-
 }
-
 
 .service-tags{
 
@@ -1906,9 +1690,7 @@ nav{
     gap:8px;
 
     margin-top:20px;
-
 }
-
 
 .service-tags span{
 
@@ -1931,25 +1713,18 @@ nav{
 
     background:
         rgba(168,85,247,.07);
-
 }
-
 
 .owner-service-add{
 
     display:none;
 
     margin-top:16px;
-
 }
-
 
 body.owner .owner-service-add{
-
     display:block;
-
 }
-
 
 .add-btn{
 
@@ -1968,7 +1743,6 @@ body.owner .owner-service-add{
         rgba(120,30,255,.12);
 
     cursor:pointer;
-
 }
 
 
@@ -1981,9 +1755,7 @@ body.owner .owner-service-add{
     max-width:1250px;
 
     margin:auto;
-
 }
-
 
 .edits-grid{
 
@@ -1993,9 +1765,7 @@ body.owner .owner-service-add{
         repeat(3,1fr);
 
     gap:18px;
-
 }
-
 
 .edit-card{
 
@@ -2019,9 +1789,7 @@ body.owner .owner-service-add{
         rgba(255,255,255,.10);
 
     transition:.35s;
-
 }
-
 
 .edit-card:hover{
 
@@ -2032,9 +1800,7 @@ body.owner .owner-service-add{
 
         0 0 25px
         rgba(168,85,247,.25);
-
 }
-
 
 .edit-card img{
 
@@ -2046,9 +1812,7 @@ body.owner .owner-service-add{
     height:100%;
 
     object-fit:cover;
-
 }
-
 
 .edit-card::after{
 
@@ -2064,8 +1828,8 @@ body.owner .owner-service-add{
             rgba(0,0,0,.9)
         );
 
+    pointer-events:none;
 }
-
 
 .edit-info{
 
@@ -2074,19 +1838,17 @@ body.owner .owner-service-add{
     z-index:2;
 
     left:16px;
-    right:16px;
+    right:55px;
 
     bottom:15px;
-
 }
-
 
 .edit-info h3{
 
     font-size:16px;
 
+    word-break:break-word;
 }
-
 
 .edit-info p{
 
@@ -2095,13 +1857,11 @@ body.owner .owner-service-add{
     font-size:10px;
 
     margin-top:5px;
-
 }
-
 
 .plus-card{
 
-    display:grid;
+    display:none;
 
     place-items:center;
 
@@ -2111,8 +1871,12 @@ body.owner .owner-service-add{
         1px dashed
         rgba(168,85,247,.55);
 
+    min-height:220px;
 }
 
+body.owner .plus-card{
+    display:grid;
+}
 
 .plus{
 
@@ -2125,30 +1889,78 @@ body.owner .owner-service-add{
     text-shadow:
         0 0 25px
         #8a20ff;
-
 }
-
 
 .plus-card p{
 
     color:#aaa;
 
     text-align:center;
-
 }
 
+.delete-photo-btn{
 
-.owner-only{
+    position:absolute;
+
+    z-index:10;
+
+    right:12px;
+
+    bottom:12px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(255,80,120,.4);
+
+    background:
+        rgba(0,0,0,.65);
+
+    color:#fff;
+
+    cursor:pointer;
 
     display:none;
 
+    align-items:center;
+    justify-content:center;
 }
 
+body.owner .delete-photo-btn{
+    display:flex;
+}
 
-body.owner .owner-only{
+.delete-photo-btn:hover{
 
-    display:grid;
+    background:
+        rgba(255,40,80,.25);
 
+    transform:scale(1.08);
+}
+
+.upload-status{
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border-radius:14px;
+
+    color:#aaa;
+
+    font-size:11px;
+
+    display:none;
+
+    text-align:center;
+}
+
+.upload-status.show{
+    display:block;
 }
 
 
@@ -2161,42 +1973,31 @@ body.owner .owner-only{
     max-width:1100px;
 
     margin:auto;
-
 }
-
 
 .contact-intro{
 
     text-align:center;
 
     margin-bottom:35px;
-
 }
-
 
 .contact-intro h2{
 
     font-size:
         clamp(28px,4vw,45px);
-
 }
-
 
 .contact-intro p{
 
     color:#777;
 
     margin-top:8px;
-
 }
-
 
 .contact-section{
-
     margin-bottom:25px;
-
 }
-
 
 .contact-section-title{
 
@@ -2211,9 +2012,7 @@ body.owner .owner-only{
     gap:15px;
 
     margin-bottom:12px;
-
 }
-
 
 .contact-section-title .section-icon{
 
@@ -2234,18 +2033,14 @@ body.owner .owner-only{
             rgba(168,85,247,.25),
             rgba(37,99,235,.12)
         );
-
 }
-
 
 .contact-section-title h3{
 
     font-size:16px;
 
     letter-spacing:1px;
-
 }
-
 
 .contact-section-title p{
 
@@ -2254,9 +2049,7 @@ body.owner .owner-only{
     font-size:10px;
 
     margin-top:4px;
-
 }
-
 
 .contact-grid{
 
@@ -2266,9 +2059,7 @@ body.owner .owner-only{
         repeat(2,1fr);
 
     gap:14px;
-
 }
-
 
 .contact-card{
 
@@ -2287,9 +2078,7 @@ body.owner .owner-only{
     gap:15px;
 
     transition:.3s;
-
 }
-
 
 .contact-card:hover{
 
@@ -2302,9 +2091,7 @@ body.owner .owner-only{
     box-shadow:
         0 15px 40px
         rgba(168,85,247,.12);
-
 }
-
 
 .contact-icon{
 
@@ -2321,9 +2108,7 @@ body.owner .owner-only{
         rgba(168,85,247,.10);
 
     font-size:21px;
-
 }
-
 
 .contact-card small{
 
@@ -2334,9 +2119,7 @@ body.owner .owner-only{
     font-size:8px;
 
     letter-spacing:1px;
-
 }
-
 
 .contact-card strong{
 
@@ -2349,9 +2132,7 @@ body.owner .owner-only{
     font-size:13px;
 
     word-break:break-word;
-
 }
-
 
 .owner-contact{
 
@@ -2362,25 +2143,18 @@ body.owner .owner-only{
     border-radius:22px;
 
     margin-top:15px;
-
 }
-
 
 body.owner .owner-contact{
-
     display:block;
-
 }
-
 
 .owner-contact h3{
 
     color:#c084fc;
 
     margin-bottom:15px;
-
 }
-
 
 .owner-contact input{
 
@@ -2401,9 +2175,7 @@ body.owner .owner-contact{
     color:white;
 
     outline:none;
-
 }
-
 
 .owner-contact button{
 
@@ -2426,12 +2198,11 @@ body.owner .owner-contact{
     cursor:pointer;
 
     font-weight:800;
-
 }
 
 
 /* =====================================================
-   CONTACT EMAIL
+   EMAIL
 ===================================================== */
 
 .email-box{
@@ -2439,9 +2210,7 @@ body.owner .owner-contact{
     padding:5px;
 
     border-radius:22px;
-
 }
-
 
 .email-box a{
 
@@ -2456,7 +2225,6 @@ body.owner .owner-contact{
     color:white;
 
     text-decoration:none;
-
 }
 
 
@@ -2488,9 +2256,7 @@ body.owner .owner-contact{
         repeat(4,1fr);
 
     gap:15px;
-
 }
-
 
 .support-item{
 
@@ -2501,16 +2267,11 @@ body.owner .owner-contact{
     gap:12px;
 
     padding:10px;
-
 }
-
 
 .support-icon{
-
     font-size:30px;
-
 }
-
 
 .support-item h4{
 
@@ -2519,9 +2280,7 @@ body.owner .owner-contact{
     font-size:11px;
 
     letter-spacing:1px;
-
 }
-
 
 .support-item p{
 
@@ -2532,7 +2291,6 @@ body.owner .owner-contact{
     line-height:1.5;
 
     margin-top:4px;
-
 }
 
 
@@ -2559,16 +2317,11 @@ body.owner .owner-contact{
 
     backdrop-filter:
         blur(12px);
-
 }
-
 
 .modal.show{
-
     display:grid;
-
 }
-
 
 .login-box{
 
@@ -2579,17 +2332,17 @@ body.owner .owner-contact{
 
     border-radius:25px;
 
-}
+    max-height:90vh;
 
+    overflow-y:auto;
+}
 
 .login-box h2{
 
     text-align:center;
 
     font-size:28px;
-
 }
-
 
 .login-box > p{
 
@@ -2601,9 +2354,7 @@ body.owner .owner-contact{
 
     margin:
         7px 0 20px;
-
 }
-
 
 .login-box input{
 
@@ -2624,18 +2375,14 @@ body.owner .owner-contact{
     color:#fff;
 
     outline:none;
-
 }
-
 
 .login-actions{
 
     display:flex;
 
     gap:10px;
-
 }
-
 
 .login-actions button{
 
@@ -2646,9 +2393,7 @@ body.owner .owner-contact{
     border-radius:12px;
 
     cursor:pointer;
-
 }
-
 
 .login-main{
 
@@ -2664,9 +2409,7 @@ body.owner .owner-contact{
             #7c3aed,
             #2563eb
         );
-
 }
-
 
 .close-btn{
 
@@ -2678,9 +2421,7 @@ body.owner .owner-contact{
         rgba(255,255,255,.05);
 
     color:#fff;
-
 }
-
 
 #loginMessage{
 
@@ -2693,7 +2434,6 @@ body.owner .owner-contact{
     color:#ff7777;
 
     font-size:11px;
-
 }
 
 
@@ -2710,30 +2450,76 @@ body.owner .owner-contact{
     padding:18px;
 
     border-radius:20px;
-
 }
-
 
 body.owner .owner-panel{
-
     display:block;
-
 }
-
 
 .owner-panel h3{
 
     color:#c084fc;
 
     margin-bottom:10px;
+}
 
+.owner-panel button{
+    margin-top:10px;
 }
 
 
-.owner-panel button{
+/* =====================================================
+   TOAST
+===================================================== */
 
-    margin-top:10px;
+.toast{
 
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    z-index:10000;
+
+    padding:
+        13px 20px;
+
+    border-radius:14px;
+
+    background:
+        rgba(20,10,35,.95);
+
+    border:
+        1px solid
+        rgba(168,85,247,.45);
+
+    box-shadow:
+        0 0 30px
+        rgba(168,85,247,.25);
+
+    color:#fff;
+
+    font-size:12px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
 }
 
 
@@ -2752,7 +2538,6 @@ footer{
     letter-spacing:2px;
 
     padding:30px;
-
 }
 
 
@@ -2766,37 +2551,27 @@ footer{
 
         grid-template-columns:
             1fr 1.5fr;
-
     }
 
     .hero-right{
-
         display:none;
-
     }
-
 }
-
 
 @media(max-width:850px){
 
     nav{
-
         display:none;
-
     }
 
     header{
 
         padding:
             0 18px;
-
     }
 
     .dashboard-top{
-
         grid-template-columns:1fr;
-
     }
 
     .hero-side{
@@ -2804,44 +2579,32 @@ footer{
         text-align:center;
 
         order:2;
-
     }
 
     .hero-side p{
 
         margin-left:auto;
         margin-right:auto;
-
     }
 
     .hero-btns{
-
         justify-content:center;
-
     }
 
     .dashboard-laptop-area{
-
         order:1;
-
     }
 
     .profile-grid,
     .services-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .support-bar{
-
         grid-template-columns:
             1fr 1fr;
-
     }
-
 }
-
 
 @media(max-width:600px){
 
@@ -2849,13 +2612,6 @@ footer{
 
         padding:
             100px 15px 40px;
-
-    }
-
-    .dilu-title{
-
-        letter-spacing:-3px;
-
     }
 
     .laptop-glass{
@@ -2864,50 +2620,27 @@ footer{
 
         padding:
             22px 12px 30px;
-
     }
 
     .dashboard-laptop-area{
-
         min-height:380px;
-
     }
 
     .contact-grid{
-
         grid-template-columns:1fr;
-
     }
 
     .edits-grid{
-
         grid-template-columns:1fr;
-
     }
 
     #commentsList{
-
         grid-template-columns:1fr;
-
     }
 
     .support-bar{
-
         grid-template-columns:1fr;
-
     }
-
-}
-
-
-/* =====================================================
-   HIDE MOBILE MENU ELEMENT
-===================================================== */
-
-.mobile-menu{
-
-    display:none;
-
 }
 
 </style>
@@ -2918,7 +2651,9 @@ footer{
 <body>
 
 
-<!-- BACKGROUND -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
 <div class="bg-orb one"></div>
 <div class="bg-orb two"></div>
@@ -2937,14 +2672,13 @@ footer{
         DILU <span>EDITS</span>
     </div>
 
-
     <nav>
 
         <button
             class="nav active"
             data-page="home"
         >
-            DASHBORD
+            DASHBOARD
         </button>
 
         <button
@@ -2975,7 +2709,6 @@ footer{
             CONTACTS
         </button>
 
-
         <button
             class="login-btn"
             onclick="openLogin()"
@@ -2983,7 +2716,6 @@ footer{
         >
             🔐 LOGIN
         </button>
-
 
         <div class="de-logo">
 
@@ -2993,9 +2725,6 @@ footer{
         </div>
 
     </nav>
-
-
-    <!-- MOBILE LOGIN -->
 
     <button
         class="login-btn mobile-menu"
@@ -3023,9 +2752,7 @@ footer{
     id="home"
 >
 
-
     <div class="dashboard">
-
 
         <div class="page-title">
 
@@ -3044,8 +2771,6 @@ footer{
         <div class="dashboard-top">
 
 
-            <!-- LEFT -->
-
             <div class="hero-side">
 
                 <div class="availability">
@@ -3056,17 +2781,14 @@ footer{
 
                 </div>
 
-
                 <h3>
                     PROFESSIONAL
                 </h3>
-
 
                 <h2>
                     Video<br>
                     Editor
                 </h2>
-
 
                 <p>
 
@@ -3077,7 +2799,6 @@ footer{
                     content stand out.
 
                 </p>
-
 
                 <div class="hero-btns">
 
@@ -3091,7 +2812,6 @@ footer{
                     >
                         VIEW MY WORK ↗
                     </a>
-
 
                     <a
                         class="hero-btn secondary"
@@ -3123,7 +2843,6 @@ footer{
                         id="laptop3D"
                     >
 
-
                         <div class="laptop-screen">
 
                             <video
@@ -3141,7 +2860,6 @@ footer{
 
                             </video>
 
-
                             <div
                                 class="screen-fallback"
                                 id="screenFallback"
@@ -3155,18 +2873,16 @@ footer{
                                     </strong>
 
                                     <small>
-                                        3–5 SECOND INTRO
+                                        PROFESSIONAL EDITING
                                     </small>
 
                                 </div>
 
                             </div>
 
-
                             <div class="screen-shine"></div>
 
                         </div>
-
 
                         <div class="laptop-base">
 
@@ -3176,14 +2892,11 @@ footer{
 
                         </div>
 
-
                         <div class="laptop-shadow"></div>
-
 
                     </div>
 
                 </div>
-
 
                 <div class="laptop-caption">
 
@@ -3202,7 +2915,6 @@ footer{
 
             <div class="hero-right">
 
-
                 <div class="mini-card glass">
 
                     <h3>
@@ -3216,7 +2928,6 @@ footer{
                     </p>
 
                 </div>
-
 
                 <div class="mini-card glass">
 
@@ -3233,7 +2944,6 @@ footer{
 
                 </div>
 
-
                 <div class="mini-card glass">
 
                     <h3>
@@ -3246,19 +2956,14 @@ footer{
 
                 </div>
 
-
             </div>
-
 
         </div>
 
 
-        <!-- =================================================
-             SUPPORT
-        ================================================== -->
+        <!-- SUPPORT -->
 
         <div class="support-bar">
-
 
             <div class="support-item">
 
@@ -3347,16 +3052,12 @@ footer{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             COMMENTS
-        ================================================== -->
+        <!-- COMMENTS -->
 
         <div class="comments-section">
-
 
             <div class="comments-title">
 
@@ -3371,14 +3072,12 @@ footer{
 
             </div>
 
-
             <div class="comment-form glass">
 
                 <textarea
                     id="commentText"
                     placeholder="Write your comment..."
                 ></textarea>
-
 
                 <button
                     onclick="addComment()"
@@ -3388,12 +3087,9 @@ footer{
 
             </div>
 
-
             <div id="commentsList"></div>
 
-
         </div>
-
 
     </div>
 
@@ -3408,7 +3104,6 @@ footer{
     class="page"
     id="profile"
 >
-
 
     <div class="page-title">
 
@@ -3425,7 +3120,6 @@ footer{
 
     <div class="profile-grid">
 
-
         <div class="profile-card glass">
 
             <div class="profile-avatar">
@@ -3435,16 +3129,13 @@ footer{
 
             </div>
 
-
             <h2>
                 Lakshana Dilshan
             </h2>
 
-
             <div class="role">
                 FOUNDER & PROFESSIONAL VIDEO EDITOR
             </div>
-
 
             <div class="profile-info">
 
@@ -3486,7 +3177,6 @@ footer{
                 MY SKILLS
             </h3>
 
-
             <div class="service-list">
 
                 <div class="service-item">
@@ -3523,11 +3213,8 @@ footer{
 
         </div>
 
-
     </div>
 
-
-    <!-- OWNER PROFILE EDITOR -->
 
     <div class="owner-panel glass">
 
@@ -3536,12 +3223,10 @@ footer{
         </h3>
 
         <p style="color:#aaa;font-size:12px">
-            Owner login is active. You can later connect
-            this section to Firebase for permanent editing.
+            Owner login is active.
         </p>
 
     </div>
-
 
 </section>
 
@@ -3554,7 +3239,6 @@ footer{
     class="page"
     id="services"
 >
-
 
     <div class="page-title">
 
@@ -3572,14 +3256,11 @@ footer{
     <div class="services-grid">
 
 
-        <!-- EDITING -->
-
         <div class="service-column glass">
 
             <h2>
                 🎬 EDITING SERVICE
             </h2>
-
 
             <div
                 class="service-list"
@@ -3587,99 +3268,46 @@ footer{
             >
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎬
-                    </div>
-
-                    <div>
-                        YouTube Video Editing
-                    </div>
-
+                    <div class="icon">🎬</div>
+                    <div>YouTube Video Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        📱
-                    </div>
-
-                    <div>
-                        Shorts & Reels Editing
-                    </div>
-
+                    <div class="icon">📱</div>
+                    <div>Shorts & Reels Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎵
-                    </div>
-
-                    <div>
-                        TikTok Video Editing
-                    </div>
-
+                    <div class="icon">🎵</div>
+                    <div>TikTok Video Editing</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🖼️
-                    </div>
-
-                    <div>
-                        Thumbnail Design
-                    </div>
-
+                    <div class="icon">🖼️</div>
+                    <div>Thumbnail Design</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎨
-                    </div>
-
-                    <div>
-                        Color Correction
-                    </div>
-
+                    <div class="icon">🎨</div>
+                    <div>Color Correction</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🎧
-                    </div>
-
-                    <div>
-                        Audio Sync
-                    </div>
-
+                    <div class="icon">🎧</div>
+                    <div>Audio Sync</div>
                 </div>
-
 
             </div>
 
-
             <div class="service-divider"></div>
-
 
             <div class="service-tags">
 
                 <span>⚡ FAST DELIVERY</span>
-
                 <span>✦ HIGH QUALITY</span>
-
                 <span>✓ PROFESSIONAL</span>
 
             </div>
-
 
             <div class="owner-service-add">
 
@@ -3695,14 +3323,11 @@ footer{
         </div>
 
 
-        <!-- ONLINE -->
-
         <div class="service-column glass">
 
             <h2>
                 🌐 ONLINE SERVICE
             </h2>
-
 
             <div
                 class="service-list"
@@ -3710,99 +3335,46 @@ footer{
             >
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🌐
-                    </div>
-
-                    <div>
-                        Website Development
-                    </div>
-
+                    <div class="icon">🌐</div>
+                    <div>Website Development</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        💻
-                    </div>
-
-                    <div>
-                        Landing Pages
-                    </div>
-
+                    <div class="icon">💻</div>
+                    <div>Landing Pages</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🛒
-                    </div>
-
-                    <div>
-                        E-Commerce Sites
-                    </div>
-
+                    <div class="icon">🛒</div>
+                    <div>E-Commerce Sites</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        🔎
-                    </div>
-
-                    <div>
-                        SEO Optimization
-                    </div>
-
+                    <div class="icon">🔎</div>
+                    <div>SEO Optimization</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        📲
-                    </div>
-
-                    <div>
-                        Social Media Setup
-                    </div>
-
+                    <div class="icon">📲</div>
+                    <div>Social Media Setup</div>
                 </div>
-
 
                 <div class="service-item">
-
-                    <div class="icon">
-                        ▶️
-                    </div>
-
-                    <div>
-                        YouTube Channel Setup
-                    </div>
-
+                    <div class="icon">▶️</div>
+                    <div>YouTube Channel Setup</div>
                 </div>
-
 
             </div>
 
-
             <div class="service-divider"></div>
-
 
             <div class="service-tags">
 
                 <span>⚡ FAST DELIVERY</span>
-
                 <span>✦ HIGH QUALITY</span>
-
                 <span>✓ ONLINE SUPPORT</span>
 
             </div>
-
 
             <div class="owner-service-add">
 
@@ -3817,9 +3389,7 @@ footer{
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3832,7 +3402,6 @@ footer{
     class="page"
     id="edits"
 >
-
 
     <div class="page-title">
 
@@ -3849,12 +3418,10 @@ footer{
 
     <div class="edits-wrap">
 
-
         <div
             class="edits-grid"
             id="editsGrid"
         >
-
 
             <!-- SAMPLE -->
 
@@ -3892,10 +3459,11 @@ footer{
             </div>
 
 
-            <!-- OWNER ONLY -->
+            <!-- OWNER ADD -->
 
             <label
                 class="edit-card plus-card owner-only"
+                title="Add Photos"
             >
 
                 <input
@@ -3905,7 +3473,6 @@ footer{
                     multiple
                     hidden
                 >
-
 
                 <div>
 
@@ -3921,13 +3488,18 @@ footer{
 
             </label>
 
-
         </div>
 
 
         <div
-            class="owner-panel glass"
+            class="upload-status glass"
+            id="uploadStatus"
         >
+            Uploading...
+        </div>
+
+
+        <div class="owner-panel glass">
 
             <h3>
                 👑 OWNER EDIT CONTROLS
@@ -3939,15 +3511,14 @@ footer{
                 font-size:11px;
                 "
             >
-                Add multiple portfolio photos
-                using the + Add Photos card.
+                Photos are stored in Cloudinary
+                and photo information is stored
+                in Firebase Firestore.
             </p>
 
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -3960,7 +3531,6 @@ footer{
     class="page"
     id="contacts"
 >
-
 
     <div class="page-title">
 
@@ -3981,7 +3551,9 @@ footer{
         <div class="contact-intro">
 
             <h2>
-                Contact <span style="
+                Contact
+                <span
+                    style="
                     background:
                     linear-gradient(
                         90deg,
@@ -3991,7 +3563,10 @@ footer{
                     -webkit-background-clip:text;
                     background-clip:text;
                     color:transparent;
-                ">ME</span>
+                    "
+                >
+                    ME
+                </span>
             </h2>
 
             <p>
@@ -4002,12 +3577,9 @@ footer{
         </div>
 
 
-        <!-- =================================================
-             PHONE NUMBERS
-        ================================================== -->
+        <!-- PHONE -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4032,11 +3604,10 @@ footer{
 
             <div class="contact-grid">
 
-
                 <a
                     class="contact-card glass"
                     id="phoneCard"
-                    href="tel:+94771234567"
+                    href="#"
                 >
 
                     <div class="contact-icon">
@@ -4061,7 +3632,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="whatsappCard"
-                    href="https://wa.me/94701412188"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4083,11 +3654,8 @@ footer{
 
                 </a>
 
-
             </div>
 
-
-            <!-- OWNER -->
 
             <div class="owner-contact glass">
 
@@ -4095,18 +3663,15 @@ footer{
                     👑 EDIT PHONE DETAILS
                 </h3>
 
-
                 <input
                     id="phoneInput"
                     placeholder="Phone Number"
                 >
 
-
                 <input
                     id="whatsappInput"
                     placeholder="WhatsApp Number"
                 >
-
 
                 <button
                     onclick="saveContacts()"
@@ -4116,16 +3681,12 @@ footer{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             SOCIAL MEDIA
-        ================================================== -->
+        <!-- SOCIAL -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4154,7 +3715,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="instagramCard"
-                    href="https://instagram.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4169,7 +3730,7 @@ footer{
                         </small>
 
                         <strong id="instagramDisplay">
-                            https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr
+                            DILU EDITS
                         </strong>
 
                     </div>
@@ -4180,7 +3741,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="facebookCard"
-                    href="https://facebook.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4194,8 +3755,8 @@ footer{
                             FACEBOOK
                         </small>
 
-                        <strong>
-                            https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr
+                        <strong id="facebookDisplay">
+                            DILU EDITS
                         </strong>
 
                     </div>
@@ -4206,7 +3767,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="tiktokCard"
-                    href="https://tiktok.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4220,8 +3781,8 @@ footer{
                             TIKTOK
                         </small>
 
-                        <strong>
-                        https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY
+                        <strong id="tiktokDisplay">
+                            @secrethearthunter
                         </strong>
 
                     </div>
@@ -4232,7 +3793,7 @@ footer{
                 <a
                     class="contact-card glass"
                     id="youtubeCard"
-                    href="https://youtube.com/"
+                    href="#"
                     target="_blank"
                 >
 
@@ -4246,14 +3807,13 @@ footer{
                             YOUTUBE
                         </small>
 
-                        <strong>
+                        <strong id="youtubeDisplay">
                             DILU EDITS
                         </strong>
 
                     </div>
 
                 </a>
-
 
             </div>
 
@@ -4267,27 +3827,23 @@ footer{
 
                 <input
                     id="instagramInput"
-                    placeholder="https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr"
+                    placeholder="Instagram Link"
                 >
-
 
                 <input
                     id="facebookInput"
-                    placeholder="https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr
+                    placeholder="Facebook Link"
                 >
-
 
                 <input
                     id="tiktokInput"
-                     placeholder="https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY"
+                    placeholder="TikTok Link"
                 >
-
 
                 <input
                     id="youtubeInput"
                     placeholder="YouTube Link"
                 >
-
 
                 <button
                     onclick="saveContacts()"
@@ -4297,16 +3853,12 @@ footer{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             EMAIL
-        ================================================== -->
+        <!-- EMAIL -->
 
         <div class="contact-section">
-
 
             <div class="contact-section-title glass">
 
@@ -4320,8 +3872,8 @@ footer{
                         EMAIL
                     </h3>
 
-                    <p>
-                       dilshanlakshana20@gmail.com
+                    <p id="emailSectionText">
+                        dilshanlakshana20@gmail.com
                     </p>
 
                 </div>
@@ -4333,7 +3885,7 @@ footer{
 
                 <a
                     id="emailCard"
-                    href="dilshanlakshana20@gmail.com"
+                    href="#"
                 >
 
                     <div class="contact-icon">
@@ -4349,7 +3901,7 @@ footer{
                         <strong
                             id="emailDisplay"
                         >
-                           dilshanlakshana20@gmail.com
+                            dilshanlakshana20@gmail.com
                         </strong>
 
                     </div>
@@ -4365,12 +3917,10 @@ footer{
                     👑 EDIT EMAIL
                 </h3>
 
-
                 <input
                     id="emailInput"
-                    placeholder="dilshanlakshana20@gmai.com"
+                    placeholder="Business Email"
                 >
-
 
                 <button
                     onclick="saveContacts()"
@@ -4380,15 +3930,11 @@ footer{
 
             </div>
 
-
         </div>
-
 
     </div>
 
-
 </section>
-
 
 </main>
 
@@ -4413,21 +3959,18 @@ footer{
     id="loginModal"
 >
 
-
     <div class="login-box glass">
-
 
         <h2>
             LOGIN
         </h2>
-
 
         <p>
             Login with your name and phone number
         </p>
 
 
-        <!-- NORMAL USER LOGIN -->
+        <!-- NORMAL USER -->
 
         <input
             id="userName"
@@ -4435,13 +3978,11 @@ footer{
             placeholder="Your Name"
         >
 
-
         <input
             id="userPhone"
             type="tel"
             placeholder="Phone Number"
         >
-
 
         <div class="login-actions">
 
@@ -4451,7 +3992,6 @@ footer{
             >
                 LOGIN
             </button>
-
 
             <button
                 class="close-btn"
@@ -4489,19 +4029,17 @@ footer{
             👑 OWNER LOGIN
         </p>
 
-
         <input
             id="ownerUsername"
+            type="text"
             placeholder="Owner Username"
         >
-
 
         <input
             id="ownerPassword"
             type="password"
-            placeholder="Owner Password"
+            placeholder="Firebase Password"
         >
-
 
         <button
             class="login-main"
@@ -4514,50 +4052,166 @@ footer{
             👑 OWNER LOGIN
         </button>
 
-
     </div>
 
 </div>
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     TOAST
 ===================================================== -->
 
-<script>
+<div
+    class="toast"
+    id="toast"
+>
+</div>
+
+
+<!-- =====================================================
+     FIREBASE + CLOUDINARY JAVASCRIPT
+===================================================== -->
+
+<script type="module">
+
+/* =====================================================
+   FIREBASE IMPORTS
+===================================================== */
+
+import {
+    initializeApp
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 
 /* =====================================================
-   PARTICLES
+   FIREBASE CONFIG
 ===================================================== */
 
-const particles =
-    document.getElementById("particles");
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyC2JMZsM3wUl3mPgnwujAa_PdrApozWBmw",
+
+    authDomain:
+        "dilu-edits-b184a.firebaseapp.com",
+
+    databaseURL:
+        "https://dilu-edits-b184a-default-rtdb.firebaseio.com",
+
+    projectId:
+        "dilu-edits-b184a",
+
+    storageBucket:
+        "dilu-edits-b184a.firebasestorage.app",
+
+    messagingSenderId:
+        "834870152212",
+
+    appId:
+        "1:834870152212:web:fb6c403ad2977153f42b01",
+
+    measurementId:
+        "G-9R3207D72Y"
+};
 
 
-for(let i=0;i<70;i++){
+/* =====================================================
+   FIREBASE INIT
+===================================================== */
 
-    const p =
-        document.createElement("div");
+const app =
+    initializeApp(firebaseConfig);
 
-    p.className =
-        "particle";
+const auth =
+    getAuth(app);
 
-    p.style.left =
-        Math.random()*100 + "%";
+const db =
+    getFirestore(app);
 
-    p.style.animationDuration =
-        (5 + Math.random()*10) + "s";
 
-    p.style.animationDelay =
-        Math.random()*8 + "s";
+/* =====================================================
+   OWNER
+===================================================== */
 
-    p.style.opacity =
-        Math.random();
+const OWNER_USERNAME =
+    "dilu";
 
-    particles.appendChild(p);
+const OWNER_EMAIL =
+    "dilshanlakshana20@gmail.com";
 
-}
+const OWNER_UID =
+    "9HvdVWGzDCPjHtmXLyXvEfnYkq22";
+
+
+/* =====================================================
+   CLOUDINARY
+===================================================== */
+
+const CLOUDINARY_CLOUD_NAME =
+    "paxu7ccs";
+
+const CLOUDINARY_UPLOAD_PRESET =
+    "dilu_edits";
+
+const CLOUDINARY_UPLOAD_URL =
+    "https://api.cloudinary.com/v1_1/" +
+    CLOUDINARY_CLOUD_NAME +
+    "/image/upload";
+
+
+/* =====================================================
+   GLOBAL HELPERS
+===================================================== */
+
+let toastTimer;
+
+
+window.showToast =
+function(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    if(!toast) return;
+
+    toast.textContent =
+        message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer =
+        setTimeout(
+            function(){
+
+                toast.classList.remove("show");
+
+            },
+            3000
+        );
+};
 
 
 /* =====================================================
@@ -4565,32 +4219,41 @@ for(let i=0;i<70;i++){
 ===================================================== */
 
 const pages =
-    [...document.querySelectorAll(".page")];
+    Array.from(
+        document.querySelectorAll(".page")
+    );
 
 const navButtons =
-    [...document.querySelectorAll(".nav")];
+    Array.from(
+        document.querySelectorAll(".nav")
+    );
 
 
-function showPage(id){
+window.showPage =
+function(id){
 
-    pages.forEach(page => {
+    pages.forEach(
+        function(page){
 
-        page.classList.toggle(
-            "active",
-            page.id === id
-        );
+            page.classList.toggle(
+                "active",
+                page.id === id
+            );
 
-    });
+        }
+    );
 
 
-    navButtons.forEach(button => {
+    navButtons.forEach(
+        function(button){
 
-        button.classList.toggle(
-            "active",
-            button.dataset.page === id
-        );
+            button.classList.toggle(
+                "active",
+                button.dataset.page === id
+            );
 
-    });
+        }
+    );
 
 
     window.scrollTo({
@@ -4601,23 +4264,25 @@ function showPage(id){
 
     });
 
-}
+};
 
 
-navButtons.forEach(button => {
+navButtons.forEach(
+    function(button){
 
-    button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+            "click",
+            function(){
 
-            showPage(
-                button.dataset.page
-            );
+                window.showPage(
+                    button.dataset.page
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
 
 
 /* =====================================================
@@ -4630,27 +4295,36 @@ const loginModal =
     );
 
 
-function openLogin(){
+window.openLogin =
+function(){
 
-    loginModal.classList.add("show");
+    loginModal.classList.add(
+        "show"
+    );
 
-}
-
-
-function closeLogin(){
-
-    loginModal.classList.remove("show");
-
-}
+};
 
 
-window.addEventListener(
+window.closeLogin =
+function(){
+
+    loginModal.classList.remove(
+        "show"
+    );
+
+};
+
+
+loginModal.addEventListener(
     "click",
-    function(e){
+    function(event){
 
-        if(e.target === loginModal){
+        if(
+            event.target ===
+            loginModal
+        ){
 
-            closeLogin();
+            window.closeLogin();
 
         }
 
@@ -4660,16 +4334,17 @@ window.addEventListener(
 
 /* =====================================================
    NORMAL USER LOGIN
-   NAME + PHONE ONLY
 ===================================================== */
 
-function userLogin(){
+window.userLogin =
+function(){
 
     const name =
         document
         .getElementById("userName")
         .value
         .trim();
+
 
     const phone =
         document
@@ -4686,6 +4361,9 @@ function userLogin(){
 
     if(!name || !phone){
 
+        message.style.color =
+            "#ff7777";
+
         message.textContent =
             "Please enter your name and phone number.";
 
@@ -4694,18 +4372,15 @@ function userLogin(){
     }
 
 
-    const user = {
-
-        name:name,
-
-        phone:phone
-
-    };
-
-
     localStorage.setItem(
         "diluCurrentUser",
-        JSON.stringify(user)
+        JSON.stringify({
+
+            name:name,
+
+            phone:phone
+
+        })
     );
 
 
@@ -4720,40 +4395,34 @@ function userLogin(){
 
 
     setTimeout(
-        closeLogin,
+        window.closeLogin,
         600
     );
 
-}
+};
 
 
 /* =====================================================
    OWNER LOGIN
 ===================================================== */
 
-
-/*
-   CHANGE THESE BEFORE PUBLISHING
-*/
-
-const OWNER_USERNAME =
-    "dilu";
-
-const OWNER_PASSWORD =
-    "1234";
-
-
-function ownerLogin(){
+window.ownerLogin =
+async function(){
 
     const username =
         document
-        .getElementById("ownerUsername")
+        .getElementById(
+            "ownerUsername"
+        )
         .value
         .trim();
 
+
     const password =
         document
-        .getElementById("ownerPassword")
+        .getElementById(
+            "ownerPassword"
+        )
         .value;
 
 
@@ -4763,22 +4432,54 @@ function ownerLogin(){
         );
 
 
-    if(
+    if(username !== OWNER_USERNAME){
 
-        username === OWNER_USERNAME &&
-        password === OWNER_PASSWORD
+        message.style.color =
+            "#ff7777";
 
-    ){
+        message.textContent =
+            "Wrong owner username.";
 
-        localStorage.setItem(
-            "diluOwner",
-            "1"
-        );
+        return;
+
+    }
 
 
-        document.body.classList.add(
-            "owner"
-        );
+    if(!password){
+
+        message.style.color =
+            "#ff7777";
+
+        message.textContent =
+            "Enter your Firebase password.";
+
+        return;
+
+    }
+
+
+    try{
+
+        const result =
+            await signInWithEmailAndPassword(
+                auth,
+                OWNER_EMAIL,
+                password
+            );
+
+
+        if(
+            result.user.uid !==
+            OWNER_UID
+        ){
+
+            await signOut(auth);
+
+            throw new Error(
+                "This Firebase account is not the website owner."
+            );
+
+        }
 
 
         message.style.color =
@@ -4792,51 +4493,66 @@ function ownerLogin(){
 
 
         setTimeout(
-            closeLogin,
+            window.closeLogin,
             600
         );
 
 
-    }else{
+        showToast(
+            "👑 Owner login successful!"
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "OWNER LOGIN ERROR:",
+            error
+        );
+
 
         message.style.color =
             "#ff7777";
 
-        message.textContent =
-            "Wrong owner username or password.";
+
+        if(
+            error.code ===
+            "auth/invalid-credential"
+        ){
+
+            message.textContent =
+                "Wrong Firebase password.";
+
+        }else if(
+            error.code ===
+            "auth/user-not-found"
+        ){
+
+            message.textContent =
+                "Firebase owner account not found.";
+
+        }else if(
+            error.code ===
+            "auth/too-many-requests"
+        ){
+
+            message.textContent =
+                "Too many attempts. Try again later.";
+
+        }else{
+
+            message.textContent =
+                error.message;
+
+        }
 
     }
 
-}
+};
 
 
 /* =====================================================
-   LOGOUT
-===================================================== */
-
-function logout(){
-
-    localStorage.removeItem(
-        "diluCurrentUser"
-    );
-
-    localStorage.removeItem(
-        "diluOwner"
-    );
-
-
-    document.body.classList.remove(
-        "owner"
-    );
-
-
-    updateLoginButton();
-
-}
-
-
-/* =====================================================
-   LOGIN BUTTON UPDATE
+   UPDATE LOGIN BUTTON
 ===================================================== */
 
 function updateLoginButton(){
@@ -4847,21 +4563,17 @@ function updateLoginButton(){
         );
 
 
+    if(!button) return;
+
+
     const user =
-        JSON.parse(
-            localStorage.getItem(
-                "diluCurrentUser"
-            ) || "null"
-        );
+        auth.currentUser;
 
 
-    const owner =
-        localStorage.getItem(
-            "diluOwner"
-        );
-
-
-    if(owner === "1"){
+    if(
+        user &&
+        user.uid === OWNER_UID
+    ){
 
         button.innerHTML =
             "👑 OWNER";
@@ -4871,10 +4583,19 @@ function updateLoginButton(){
     }
 
 
-    if(user){
+    const normalUser =
+        JSON.parse(
+            localStorage.getItem(
+                "diluCurrentUser"
+            ) || "null"
+        );
+
+
+    if(normalUser){
 
         button.innerHTML =
-            "👤 " + user.name;
+            "👤 " +
+            normalUser.name;
 
         return;
 
@@ -4888,26 +4609,37 @@ function updateLoginButton(){
 
 
 /* =====================================================
-   OWNER CHECK
+   OWNER STATE
 ===================================================== */
+
+function isOwner(){
+
+    const user =
+        auth.currentUser;
+
+
+    return !!(
+        user &&
+        user.uid === OWNER_UID
+    );
+
+}
+
 
 function ownerRequired(){
 
-    if(
-        localStorage.getItem(
-            "diluOwner"
-        ) !== "1"
-    ){
+    if(!isOwner()){
 
         alert(
-            "Owner login required."
+            "Owner login required. 🔐"
         );
 
-        openLogin();
+        window.openLogin();
 
         return false;
 
     }
+
 
     return true;
 
@@ -4915,263 +4647,409 @@ function ownerRequired(){
 
 
 /* =====================================================
-   SERVICES
+   FIREBASE AUTH STATE
 ===================================================== */
 
-function addService(type){
+onAuthStateChanged(
+    auth,
+    function(user){
 
-    if(!ownerRequired()) return;
+        if(
+            user &&
+            user.uid === OWNER_UID
+        ){
 
-
-    const label =
-        type === "editing"
-        ? "Enter Editing Service:"
-        : "Enter Online Service:";
-
-
-    const text =
-        prompt(label);
-
-
-    if(!text) return;
-
-
-    const item =
-        document.createElement("div");
-
-
-    item.className =
-        "service-item";
-
-
-    item.innerHTML = `
-
-        <div class="icon">
-            ${type === "editing" ? "✦" : "🌐"}
-        </div>
-
-        <div></div>
-
-    `;
-
-
-    item.lastElementChild
-        .textContent = text;
-
-
-    const target =
-        type === "editing"
-        ? "editingServices"
-        : "onlineServices";
-
-
-    document
-        .getElementById(target)
-        .appendChild(item);
-
-
-    saveServices();
-
-}
-
-
-/* =====================================================
-   SAVE SERVICES
-===================================================== */
-
-function saveServices(){
-
-    const editing =
-        [...document
-        .querySelectorAll(
-            "#editingServices .service-item"
-        )]
-        .map(
-            item =>
-                item.lastElementChild
-                .textContent
-        );
-
-
-    const online =
-        [...document
-        .querySelectorAll(
-            "#onlineServices .service-item"
-        )]
-        .map(
-            item =>
-                item.lastElementChild
-                .textContent
-        );
-
-
-    localStorage.setItem(
-        "diluEditingServices",
-        JSON.stringify(editing)
-    );
-
-
-    localStorage.setItem(
-        "diluOnlineServices",
-        JSON.stringify(online)
-    );
-
-}
-
-
-/* =====================================================
-   LOAD SERVICES
-===================================================== */
-
-function loadServices(){
-
-    const editing =
-        JSON.parse(
-            localStorage.getItem(
-                "diluEditingServices"
-            ) || "null"
-        );
-
-
-    const online =
-        JSON.parse(
-            localStorage.getItem(
-                "diluOnlineServices"
-            ) || "null"
-        );
-
-
-    if(editing){
-
-        const box =
-            document.getElementById(
-                "editingServices"
+            document.body.classList.add(
+                "owner"
             );
 
+            updateLoginButton();
 
-        box.innerHTML = "";
+        }else{
 
-
-        editing.forEach(
-            text => {
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-                item.className =
-                    "service-item";
-
-                item.innerHTML = `
-                    <div class="icon">✦</div>
-                    <div></div>
-                `;
-
-                item.lastElementChild
-                    .textContent = text;
-
-                box.appendChild(item);
-
-            }
-        );
-
-    }
-
-
-    if(online){
-
-        const box =
-            document.getElementById(
-                "onlineServices"
+            document.body.classList.remove(
+                "owner"
             );
 
+            updateLoginButton();
 
-        box.innerHTML = "";
-
-
-        online.forEach(
-            text => {
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-                item.className =
-                    "service-item";
-
-                item.innerHTML = `
-                    <div class="icon">🌐</div>
-                    <div></div>
-                `;
-
-                item.lastElementChild
-                    .textContent = text;
-
-                box.appendChild(item);
-
-            }
-        );
-
-    }
-
-}
+        }
 
 
-/* =====================================================
-   PHOTO UPLOAD
-===================================================== */
+        loadPhotos();
 
-document
-.getElementById("photoInput")
-.addEventListener(
-    "change",
-    function(){
-
-           const files = Array.from(this.files);
-
-        if(!files.length) return;
-
-        files.forEach(file => {
-
-            const reader = new FileReader();
-
-            reader.onload = function(e){
-
-                const photos =
-                    JSON.parse(
-                        localStorage.getItem("diluPhotos") || "[]"
-                    );
-
-                photos.push({
-                    name: file.name,
-                    data: e.target.result
-                });
-
-                localStorage.setItem(
-                    "diluPhotos",
-                    JSON.stringify(photos)
-                );
-
-                loadPhotos();
-            };
-
-            reader.readAsDataURL(file);
-        });
-
-        this.value = "";
     }
 );
+
+
+/* =====================================================
+   CLOUDINARY UPLOAD
+===================================================== */
+
+async function uploadToCloudinary(file){
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "file",
+        file
+    );
+
+
+    formData.append(
+        "upload_preset",
+        CLOUDINARY_UPLOAD_PRESET
+    );
+
+
+    const response =
+        await fetch(
+            CLOUDINARY_UPLOAD_URL,
+            {
+
+                method:
+                    "POST",
+
+                body:
+                    formData
+
+            }
+        );
+
+
+    const data =
+        await response.json();
+
+
+    if(!response.ok){
+
+        console.error(
+            "CLOUDINARY ERROR:",
+            data
+        );
+
+
+        throw new Error(
+
+            data.error &&
+            data.error.message
+
+                ? data.error.message
+
+                : "Cloudinary upload failed."
+
+        );
+
+    }
+
+
+    return data;
+
+}
+
+
+/* =====================================================
+   GET FIRESTORE PHOTOS
+===================================================== */
+
+async function getFirebasePhotos(){
+
+    const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "diluPhotos"
+            )
+        );
+
+
+    const photos = [];
+
+
+    snapshot.forEach(
+        function(item){
+
+            photos.push({
+
+                id:
+                    item.id,
+
+                ...item.data()
+
+            });
+
+        }
+    );
+
+
+    photos.sort(
+        function(a,b){
+
+            return (
+                (b.createdAt || 0) -
+                (a.createdAt || 0)
+            );
+
+        }
+    );
+
+
+    return photos;
+
+}
+
+
+/* =====================================================
+   PHOTO INPUT
+===================================================== */
+
+const photoInput =
+    document.getElementById(
+        "photoInput"
+    );
+
+
+if(photoInput){
+
+    photoInput.addEventListener(
+        "change",
+        async function(){
+
+            if(!ownerRequired()){
+
+                this.value = "";
+
+                return;
+
+            }
+
+
+            const files =
+                Array.from(
+                    this.files || []
+                );
+
+
+            if(!files.length){
+
+                return;
+
+            }
+
+
+            const status =
+                document.getElementById(
+                    "uploadStatus"
+                );
+
+
+            try{
+
+                status.textContent =
+                    "Preparing photos... ⏳";
+
+                status.classList.add(
+                    "show"
+                );
+
+
+                const existing =
+                    await getFirebasePhotos();
+
+
+                const existingKeys =
+                    new Set();
+
+
+                existing.forEach(
+                    function(photo){
+
+                        existingKeys.add(
+
+                            [
+                                photo.name || "",
+                                photo.size || "",
+                                photo.lastModified || ""
+                            ].join("|")
+
+                        );
+
+                    }
+                );
+
+
+                let uploaded =
+                    0;
+
+                let skipped =
+                    0;
+
+
+                for(
+                    const file of files
+                ){
+
+                    if(
+                        !file.type ||
+                        !file.type.startsWith(
+                            "image/"
+                        )
+                    ){
+
+                        continue;
+
+                    }
+
+
+                    const key =
+                        [
+                            file.name,
+                            file.size,
+                            file.lastModified
+                        ].join("|");
+
+
+                    if(
+                        existingKeys.has(
+                            key
+                        )
+                    ){
+
+                        skipped++;
+
+                        continue;
+
+                    }
+
+
+                    status.textContent =
+                        "Uploading " +
+                        file.name +
+                        " ☁️";
+
+
+                    const cloudinary =
+                        await uploadToCloudinary(
+                            file
+                        );
+
+
+                    await addDoc(
+                        collection(
+                            db,
+                            "diluPhotos"
+                        ),
+                        {
+
+                            name:
+                                file.name,
+
+                            size:
+                                file.size,
+
+                            lastModified:
+                                file.lastModified,
+
+                            type:
+                                file.type,
+
+                            url:
+                                cloudinary.secure_url,
+
+                            publicId:
+                                cloudinary.public_id,
+
+                            width:
+                                cloudinary.width ||
+                                null,
+
+                            height:
+                                cloudinary.height ||
+                                null,
+
+                            format:
+                                cloudinary.format ||
+                                null,
+
+                            createdAt:
+                                Date.now(),
+
+                            ownerUid:
+                                OWNER_UID
+
+                        }
+                    );
+
+
+                    existingKeys.add(
+                        key
+                    );
+
+
+                    uploaded++;
+
+                }
+
+
+                await loadPhotos();
+
+
+                if(uploaded > 0){
+
+                    showToast(
+                        uploaded +
+                        " photo(s) uploaded successfully! ✅"
+                    );
+
+                }
+
+
+                if(skipped > 0){
+
+                    showToast(
+                        skipped +
+                        " duplicate photo(s) skipped."
+                    );
+
+                }
+
+
+            }catch(error){
+
+                console.error(
+                    "PHOTO UPLOAD ERROR:",
+                    error
+                );
+
+
+                alert(
+                    "Photo upload failed! ❌\n\n" +
+                    error.message
+                );
+
+            }finally{
+
+                status.classList.remove(
+                    "show"
+                );
+
+                this.value = "";
+
+            }
+
+        }
+    );
+
+}
+
 
 /* =====================================================
    CREATE PHOTO CARD
 ===================================================== */
 
-function createPhotoCard(
-    src,
-    name
-){
+function createPhotoCard(photo){
 
     const grid =
         document.getElementById(
@@ -5180,7 +5058,7 @@ function createPhotoCard(
 
 
     const plusCard =
-        document.querySelector(
+        grid.querySelector(
             ".plus-card"
         );
 
@@ -5192,7 +5070,7 @@ function createPhotoCard(
 
 
     card.className =
-        "edit-card";
+        "edit-card uploaded-photo-card";
 
 
     const img =
@@ -5202,11 +5080,16 @@ function createPhotoCard(
 
 
     img.src =
-        src;
+        photo.url;
 
 
     img.alt =
+        photo.name ||
         "DILU EDITS Project";
+
+
+    img.loading =
+        "lazy";
 
 
     const info =
@@ -5226,84 +5109,95 @@ function createPhotoCard(
 
 
     title.textContent =
-        name;
+        photo.name ||
+        "DILU EDITS Project";
 
 
-    const desc =
+    const description =
         document.createElement(
             "p"
         );
 
 
-    desc.textContent =
+    description.textContent =
         "Owner uploaded project";
 
 
-    info.appendChild(title);
-
-    info.appendChild(desc);
-
-    card.appendChild(img);
-
-    card.appendChild(info);
-
-
-    grid.insertBefore(
-        card,
-        plusCard
+    info.appendChild(
+        title
     );
 
 
-    savePhotos();
+    info.appendChild(
+        description
+    );
 
-}
 
-
-/* =====================================================
-   SAVE PHOTOS
-===================================================== */
-
-function savePhotos(){
-
-    const photos =
-        [...document
-        .querySelectorAll(
-            "#editsGrid .edit-card img"
-        )]
-        .map(
-            img => ({
-
-                src:img.src,
-
-                name:
-                    img
-                    .closest(".edit-card")
-                    .querySelector("h3")
-                    ?.textContent
-                    || "Project"
-
-            })
+    const deleteButton =
+        document.createElement(
+            "button"
         );
 
 
-    /*
-       NOTE:
-       Browser localStorage has limited space.
-       For the final Firebase version we will store
-       images in Cloudinary/Firebase.
-    */
+    deleteButton.type =
+        "button";
 
-    try{
 
-        localStorage.setItem(
-            "diluPhotos",
-            JSON.stringify(photos)
+    deleteButton.className =
+        "delete-photo-btn";
+
+
+    deleteButton.innerHTML =
+        "🗑️";
+
+
+    deleteButton.title =
+        "Delete photo";
+
+
+    deleteButton.addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            deletePhoto(
+                photo.id,
+                photo.name
+            );
+
+        }
+    );
+
+
+    card.appendChild(
+        img
+    );
+
+
+    card.appendChild(
+        info
+    );
+
+
+    card.appendChild(
+        deleteButton
+    );
+
+
+    if(plusCard){
+
+        grid.insertBefore(
+            card,
+            plusCard
         );
 
-    }catch(error){
+    }else{
 
-        console.log(
-            "Storage limit reached."
+        grid.appendChild(
+            card
         );
 
     }
@@ -5315,53 +5209,396 @@ function savePhotos(){
    LOAD PHOTOS
 ===================================================== */
 
-function loadPhotos(){
+async function loadPhotos(){
 
-    const photos =
-        JSON.parse(
-            localStorage.getItem(
-                "diluPhotos"
-            ) || "[]"
+    const grid =
+        document.getElementById(
+            "editsGrid"
         );
 
 
-    photos.forEach(
-        photo => {
+    if(!grid) return;
 
-            createPhotoCard(
-                photo.src,
-                photo.name
-            );
 
-        }
-    );
+    grid
+        .querySelectorAll(
+            ".uploaded-photo-card"
+        )
+        .forEach(
+            function(card){
+
+                card.remove();
+
+            }
+        );
+
+
+    try{
+
+        const photos =
+            await getFirebasePhotos();
+
+
+        photos.forEach(
+            function(photo){
+
+                if(photo.url){
+
+                    createPhotoCard(
+                        photo
+                    );
+
+                }
+
+            }
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "FIRESTORE LOAD ERROR:",
+            error
+        );
+
+    }
 
 }
 
 
 /* =====================================================
-   CONTACT DATA
+   DELETE PHOTO
+===================================================== */
+
+async function deletePhoto(
+    photoId,
+    photoName
+){
+
+    if(!ownerRequired()){
+        return;
+    }
+
+
+    const answer =
+        confirm(
+            'Delete "' +
+            (photoName || "this photo") +
+            '" from DILU EDITS?'
+        );
+
+
+    if(!answer){
+        return;
+    }
+
+
+    try{
+
+        await deleteDoc(
+            doc(
+                db,
+                "diluPhotos",
+                photoId
+            )
+        );
+
+
+        await loadPhotos();
+
+
+        showToast(
+            "Photo removed from website! 🗑️"
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "DELETE ERROR:",
+            error
+        );
+
+
+        alert(
+            "Delete failed! ❌\n\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+window.addService =
+function(type){
+
+    if(!ownerRequired()){
+        return;
+    }
+
+
+    const text =
+        prompt(
+            type === "editing"
+                ? "Enter Editing Service:"
+                : "Enter Online Service:"
+        );
+
+
+    if(!text){
+        return;
+    }
+
+
+    const target =
+        document.getElementById(
+            type === "editing"
+                ? "editingServices"
+                : "onlineServices"
+        );
+
+
+    const item =
+        document.createElement(
+            "div"
+        );
+
+
+    item.className =
+        "service-item";
+
+
+    item.innerHTML =
+
+        type === "editing"
+
+        ?
+
+        `
+        <div class="icon">✦</div>
+        <div></div>
+        `
+
+        :
+
+        `
+        <div class="icon">🌐</div>
+        <div></div>
+        `;
+
+
+    item.lastElementChild.textContent =
+        text;
+
+
+    target.appendChild(
+        item
+    );
+
+
+    saveServices();
+
+};
+
+
+function saveServices(){
+
+    const editing =
+        Array.from(
+            document.querySelectorAll(
+                "#editingServices .service-item"
+            )
+        )
+        .map(
+            function(item){
+
+                return item
+                    .lastElementChild
+                    .textContent;
+
+            }
+        );
+
+
+    const online =
+        Array.from(
+            document.querySelectorAll(
+                "#onlineServices .service-item"
+            )
+        )
+        .map(
+            function(item){
+
+                return item
+                    .lastElementChild
+                    .textContent;
+
+            }
+        );
+
+
+    localStorage.setItem(
+        "diluEditingServices",
+        JSON.stringify(
+            editing
+        )
+    );
+
+
+    localStorage.setItem(
+        "diluOnlineServices",
+        JSON.stringify(
+            online
+        )
+    );
+
+}
+
+
+function loadServices(){
+
+    const editing =
+        JSON.parse(
+            localStorage.getItem(
+                "diluEditingServices"
+            ) || "null"
+        );
+
+
+    const online =
+        JSON.parse(
+            localStorage.getItem(
+                "diluOnlineServices"
+            ) || "null"
+        );
+
+
+    if(
+        Array.isArray(editing)
+    ){
+
+        const box =
+            document.getElementById(
+                "editingServices"
+            );
+
+
+        box.innerHTML =
+            "";
+
+
+        editing.forEach(
+            function(text){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "service-item";
+
+
+                item.innerHTML =
+                    `
+                    <div class="icon">✦</div>
+                    <div></div>
+                    `;
+
+
+                item.lastElementChild.textContent =
+                    text;
+
+
+                box.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+
+    if(
+        Array.isArray(online)
+    ){
+
+        const box =
+            document.getElementById(
+                "onlineServices"
+            );
+
+
+        box.innerHTML =
+            "";
+
+
+        online.forEach(
+            function(text){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "service-item";
+
+
+                item.innerHTML =
+                    `
+                    <div class="icon">🌐</div>
+                    <div></div>
+                    `;
+
+
+                item.lastElementChild.textContent =
+                    text;
+
+
+                box.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTACTS
 ===================================================== */
 
 let contacts = {
 
     phone:
-        "+94 77 123 4567",
+        "+94 7801412188",
 
     whatsapp:
-        "94771234567",
+        "94701412188",
 
     email:
-        "diluedits@gmail.com",
+        "dilshanlakshana20@gmail.com",
 
     instagram:
-        "https://instagram.com/",
+        "https://www.instagram.com/finiks_1234/",
 
     facebook:
-        "https://facebook.com/",
+        "https://www.facebook.com/share/1999WJBMvX/",
 
     tiktok:
-        "https://tiktok.com/",
+        "https://www.tiktok.com/@secrethearthunter",
 
     youtube:
         "https://youtube.com/"
@@ -5382,8 +5619,11 @@ function loadContacts(){
     if(saved){
 
         contacts = {
+
             ...contacts,
+
             ...saved
+
         };
 
     }
@@ -5394,44 +5634,49 @@ function loadContacts(){
 }
 
 
-/* =====================================================
-   SAVE CONTACTS
-===================================================== */
+window.saveContacts =
+function(){
 
-function saveContacts(){
-
-    if(!ownerRequired()) return;
+    if(!ownerRequired()){
+        return;
+    }
 
 
     const emailInput =
         document.getElementById(
-            "dilshanlakshana20@gmail.com"
+            "emailInput"
         );
+
 
     const phoneInput =
         document.getElementById(
-            "0787147743"
+            "phoneInput"
         );
+
 
     const whatsappInput =
         document.getElementById(
-            "+94701412188"
+            "whatsappInput"
         );
+
 
     const instagramInput =
         document.getElementById(
-            "https://www.instagram.com/finiks_1234?igsh=MWg0cHF2enphemdrZw%3D%3D&utm_source=qr"
+            "instagramInput"
         );
+
 
     const facebookInput =
         document.getElementById(
-            "https://www.facebook.com/share/1999WJBMvX/?mibextid=wwXIfr"
+            "facebookInput"
         );
+
 
     const tiktokInput =
         document.getElementById(
-            "https://www.tiktok.com/@secrethearthunter?_r=1&_t=ZS-98s4qGX3lYY"
+            "tiktokInput"
         );
+
 
     const youtubeInput =
         document.getElementById(
@@ -5439,7 +5684,10 @@ function saveContacts(){
         );
 
 
-    if(emailInput.value.trim()){
+    if(
+        emailInput &&
+        emailInput.value.trim()
+    ){
 
         contacts.email =
             emailInput.value.trim();
@@ -5447,7 +5695,10 @@ function saveContacts(){
     }
 
 
-    if(phoneInput.value.trim()){
+    if(
+        phoneInput &&
+        phoneInput.value.trim()
+    ){
 
         contacts.phone =
             phoneInput.value.trim();
@@ -5455,10 +5706,14 @@ function saveContacts(){
     }
 
 
-    if(whatsappInput.value.trim()){
+    if(
+        whatsappInput &&
+        whatsappInput.value.trim()
+    ){
 
         contacts.whatsapp =
-            whatsappInput.value
+            whatsappInput
+            .value
             .trim()
             .replace(
                 /\D/g,
@@ -5468,34 +5723,54 @@ function saveContacts(){
     }
 
 
-    if(instagramInput.value.trim()){
+    if(
+        instagramInput &&
+        instagramInput.value.trim()
+    ){
 
         contacts.instagram =
-            instagramInput.value.trim();
+            instagramInput
+            .value
+            .trim();
 
     }
 
 
-    if(facebookInput.value.trim()){
+    if(
+        facebookInput &&
+        facebookInput.value.trim()
+    ){
 
         contacts.facebook =
-            facebookInput.value.trim();
+            facebookInput
+            .value
+            .trim();
 
     }
 
 
-    if(tiktokInput.value.trim()){
+    if(
+        tiktokInput &&
+        tiktokInput.value.trim()
+    ){
 
         contacts.tiktok =
-            tiktokInput.value.trim();
+            tiktokInput
+            .value
+            .trim();
 
     }
 
 
-    if(youtubeInput.value.trim()){
+    if(
+        youtubeInput &&
+        youtubeInput.value.trim()
+    ){
 
         contacts.youtube =
-            youtubeInput.value.trim();
+            youtubeInput
+            .value
+            .trim();
 
     }
 
@@ -5511,102 +5786,185 @@ function saveContacts(){
     updateContactUI();
 
 
-    alert(
+    showToast(
         "Contact details saved! ✅"
     );
 
-}
+};
 
-
-/* =====================================================
-   UPDATE CONTACT UI
-===================================================== */
 
 function updateContactUI(){
 
-    document
-        .getElementById(
+    const phoneDisplay =
+        document.getElementById(
             "phoneDisplay"
-        )
-        .textContent =
+        );
+
+
+    const phoneCard =
+        document.getElementById(
+            "phoneCard"
+        );
+
+
+    const whatsappDisplay =
+        document.getElementById(
+            "whatsappDisplay"
+        );
+
+
+    const whatsappCard =
+        document.getElementById(
+            "whatsappCard"
+        );
+
+
+    const emailDisplay =
+        document.getElementById(
+            "emailDisplay"
+        );
+
+
+    const emailCard =
+        document.getElementById(
+            "emailCard"
+        );
+
+
+    const instagramDisplay =
+        document.getElementById(
+            "instagramDisplay"
+        );
+
+
+    const instagramCard =
+        document.getElementById(
+            "instagramCard"
+        );
+
+
+    const facebookDisplay =
+        document.getElementById(
+            "facebookDisplay"
+        );
+
+
+    const facebookCard =
+        document.getElementById(
+            "facebookCard"
+        );
+
+
+    const tiktokDisplay =
+        document.getElementById(
+            "tiktokDisplay"
+        );
+
+
+    const tiktokCard =
+        document.getElementById(
+            "tiktokCard"
+        );
+
+
+    const youtubeDisplay =
+        document.getElementById(
+            "youtubeDisplay"
+        );
+
+
+    const youtubeCard =
+        document.getElementById(
+            "youtubeCard"
+        );
+
+
+    if(phoneDisplay)
+        phoneDisplay.textContent =
             contacts.phone;
 
 
-    document
-        .getElementById(
-            "phoneCard"
-        )
-        .href =
+    if(phoneCard)
+        phoneCard.href =
             "tel:" +
-            contacts.phone
-            .replace(/\s/g,"");
+            contacts.phone.replace(
+                /\s/g,
+                ""
+            );
 
 
-    document
-        .getElementById(
-            "whatsappDisplay"
-        )
-        .textContent =
+    if(whatsappDisplay)
+        whatsappDisplay.textContent =
             "+" +
             contacts.whatsapp;
 
 
-    document
-        .getElementById(
-            "whatsappCard"
-        )
-        .href =
+    if(whatsappCard)
+        whatsappCard.href =
             "https://wa.me/" +
             contacts.whatsapp;
 
 
-    document
-        .getElementById(
-            "emailDisplay"
-        )
-        .textContent =
+    if(emailDisplay)
+        emailDisplay.textContent =
             contacts.email;
 
 
-    document
-        .getElementById(
-            "emailCard"
-        )
-        .href =
+    if(emailCard)
+        emailCard.href =
             "mailto:" +
             contacts.email;
 
 
-    document
-        .getElementById(
-            "instagramCard"
-        )
-        .href =
+    if(instagramDisplay)
+        instagramDisplay.textContent =
             contacts.instagram;
 
 
-    document
-        .getElementById(
-            "facebookCard"
-        )
-        .href =
+    if(instagramCard)
+        instagramCard.href =
+            contacts.instagram;
+
+
+    if(facebookDisplay)
+        facebookDisplay.textContent =
             contacts.facebook;
 
 
-    document
-        .getElementById(
-            "tiktokCard"
-        )
-        .href =
+    if(facebookCard)
+        facebookCard.href =
+            contacts.facebook;
+
+
+    if(tiktokDisplay)
+        tiktokDisplay.textContent =
             contacts.tiktok;
 
 
-    document
-        .getElementById(
-            "youtubeCard"
-        )
-        .href =
+    if(tiktokCard)
+        tiktokCard.href =
+            contacts.tiktok;
+
+
+    if(youtubeDisplay)
+        youtubeDisplay.textContent =
             contacts.youtube;
+
+
+    if(youtubeCard)
+        youtubeCard.href =
+            contacts.youtube;
+
+
+    const emailSectionText =
+        document.getElementById(
+            "emailSectionText"
+        );
+
+
+    if(emailSectionText)
+        emailSectionText.textContent =
+            contacts.email;
 
 }
 
@@ -5615,7 +5973,8 @@ function updateContactUI(){
    COMMENTS
 ===================================================== */
 
-function addComment(){
+window.addComment =
+function(){
 
     const user =
         JSON.parse(
@@ -5631,7 +5990,7 @@ function addComment(){
             "Please login first to comment."
         );
 
-        openLogin();
+        window.openLogin();
 
         return;
 
@@ -5669,11 +6028,14 @@ function addComment(){
 
     comments.unshift({
 
-        name:user.name,
+        name:
+            user.name,
 
-        phone:user.phone,
+        phone:
+            user.phone,
 
-        text:text,
+        text:
+            text,
 
         date:
             new Date()
@@ -5690,17 +6052,19 @@ function addComment(){
     );
 
 
-    textarea.value = "";
+    textarea.value =
+        "";
 
 
     loadComments();
 
-}
 
+    showToast(
+        "Comment posted! 💬"
+    );
 
-/* =====================================================
-   LOAD COMMENTS
-===================================================== */
+};
+
 
 function loadComments(){
 
@@ -5708,6 +6072,9 @@ function loadComments(){
         document.getElementById(
             "commentsList"
         );
+
+
+    if(!list) return;
 
 
     const comments =
@@ -5718,16 +6085,21 @@ function loadComments(){
         );
 
 
-    list.innerHTML = "";
+    list.innerHTML =
+        "";
 
 
     if(!comments.length){
 
-        list.innerHTML = `
+        list.innerHTML =
 
+            `
             <div
                 class="comment glass"
-                style="grid-column:1/-1;text-align:center"
+                style="
+                grid-column:1/-1;
+                text-align:center
+                "
             >
 
                 <strong>
@@ -5739,8 +6111,7 @@ function loadComments(){
                 </p>
 
             </div>
-
-        `;
+            `;
 
         return;
 
@@ -5748,7 +6119,7 @@ function loadComments(){
 
 
     comments.forEach(
-        comment => {
+        function(comment){
 
             const div =
                 document.createElement(
@@ -5794,9 +6165,11 @@ function loadComments(){
                 strong
             );
 
+
             div.appendChild(
                 small
             );
+
 
             div.appendChild(
                 p
@@ -5814,7 +6187,7 @@ function loadComments(){
 
 
 /* =====================================================
-   LAPTOP 3D MOUSE EFFECT
+   LAPTOP EFFECT
 ===================================================== */
 
 const laptopArea =
@@ -5829,11 +6202,14 @@ const laptop =
     );
 
 
-if(laptopArea && laptop){
+if(
+    laptopArea &&
+    laptop
+){
 
     laptopArea.addEventListener(
         "mousemove",
-        function(e){
+        function(event){
 
             const rect =
                 laptopArea
@@ -5841,12 +6217,12 @@ if(laptopArea && laptop){
 
 
             const x =
-                e.clientX -
+                event.clientX -
                 rect.left;
 
 
             const y =
-                e.clientY -
+                event.clientY -
                 rect.top;
 
 
@@ -5859,22 +6235,24 @@ if(laptopArea && laptop){
 
 
             const rotateY =
-                ((x-centerX) /
-                centerX) * 22;
+                (
+                    (x - centerX) /
+                    centerX
+                ) * 22;
 
 
             const rotateX =
-                -((y-centerY) /
-                centerY) * 16;
+                -(
+                    (y - centerY) /
+                    centerY
+                ) * 16;
 
 
-            laptop.style.transform = `
-
+            laptop.style.transform =
+                `
                 rotateX(${rotateX}deg)
-
                 rotateY(${rotateY}deg)
-
-            `;
+                `;
 
         }
     );
@@ -5909,7 +6287,10 @@ const screenFallback =
     );
 
 
-if(introVideo){
+if(
+    introVideo &&
+    screenFallback
+){
 
     introVideo.addEventListener(
         "loadeddata",
@@ -5917,24 +6298,6 @@ if(introVideo){
 
             screenFallback.style.display =
                 "none";
-
-        }
-    );
-
-
-    introVideo.addEventListener(
-        "timeupdate",
-        function(){
-
-            if(
-                introVideo.duration &&
-                introVideo.currentTime >= 5
-            ){
-
-                introVideo.currentTime =
-                    0;
-
-            }
 
         }
     );
@@ -5971,39 +6334,76 @@ if(introVideo){
 
 
 /* =====================================================
-   PAGE INITIALIZE
+   PARTICLES
 ===================================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        if(
-            localStorage.getItem(
-                "diluOwner"
-            ) === "1"
-        ){
-
-            document.body.classList.add(
-                "owner"
-            );
-
-        }
+const particleContainer =
+    document.getElementById(
+        "particles"
+    );
 
 
-        updateLoginButton();
+for(
+    let i = 0;
+    i < 70;
+    i++
+){
 
-        loadServices();
+    const particle =
+        document.createElement(
+            "div"
+        );
 
-        loadContacts();
 
-        loadComments();
+    particle.className =
+        "particle";
 
-        loadPhotos();
 
-    }
-);
+    particle.style.left =
+        Math.random() *
+        100 +
+        "%";
 
+
+    particle.style.animationDuration =
+        (
+            5 +
+            Math.random() *
+            10
+        ) +
+        "s";
+
+
+    particle.style.animationDelay =
+        Math.random() *
+        8 +
+        "s";
+
+
+    particle.style.opacity =
+        Math.random();
+
+
+    particleContainer.appendChild(
+        particle
+    );
+
+}
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadServices();
+
+loadContacts();
+
+loadComments();
+
+updateLoginButton();
+
+loadPhotos();
 
 </script>
 
