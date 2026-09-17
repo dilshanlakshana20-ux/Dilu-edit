@@ -5119,50 +5119,225 @@ function loadServices(){
 }
 
 
+
+
 /* =====================================================
-   PHOTO UPLOAD
+   PHOTO UPLOAD - OWNER ONLY
 ===================================================== */
 
-document
-.getElementById("photoInput")
-.addEventListener(
-    "change",
-    function(){
+const photoInput = document.getElementById("photoInput");
 
-           const files = Array.from(this.files);
+if (photoInput) {
 
-        if(!files.length) return;
+    photoInput.addEventListener("change", function () {
 
-        files.forEach(file => {
+        /* Owner check */
+        if (localStorage.getItem("diluOwner") !== "1") {
+
+            alert("Owner login required.");
+
+            this.value = "";
+
+            openLogin();
+
+            return;
+        }
+
+
+        const files = Array.from(this.files);
+
+        if (!files.length) {
+            return;
+        }
+
+
+        let photos = JSON.parse(
+            localStorage.getItem("diluPhotos") || "[]"
+        );
+
+
+        let completed = 0;
+
+
+        files.forEach(function (file) {
+
+            /* Only images */
+            if (!file.type.startsWith("image/")) {
+                completed++;
+                return;
+            }
+
 
             const reader = new FileReader();
 
-            reader.onload = function(e){
 
-                const photos =
-                    JSON.parse(
-                        localStorage.getItem("diluPhotos") || "[]"
-                    );
+            reader.onload = function (event) {
 
                 photos.push({
+
+                    id:
+                        Date.now() +
+                        "_" +
+                        Math.random()
+                        .toString(36)
+                        .substring(2),
+
                     name: file.name,
-                    data: e.target.result
+
+                    data: event.target.result
+
                 });
 
-                localStorage.setItem(
-                    "diluPhotos",
-                    JSON.stringify(photos)
-                );
 
-                loadPhotos();
+                completed++;
+
+
+                if (completed === files.length) {
+
+                    localStorage.setItem(
+                        "diluPhotos",
+                        JSON.stringify(photos)
+                    );
+
+
+                    renderPhotos();
+
+
+                    photoInput.value = "";
+
+
+                    alert(
+                        files.length +
+                        " photo(s) added successfully! ✅"
+                    );
+
+                }
+
             };
 
+
+            reader.onerror = function () {
+
+                completed++;
+
+            };
+
+
             reader.readAsDataURL(file);
+
         });
 
-        this.value = "";
+    });
+
+}
+
+
+/* =====================================================
+   RENDER PHOTOS
+===================================================== */
+
+function renderPhotos() {
+
+    const grid =
+        document.getElementById("editsGrid");
+
+
+    if (!grid) {
+        return;
     }
-);
+
+
+    /* Remove previously generated photos */
+
+    grid
+        .querySelectorAll(".uploaded-photo")
+        .forEach(function (card) {
+
+            card.remove();
+
+        });
+
+
+    const photos =
+        JSON.parse(
+            localStorage.getItem("diluPhotos") || "[]"
+        );
+
+
+    const plusCard =
+        grid.querySelector(".plus-card");
+
+
+    photos.forEach(function (photo) {
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "edit-card uploaded-photo";
+
+
+        card.innerHTML = `
+
+            <img
+                src="${photo.data}"
+                alt="DILU EDITS Project"
+            >
+
+            <div class="edit-info">
+
+                <h3></h3>
+
+                <p>
+                    DILU EDITS Portfolio
+                </p>
+
+            </div>
+
+        `;
+
+
+        const title =
+            card.querySelector("h3");
+
+
+        title.textContent =
+            photo.name;
+
+
+        /*
+           Insert photo before
+           the + Add Photos card
+        */
+
+        if (plusCard) {
+
+            grid.insertBefore(
+                card,
+                plusCard
+            );
+
+        } else {
+
+            grid.appendChild(card);
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   LOAD PHOTOS
+===================================================== */
+
+function loadPhotos() {
+
+    renderPhotos();
+
+}
 
 /* =====================================================
    CREATE PHOTO CARD
