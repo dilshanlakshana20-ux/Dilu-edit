@@ -2558,11 +2558,148 @@ footer{
     }
 }
 
+
+
+/* =====================================================
+   RESPONSIVE NAVIGATION FIX
+===================================================== */
+
+.mobile-menu{
+    display:none;
+}
+
 @media(max-width:850px){
 
+    header{
+        padding:0 15px;
+    }
+
     nav{
+        position:fixed;
+        top:78px;
+        left:10px;
+        right:10px;
+
+        display:none;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        gap:5px;
+
+        padding:15px;
+
+        border-radius:20px;
+
+        background:rgba(8,5,15,.96);
+
+        border:1px solid rgba(168,85,247,.25);
+
+        backdrop-filter:blur(25px);
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.6),
+            0 0 30px rgba(168,85,247,.12);
+
+        z-index:2000;
+    }
+
+    nav.mobile-open{
+        display:flex;
+    }
+
+    nav .nav{
+        width:100%;
+        text-align:center;
+
+        padding:13px;
+
+        border-radius:12px;
+    }
+
+    nav .nav::after{
         display:none;
     }
+
+    nav .login-btn{
+        width:100%;
+    }
+
+    .de-logo{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .dashboard-top{
+        grid-template-columns:1fr;
+    }
+
+    .hero-side{
+        text-align:center;
+        order:2;
+    }
+
+    .hero-side p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-btns{
+        justify-content:center;
+    }
+
+    .dashboard-laptop-area{
+        order:1;
+    }
+
+    .profile-grid,
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .support-bar{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .page{
+        padding:100px 15px 40px;
+    }
+
+    .laptop-glass{
+        width:96%;
+        padding:22px 12px 30px;
+    }
+
+    .dashboard-laptop-area{
+        min-height:380px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .edits-grid{
+        grid-template-columns:1fr;
+    }
+
+    #commentsList{
+        grid-template-columns:1fr;
+    }
+
+    .support-bar{
+        grid-template-columns:1fr;
+    }
+}
+
+
+    
+
 
     header{
 
@@ -2726,13 +2863,15 @@ footer{
 
     </nav>
 
-    <button
-        class="login-btn mobile-menu"
-        onclick="openLogin()"
-    >
-        🔐
-    </button>
+<button
+    class="login-btn mobile-menu"
+    id="mobileMenuButton"
+    onclick="toggleMobileMenu()"
+>
+    ☰
+</button>
 
+    
 </header>
 
 
