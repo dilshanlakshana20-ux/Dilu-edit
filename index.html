@@ -5118,57 +5118,85 @@ function loadServices(){
 
 }
 
-
-
-
 /* =====================================================
-   PHOTO UPLOAD - OWNER ONLY
-===================================================== */
-
-/* =====================================================
-   PHOTO UPLOAD
+   PHOTO UPLOAD + DELETE - OWNER ONLY
 ===================================================== */
 
 const photoInput = document.getElementById("photoInput");
+
+
+/* =====================================================
+   PHOTO INPUT
+===================================================== */
 
 if (photoInput) {
 
     photoInput.addEventListener("change", function () {
 
-        // Owner check
+        /* Owner check */
+
         if (localStorage.getItem("diluOwner") !== "1") {
+
             alert("Owner login required.");
+
             this.value = "";
+
+            openLogin();
+
             return;
         }
+
 
         const files = Array.from(this.files)
-            .filter(file => file.type.startsWith("image/"));
+            .filter(file =>
+                file.type.startsWith("image/")
+            );
 
-        if (files.length === 0) {
+
+        if (!files.length) {
+
             this.value = "";
+
             return;
+
         }
+
 
         let photos = JSON.parse(
             localStorage.getItem("diluPhotos") || "[]"
         );
 
+
         let completed = 0;
 
-        files.forEach(file => {
+
+        files.forEach(function(file) {
 
             const reader = new FileReader();
 
-            reader.onload = function (e) {
+
+            reader.onload = function(e) {
 
                 photos.push({
-                    id: Date.now() + "_" + Math.random(),
-                    name: file.name,
-                    data: e.target.result
+
+                    id:
+                        Date.now() +
+                        "_" +
+                        Math.random()
+                            .toString(36)
+                            .substring(2),
+
+                    name:
+                        file.name,
+
+                    data:
+                        e.target.result
+
                 });
 
+
                 completed++;
+
 
                 if (completed === files.length) {
 
@@ -5177,94 +5205,51 @@ if (photoInput) {
                         JSON.stringify(photos)
                     );
 
+
                     renderPhotos();
+
 
                     photoInput.value = "";
 
+
                     alert(
-                        files.length +
-                        " photo(s) added successfully ✅"
+                        completed +
+                        " photo(s) added successfully! ✅"
                     );
+
                 }
+
             };
 
+
+            reader.onerror = function() {
+
+                completed++;
+
+
+                if (completed === files.length) {
+
+                    photoInput.value = "";
+
+                }
+
+            };
+
+
             reader.readAsDataURL(file);
+
         });
+
     });
+
 }
 
 
 /* =====================================================
-   RENDER PHOTOS
+   RENDER ALL PHOTOS
 ===================================================== */
 
 function renderPhotos() {
-
-    const grid = document.getElementById("editsGrid");
-
-    if (!grid) return;
-
-    // ONLY uploaded photos remove karanawa
-    grid.querySelectorAll(".uploaded-photo").forEach(card => {
-        card.remove();
-    });
-
-    const photos = JSON.parse(
-        localStorage.getItem("diluPhotos") || "[]"
-    );
-
-    const plusCard = grid.querySelector(".plus-card");
-
-    photos.forEach(photo => {
-
-        const card = document.createElement("div");
-
-        card.className = "edit-card uploaded-photo";
-
-        const img = document.createElement("img");
-        img.src = photo.data;
-        img.alt = "DILU EDITS Project";
-
-        const info = document.createElement("div");
-        info.className = "edit-info";
-
-        const title = document.createElement("h3");
-        title.textContent = photo.name;
-
-        const desc = document.createElement("p");
-        desc.textContent = "DILU EDITS Portfolio";
-
-        info.appendChild(title);
-        info.appendChild(desc);
-
-        card.appendChild(img);
-        card.appendChild(info);
-
-        if (plusCard) {
-            grid.insertBefore(card, plusCard);
-        } else {
-            grid.appendChild(card);
-        }
-    });
-}
-
-
-/* =====================================================
-   LOAD PHOTOS
-===================================================== */
-
-function loadPhotos() {
-    renderPhotos();
-}
-
-/* =====================================================
-   CREATE PHOTO CARD
-===================================================== */
-
-function createPhotoCard(
-    src,
-    name
-){
 
     const grid =
         document.getElementById(
@@ -5272,143 +5257,27 @@ function createPhotoCard(
         );
 
 
-    const plusCard =
-        document.querySelector(
-            ".plus-card"
-        );
+    if (!grid) return;
 
 
-    const card =
-        document.createElement(
-            "div"
-        );
+    /* ---------------------------------------------
+       Remove ONLY previously uploaded photos
+    --------------------------------------------- */
 
-
-    card.className =
-        "edit-card";
-
-
-    const img =
-        document.createElement(
-            "img"
-        );
-
-
-    img.src =
-        src;
-
-
-    img.alt =
-        "DILU EDITS Project";
-
-
-    const info =
-        document.createElement(
-            "div"
-        );
-
-
-    info.className =
-        "edit-info";
-
-
-    const title =
-        document.createElement(
-            "h3"
-        );
-
-
-    title.textContent =
-        name;
-
-
-    const desc =
-        document.createElement(
-            "p"
-        );
-
-
-    desc.textContent =
-        "Owner uploaded project";
-
-
-    info.appendChild(title);
-
-    info.appendChild(desc);
-
-    card.appendChild(img);
-
-    card.appendChild(info);
-
-
-    grid.insertBefore(
-        card,
-        plusCard
-    );
-
-
-    savePhotos();
-
-}
-
-
-/* =====================================================
-   SAVE PHOTOS
-===================================================== */
-
-function savePhotos(){
-
-    const photos =
-        [...document
+    grid
         .querySelectorAll(
-            "#editsGrid .edit-card img"
-        )]
-        .map(
-            img => ({
+            ".uploaded-photo"
+        )
+        .forEach(function(card) {
 
-                src:img.src,
+            card.remove();
 
-                name:
-                    img
-                    .closest(".edit-card")
-                    .querySelector("h3")
-                    ?.textContent
-                    || "Project"
-
-            })
-        );
+        });
 
 
-    /*
-       NOTE:
-       Browser localStorage has limited space.
-       For the final Firebase version we will store
-       images in Cloudinary/Firebase.
-    */
-
-    try{
-
-        localStorage.setItem(
-            "diluPhotos",
-            JSON.stringify(photos)
-        );
-
-    }catch(error){
-
-        console.log(
-            "Storage limit reached."
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   LOAD PHOTOS
-===================================================== */
-
-function loadPhotos(){
+    /* ---------------------------------------------
+       Get saved photos
+    --------------------------------------------- */
 
     const photos =
         JSON.parse(
@@ -5418,18 +5287,255 @@ function loadPhotos(){
         );
 
 
-    photos.forEach(
-        photo => {
+    const plusCard =
+        grid.querySelector(
+            ".plus-card"
+        );
 
-            createPhotoCard(
-                photo.src,
-                photo.name
+
+    /* ---------------------------------------------
+       Create cards
+    --------------------------------------------- */
+
+    photos.forEach(function(photo) {
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "edit-card uploaded-photo";
+
+
+        /* IMAGE */
+
+        const img =
+            document.createElement(
+                "img"
+            );
+
+
+        img.src =
+            photo.data;
+
+
+        img.alt =
+            "DILU EDITS Project";
+
+
+        /* INFO */
+
+        const info =
+            document.createElement(
+                "div"
+            );
+
+
+        info.className =
+            "edit-info";
+
+
+        const title =
+            document.createElement(
+                "h3"
+            );
+
+
+        title.textContent =
+            photo.name;
+
+
+        const description =
+            document.createElement(
+                "p"
+            );
+
+
+        description.textContent =
+            "DILU EDITS Portfolio";
+
+
+        info.appendChild(
+            title
+        );
+
+
+        info.appendChild(
+            description
+        );
+
+
+        /* -----------------------------------------
+           DELETE BUTTON
+        ----------------------------------------- */
+
+        const deleteButton =
+            document.createElement(
+                "button"
+            );
+
+
+        deleteButton.className =
+            "photo-delete-btn owner-only";
+
+
+        deleteButton.type =
+            "button";
+
+
+        deleteButton.innerHTML =
+            "🗑 DELETE";
+
+
+        deleteButton.addEventListener(
+            "click",
+            function(e) {
+
+                e.preventDefault();
+
+                e.stopPropagation();
+
+
+                deletePhoto(
+                    photo.id
+                );
+
+            }
+        );
+
+
+        /* -----------------------------------------
+           Add elements
+        ----------------------------------------- */
+
+        card.appendChild(
+            img
+        );
+
+
+        card.appendChild(
+            info
+        );
+
+
+        card.appendChild(
+            deleteButton
+        );
+
+
+        /* -----------------------------------------
+           Put before + button
+        ----------------------------------------- */
+
+        if (plusCard) {
+
+            grid.insertBefore(
+                card,
+                plusCard
+            );
+
+        } else {
+
+            grid.appendChild(
+                card
             );
 
         }
+
+    });
+
+}
+
+
+/* =====================================================
+   DELETE PHOTO
+===================================================== */
+
+function deletePhoto(id) {
+
+
+    /* Owner check */
+
+    if (
+        localStorage.getItem(
+            "diluOwner"
+        ) !== "1"
+    ) {
+
+        alert(
+            "Owner login required."
+        );
+
+        openLogin();
+
+        return;
+
+    }
+
+
+    const confirmDelete =
+        confirm(
+            "Are you sure you want to delete this photo?"
+        );
+
+
+    if (!confirmDelete) {
+
+        return;
+
+    }
+
+
+    let photos =
+        JSON.parse(
+            localStorage.getItem(
+                "diluPhotos"
+            ) || "[]"
+        );
+
+
+    photos =
+        photos.filter(
+            function(photo) {
+
+                return photo.id !== id;
+
+            }
+        );
+
+
+    localStorage.setItem(
+        "diluPhotos",
+        JSON.stringify(
+            photos
+        )
+    );
+
+
+    renderPhotos();
+
+
+    alert(
+        "Photo deleted successfully! 🗑️"
     );
 
 }
+
+
+/* =====================================================
+   LOAD PHOTOS
+===================================================== */
+
+function loadPhotos() {
+
+    renderPhotos();
+
+}
+
+
 
 
 /* =====================================================
